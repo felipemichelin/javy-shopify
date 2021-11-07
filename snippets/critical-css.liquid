@@ -1,0 +1,272 @@
+{%- liquid
+  assign header_font = settings.type_header_font_family
+  assign base_font = settings.type_base_font_family
+  assign base_font_bold = base_font | font_modify: 'weight', 'bolder'
+  assign base_font_italic = base_font | font_modify: 'style', 'italic'
+  assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic'
+-%}
+
+<style>
+
+
+  @font-face {
+  font-family: 'Fa brands 400';
+  src: url('{{ "fa-brands-400.woff2" | asset_url }}') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fa solid 900';
+  src: url('{{ "fa-solid-900.woff2" | asset_url }}') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+  
+  
+
+@font-face {
+    font-family: "gotham_proregular";
+    src: url('{{ "gothampro-webfont.woff2" | asset_url }}') format("woff2"),
+         url('{{ "gothampro-webfont.woff" | asset_url }}') format("woff");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: "gotham_problack";
+    src: url('{{ "gothampro-black-webfont.woff2" | asset_url }}') format("woff2"),
+         url('{{ "gothampro-black-webfont.woff" | asset_url }}') format("woff");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: "gotham_problack_italic";
+    src: url('{{ "gothampro-blackitalic-webfont.woff2" | asset_url }}') format("woff2"),
+         url('{{ "gothampro-blackitalic-webfont.woff" | asset_url }}') format("woff");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: "gotham_probold_italic";
+    src: url('{{ "gothampro-bolditalic-webfont.woff2" | asset_url }}') format("woff2"),
+         url('{{ "gothampro-bolditalic-webfont.woff" | asset_url }}') format("woff");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: "gotham_proitalic";
+    src: url('{{ "gothampro-italic-webfont.woff2" | asset_url }}') format("woff2"),
+         url('{{ "gothampro-italic-webfont.woff" | asset_url }}') format("woff");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: "gotham_prolight";
+    src: url('{{ "gothampro-light-webfont.woff2" | asset_url }}') format("woff2"),
+         url('{{ "gothampro-light-webfont.woff" | asset_url }}') format("woff");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: "gotham_prolight_italic";
+    src: url('{{ "gothampro-lightitalic-webfont.woff2" | asset_url }}') format("woff2"),
+         url('{{ "gothampro-lightitalic-webfont.woff" | asset_url }}') format("woff");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: "gotham_promedium";
+    src: url('{{ "gothampro-medium-webfont.woff2" | asset_url }}') format("woff2"),
+         url('{{ "gothampro-medium-webfont.woff" | asset_url }}') format("woff");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: "gotham_promedium_italic";
+    src: url('{{ "gothampro-mediumitalic-webfont.woff2" | asset_url }}') format("woff2"),
+         url('{{ "gothampro-mediumitalic-webfont.woff" | asset_url }}') format("woff");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+  
+  
+
+
+  body,
+  input,
+  textarea,
+  button,
+  select {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeSpeed;
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-size: calc(var(--typeBaseSize) * 0.85);
+    font-weight: var(--typeBaseWeight);
+    font-style: var(--typeBaseStyle);
+    letter-spacing: var(--typeBaseSpacing);
+    line-height: var(--typeBaseLineHeight);
+  }
+
+  @media only screen and (min-width: 769px) {
+    body,
+    input,
+    textarea,
+    button,
+    select {
+      font-size: var(--typeBaseSize);
+    }
+  }
+
+  .page-container,
+  .overscroll-loader {
+    display: none;
+  }
+
+  h1, .h1,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6,
+  .section-header__title,
+  .spr-header-title.spr-header-title {
+    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
+    font-weight: var(--typeHeaderWeight);
+    font-style: {{ settings.type_header_font_family.style }};
+    letter-spacing: var(--typeHeaderSpacing);
+    line-height: var(--typeHeaderLineHeight);
+    word-break: break-word;
+
+    {% if settings.type_header_capitalize %}
+      text-transform: uppercase;
+    {% endif %}
+  }
+
+  h2, .h2 {
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    font-weight: var(--typeBaseWeight);
+    letter-spacing: var(--typeBaseSpacing);
+    line-height: var(--typeBaseLineHeight);
+  }
+
+  {% comment %}
+    Splash screen logo and animation
+  {% endcomment %}
+  @keyframes pulse-fade {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .splash-screen {
+    box-sizing: border-box;
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    background-color: {{ settings.color_body_bg | default: '#fff' }};
+  }
+
+  .splash-screen__loader {
+    max-width: {{ settings.mobile_loader_width }}px;
+  }
+
+  @media only screen and (min-width: 769px) {
+    .splash-screen__loader {
+      max-width: {{ settings.desktop_loader_width }}px;
+    }
+  }
+
+  .splash-screen img {
+    display: block;
+    max-width: 100%;
+    border: 0 none;
+    animation: pulse-fade 0.4s infinite linear;
+  }
+
+  .loader-text {
+    letter-spacing: 0.2em;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    animation: pulse-fade 0.4s infinite linear;
+  }
+
+  .loader-logo {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: {{ settings.color_body_bg }};
+    z-index: 6000;
+  }
+
+  .loader-logo__img {
+    display: block;
+  }
+
+  .transition-body {
+    opacity: 0;
+  }
+
+  .btn--loading span:after {
+    content: "{{ 'general.accessibility.loading' | t }}";
+  }
+</style>

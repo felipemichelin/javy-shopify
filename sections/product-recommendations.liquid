@@ -1,0 +1,130 @@
+{%- liquid
+  assign recommend_products = true
+  if recommendations.products and recommendations.products_count > 0
+    assign related_collection = recommendations
+  endif
+-%}
+
+{% comment %}
+  Check if the utility tag defines related section
+{% endcomment %}
+{%- liquid
+  for tag in product.tags
+    if tag contains '_related'
+      assign include_collection_handle = tag | split: '_' | last
+      assign include_collection = collections[include_collection_handle]
+      if include_collection != empty and include_collection.products_count > 0
+        assign related_collection = include_collection
+        assign recommend_products = false
+        break
+      endif
+    endif
+  endfor
+
+  assign grid_item_width = 'grid-product--small'
+-%}
+
+{%- if section.settings.show_product_recommendations -%}
+  <div
+    data-subsection
+    id="Recommendations-{{ product.id }}"
+    data-section-id="{{ product.id }}"
+    data-section-type="product-recommendations"
+    data-enable="{{ recommend_products }}"
+    data-product-id="{{ product.id }}"
+    data-url="{{ routes.product_recommendations_url }}"
+    data-limit="14">
+
+    <div
+      data-subsection
+      data-section-id="{{ product.id }}"
+      data-section-type="featured-collection"
+      data-scrollable="true"
+      data-product-sliders-mobile="false"
+      data-paginate="false"
+      class="index-section">
+
+      <div class="page-width">
+        <header class="section-header" data-aos>
+          <h2 class="section-header__title appear-delay">
+            {{ section.settings.product_recommendations_heading }}
+          </h2>
+        </header>
+      </div>
+
+      <div class="overflow-scroll-wrap" data-ajax-loader>
+        <button
+          type="button"
+          class="btn btn--tertiary overflow-scroller__arrow overflow-scroller__arrow--left overflow-scroller--disable-left small--hide"
+          aria-hidden="true"
+          aria-label="{{ 'general.pagination.previous' | t }}"
+          data-arrow>
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z"/></svg>
+        </button>
+        <button
+          type="button"
+          class="btn btn--tertiary overflow-scroller__arrow overflow-scroller__arrow--right small--hide"
+          aria-hidden="true"
+          aria-label="{{ 'general.pagination.next' | t }}"
+          data-arrow>
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><path d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z"/></svg>
+        </button>
+        <div class="overflow-scroller" data-pagination-wrapper>
+
+          {%- if recommend_products -%}
+            <div class="product-recommendations-placeholder">
+              <div
+                class="grid grid--uniform visually-invisible"
+                data-product-container
+                aria-hidden="true">
+                {%- render 'product-grid-item'
+                  product: product,
+                  grid_item_width: grid_item_width,
+                  no_modal: true
+                -%}
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- if related_collection.products_count > 1 -%}
+            <div class="product-recommendations">
+              <div
+                class="grid grid--uniform grid--scattered-large-2 grid--scattered-small-2"
+                data-aos="overflow__animation"
+                data-product-container>
+                {%- for product in related_collection.products -%}
+                  {%- render 'product-grid-item'
+                    product: product,
+                    grid_item_width: grid_item_width,
+                    no_modal: true
+                  -%}
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Product recommendations",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_product_recommendations",
+        "label": "Show dynamic recommendations",
+        "info": "Dynamic recommendations change and improve with time. [Learn more](https://help.shopify.com/en/themes/development/recommended-products)",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "product_recommendations_heading",
+        "label": "Heading",
+        "default": "You may also like"
+      }
+    ]
+  }
+{% endschema %}

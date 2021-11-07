@@ -1,0 +1,45 @@
+{% unless background_position %}
+  {%- assign background_position = 'top center' -%}
+{% endunless %}
+
+<div class="skrim__item">
+  <a href="{{ collection.url }}" class="skrim__link">
+    {%- if collection.empty? -%}
+      {%- assign collection_title = 'home_page.onboarding.collection_title' | t -%}
+    {%- else -%}
+      {%- assign collection_title = collection.title | escape -%}
+    {%- endif -%}
+
+    {%- if image -%}
+      {%- assign collection_image = image -%}
+    {%- elsif collection.image -%}
+      {%- assign collection_image = collection.image -%}
+    {%- else -%}
+      {%- assign collection_image = collection.products.first.featured_media.preview_image -%}
+    {%- endif -%}
+
+    {%- if collection.empty? -%}
+      {%- capture placeholder -%}collection-{% cycle 1,2,3,4,5,6 %}{%- endcapture -%}
+      <div class="skrim__overlay grid__image">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
+    {%- else -%}
+      <div
+        class="skrim__overlay grid__image lazyload"
+        data-bgset="{% render 'bgset', image: collection_image %}"
+        data-sizes="auto"
+        style="background-position: {{ background_position }};">
+      </div>
+      <noscript>
+        <div
+          class="skrim__overlay grid__image"
+          style="background-image: url({{ collection_image | img_url: '400x' }}); background-position: {{ background_position }};">
+        </div>
+      </noscript>
+    {%- endif -%}
+
+    <div class="skrim__title">
+      <div class="skrim__underline-me">
+        {{ collection_title }}
+      </div>
+    </div>
+  </a>
+</div>

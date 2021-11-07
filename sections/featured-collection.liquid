@@ -1,0 +1,186 @@
+{%- liquid
+  assign paginate_by = section.settings.rows | times: section.settings.per_row_desktop
+  assign collection = collections[section.settings.home_featured_products]
+
+  case section.settings.per_row_desktop
+    when 2
+      assign grid_large_width = 'medium-up--one-half'
+    when 3
+      assign grid_large_width = 'medium-up--one-third'
+    when 4
+      assign grid_large_width = 'medium-up--one-quarter'
+  endcase
+  assign per_row_mobile = section.settings.per_row_mobile
+  assign grid_small_width = 'grid-product--padded'
+  if section.settings.per_row_mobile contains '2'
+    assign per_row_mobile = 2
+    assign grid_small_width = 'small--one-half'
+  endif
+-%}
+
+{%- capture grid_item_width -%}{{ grid_small_width }} {{ grid_large_width}}{%- endcapture -%}
+
+<div class="index-section{% if section.settings.alt %} index-section--alt{% endif %}">
+
+  <div
+    id="CollectionSection-{{ section.id }}"
+    data-section-id="{{ section.id }}"
+    data-section-type="featured-collection"
+    data-scrollable="false"
+    data-product-sliders-mobile="{% if section.settings.per_row_mobile == '1' %}true{% else %}false{% endif %}"
+    data-paginate="false"
+    data-paginate-by="{{ paginate_by }}"
+    data-collection-url="{{ collection.url }}"
+    data-collection-count="{{ collection.all_products_count }}"
+    data-aos>
+    {%- if section.settings.title != blank -%}
+      <div class="page-width">
+        <header class="section-header">
+          <h2 class="section-header__title appear-delay">
+            {{ section.settings.title }}
+          </h2>
+          {%- if section.settings.description != blank -%}
+            <div class="rte section-header__description section-header__description--large appear-delay-1">
+              {{ section.settings.description }}
+            </div>
+          {%- endif -%}
+        </header>
+      </div>
+    {%- endif -%}
+
+    <div class="page-width page-width--flush">
+      <div data-pagination-wrapper>
+        <div
+          class="grid grid--uniform grid--scattered-large-4 grid--scattered-small-{{ per_row_mobile }} appear-delay-3{% if section.settings.per_row_mobile == '2-flush' %} small--grid--flush{% endif %}"
+          data-product-container>
+
+          {%- if section.settings.home_featured_products == blank or collections[section.settings.home_featured_products].empty? or collections[section.settings.home_featured_products].products_count == 0 -%}
+
+            {%- liquid
+              unless emptyState
+                assign emptyState = true
+              endunless
+            -%}
+
+            {%- for i in (1..paginate_by) -%}
+              <div class="grid__item grid-product {{ grid_item_width }}{% if settings.product_hover_details %} grid-product__hover-details{% endif %}">
+                <div class="grid-product__content">
+                  <a href="{{ product.url | within: collection }}" class="grid-product__link {% if sold_out %} grid-product__link--disabled{% endif %}">
+                    <div class="product-slider"
+                      data-image-count="1"
+                      data-id="1234">
+                      <div class="product-slide">
+                        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                        <div class="image-wrap">{{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                      </div>
+                    </div>
+                    <div class="grid-product__meta">
+                      <div class="grid-product__title">{{ 'home_page.onboarding.product_title' | t }}</div>
+                      <div class="grid-product__price">$29</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            {%- endfor -%}
+
+          {%- else -%}
+
+            {%- for product in collections[section.settings.home_featured_products].products limit: paginate_by -%}
+              {%- render 'product-grid-item'
+                product: product,
+                grid_item_width: grid_item_width
+              -%}
+            {%- endfor -%}
+
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.view_all -%}
+          <div class="text-center">
+            <a href="{{ collections[section.settings.home_featured_products].url }}" class="btn">
+              {{ 'collections.general.all_of_collection' | t }}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Featured collection grid",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Featured collection grid"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "collection",
+        "id": "home_featured_products",
+        "label": "Collection"
+      },
+      {
+        "type": "range",
+        "id": "rows",
+        "label": "Rows of products",
+        "default": 2,
+        "min": 1,
+        "max": 4,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "per_row_desktop",
+        "label": "Desktop products per row",
+        "default": 3,
+        "min": 2,
+        "max": 4,
+        "step": 1
+      },
+      {
+        "type": "select",
+        "id": "per_row_mobile",
+        "label": "Mobile products per row",
+        "default": "1",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2, spaced"
+          },
+          {
+            "value": "2-flush",
+            "label": "2, flush"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "view_all",
+        "label": "Show 'View all' link",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "alt",
+        "label": "Use alternate section color"
+      }
+    ],
+    "presets": [{
+      "name": "Featured collection grid"
+    }],
+    "blocks" : []
+  }
+{% endschema %}

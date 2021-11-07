@@ -1,0 +1,92 @@
+{%- assign static_cart = false -%}
+{%- if cart.items.size < 3 -%}
+  {%- assign static_cart = true -%}
+{%- endif -%}
+{%- if additional_checkout_buttons and settings.cart_additional_buttons -%}
+  {%- assign static_cart = false -%}
+{%- endif -%}
+<div id="CartDrawer" class="drawer drawer--cart{% if static_cart %} drawer--cart--static{% endif %}" data-drawer="true">
+  <form id="CartDrawerForm" action="{{ routes.cart_url }}" method="post" novalidate class="drawer__contents{% if cart.items.size == 0 %} cart--empty{% endif %}">
+    <div class="drawer__header">
+      <div class="drawer__close text-right">
+        <button type="button" class="drawer__close-button js-drawer-close">
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+          <span class="icon__fallback-text">{{ 'cart.general.close_cart' | t }}</span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer__inner">
+      <div class="drawer__scrollable">
+        <div data-products></div>
+
+        {%- if settings.cart_notes_enable -%}
+          <div class="cart__note" data-cart-note-container>
+            <label for="CartDrawerSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+            <textarea name="note" class="input-full" id="CartDrawerSpecialInstructions" data-cart-note>{{ cart.note }}</textarea>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="drawer__footer cart__footer">
+        <div data-discounts>
+          {% if cart.cart_level_discount_applications != blank %}
+            <div class="cart__item-sub cart__item-row">
+              <div>{{ 'cart.general.discounts' | t }}</div>
+              <div class="text-right">
+                {% for cart_discount in cart.cart_level_discount_applications %}
+                  <div>
+                    {{ cart_discount.title }} (-{{ cart_discount.total_allocated_amount | money }})
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="cart__item-sub cart__item-row">
+          <div class="cart__subtotal">{{ 'cart.general.subtotal' | t }}</div>
+          <div data-subtotal>{{ cart.total_price | money }}</div>
+        </div>
+
+        <div class="cart__item-row cart__note text-center">
+          {{ 'cart.general.shipping_at_checkout' | t }}
+        </div>
+
+        {%- if settings.cart_terms_conditions_enable -%}
+          <p class="cart__note cart__terms">
+            <input type="checkbox" id="CartTermsDrawer" class="cart__terms-checkbox">
+            <label for="CartTermsDrawer">
+              {%- if settings.cart_terms_conditions_link != blank -%}
+                {{ 'cart.general.terms_html' | t: url: settings.cart_terms_conditions_link }}
+              {%- else -%}
+                {{ 'cart.general.terms' | t }}
+              {%- endif -%}
+            </label>
+          </p>
+        {%- endif -%}
+
+        <button type="submit" class="btn btn--full cart__checkout cart__checkout--drawer" name="checkout" data-terms-required="{{ settings.cart_terms_conditions_enable }}">
+          <span>{{ 'cart.general.checkout' | t }}</span>
+        </button>
+
+        {%- if additional_checkout_buttons and settings.cart_additional_buttons -%}
+          <div class="additional-checkout-buttons additional-checkout-buttons--vertical">{{ content_for_additional_checkout_buttons }}</div>
+        {%- endif -%}
+
+        {% comment %}
+          Uncomment to show continue shopping button
+        {% endcomment %}
+        {% comment %}
+        <a href="{{ routes.all_products_collection_url }}" class="btn btn--secondary btn--full">
+          {{ 'cart.general.continue_shopping' | t }}
+        </a>
+        {% endcomment %}
+      </div>
+
+    </div>
+    <div class="drawer__cart-empty text-center">
+      <p>{{ 'cart.general.empty' | t }}</p>
+      <p class="rte">{{ 'cart.general.continue_browsing_html' | t: url: routes.all_products_collection_url }}</p>
+    </div>
+  </form>
+</div>

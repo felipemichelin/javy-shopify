@@ -1,0 +1,13 @@
+{%- if collection -%}
+  <div class="text-center">
+    <a href="{{ collection.url }}" class="btn btn--tertiary">
+      &xlarr; {{ 'products.general.collection_return' | t: collection: collection.title }}
+    </a>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Back to collection"
+  }
+{% endschema %}

@@ -1,0 +1,191 @@
+{%- assign natural_height_ratio = '60%' -%}
+{%- if section.settings.image != blank -%}
+  {%- capture natural_height_ratio -%}{{ 100 | divided_by: section.settings.image.aspect_ratio }}%{% endcapture %}
+{%- endif -%}
+
+{%- style -%}
+  @media screen and (max-width: 768px) {
+    .background-media-text--{{ section.id }} {
+      background: {{ section.settings.color_border }};
+    }
+  }
+  @media only screen and (min-width: 769px) {
+    .background-media-text--{{ section.id }} {
+      height: 0;
+      padding-bottom: {{ natural_height_ratio | plus: section.settings.desktop_size }}%;
+    }
+  }
+  .background-media-text--{{ section.id }} .background-media-text__image {
+    background-position: {{ section.settings.image_alignment }};
+  }
+{%- endstyle -%}
+
+<div
+  class="background-media-text background-media-text--{{ section.id }} loaded"
+  data-aos="background-media-text__animation">
+
+  <div
+    class="background-media-text__image{% if section.settings.image != blank %} lazyload{% endif %}"
+    {% if section.settings.image != blank %}
+      data-bgset="{% render 'bgset', image: section.settings.image %}"
+      data-sizes="auto"
+    {% endif %}>
+    {%- if section.settings.image == blank -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  </div>
+  {%- if section.settings.image != blank -%}
+    <noscript>
+      <div
+        class="background-media-text__image"
+        style="background-image: url({{ section.settings.image | img_url: '1400x' }});">
+      </div>
+    </noscript>
+  {%- endif -%}
+  {%- if section.settings.subtitle != blank or section.settings.title != blank or section.settings.text != blank -%}
+    <div class="background-media-text__inner">
+      <div class="background-media-text__aligner background-media-text--{{ section.settings.layout }}">
+        <div class="background-media-text__text">
+          {%- if section.settings.subtitle != blank -%}
+            <div class="subheading appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.subtitle }}</div>
+          {%- endif -%}
+          {%- if section.settings.title != blank -%}
+            <h2 class="h1 appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.title | escape }}</h2>
+          {%- endif -%}
+          {%- if section.settings.text != blank -%}
+            <div class="rte appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.text }}</div>
+          {%- endif -%}
+          {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+            <a href="{{ section.settings.button_link }}" class="btn appear-delay{% cycle '','-1','-2','-3','-4' %}">
+              {{ section.settings.button_label }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Large image with text box",
+    "class": "index-section--flush",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subheading"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Large image with text box"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "range",
+        "id": "desktop_size",
+        "label": "Desktop height adjustment",
+        "default": 0,
+        "min": -100,
+        "max": 100,
+        "step": 10,
+        "unit": "%"
+      },
+      {
+        "type": "select",
+        "id": "image_alignment",
+        "label": "Image focal point",
+        "info": "Used to keep the subject of your photo in view.",
+        "default": "center center",
+        "options": [
+          {
+            "value": "20% 10%",
+            "label": "Top left"
+          },
+          {
+            "value": "50% 10%",
+            "label": "Top center"
+          },
+          {
+            "value": "80% 10%",
+            "label": "Top right"
+          },
+          {
+            "value": "20% 50%",
+            "label": "Left"
+          },
+          {
+            "value": "center center",
+            "label": "Center"
+          },
+          {
+            "value": "80% 50%",
+            "label": "Right"
+          },
+          {
+            "value": "20% 90%",
+            "label": "Bottom left"
+          },
+          {
+            "value": "50% 90%",
+            "label": "Bottom center"
+          },
+          {
+            "value": "80% 90%",
+            "label": "Bottom right"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "label": "Image color",
+        "info": "Used for mobile border",
+        "default": "#f4f4f4"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Text on left"
+          },
+          {
+            "value": "right",
+            "label": "Text on right"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Large image with text box"
+      }
+    ]
+  }
+{% endschema %}

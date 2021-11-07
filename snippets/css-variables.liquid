@@ -1,0 +1,48 @@
+{%- style -%}
+  :root {
+    --typeHeaderPrimary: 'gotham_problack';
+    --typeHeaderFallback: {{ settings.type_header_font_family.fallback_families }};
+    --typeHeaderSize: {{ settings.type_header_base_size | default: 32 | append: 'px' }};
+    --typeHeaderStyle: {{ settings.type_header_font_family.style }};
+    --typeHeaderWeight: {{ settings.type_header_font_family.weight }};
+    --typeHeaderLineHeight: {{ settings.type_header_line_height | default: 1.4 }};
+    --typeHeaderSpacing: {{ settings.type_header_spacing | default: '25' | divided_by: 1000.00 | append: 'em' }};
+
+    --typeBasePrimary: 'gotham_proregular';
+    --typeBaseFallback:{{ settings.type_base_font_family.fallback_families }};
+    --typeBaseSize: {{ settings.type_base_size | default: 16 | append: 'px' }};
+    --typeBaseWeight: {{ settings.type_base_font_family.weight }};
+    --typeBaseStyle: {{ settings.type_base_font_family.style }};
+    --typeBaseSpacing: {{ settings.type_base_spacing | default: '50' | divided_by: 1000.00 | append: 'em' }};
+    --typeBaseLineHeight: {{ settings.type_base_line_height | default: 1.6 }};
+
+    {% if settings.button_style == 'round-slight' %}
+      --buttonRadius: 10px;
+    {% elsif settings.button_style == 'round' %}
+      --buttonRadius: 35px;
+    {% else %}
+      --buttonRadius: 0px;
+    {% endif %}
+
+    --iconWeight: {{ settings.icon_weight | default: '5px' }};
+    --iconLinecaps: {{ settings.icon_linecaps | default: 'miter' }};
+  }
+
+  {% if settings.color_cart_dot == settings.color_button %}
+    .site-nav__thumb-cart {
+      border-left: 1px solid rgba(255,255,255,0.3);
+    }
+  {% endif %}
+
+  .hero {
+    background-image: linear-gradient(100deg, {{ settings.color_large_image_bg }} 40%, {{ settings.color_large_image_bg | color_lighten: 13 }} 63%, {{ settings.color_large_image_bg }} 79%);
+  }
+
+  .placeholder-content,
+  .image-wrap,
+  .skrim__link,
+  .pswp__img--placeholder {
+    background-image: linear-gradient(100deg, {{ settings.color_small_image_bg }} 40%, {{ settings.color_small_image_bg | color_darken:
+    3 }} 63%, {{ settings.color_small_image_bg }} 79%);
+  }
+{%- endstyle -%}

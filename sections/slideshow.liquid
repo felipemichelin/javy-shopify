@@ -1,0 +1,429 @@
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="slideshow-section"
+  data-immediate-load
+  data-align-top="true">
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="slideshow-wrapper hero-wrapper">
+      {%- if section.settings.autoplay and section.settings.style == 'minimal' and section.blocks.size > 1 -%}
+        {%- style -%}
+          .slideshow__slide.is-selected:after {
+            width: 100%;
+            transition-delay: 1500ms;
+            transition-duration: {{ section.settings.autoplay_speed | times: 1000 | minus: 1500 }}ms;
+          }
+        {%- endstyle -%}
+
+        <button type="button" class="visually-hidden slideshow__pause" data-id="{{ section.id }}" aria-live="polite">
+          <span class="slideshow__pause-stop">
+            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-pause" viewBox="0 0 10 13"><g fill="#000" fill-rule="evenodd"><path d="M0 0h3v13H0zM7 0h3v13H7z"/></g></svg>
+            <span class="icon__fallback-text">{{ 'sections.slideshow.pause_slideshow' | t }}</span>
+          </span>
+          <span class="slideshow__pause-play">
+            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-play" viewBox="18.24 17.35 24.52 28.3"><path fill="#323232" d="M22.1 19.151v25.5l20.4-13.489-20.4-12.011z"/></svg>
+            <span class="icon__fallback-text">{{ 'sections.slideshow.play_slideshow' | t }}</span>
+          </span>
+        </button>
+      {%- endif -%}
+
+      {%- assign natural_height_ratio = '60%' -%}
+      {%- assign natural_height_ratio_mobile = '100%' -%}
+      {%- for block in section.blocks limit: 1 -%}
+        {%- if block.settings.image != blank -%}
+          {%- capture natural_height_ratio -%}{{ 100 | divided_by: block.settings.image.aspect_ratio }}%{% endcapture %}
+          {%- assign natural_height_ratio_mobile = natural_height_ratio -%}
+          {%- if page_image == blank -%}
+            <meta property="og:image" content="http:{{ block.settings.image | img_url: '1200x630' }}">
+            <meta property="og:image:secure_url" content="https:{{ block.settings.image | img_url: '1200x630' }}">
+          {%- endif -%}
+        {%- endif -%}
+        {%- if block.settings.image_mobile != blank -%}
+          {%- capture natural_height_ratio_mobile -%}{{ 100 | divided_by: block.settings.image_mobile.aspect_ratio }}%{% endcapture %}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- style -%}
+        .hero-natural--{{ section.id }} {
+          height: 0;
+          padding-bottom: {{ natural_height_ratio | plus: section.settings.desktop_size }}%;
+        }
+
+        @media screen and (max-width: 768px) {
+          .hero-natural--{{ section.id }} {
+            padding-bottom: {{ natural_height_ratio_mobile | plus: section.settings.mobile_size }}%;
+          }
+        }
+      {%- endstyle -%}
+
+      <div class="hero-natural--{{ section.id }}">
+        <div id="Slideshow-{{ section.id }}"
+          class="hero hero--{{ section.id }}"
+          data-natural="true"
+          data-autoplay="{{ section.settings.autoplay }}"
+          data-speed="{{ section.settings.autoplay_speed | times: 1000 }}"
+          {% if section.settings.style == 'arrows' %}
+            data-arrows="true"
+          {% endif %}
+          {% if section.settings.style == 'dots' %}
+            data-dots="true"
+          {% endif %}
+          data-slide-count="{{ section.blocks.size }}">
+          {%- for block in section.blocks -%}
+            <div
+              {{ block.shopify_attributes }}
+              class="slideshow__slide slideshow__slide--{{ block.id }}"
+              data-index="{{ forloop.index0 }}"
+              data-id="{{ block.id }}">
+
+              {%- style -%}
+                .slideshow__slide--{{ block.id }} .hero__title {
+                  font-size: {{ block.settings.title_size | times: 0.6 }}px;
+                }
+                .hero__image--{{ block.id }} {
+                  object-position: {{ block.settings.focal_point }};
+                }
+                @media only screen and (min-width: 769px) {
+                  .slideshow__slide--{{ block.id }} .hero__title {
+                    font-size: {{ block.settings.title_size }}px;
+                  }
+                }
+
+                {%- assign accent_exists = false -%}
+                {%- assign button_alpha = block.settings.color_accent | color_extract: 'alpha' -%}
+                {% unless button_alpha == 0.0 %}
+                  {%- assign accent_exists = true -%}
+                  .slideshow__slide--{{ block.id }} .btn {
+                    background: {{ block.settings.color_accent }} !important;
+                    border: none;
+
+                    {%- assign accent_brightness = block.settings.color_accent | color_extract: 'lightness' -%}
+
+                    {% if accent_brightness > 40 %}
+                      color: #000 !important;
+                    {% endif %}
+                  }
+                {% endunless %}
+              {%- endstyle -%}
+
+              {%- liquid
+                assign hero_text = false
+                assign link_slide = false
+                if block.settings.title != blank or block.settings.subheading != blank or block.settings.link_text != blank
+                  assign hero_text = true
+                endif
+                if block.settings.link_text == blank and block.settings.link != blank
+                  assign link_slide = true
+                endif
+              -%}
+
+              <div class="hero__image-wrapper{% if hero_text %} hero__image-wrapper--overlay{% endif %}">
+                {%- if block.settings.image != blank -%}
+                  {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+                  <img class="hero__image hero__image--{{ block.id }} lazyload{% if block.settings.image_mobile != blank %} small--hide{% endif %}"
+                    src=""
+                    data-src="{{ img_url }}"
+                    data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                    data-sizes="auto"
+                    data-parent-fit="cover"
+                    alt="{{ block.settings.image.alt | escape }}">
+                  <noscript>
+                    <img class="hero__image hero__image--{{ block.id }}{% if block.settings.image_mobile != blank %} small--hide{% endif %}"
+                      src="{{ block.settings.image | img_url: '1400x' }}"
+                      alt="{{ block.settings.image.alt | escape }}">
+                  </noscript>
+
+                  {%- if block.settings.image_mobile != blank -%}
+                    {%- assign img_mobile_url = block.settings.image_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                    <img class="hero__image hero__image--{{ block.id }} lazyload medium-up--hide"
+                      src=""
+                      data-src="{{ img_mobile_url }}"
+                      data-aspectratio="{{ block.settings.image_mobile.aspect_ratio }}"
+                      data-sizes="auto"
+                      data-parent-fit="cover"
+                      alt="{{ block.settings.image_mobile.alt | escape }}">
+                    <noscript>
+                      <img class="hero__image hero__image--{{ block.id }} medium-up--hide"
+                        src="{{ block.settings.image_mobile | img_url: '1400x' }}"
+                        alt="{{ block.settings.image_mobile.alt | escape }}">
+                    </noscript>
+                  {%- endif -%}
+                {%- else -%}
+                  {%- if template == 'password' -%}
+                    {%- assign password_image = 'password-page-background.jpg' | asset_url -%}
+                    <img class="hero__image lazyload" src="{{ password_image }}">
+                  {%- else -%}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                {%- endif -%}
+              </div>
+
+              {%- if link_slide -%}
+                <a href="{{ block.settings.link }}" class="hero__slide-link">
+              {%- endif -%}
+
+              {%- if hero_text -%}
+                <div class="hero__text-wrap">
+                  <div class="page-width">
+                    <div class="hero__text-content {{ block.settings.text_align }}">
+                      <div class="hero__text-shadow" data-aos>
+                        {%- unless block.settings.title == blank -%}
+                          <h2 class="h1 hero__title">
+                            {{ block.settings.title | newline_to_br }}
+                          </h2>
+                        {%- endunless -%}
+                        {%- if block.settings.subheading or block.settings.link -%}
+                          {%- unless block.settings.subheading == blank -%}
+                            <div class="hero__subtitle">
+                              {{ block.settings.subheading | escape }}
+                            </div>
+                          {%- endunless -%}
+                          {%- if block.settings.link_text != blank -%}
+                            <div class="hero__link">
+                              <a href="{{ block.settings.link }}" class="btn{% unless accent_exists %} btn--inverse{% endunless %}">
+                                {{ block.settings.link_text }}
+                              </a>
+                            </div>
+                          {%- endif -%}
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {%- endif -%}
+
+              {%- if link_slide -%}
+                </a>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if section.blocks.size == 0 -%}
+    <div class="placeholder-noblocks">
+      {{ 'home_page.onboarding.no_content' | t }}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Hero (optional slideshow)",
+    "class": "index-section--hero",
+    "max_blocks": 5,
+    "settings": [
+      {
+        "type": "select",
+        "id": "style",
+        "label": "Slide navigation style",
+        "default": "arrows",
+        "options": [
+          {
+            "value": "minimal",
+            "label": "Minimal"
+          },
+          {
+            "value": "arrows",
+            "label": "Arrows"
+          },
+          {
+            "value": "dots",
+            "label": "Dots"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "desktop_size",
+        "label": "Desktop height adjustment",
+        "default": 0,
+        "min": -100,
+        "max": 100,
+        "step": 10,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "mobile_size",
+        "label": "Mobile height adjustment",
+        "default": 0,
+        "min": -100,
+        "max": 100,
+        "step": 10,
+        "unit": "%"
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Auto-change slides"
+      },
+      {
+        "type": "range",
+        "id": "autoplay_speed",
+        "label": "Auto-change every",
+        "default": 7,
+        "min": 5,
+        "max": 10,
+        "step": 1,
+        "unit": "s"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Heading",
+            "default": "Two line\nslide title."
+          },
+          {
+            "type": "range",
+            "id": "title_size",
+            "label": "Heading text size",
+            "default": 80,
+            "min": 40,
+            "max": 100,
+            "unit": "px"
+          },
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "Text",
+            "default": "And an optional subheading"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Slide link"
+          },
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Slide link text",
+            "default": "Optional button"
+          },
+          {
+            "type": "color",
+            "id": "color_accent",
+            "label": "Buttons",
+            "default": "rgba(0,0,0,0)"
+          },
+          {
+            "type": "select",
+            "id": "text_align",
+            "label": "Text alignment",
+            "default": "vertical-center horizontal-center",
+            "options": [
+              {
+                "value": "vertical-top horizontal-left",
+                "label": "Top left"
+              },
+              {
+                "value": "vertical-top horizontal-center",
+                "label": "Top center"
+              },
+              {
+                "value": "vertical-top horizontal-right",
+                "label": "Top right"
+              },
+              {
+                "value": "vertical-center horizontal-left",
+                "label": "Center left"
+              },
+              {
+                "value": "vertical-center horizontal-center",
+                "label": "Center"
+              },
+              {
+                "value": "vertical-center horizontal-right",
+                "label": "Center right"
+              },
+              {
+                "value": "vertical-bottom horizontal-left",
+                "label": "Bottom left"
+              },
+              {
+                "value": "vertical-bottom horizontal-center",
+                "label": "Bottom center"
+              },
+              {
+                "value": "vertical-bottom horizontal-right",
+                "label": "Bottom right"
+              }
+            ]
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Mobile image"
+          },
+          {
+            "type": "select",
+            "id": "focal_point",
+            "label": "Focal point",
+            "default": "center center",
+            "options": [
+              {
+                "value": "20% 10%",
+                "label": "Top left"
+              },
+              {
+                "value": "50% 10%",
+                "label": "Top center"
+              },
+              {
+                "value": "80% 10%",
+                "label": "Top right"
+              },
+              {
+                "value": "20% 50%",
+                "label": "Left"
+              },
+              {
+                "value": "center center",
+                "label": "Center"
+              },
+              {
+                "value": "80% 50%",
+                "label": "Right"
+              },
+              {
+                "value": "20% 90%",
+                "label": "Bottom left"
+              },
+              {
+                "value": "50% 90%",
+                "label": "Bottom center"
+              },
+              {
+                "value": "80% 90%",
+                "label": "Bottom right"
+              }
+            ],
+            "info": "Used to keep the subject of your photo in view."
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Hero (optional slideshow)",
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }]
+  }
+{% endschema %}

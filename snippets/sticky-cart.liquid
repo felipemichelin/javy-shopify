@@ -1,0 +1,23 @@
+<div id="StickyCart" class="sticky-cart{% if cart.item_count > 0 and template != 'cart' %} sticky-cart--open{% endif %}">
+  <form action="{{ routes.cart_url }}" method="post" novalidate class="sticky-cart__inner">
+    {%- if mobile_menu_style == 'thumb' -%}
+      <button
+        type="button"
+        class="site-nav__link site-nav__link--icon js-toggle-slide-nav">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 64 64"><path d="M7 15h51M7 32h43M7 49h51"/></svg>
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+        <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
+      </button>
+    {%- endif -%}
+    {%- unless template == 'cart' -%}
+      <a href="{{ routes.cart_url }}" id="StickyItems" class="sticky-cart__item">{{ 'cart.general.item_count' | t: count: cart.item_count }}</a>
+      <span id="StickySubtotal" class="sticky-cart__item">{{ cart.total_price | money }}</span>
+    {%- endunless -%}
+    <button
+      type="submit" name="checkout"
+      id="StickySubmit"
+      class="btn sticky-cart__item">
+      <span>{{ 'cart.general.checkout' | t }}</span>
+    </button>
+  </form>
+</div>

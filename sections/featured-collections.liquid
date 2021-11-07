@@ -1,0 +1,144 @@
+<div class="index-section{% if section.settings.alt %} index-section--alt{% endif %}">
+  <div data-aos>
+
+    {%- if section.settings.title != blank -%}
+      <div class="page-width">
+        <header class="section-header">
+          <h2 class="section-header__title appear-delay">
+            {{ section.settings.title }}
+          </h2>
+        </header>
+      </div>
+    {%- endif -%}
+
+    <div class="page-width">
+      <div class="skrim-grid appear-delay-2">
+        {%- liquid
+          assign isEmpty = true
+
+          if section.blocks.size > 0
+            assign isEmpty = false
+          endif
+
+          for block in section.blocks limit: collection_limit
+            assign background_position = block.settings.focal_point
+            render 'collection-grid-item', collection: collections[block.settings.collection], image: block.settings.image
+          endfor
+        -%}
+
+        {%- if isEmpty -%}
+          <div class="page-width">
+            <div class="grid">
+              <div class="grid__item">
+                <div class="rte">
+                  {{ 'home_page.onboarding.no_content' | t }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Collection list",
+    "max_blocks": 15,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "checkbox",
+        "id": "alt",
+        "label": "Use alternate section color"
+      }
+    ],
+    "presets": [{
+      "name": "Collection list",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "id": "collection",
+            "type": "collection",
+            "label": "Collection"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "focal_point",
+            "label": "Focal point",
+            "info": "Used to keep the subject of your photo in view.",
+            "default": "center center",
+            "options": [
+              {
+                "value": "top left",
+                "label": "Top left"
+              },
+              {
+                "value": "top center",
+                "label": "Top center"
+              },
+              {
+                "value": "top right",
+                "label": "Top right"
+              },
+              {
+                "value": "center left",
+                "label": "Left"
+              },
+              {
+                "value": "center center",
+                "label": "Center"
+              },
+              {
+                "value": "center right",
+                "label": "Right"
+              },
+              {
+                "value": "bottom left",
+                "label": "Bottom left"
+              },
+              {
+                "value": "bottom center",
+                "label": "Bottom center"
+              },
+              {
+                "value": "bottom right",
+                "label": "Bottom right"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

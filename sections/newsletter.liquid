@@ -1,0 +1,98 @@
+<div class="index-section index-section--alt newsletter-section newsletter-{{ section.id }}" data-aos>
+  <div class="page-width text-center">
+    {%- for block in section.blocks -%}
+      <div class="theme-block" {{ block.shopify_attributes }}>
+        {%- case block.type -%}
+          {%- when '@app' -%}
+            {% render block %}
+          {%- when 'title' -%}
+            {%- if block.settings.title != blank -%}
+              <div class="h2 appear-delay" {{ block.shopify_attributes }}>
+                {{ block.settings.title }}
+              </div>
+            {%- endif -%}
+          {%- when 'text' -%}
+            {%- if block.settings.text != blank -%}
+              <div class="rte rte--block appear-delay-1" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+              </div>
+            {%- endif -%}
+          {%- when 'form' -%}
+            <div class="appear-delay-2" {{ block.shopify_attributes }}>
+              {%- render 'newsletter-form', section_id: section.id, snippet_context: 'section' -%}
+            </div>
+          {%- when 'share_buttons' -%}
+            {%- render 'social-sharing' -%}
+        {%- endcase -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Email signup",
+    "max_blocks": 6,
+    "blocks": [
+      {
+        "type": "@app"
+      },
+      {
+        "type": "title",
+        "name": "Title",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Sign up and save"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "Text",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Let customers know about the key benefits of joining your newsletter.</p>"
+          }
+        ]
+      },
+      {
+        "type": "form",
+        "name": "Form",
+        "limit": 1
+      },
+      {
+        "type": "share_buttons",
+        "name": "Share buttons",
+        "limit": 1
+      }
+    ],
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Customers who subscribe will have their email address added to the 'accepts marketing' [customer list](/admin/customers?query=&accepts_marketing=1)."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Email signup",
+        "blocks": [
+          {
+            "type": "title"
+          },
+          {
+            "type": "text"
+          },
+          {
+            "type": "form"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

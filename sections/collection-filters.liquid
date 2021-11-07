@@ -1,0 +1,47 @@
+<div class="collection-filters">
+  <div
+    id="CollectionFiltersSection"
+    class="collection-filter__wrapper"
+    data-section-id="{{ section.id }}"
+    data-section-type="collection-filter">
+    {%- render 'collection-filters', location: 'CollectionFilter', section: section -%}
+  </div>
+
+  {%- if section.settings.collection_sort_enable -%}
+    <div class="collection-dropdowns">
+      <div class="collection-dropdowns__item">
+        {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+        <label for="SortBy" class="hidden-label">{{ 'collections.sorting.title' | t }}</label>
+        <select name="SortBy" id="SortBy" data-default-sortby="{{ collection.default_sort_by }}">
+          <option value="title-ascending"{% if sort_by == collection.default_sort_by %} selected="selected"{% endif %}>{{ 'collections.sorting.title' | t }}</option>
+          {%- for option in collection.sort_options -%}
+            <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>{{ option.name }}</option>
+          {%- endfor -%}
+        </select>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Collection filter",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Allow your customers to filter collections and search results by product availability, price, color, and more. [Customize filters](/admin/menus)"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_color_swatches",
+        "label": "Enable color swatches",
+        "info": "[View setup instructions](https://archetypethemes.co/blogs/streamline/how-do-i-set-up-color-swatches)"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_sort_enable",
+        "label": "Show sort options"
+      }
+    ]
+  }
+{% endschema %}

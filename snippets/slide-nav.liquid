@@ -1,0 +1,140 @@
+<div class="slide-nav__overflow{% if mobile_menu_style == 'thumb'%} slide-nav__overflow--thumb{% else %} slide-nav__overflow--slide{% endif %}">
+  <nav class="slide-nav__wrapper">
+    <ul id="SlideNav" class="slide-nav">
+      {% comment %}
+        Do not show hardcoded 'Home' link if it matches the first menu link
+      {% endcomment %}
+      {%- unless main_menu.links[0].url == routes.root_url -%}
+        <li class="slide-nav__item border-bottom">
+          <a href="{{ routes.root_url }}" class="slide-nav__link">
+            {{ 'general.drawers.home' | t }}
+          </a>
+        </li>
+      {%- endunless -%}
+      {%- for link in main_menu.links -%}
+        {%- liquid
+          assign link_index = forloop.index
+          assign child_list_handle = link.title | handleize | append: link_index
+          assign has_dropdown = false
+          if link.links != blank
+            assign has_dropdown = true
+          endif
+        -%}
+
+        <li class="slide-nav__item">
+          {%- if has_dropdown -%}
+            <button
+              type="button"
+              class="js-toggle-submenu slide-nav__link"
+              data-target="{{ child_list_handle }}"
+              data-level="1"
+              {% if link.active or link.child_active %}data-active="true"{% endif %}>
+              {{ link.title }}
+              <span class="slide-nav__icon">
+                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><path d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z"/></svg>
+                <span class="icon__fallback-text">{{ 'general.drawers.expand_submenu' | t }}</span>
+              </span>
+            </button>
+            <ul
+              class="slide-nav__dropdown"
+              data-parent="{{ child_list_handle }}"
+              data-level="2">
+              <li class="slide-nav__item border-bottom">
+                <div class="slide-nav__table">
+                  <div class="slide-nav__table-cell slide-nav__return">
+                    <button class="js-toggle-submenu slide-nav__return-btn" type="button">
+                      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z"/></svg>
+                      <span class="icon__fallback-text">{{ 'general.drawers.collapse_submenu' | t }}</span>
+                    </button>
+                  </div>
+                  <a href="{{ link.url }}" class="slide-nav__sublist-link slide-nav__sublist-header">
+                    {{ link.title }}
+                  </a>
+                </div>
+              </li>
+
+              {%- for childlink in link.links -%}
+                {%- liquid
+                  assign has_sub_dropdown = false
+                  assign grand_child_list_handle = childlink.title | handleize
+                  assign grand_child_link_id = grand_child_list_handle | append: link_index
+                  if childlink.links != blank
+                    assign has_sub_dropdown = true
+                  endif
+                -%}
+
+                <li class="slide-nav__item{% unless forloop.last %} border-bottom{% endunless %}">
+                  {%- if has_sub_dropdown -%}
+                    <button type="button"
+                      class="js-toggle-submenu slide-nav__link slide-nav__sublist-link"
+                      data-target="{{ grand_child_link_id }}">
+                      {{ childlink.title }}
+                      <span class="slide-nav__icon">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><path d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z"/></svg>
+                        <span class="icon__fallback-text">{{ 'general.drawers.expand_submenu' | t }}</span>
+                      </span>
+                    </button>
+                    <ul class="slide-nav__dropdown" data-parent="{{ grand_child_link_id }}" data-level="3">
+                      <li class="slide-nav__item border-bottom">
+                        <div class="slide-nav__table">
+                          <div class="slide-nav__table-cell slide-nav__return">
+                            <button type="button"
+                              class="js-toggle-submenu slide-nav__return-btn"
+                              data-target="{{ child_list_handle }}">
+                              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z"/></svg>
+                              <span class="icon__fallback-text">{{ 'general.drawers.collapse_submenu' | t }}</span>
+                            </button>
+                          </div>
+                          <a href="{{ childlink.url }}" class="slide-nav__sublist-link slide-nav__sublist-header">
+                            {{ childlink.title }}
+                          </a>
+                        </div>
+                      </li>
+                      {%- for grandchildlink in childlink.links -%}
+                        <li class="slide-nav__item{% unless forloop.last %} border-bottom{% endunless %}">
+                          <a href="{{ grandchildlink.url }}" class="slide-nav__sublist-link">
+                            {{ grandchildlink.title | escape }}
+                          </a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- else -%}
+                    <a href="{{ childlink.url }}" class="slide-nav__sublist-link">
+                      {{ childlink.title | escape }}
+                    </a>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- else -%}
+            <a href="{{ link.url }}" class="slide-nav__link">
+              {{ link.title }}
+            </a>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+      {%- if shop.customer_accounts_enabled -%}
+        <li class="slide-nav__item medium-up--hide">
+          <a
+            href="{{ routes.account_url }}"
+            class="slide-nav__link">
+            {%- if customer -%}
+              {{ 'layout.customer.account' | t }}
+            {%- else -%}
+              {{ 'layout.customer.log_in' | t }}
+            {%- endif -%}
+          </a>
+        </li>
+      {%- endif -%}
+      {%- if section.settings.header_search_enable -%}
+        <li class="slide-nav__item medium-up--hide">
+          <a
+            href="{{ routes.search_url }}"
+            class="slide-nav__link js-modal-open-search-modal js-no-transition">
+            {{ 'general.search.title' | t }}
+          </a>
+        </li>
+      {%- endif -%}
+    </ul>
+  </nav>
+</div>

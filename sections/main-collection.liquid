@@ -1,0 +1,155 @@
+{% comment %}
+  This sections requires the same `paginate_by` variable value as
+  the other sections for the ajax loading to work.
+  If you change the number below, it must also be changed in:
+  - sections/collection-template
+  - sections/featured-collection-slider
+  - snippets/page-block-featured-collection-slider
+{% endcomment %}
+{%- liquid
+  assign paginate_by = 24
+  assign per_row_desktop = 3
+  assign per_row_mobile = 1
+
+  for block in section.blocks
+    case block.type
+    when 'product_grid'
+      assign per_row_desktop = block.settings.per_row_desktop
+      assign per_row_mobile = block.settings.per_row_mobile
+    endcase
+  endfor
+
+  case per_row_desktop
+    when 2
+      assign grid_large_width = 'medium-up--one-half'
+    when 3
+      assign grid_large_width = 'medium-up--one-third'
+    when 4
+      assign grid_large_width = 'medium-up--one-quarter'
+  endcase
+
+  assign per_row_mobile = per_row_mobile
+  assign grid_small_width = 'grid-product--padded'
+
+  if per_row_mobile contains '2'
+    assign per_row_mobile = 2
+    assign grid_small_width = 'small--one-half'
+  endif
+-%}
+
+{%- capture grid_item_width -%}{{ grid_small_width }} {{ grid_large_width}}{%- endcapture -%}
+
+{% paginate collection.products by paginate_by %}
+
+<div
+  id="CollectionSection"
+  data-section-id="{{ section.id }}"
+  data-section-type="collection-template"
+  data-product-sliders-mobile="{% if per_row_mobile == '1' %}true{% else %}false{% endif %}">
+
+  <div class="page-width">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+      {%- when 'collection_description' -%}
+        {%- if collection.description != blank -%}
+          <div class="rte text-center">
+            {{ collection.description }}
+          </div>
+        {%- endif -%}
+      {%- when 'product_grid' -%}
+        <div id="CollectionAjaxContent">
+          <div
+            class="grid grid--uniform grid--scattered-large-{{ per_row_desktop }} grid--scattered-small-{{ per_row_mobile }}{% if per_row_mobile == '2-flush' %} small--grid--flush{% endif %}"
+            data-collection-container>
+
+            {%- for product in collection.products -%}
+              {%- render 'product-grid-item'
+                product: product,
+                grid_item_width: grid_item_width
+              -%}
+            {%- else -%}
+              <div class="grid__item">
+                <p>{{ 'collections.general.no_matches' | t }}</p>
+              </div>
+            {%- endfor -%}
+          </div>
+
+          {%- if paginate.pages > 1 -%}
+            {%- render 'pagination', paginate: paginate -%}
+          {%- endif -%}
+        </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% endpaginate %}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "CollectionPage",
+    {% if collection.description != blank %}
+      "description": {{ collection.description | strip_html | json }},
+    {% endif %}
+    {% if page_image %}
+      {% assign image_size = page_image.width | append: 'x' %}
+      "image": {
+        "@type": "ImageObject",
+        "height": {{ page_image.height | json }},
+        "url": {{ page_image | img_url: image_size | prepend: "https:" | json }},
+        "width": {{ page_image.width | json }}
+      },
+    {% endif %}
+    "name": {{ collection.title | json }}
+  }
+</script>
+
+{% schema %}
+  {
+    "name": "Product grid",
+    "blocks": [
+      {
+        "type": "collection_description",
+        "name": "Collection description",
+        "limit": 1
+      },
+      {
+        "type": "product_grid",
+        "name": "Products",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "range",
+            "id": "per_row_desktop",
+            "label": "Desktop products per row",
+            "default": 3,
+            "min": 2,
+            "max": 4,
+            "step": 1
+          },
+          {
+            "type": "select",
+            "id": "per_row_mobile",
+            "label": "Mobile products per row",
+            "default": "1",
+            "options": [
+              {
+                "value": "1",
+                "label": "1"
+              },
+              {
+                "value": "2",
+                "label": "2, spaced"
+              },
+              {
+                "value": "2-flush",
+                "label": "2, flush"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

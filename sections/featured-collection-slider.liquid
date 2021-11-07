@@ -1,0 +1,189 @@
+{% comment %}
+  This sections requires the same `paginate_by` variable value as
+  the other sections for the ajax loading to work.
+  If you change the number below, it must also be changed in:
+  - sections/collection-template
+  - sections/featured-collection-slider
+  - snippets/page-block-featured-collection-slider
+{% endcomment %}
+{%- liquid
+  assign paginate_by = 24
+  assign ajax_paginate = false
+  assign collection_count = 0
+
+  assign collection = collections[section.settings.home_featured_products]
+  if collection != blank
+    assign collection_count = collection.all_products_count
+
+    if collection_count > paginate_by
+      assign ajax_paginate = true
+    endif
+  endif
+-%}
+
+{%- assign grid_item_width = 'grid-product--small' -%}
+{%- assign scrollable = true -%}
+{%- case section.settings.per_row -%}
+  {%- when 'small' -%}
+    {%- if collection_count <= 3 -%}
+      {%- assign scrollable = false -%}
+    {%- endif -%}
+  {%- when 'medium' -%}
+    {%- assign grid_item_width = 'grid-product--medium' -%}
+  {%- when 'large' -%}
+    {%- assign grid_item_width = 'grid-product--large' -%}
+{%- endcase -%}
+
+<div class="index-section index-section--overflow-scroller{% if section.settings.alt %} index-section--alt{% endif %}">
+
+  <div
+    id="CollectionSection-{{ section.id }}"
+    data-section-id="{{ section.id }}"
+    data-section-type="featured-collection"
+    data-scrollable="true"
+    data-product-sliders-mobile="false"
+    data-paginate="{{ ajax_paginate }}"
+    data-paginate-by="{{ paginate_by }}"
+    data-collection-url="{{ collection.url }}"
+    data-collection-count="{{ collection.all_products_count }}"
+    data-grid-item-width="{{ grid_item_width }}"
+    {% if section.settings.per_row == 'small' and collection.all_products_count <= 3 %} data-center-grid{% endif %}
+    data-aos>
+    {%- if section.settings.title != blank -%}
+      <div class="page-width">
+        <header class="section-header" data-aos>
+          <h2 class="section-header__title appear-delay">
+            {{ section.settings.title }}
+          </h2>
+          {%- if section.settings.description != blank -%}
+            <div class="rte section-header__description section-header__description--large appear-delay-1">
+              {{ section.settings.description }}
+            </div>
+          {%- endif -%}
+        </header>
+      </div>
+    {%- endif -%}
+
+    <div class="overflow-scroll-wrap" data-ajax-loader>
+      <button
+        type="button"
+        class="btn btn--tertiary overflow-scroller__arrow overflow-scroller__arrow--left overflow-scroller--disable-left small--hide"
+        {% unless scrollable %}hidden{% endunless %}
+        aria-hidden="true"
+        aria-label="{{ 'general.pagination.previous' | t }}"
+        data-arrow>
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z"/></svg>
+      </button>
+      <button
+        type="button"
+        class="btn btn--tertiary overflow-scroller__arrow overflow-scroller__arrow--right small--hide"
+        {% unless scrollable %}hidden{% endunless %}
+        aria-hidden="true"
+        aria-label="{{ 'general.pagination.next' | t }}"
+        data-arrow>
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><path d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z"/></svg>
+      </button>
+      <div
+        class="overflow-scroller"
+        data-pagination-wrapper>
+        <div
+          class="grid grid--uniform grid--scattered-large-2 grid--scattered-small-2"
+          data-aos="overflow__animation"
+          data-product-container>
+
+          {%- if
+            section.settings.home_featured_products == blank
+            or collections[section.settings.home_featured_products].empty?
+            or collections[section.settings.home_featured_products].products_count == 0 -%}
+
+            {%- for i in (1..paginate_by) -%}
+              <div class="grid__item grid-product {{ grid_item_width }}{% if settings.product_hover_details %} grid-product__hover-details{% endif %}">
+                <div class="grid-product__content">
+                  <a href="{{ product.url | within: collection }}" class="grid-product__link {% if sold_out %} grid-product__link--disabled{% endif %}">
+                    <div class="product-slider"
+                      data-image-count="1"
+                      data-id="1234">
+                      <div class="product-slide">
+                        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                        <div class="image-wrap">{{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                      </div>
+                    </div>
+                    <div class="grid-product__meta">
+                      <div class="grid-product__title">{{ 'home_page.onboarding.product_title' | t }}</div>
+                      <div class="grid-product__price">$29</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            {%- endfor -%}
+
+          {%- else -%}
+
+            {%- for product in collections[section.settings.home_featured_products].products limit: paginate_by -%}
+              {%- render 'product-grid-item'
+                product: product,
+                grid_item_width: grid_item_width
+              -%}
+            {%- endfor -%}
+
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Featured collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Featured collection"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "collection",
+        "id": "home_featured_products",
+        "label": "Collection"
+      },
+      {
+        "type": "select",
+        "id": "per_row",
+        "label": "Products per row",
+        "default": "small",
+        "options": [
+          {
+            "value": "small",
+            "label": "3"
+          },
+          {
+            "value": "medium",
+            "label": "4"
+          },
+          {
+            "value": "large",
+            "label": "5"
+          }
+        ],
+        "info": "Products will scroll infinitely"
+      },
+      {
+        "type": "checkbox",
+        "id": "alt",
+        "label": "Use alternate section color"
+      }
+    ],
+    "presets": [{
+      "name": "Featured collection"
+    }],
+    "blocks" : []
+  }
+{% endschema %}

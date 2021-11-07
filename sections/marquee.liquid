@@ -1,0 +1,151 @@
+{%- liquid
+  case section.settings.speed
+    when 'fast'
+      assign mobile_speed = 4.6
+      assign desktop_speed = 6
+    when 'normal'
+      assign mobile_speed = 6.6
+      assign desktop_speed = 10
+    when 'slow'
+      assign mobile_speed = 10
+      assign desktop_speed = 15
+  endcase
+-%}
+
+{%- style -%}
+  {% if section.settings.color_scheme == 'button' %}
+    .marquee--{{ section.id }} {
+      background: {{ settings.color_button }};
+      color: {{ settings.color_button_text }};
+    }
+  {% endif %}
+  .marquee--{{ section.id }} .marquee__text {
+    font-size: {{ section.settings.text_size }}px;
+    animation-duration: {{ desktop_speed }}s;
+  }
+  @media screen and (max-width: 768px) {
+    .marquee--{{ section.id }} .marquee__text {
+      font-size: {{ section.settings.text_size | times: 0.6 }}px;
+      animation-duration: {{ mobile_speed }}s;
+    }
+  }
+  {% unless section.settings.text_spacing %}
+    .marquee--{{ section.id }} .marquee__text span {
+      padding: 0;
+    }
+  {% endunless %}
+}
+{%- endstyle -%}
+
+<div class="marquee marquee--{{ section.id }}">
+  {%- capture markup -%}
+    <div class="marquee__container">
+      <div class="marquee__text marquee__text--{{ section.settings.direction }}">
+        <span>{{ section.settings.text }}</span>
+        <span aria-hidden="true">{{ section.settings.text }}</span>
+        <span aria-hidden="true">{{ section.settings.text }}</span>
+        <span aria-hidden="true">{{ section.settings.text }}</span>
+      </div>
+    </div>
+  {%- endcapture -%}
+
+  {%- if section.settings.link != blank -%}
+    <a href="{{ section.settings.link }}">
+      {{ markup }}
+    </a>
+  {%- else -%}
+    {{ markup }}
+  {%- endif -%}
+
+</div>
+
+{% schema %}
+  {
+    "name": "Scrolling text",
+    "class": "index-section--flush",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "Free shipping and returns"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
+      },
+      {
+        "type": "range",
+        "id": "text_size",
+        "label": "Text size",
+        "default": 70,
+        "min": 20,
+        "max": 150,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "checkbox",
+        "id": "text_spacing",
+        "label": "Add spacing",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "color_scheme",
+        "label": "Color scheme",
+        "default": "button",
+        "options": [
+          {
+            "label": "Button",
+            "value": "button"
+          },
+          {
+            "label": "Text",
+            "value": "text"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "direction",
+        "label": "Direction",
+        "default": "left",
+        "options": [
+          {
+            "label": "Left",
+            "value": "left"
+          },
+          {
+            "label": "Right",
+            "value": "right"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "speed",
+        "label": "Speed",
+        "default": "normal",
+        "options": [
+          {
+            "label": "Fast",
+            "value": "fast"
+          },
+          {
+            "label": "Normal",
+            "value": "normal"
+          },
+          {
+            "label": "Slow",
+            "value": "slow"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Scrolling text"
+    }]
+  }
+{% endschema %}

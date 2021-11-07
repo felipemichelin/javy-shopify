@@ -1,0 +1,366 @@
+{% comment %}
+  menu_alignment options:
+    - left
+    - left-center
+    - center-left
+    - center-split
+    - center
+    - right
+{% endcomment %}
+
+{%- liquid
+  assign main_menu = linklists[section.settings.main_menu_link_list]
+
+  assign menu_alignment = section.settings.main_menu_alignment
+  assign logo_alignment = 'left'
+  if menu_alignment == 'center-left' or menu_alignment == 'center-split' or menu_alignment == 'center'
+    assign logo_alignment = 'center'
+  endif
+  if menu_alignment == 'right'
+    assign logo_alignment = 'left-right'
+  endif
+
+  if main_menu == blank
+    assign logo_alignment = 'center'
+  endif
+
+  assign mobile_menu_style = 'thumb'
+
+  assign template_name = template | replace: '.', ' ' | truncatewords: 2, '' | handle
+
+  assign overlay_header = false
+  if template_name == 'index' and section.settings.sticky_index
+    assign overlay_header = true
+  endif
+  if template_name == 'collection' and collection.image and section.settings.sticky_collection
+    assign overlay_header = true
+  endif
+-%}
+
+{%- render 'slide-nav',
+  section: section,
+  main_menu: main_menu,
+  mobile_menu_style: mobile_menu_style
+-%}
+{%- if settings.cart_type == 'sticky' -%}
+  {%- render 'sticky-cart', mobile_menu_style: mobile_menu_style -%}
+{%- endif -%}
+
+{%- style -%}
+  .slide-nav,
+  .slide-nav button {
+    font-size: {{ settings.type_navigation_size }}px;
+  }
+
+  {% if mobile_menu_style == 'thumb' %}
+    body {
+      {% comment %}
+        Thumb menu button height + padding + 40
+      {% endcomment %}
+      padding-bottom: 148px;
+    }
+  {% endif %}
+
+  {% if mobile_menu_style == 'top' %}
+    body.screen-layer-open {
+      {% comment %}
+        Space for the close modal button
+      {% endcomment %}
+      padding-bottom: 40px;
+    }
+  {% endif %}
+
+  {% if overlay_header %}
+    @media only screen and (min-width: 769px) {
+      .collection-hero__content .section-header--hero {
+        margin-top: 40px;
+      }
+    }
+  {% endif %}
+{%- endstyle -%}
+
+<div data-section-id="{{ section.id }}" data-section-type="header-section">
+  <div
+    data-header-style="{{ section.settings.header_style }}"
+    class="header-wrapper{% if overlay_header %} header-wrapper--overlay is-light{% endif %}">
+
+    {%- if section.settings.show_announcement -%}
+      {%- if section.settings.show_announcement_home_only -%}
+        {%- if template == 'index' -%}
+          {%- render 'announcement-bar', section: section -%}
+        {%- endif -%}
+      {%- else -%}
+        {%- render 'announcement-bar', section: section -%}
+      {%- endif -%}
+    {%- endif -%}
+
+    {% comment %}
+      Logo is used as a between-screen loader, so we only
+      show the mobile logo on the home page (setting to override)
+    {% endcomment %}
+    {%- assign mobile_logo_only = true -%}
+
+    <header
+      class="site-header{% if section.settings.logo_hide_mobile %}{% unless template_name == 'index' %} small--hide{% endunless %}{% endif %}"
+      data-overlay="{{ overlay_header }}">
+      <div class="page-width">
+        <div
+          class="header-layout header-layout--{{ menu_alignment }}{% if mobile_logo_only %} header-layout--mobile-logo-only{% endif %}"
+          data-logo-align="{{ logo_alignment }}">
+
+          {%- if logo_alignment == 'left' or logo_alignment == 'left-right' -%}
+            <div class="header-item header-item--logo">
+              {%- render 'header-logo-block', section: section -%}
+            </div>
+          {%- endif -%}
+
+          {%- if logo_alignment == 'left' -%}
+            <div role="navigation" aria-label="Primary"
+              class="header-item header-item--navigation{% if menu_alignment == 'left-center' %} text-center{% endif %} small--hide">
+              {%- render 'header-desktop-nav', main_menu: main_menu -%}
+            </div>
+          {%- endif -%}
+
+          {%- if logo_alignment == 'center' -%}
+            <div class="header-item header-item--left header-item--navigation small--hide" role="navigation" aria-label="Primary">
+              {%- if menu_alignment == 'center' or menu_alignment == 'center-split' -%}
+                {%- if section.settings.header_search_enable -%}
+                  <div class="site-nav">
+                    <a href="{{ routes.search_url }}" class="site-nav__link site-nav__link--icon js-modal-open-search-modal js-no-transition">
+                      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/></svg>
+                      <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
+                    </a>
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+
+              {%- if menu_alignment == 'center-left' -%}
+                {%- render 'header-desktop-nav', main_menu: main_menu -%}
+              {%- endif -%}
+            </div>
+
+            {%- if menu_alignment == 'center-split' -%}
+              {%- render 'header-split-nav', main_menu: main_menu, section: section -%}
+            {%- endif -%}
+
+            {%- if menu_alignment != 'center-split' -%}
+              <div class="header-item header-item--logo">
+                {%- render 'header-logo-block', section: section -%}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- if logo_alignment == 'left-right' -%}
+            <div
+              role="navigation" aria-label="Primary"
+              class="header-item header-item--navigation text-right small--hide">
+              {%- render 'header-desktop-nav', main_menu: main_menu -%}
+            </div>
+          {%- endif -%}
+
+          {% comment %}
+            Center mobile logo if icons are not visible
+          {% endcomment %}
+          <div class="header-item header-item--icons{% if mobile_logo_only %} small--hide{% endif %}">
+            {%- render 'header-icons', section: section, menu_alignment: menu_alignment -%}
+          </div>
+        </div>
+
+        {%- if menu_alignment == 'center' -%}
+          <div role="navigation" aria-label="Primary" class="text-center">
+            {%- render 'header-desktop-nav', main_menu: main_menu -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </header>
+  </div>
+
+  {%- if mobile_menu_style == 'thumb' -%}
+    {%- if main_menu != blank -%}
+      <div class="site-nav__thumb-menu site-nav__thumb-menu--inactive">
+        <button
+          type="button"
+          class="btn site-nav__thumb-button js-toggle-slide-nav">
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 64 64"><path d="M7 15h51M7 32h43M7 49h51"/></svg>
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+          <span class="icon-menu-label">{{ 'general.drawers.navigation' | t }}</span>
+        </button>
+
+        <a href="{{ routes.cart_url }}" class="site-nav__thumb-cart js-drawer-open-cart js-no-transition" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
+          <span class="cart-link">
+            {%- if settings.cart_icon == 'cart' -%}
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64"><path d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3"/><circle cx="27" cy="53" r="2"/><circle cx="47" cy="53" r="2"/></svg>
+            {%- else -%}
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-bag" viewBox="0 0 64 64"><g fill="none" stroke="#000" stroke-width="2"><path d="M25 26c0-15.79 3.57-20 8-20s8 4.21 8 20"/><path d="M14.74 18h36.51l3.59 36.73h-43.7z"/></g></svg>
+            {%- endif -%}
+            <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
+            <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}">
+              <span class="cart-link__bubble-num" aria-hidden="true">
+                {{ cart.item_count }}
+              </span>
+            </span>
+          </span>
+        </a>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+</div>
+
+{%- if section.settings.header_search_enable -%}
+  {%- render 'search-modal' -%}
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "header_style",
+        "label": "Desktop style",
+        "default": "button",
+        "options": [
+          {
+            "value": "button",
+            "label": "Sticky button"
+          },
+          {
+            "value": "bar",
+            "label": "Sticky bar"
+          },
+          {
+            "value": "top",
+            "label": "Top only"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "main_menu_alignment",
+        "label": "Header layout",
+        "default": "right",
+        "options": [
+          {
+            "value": "right",
+            "label": "Logo left, menu right"
+          },
+          {
+            "value": "left-center",
+            "label": "Logo left, menu center"
+          },
+          {
+            "value": "center-left",
+            "label": "Logo center, menu left"
+          },
+          {
+            "value": "center-split",
+            "label": "Logo center, menu split"
+          },
+          {
+            "value": "center",
+            "label": "Logo center, menu below"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "sticky_index",
+        "label": "Overlay header over home page"
+      },
+      {
+        "type": "checkbox",
+        "id": "sticky_collection",
+        "label": "Overlay header over collection",
+        "info": "(if collection image is enabled)"
+      },
+      {
+        "type": "checkbox",
+        "id": "header_search_enable",
+        "label": "Enable search"
+      },
+      {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo-inverted",
+        "label": "White logo",
+        "info": "Used when on top of an image"
+      },
+      {
+        "type": "range",
+        "id": "desktop_logo_width",
+        "label": "Desktop logo width",
+        "default": 200,
+        "min": 80,
+        "max": 400,
+        "step": 10,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "mobile_logo_width",
+        "label": "Mobile logo width",
+        "default": 140,
+        "min": 50,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "info": "Set as a max-width, may appear smaller"
+      },
+      {
+        "type": "checkbox",
+        "id": "logo_hide_mobile",
+        "label": "Hide logo on mobile pages",
+        "default": true,
+        "info": "Maximizes screen space for your content. Add your logo under Animations to show your logo as the page loads instead. Logo always shows on home page."
+      },
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "link_list",
+        "id": "main_menu_link_list",
+        "label": "Menu",
+        "default": "main-menu"
+      },
+
+      {
+        "type": "header",
+        "content": "Announcement bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_announcement",
+        "label": "Show an announcement"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_announcement_home_only",
+        "label": "Home page only"
+      },
+      {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "Announcement text",
+        "default": "Free shipping and returns"
+      },
+      {
+        "type": "url",
+        "id": "announcement_link",
+        "label": "Announcement link"
+      }
+    ]
+  }
+{% endschema %}

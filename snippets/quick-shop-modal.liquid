@@ -1,0 +1,55 @@
+<div
+  id="ProductScreen-{{ product.id }}"
+  class="screen-layer screen-layer--product"
+  data-product-title="{{ product.title | escape }}"
+  data-product-id="{{ product.id }}">
+  <div class="screen-layer__inner">
+    {%- render 'product-template',
+      product: product,
+      section_id: product.id,
+      blocks: false,
+      isModal: true,
+
+      image_container_width: settings.product_image_size,
+      product_image_type: settings.product_image_type,
+      product_zoom_enable: settings.product_zoom_enable,
+      vendor_enable: settings.vendor_enable,
+      sku_enable: true,
+      video_looping: false,
+      video_style: 'muted'
+    -%}
+  </div>
+
+  {%- if settings.quick_shop_style == 'full' -%}
+    <div id="ProductSectionsHolder-{{ product.id }}"></div>
+    <div id="SocialSectionHolder-{{ product.id }}"></div>
+  {%- endif -%}
+
+  <button type="button" class="btn btn--circle btn--large screen-layer__close js-screen-close">
+    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+    <span class="icon__fallback-text">{{ 'general.accessibility.close_modal' | t }}</span>
+  </button>
+
+  <div class="text-center small--hide">
+    <button type="button" class="btn btn--tertiary js-screen-close">
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+      <span>{{ 'general.accessibility.close' | t }}</span>
+    </button>
+  </div>
+
+  <a href="{{ routes.cart_url }}" class="quick-view__thumb-cart js-drawer-open-cart js-no-transition" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
+    <span class="cart-link">
+      {%- if settings.cart_icon == 'cart' -%}
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64"><path d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3"/><circle cx="27" cy="53" r="2"/><circle cx="47" cy="53" r="2"/></svg>
+      {%- else -%}
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-bag" viewBox="0 0 64 64"><g fill="none" stroke="#000" stroke-width="2"><path d="M25 26c0-15.79 3.57-20 8-20s8 4.21 8 20"/><path d="M14.74 18h36.51l3.59 36.73h-43.7z"/></g></svg>
+      {%- endif -%}
+      <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
+      <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}">
+        <span class="cart-link__bubble-num" aria-hidden="true">
+          {{ cart.item_count }}
+        </span>
+      </span>
+    </span>
+  </a>
+</div>
