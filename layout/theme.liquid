@@ -200,7 +200,11 @@
   <script src="{{ 'product-scripts.js' | asset_url}}"></script>
 
 
+<script>
+const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
 
+</script>
 
   
 {% endif %}
