@@ -1,4 +1,7 @@
-
+h2.okeReviews-review-main-heading {
+  font-family: 'gotham_proregular'!important;
+  color: #000!important;
+}
 
 h2.section-header__title {
   text-transform: capitalize!important;
