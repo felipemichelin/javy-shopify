@@ -10845,3 +10845,20 @@ span.swatch-title {
     h1.section-header__title.appear-delay {
       text-transform: capitalize;
   }
+
+  .article__content-meta a {
+    font-size: 18px!important;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+h2.rk_heading {
+  font-weight: 800;
+}
+
+
+@media only screen and (min-width: 1024px) {
+#rk_parent .rk_modern .rk_container .rk_grid .rk_column_third {
+    width: 50%!important;
+}
+}
