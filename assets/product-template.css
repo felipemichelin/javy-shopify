@@ -1568,6 +1568,11 @@ h2.section-header__title {
 }
 
 @media screen and (max-width: 767px) {
+
+  div#PageContainer {
+    overflow: hidden;
+}
+
   .rt_title-2 {
     font-size: 14px;
     line-height: 30px;
