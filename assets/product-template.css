@@ -3,6 +3,9 @@ div#PageContainer {
   overflow: hidden;
 }
 
+h2.section-header__title {
+  text-transform: capitalize!important;
+}
 
 .w-layout-grid {
   display: -ms-grid;
