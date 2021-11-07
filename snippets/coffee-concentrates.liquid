@@ -239,7 +239,7 @@ var slider2 = new Swiper(".slider2", {
             </div>
           </div>
         </div>
-        <div class="card"><img src="images/dealll.png" loading="lazy" sizes="100vw" srcset="images/dealll-p-500.png 500w, images/dealll.png 594w" alt="" class="img-fluid hide-mobo lozad"></div>
+        <div class="card"><img src="                    <source data-src="{{ 'dealll.png' | asset_url}}" loading="lazy" sizes="100vw" srcset="{{ 'dealll-p-500.png' | asset_url}} 500w, {{ 'dealll.png' | asset_url}} 594w" alt="" class="img-fluid hide-mobo lozad"></div>
       </div>
     </div>
   </div>
@@ -497,7 +497,7 @@ var slider3 = new Swiper(".slider3", {
             <div class="text-block-35">TRIAL</div>
           </div>
           <div class="checkout-item-info">
-            <div class="checkout-item-img"><img src="images/img-new.png" loading="lazy" sizes="100vw" srcset="images/img-new-p-500.png 500w, images/img-new-p-800.png 800w, images/img-new.png 1000w" alt="" class="img-fluid"></div>
+            <div class="checkout-item-img"><img src="{{ 'img-new.png' | asset_url}}" loading="lazy" sizes="100vw" srcset="{{ 'img-new-p-500.png' | asset_url}} 500w, {{ 'img-new-p-800.png' | asset_url}} 800w, {{ 'img-new.png' | asset_url}}" alt="" class="img-fluid"></div>
             <h3 class="text-center">Trial</h3>
             <h3 class="price-text">$24</h3>
           </div>
