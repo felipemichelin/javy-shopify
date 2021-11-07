@@ -10778,7 +10778,6 @@ span.swatch-title {
     /* align-content: space-between; */
     display: -ms;
     display: grid!important;
-    grid: ;
     width: 100%;
     margin-bottom: 10px!important;
     margin-left: 0 px;
@@ -10842,3 +10841,7 @@ span.swatch-title {
   
     }
 
+
+    h1.section-header__title.appear-delay {
+      text-transform: capitalize;
+  }
