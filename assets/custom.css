@@ -750,8 +750,9 @@ nav.slide-nav__wrapper {
 }
 
 .header-item.header-item--icons.small--hide {
-  position: absolute;
-  right: 20px;
+  position: relative;
+  right: 0px;
+  top: 0px;
 }
 
 }
