@@ -954,4 +954,8 @@ ul.no-bullets.inline-list.footer__social {
 }
 
 
+span.multi-picker__label {
+  display: none!important;
+}
+
 }
