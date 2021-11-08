@@ -693,6 +693,10 @@ img.medium-up--hide {
   z-index: 50!important;
 }
 
+.announcement {
+  z-index: 10!important;
+}
+
 }
 
 
