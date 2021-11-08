@@ -997,3 +997,8 @@ a.logo_swiper {
 
 
 }
+
+
+img.small--hide {
+  width: 100%!important;
+}
