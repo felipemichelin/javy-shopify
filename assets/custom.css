@@ -915,9 +915,9 @@ a.site-nav__link.site-nav__link--icon.js-modal-open-search-modal.js-no-transitio
   border-radius: 100px;
 }
 
-.site-nav__thumb-menu {
-  z-index: 1000;
-}
+button.site-nav__link.site-nav__link--icon.js-toggle-slide-nav.hide.is-active {
+  z-index: 9999!important;
+  display: block!important;
 
 
 
