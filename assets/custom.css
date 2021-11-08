@@ -1216,3 +1216,13 @@ p#rk_rating_thanks {
 .rk_container {
   padding: 0px!important;
 }
+
+#rk_parent .rk_modern .rk_container .rk_directions ul li, #rk_parent .rk_modern .rk_container .rk_ingredients ul li {
+  list-style: outside;
+  margin-bottom: 10px;
+  margin-left: 13px;
+  padding-left: 5px;
+  position: relative;
+  white-space: normal;
+  margin-bottom: 5px!important;
+}
