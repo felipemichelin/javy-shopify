@@ -200,6 +200,7 @@
 <div class="right-icons">
 
 
+<footer class="site-footer text-center" data-section-id="{{ section.id }}" data-section-type="footer-section">
 
       {%- form 'localization', class: 'multi-selectors site-footer__section', data-disclosure-form: '' -%}
 
@@ -207,6 +208,9 @@
             <div class="disclosure" data-disclosure-currency>
               <button type="button" class="faux-select disclosure__toggle" aria-expanded="false" aria-controls="CurrencyList" aria-describedby="CurrencyHeading" data-disclosure-toggle>
                   <span class="currency-flag currency-flag--small" data-flag="{{ form.current_currency.iso_code }}" aria-hidden="true"></span>
+                <span class="multi-picker__label">
+                  {{ form.current_currency.iso_code }} {%- if form.current_currency.symbol -%}{{ form.current_currency.symbol }}{%- endif -%}
+                </span>
                 <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"/></svg>
               </button>
               <ul id="CurrencyList" class="disclosure-list" data-disclosure-list>
@@ -224,7 +228,7 @@
           </div>
       {%- endform -%}
 
-
+</footer>
 
 
         {%- render 'social-icons', social_class: 'footer__social' -%}
