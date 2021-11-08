@@ -873,6 +873,8 @@ span.icon__fallback-text {
       align-content: flex-start;
       flex-direction: column;
       height: 100%!important;
+      margin-bottom: 100px!important;
+      justify-content: flex-end;
 }
 
 
