@@ -740,6 +740,12 @@ nav.slide-nav__wrapper {
   width: 100%!important;
 }
 
+.slide-nav__overflow.slide-nav__overflow--thumb.js-menu--is-open {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
 }
 
 
