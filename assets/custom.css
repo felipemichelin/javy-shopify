@@ -771,6 +771,11 @@ nav.slide-nav__wrapper {
   transition: background-color 0s ease 0s!important;
 }
 
+.js-menu--is-open .slide-nav__wrapper {
+  transition: none!important;
+}
+
+
 }
 
 
