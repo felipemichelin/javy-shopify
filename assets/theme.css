@@ -10872,3 +10872,12 @@ h2.okeReviews-review-main-heading {
   font-weight: 800!important;
   font-family: Gothampro!important;
 }
+
+.swatch-title .title {
+  font-weight: 500;
+  font-family: 'Gothampro'!important;
+}
+
+body {
+  font-family:'Gothampro'!important;
+}
