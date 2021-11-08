@@ -719,8 +719,8 @@ nav.slide-nav__wrapper {
 .slide-nav__overflow.slide-nav__overflow--thumb.js-menu--is-open {
   display: flex!important;
   align-content: center;
-  justify-content: flex-start;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
 
@@ -772,12 +772,11 @@ button.btn.site-nav__thumb-button.js-toggle-slide-nav {
 }
 
 .top_nav_slider {
-  height: auto!important;
+  height: 10%!important;
 }
 
 .bottom_nav_slider {
-  height: auto!important;
-  margin-top: 25px!important;
+  height: 20%!important;
   border-top: 1px solid #94670036;
 }
 
@@ -873,7 +872,8 @@ span.icon__fallback-text {
 
 .bottom_nav_slider {
   padding: 15px;
-  display:flex;
+      display: flex;
+      align-items: center;
 }
 
 
@@ -966,7 +966,7 @@ nav.slide-nav__wrapper {
 }
 
 nav.slide-nav__wrapper {
-  height: auto;
+  height: 70%;
 }
 
 nav.slide-nav__wrapper {
