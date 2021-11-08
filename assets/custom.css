@@ -689,6 +689,10 @@ img.medium-up--hide {
   padding-top: 15px!important;
   max-height:100%!important;
 }
+.site-nav__thumb-menu {
+  z-index: 50!important;
+}
 
 }
+
 
