@@ -868,6 +868,14 @@ a.slide-nav__sublist-link.slide-nav__sublist-header {
   text-align: left!important;
 }
 
+
+.site-nav__link--icon .icon {
+  /* display: block; */
+  width: 30px;
+  height: 30px;
+
+
+}
 }
 
 
