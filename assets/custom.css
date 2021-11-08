@@ -1062,3 +1062,8 @@ button.js-qty__adjust.js-qty__adjust--plus {
 
 
 }
+
+.cart__item--image.aos-init.aos-animate img {
+  background-color: #fff6e7!important;
+  border-radius: 6px;
+}
