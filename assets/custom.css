@@ -504,7 +504,8 @@ span.swatch-title {
   }
 
   .page-full, .page-width {
-  padding: 0 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .swatch-title .unit_price {
