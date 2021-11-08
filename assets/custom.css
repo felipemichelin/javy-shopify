@@ -1117,3 +1117,21 @@ button.js-qty__adjust.js-qty__adjust--plus {
     -webkit-animation: load8 1.1s infinite linear;
     animation: load8 1.1s infinite linear;
 }
+
+button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading {
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
