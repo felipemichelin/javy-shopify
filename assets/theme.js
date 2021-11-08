@@ -8211,6 +8211,7 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
     theme.sections.register('map', theme.Maps);
     theme.sections.register('blog', theme.Blog);
     theme.sections.register('footer-section', theme.FooterSection);
+    theme.sections.register('new-nav-section', theme.FooterSection);
     theme.sections.register('store-availability', theme.StoreAvailability);
 
     if (document.body.classList.contains('template-cart')) {
