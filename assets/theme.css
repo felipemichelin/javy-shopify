@@ -1995,7 +1995,6 @@ button[disabled],html input[disabled]{
 
 .btn--loading span:after{
     display:flex;
-    content: "PELO AMOR";
     color:#000!important;
     align-items:center;
     justify-content:center;
@@ -2008,7 +2007,7 @@ button[disabled],html input[disabled]{
   }
 
 .btn--loading span{
-    color:#ffc33a;
+    color:#000!important;
     color:var(--colorBtnPrimary)
   }
 
