@@ -755,6 +755,12 @@ nav.slide-nav__wrapper {
   top: 0px;
 }
 
+
+nav.slide-nav__wrapper {
+  width: 100%!important;
+}
+
+
 }
 
 
