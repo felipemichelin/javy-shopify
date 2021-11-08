@@ -736,6 +736,10 @@ nav.slide-nav__wrapper {
   width: 130px!important;
 }
 
+.site-header__logo img {
+  width: 100%!important;
+}
+
 }
 
 
