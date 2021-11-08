@@ -775,6 +775,13 @@ nav.slide-nav__wrapper {
   transition: none!important;
 }
 
+.slide-nav__overflow--thumb.js-menu--is-open {
+  background-color: #fff6e7!important;
+}
+
+nav.slide-nav__wrapper {
+  background-color: transparent!important;
+}
 
 }
 
