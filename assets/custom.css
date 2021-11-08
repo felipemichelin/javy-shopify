@@ -606,7 +606,7 @@ a.slide-nav__link {
   transform: translateZ(0);
   transition: all .45s cubic-bezier(.29, .63, .44, 1);
   margin: 0;
-  padding: 15px 0 15px 0px!important;
+  padding: 0px!important;
 }
 
 button.btn.btn--full.add-to-cart {
