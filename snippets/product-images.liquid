@@ -26,7 +26,7 @@
     {% endif %}>
 
         <div class="swiper slider1 product__main-photos{% if product_image_type == 'slider' %} product__main-photos--slider{% endif %}" data-aos data-product-single-media-group>
-          <div class="swiper-wrapper product__main-photos-wrapper">
+          <div class="swiper-wrapper product__main-photos-wrapper product-slideshow" data-product-photos>
             {%- for media in product.media -%}
               {%- render 'media',
                 section_id: section_id,
@@ -45,6 +45,9 @@
               -%}
             {%- endfor -%}
           </div>
+
+
+
 
                     <div class="previous-after">
             <a href="#" class="previous-hero-slider w-inline-block">
