@@ -697,6 +697,10 @@ img.medium-up--hide {
   z-index: 10!important;
 }
 
+.splash-screen {
+  z-index: 15!important;
+}
+
 }
 
 
