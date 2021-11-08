@@ -1150,7 +1150,7 @@ button.btn.btn--full.cart__checkout.cart__checkout--drawer.btn--loading {
 }
 
 
-button.btn.btn--full.cart__checkout.cart__checkout--drawer.btn--loading span {
+button.btn.btn--full.cart__checkout.cart__checkout--drawer.btn--loading span.loader {
     /* top: auto; */
     /* bottom: auto; */
     display: flex;
@@ -1168,6 +1168,10 @@ button.btn.btn--full.cart__checkout.cart__checkout--drawer.btn--loading span {
     align-content: center;
     justify-content: center;
 
+}
+
+button.btn.btn--full.cart__checkout.cart__checkout--drawer.btn--loading span.checkout-text {
+display: none;
 }
 
 
