@@ -873,9 +873,17 @@ span.icon__fallback-text {
 .bottom_nav_slider {
   padding: 15px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
+      align-content: flex-start;
 }
 
+
+.bottom_inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-content: flex-start;
+}
 
 
 .cart-link__bubble-num {
