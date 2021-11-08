@@ -1002,3 +1002,8 @@ a.logo_swiper {
 img.small--hide {
   width: 100%!important;
 }
+
+.product-single__title {
+  word-wrap: break-word;
+  margin-bottom: 0px!important;
+}
