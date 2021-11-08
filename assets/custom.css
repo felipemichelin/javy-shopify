@@ -1010,22 +1010,22 @@ img.small--hide {
 
 
 .drawer .js-qty__num {
-  border: 2px solid #000!important;
+  border: none!important;
 }
 
 button.js-qty__adjust.js-qty__adjust--minus {
-  border-right: 2px solid #000!important;
+  border-right: none!important;
 }
 
 button.js-qty__adjust.js-qty__adjust--plus {
-  border-left: 2px solid #000!important;
+  border-left: none!important;
 }
 
 .drawer .js-qty__wrapper {
   background-color: transparent;
   border-color: currentColor;
   max-width: 80px;
-  height: 30px;
+  height: 25px;
 }
 
 .drawer .js-qty__num {
@@ -1034,7 +1034,7 @@ button.js-qty__adjust.js-qty__adjust--plus {
   border-color: currentColor;
   padding-top: 0px;
   padding-bottom: 0px;
-  height: 30px;
+  height: 25px;
 }
 
 .js-qty__adjust {
@@ -1192,4 +1192,10 @@ button.btn.btn--full.cart__checkout.cart__checkout--drawer {
 .site-nav__thumb-menu {
   display: none;
   justify-content: space-between;
+}
+
+.cart__item--name {
+  width: 100%!important;
+  display: flex;
+  flex-direction: column;
 }
