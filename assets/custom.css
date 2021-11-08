@@ -635,3 +635,41 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
   background-color: #ffc33a;
   color: #000;
 }
+
+.shopify-payment-terms.product__policies {
+  display: none!important;
+}
+
+@media only screen and (max-width: 768px) {
+.small--hide {
+    display: block!important;
+}
+
+a.site-nav__link.site-nav__link--icon.small--hide {
+  display: none!important;
+}
+
+a.site-nav__link.site-nav__link--icon.js-modal-open-search-modal.js-no-transition {
+  display: none!important;
+}
+
+.header-item.header-item--navigation.text-center.small--hide {
+  display: none!important;
+}
+
+a.site-nav__link.site-nav__link--icon.site-nav__link--cart.js-drawer-open-cart.js-no-transition {
+  display: none!important;
+}
+
+.site-nav--icons {
+  justify-content: flex-end!important;
+}
+
+.header-item.header-item--icons.small--hide {
+  display: flex!important;
+  align-content: center!important;
+}
+
+
+}
+
