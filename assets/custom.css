@@ -956,4 +956,10 @@ button.site-nav__thumb-button.site-nav__thumb-cart.js-toggle-slide-nav {
   border-radius: 10px!important;
 }
 
+
+.cart__item-row.cart__note.text-center {
+  display: none;
+}
+
+
 }
