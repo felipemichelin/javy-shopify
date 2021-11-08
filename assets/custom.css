@@ -785,7 +785,7 @@ button.btn.site-nav__thumb-button.js-toggle-slide-nav {
 }
 
 .top_nav_slider {
-  height: 20%!important;
+  height: auto!important;
 }
 
 .bottom_nav_slider {
@@ -980,6 +980,10 @@ nav.slide-nav__wrapper {
 
 nav.slide-nav__wrapper {
   height: auto;
+}
+
+nav.slide-nav__wrapper {
+  margin-top: 25px;
 }
 
 }
