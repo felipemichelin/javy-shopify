@@ -61,14 +61,14 @@
       class="site-header__logo-link{% if section.settings.logo-inverted %} logo--has-inverted{% endif %}">
       <img
         class="small--hide"
-        src="{{ section.settings.logo | img_url: header_logo_size }}"
-        srcset="{{ section.settings.logo | img_url: header_logo_size }} 1x, {{ section.settings.logo | img_url: header_logo_size, scale: 2 }} 2x"
+        src="{{ 'logo.svg' | asset_url}}"
+        srcset="{{ 'logo.svg' | asset_url}} 1x, {{ 'logo.svg' | asset_url}} 2x"
         alt="{{ section.settings.logo.alt | default: shop.name }}"
         itemprop="logo">
       <img
         class="medium-up--hide"
-        src="{{ section.settings.logo | img_url: header_logo_size_mobile }}"
-        srcset="{{ section.settings.logo | img_url: header_logo_size_mobile }} 1x, {{ section.settings.logo | img_url: header_logo_size_mobile, scale: 2 }} 2x"
+        src="{{ 'logo.svg' | asset_url}}"
+        srcset="{{ 'logo.svg' | asset_url}} 1x, {{ 'logo.svg' | asset_url}} 2x"
         alt="{{ section.settings.logo.alt | default: shop.name }}">
     </a>
     {%- if section.settings.logo-inverted -%}
@@ -78,14 +78,14 @@
         class="site-header__logo-link logo--inverted">
         <img
           class="small--hide"
-          src="{{ section.settings.logo-inverted | img_url: header_logo_size }}"
-          srcset="{{ section.settings.logo-inverted | img_url: header_logo_size }} 1x, {{ section.settings.logo-inverted | img_url: header_logo_size, scale: 2 }} 2x"
+          src="{{ 'logo.svg' | asset_url}}"
+          srcset="{{ 'logo.svg' | asset_url}} 1x, {{ 'logo.svg' | asset_url}} 2x"
           alt="{{ section.settings.logo-inverted.alt | default: shop.name }}"
           itemprop="logo">
         <img
           class="medium-up--hide"
-          src="{{ section.settings.logo-inverted | img_url: header_logo_size_mobile }}"
-          srcset="{{ section.settings.logo-inverted | img_url: header_logo_size_mobile }} 1x, {{ section.settings.logo-inverted | img_url: header_logo_size_mobile, scale: 2 }} 2x"
+          src="{{ 'logo.svg' | asset_url}}"
+          srcset="{{ 'logo.svg' | asset_url}} 1x, {{ 'logo.svg' | asset_url}} 2x"
           alt="{{ section.settings.logo.alt | default: shop.name }}">
       </a>
     {%- endif -%}
