@@ -494,16 +494,16 @@ span.swatch-title {
 }
 
 .swatch-title .unit_price {
-  font-size: 10px;
+  font-size: 10px!important;
 
   }
 
   .swatch-title .title {
-    font-size: 12px;
+    font-size: 12px!important;
 }
 
 .variant-input-wrap label {
-  padding: 15px 0px 10px 0px;
+  padding: 15px 0px 10px 0px!important;
 }
     
 
