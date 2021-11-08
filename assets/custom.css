@@ -1099,7 +1099,7 @@ button.js-qty__adjust.js-qty__adjust--plus {
 
 
 
-@keyframes cart-loader {
+@keyframes cart_loading_button {
   0% { transform: translate(-50%,-50%) rotate(0deg); }
   100% { transform: translate(-50%,-50%) rotate(360deg); }
 }
@@ -1112,11 +1112,9 @@ button.js-qty__adjust.js-qty__adjust--plus {
 
 
 button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading {
-  width: 98px;
-  height: 98px;
-  display: inline-block;
-  overflow: hidden;
-  background: none;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading span {
@@ -1132,7 +1130,7 @@ button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading span {
 
 
 button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading span:after {
-  animation: cart-loader 0.9615384615384615s linear infinite;
+  animation: cart_loading_button 0.9615384615384615s linear infinite;
   top: 50px;
   left: 50px
 }
