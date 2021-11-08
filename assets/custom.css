@@ -580,3 +580,11 @@ font-family:'Gothampro'!important;
   margin-top: 0px!important;
 }
 
+
+span.icon-menu-label {
+  display: none!important;
+}
+
+.btn.site-nav__thumb-button {
+  width: 68px!important;
+}
