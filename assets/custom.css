@@ -744,8 +744,8 @@ nav.slide-nav__wrapper {
   flex-direction: column;
 }
 
-.header-item.header-item--icons.small--hide {
-  z-index: 800!important;
+button.site-nav__link.site-nav__link--icon.js-toggle-slide-nav.medium-up--hide {
+  z-index: 1200!important;
 }
 
 .header-item.header-item--icons.small--hide {
