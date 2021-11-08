@@ -806,6 +806,21 @@ button.btn.site-nav__thumb-button.js-toggle-slide-nav {
   display: flex!important;
 }
 
+.top_nav_slider {
+  height: 20%!important;
+}
+
+.top_nav_slider {
+  height: 20%!important;
+}
+
+nav.slide-nav__wrapper {
+  height: 60%!important;
+}
+a.slide-nav__link {
+  text-align: left;
+}
+
 }
 
 
