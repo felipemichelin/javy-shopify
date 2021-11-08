@@ -875,6 +875,15 @@ a.slide-nav__sublist-link.slide-nav__sublist-header {
   height: 30px;
 
 
+  span.icon__fallback-text {
+    display: block!important;
+    width: 100%!important;
+    position: relative!important;
+
+    
+}
+
+
 }
 }
 
