@@ -614,3 +614,11 @@ a.slide-nav__link {
   font-size: 18px;
   padding: 10px 0px;
 }
+
+.slide-nav {
+  display: block;
+  transform: translateZ(0);
+  transition: all .45s cubic-bezier(.29, .63, .44, 1);
+  margin: 0;
+  padding: 15px 0 15px 0px!important;
+}
