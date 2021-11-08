@@ -622,3 +622,10 @@ a.slide-nav__link {
   margin: 0;
   padding: 15px 0 15px 0px!important;
 }
+
+button.btn.btn--full.add-to-cart {
+  letter-spacing: 0px!important;
+  height: 55px;
+  font-size: 16px!important;
+  font-weight: 500!important;
+}
