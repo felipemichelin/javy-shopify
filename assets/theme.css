@@ -8747,7 +8747,6 @@ select .variant-input{
   right:0;
   line-height:1;
   padding:6px 6px 6px 8px;
-  background-color:#ffc33a;
   background-color:var(--colorBtnPrimary);
   color:#000000;
   color:var(--colorBtnPrimaryText);
