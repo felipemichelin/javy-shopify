@@ -36,6 +36,7 @@ img {
   justify-content: flex-end;
   -webkit-box-align: center;
   -webkit-align-items: center;
+  background-color:#fff6e7;
   -ms-flex-align: center;
   align-items: center;
 }
