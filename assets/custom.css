@@ -720,7 +720,7 @@ nav.slide-nav__wrapper {
 .slide-nav__overflow.slide-nav__overflow--thumb.js-menu--is-open {
   display: flex!important;
   align-content: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
