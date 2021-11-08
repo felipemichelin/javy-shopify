@@ -1057,5 +1057,12 @@ button.js-qty__adjust.js-qty__adjust--plus {
 .drawer--cart {
     width: 700px;
     right: -700px;
+
 }
+
+.drawer--cart.drawer--is-open {
+  transform: translateX(-700px);
+}
+
+
 }
