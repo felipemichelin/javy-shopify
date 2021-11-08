@@ -190,6 +190,8 @@ height: 45px;
   width: 100%!important;
 }
   
+
+
   
   
   
@@ -924,6 +926,11 @@ button.site-nav__link.site-nav__link--icon.js-toggle-slide-nav.hide.is-active {
 
 
 }
+ul.no-bullets.inline-list.footer__social {
+  display: flex;
+  flex-direction: row;
+  max-width: 100px!important;
+}
 
 
-
+}
