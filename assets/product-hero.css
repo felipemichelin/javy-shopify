@@ -1,4 +1,7 @@
 
+.product-image-main {
+  width: 100%!important;
+}
 
 img {
   display: inline-block;
