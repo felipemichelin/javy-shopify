@@ -629,3 +629,9 @@ button.btn.btn--full.add-to-cart {
   font-size: 16px!important;
   font-weight: 500!important;
 }
+
+button.btn.btn--full.add-to-cart.btn--tertiary {
+  border: 0px;
+  background-color: #ffc33a;
+  color: #000;
+}
