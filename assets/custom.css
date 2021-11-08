@@ -1042,3 +1042,8 @@ button.js-qty__adjust.js-qty__adjust--plus {
 .js-qty__adjust {
   padding: 0 6px;
 }
+
+.cart__item--details {
+  display: flex;
+  flex-wrap: wrap;
+}

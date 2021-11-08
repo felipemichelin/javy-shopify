@@ -49,6 +49,8 @@
         {%- endfor -%}
       {%- endif -%}
     </div>
+
+    <div class="right-align-cart">
     <div class="cart__item--qty">
       <div class="js-qty__wrapper">
         <label for="cart_updates_{{ product.key }}" class="hidden-label">{{ 'cart.label.quantity' | t }}</label>
@@ -102,6 +104,8 @@
 
         <div class="product__unit-price">{{ product.unit_price | money }}/{{ unit_price_base_unit }}</div>
       {%- endif -%}
+    </div>
+
     </div>
   </div>
 </div>
