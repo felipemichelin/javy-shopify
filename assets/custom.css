@@ -795,9 +795,7 @@ button.btn.site-nav__thumb-button.js-toggle-slide-nav {
   border-top: 1px solid #94670036;
 }
 
-nav.slide-nav__wrapper {
-  height: 60%!important;
-}
+
 a.slide-nav__link {
   text-align: left;
 }
