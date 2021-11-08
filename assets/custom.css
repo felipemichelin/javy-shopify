@@ -1134,6 +1134,10 @@ button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading span {
   transform: translateZ(0);
   -webkit-animation: load8 1.1s infinite linear;
   animation: load8 1.1s infinite linear;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+
 }
 
 
