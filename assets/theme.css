@@ -10862,3 +10862,8 @@ h2.rk_heading {
     width: 50%!important;
 }
 }
+
+.article__content-meta a {
+  font-size: 18px!important;
+  text-transform: capitalize!important;
+}
