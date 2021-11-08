@@ -964,6 +964,7 @@ button.site-nav__thumb-button.site-nav__thumb-cart.js-toggle-slide-nav {
 nav.slide-nav__wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
 
