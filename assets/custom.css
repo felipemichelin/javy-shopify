@@ -1149,7 +1149,7 @@ button.btn.btn--full.cart__checkout.cart__checkout--drawer.btn--loading {
 
 }
 
-button.btn.btn--full.cart__checkout.cart__checkout--drawer.btn--loading span {
+button.btn.btn--full.cart__checkout.cart__checkout--drawer.btn--loading:after {
     /* top: auto; */
     /* bottom: auto; */
     display: flex;
