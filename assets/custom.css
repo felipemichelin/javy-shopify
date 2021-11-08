@@ -1057,6 +1057,10 @@ button.js-qty__adjust.js-qty__adjust--plus {
 
 }
 
+.product-single__header {
+  margin-bottom: 0px;
+}
+
 .drawer--cart.drawer--is-open {
   transform: translateX(-700px);
 }
