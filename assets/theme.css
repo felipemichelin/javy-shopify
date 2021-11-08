@@ -2011,13 +2011,11 @@ button[disabled],html input[disabled]{
   }
 
 .btn--loading span:after{
-      color:#ffffff;
-      color:var(--colorBody);
+      color:#000;
     }
 
 .btn--loading.btn--tertiary span{
-    color:#ffffff;
-    color:var(--colorBody)
+    color:#000;
   }
 
 .btn--loading.btn--tertiary span:after{
