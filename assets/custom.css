@@ -1141,6 +1141,15 @@ button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading span:after {
   border-radius: 50%;
   width: 25px;
   height: 25px;
+  content: "";
+  background: #ffcb55;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 
