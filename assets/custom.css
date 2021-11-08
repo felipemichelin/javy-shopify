@@ -760,6 +760,14 @@ nav.slide-nav__wrapper {
   width: 100%!important;
 }
 
+.slide-nav__overflow--thumb.js-menu--is-open {
+  transition: background-color 0.1s ease 0.1s!important;
+}
+
+.slide-nav__overflow--thumb {
+  transition: all .1s ease-out!important;
+
+}
 
 }
 
