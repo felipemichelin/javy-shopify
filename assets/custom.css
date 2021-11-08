@@ -745,6 +745,10 @@ nav.slide-nav__wrapper {
   justify-content: center;
 }
 
+.header-item.header-item--icons.small--hide {
+  z-index: 800!important;
+}
+
 }
 
 
