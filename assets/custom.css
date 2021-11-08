@@ -1118,13 +1118,22 @@ button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading {
 }
 
 button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading span {
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  border: 8px solid #0a0a0a;
-  border-top-color: transparent;
-  border-radius: 50%;
-  animation: cart_loading_button 0.9615384615384615s linear infinite;
+    /* top: auto; */
+    /* bottom: auto; */
+    display: flex;
+    position: absolute;
+    width: 28px;
+    left: auto;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    height: 28px;
+    border: 4px solid #0a0a0a;
+    border-top-color: #0000001c;
+    border-radius: 50%;
+    animation: cart_loading_button .9615384615384615s linear infinite;
+    align-content: center;
+    justify-content: center;
 }
 
 
