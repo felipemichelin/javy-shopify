@@ -873,18 +873,20 @@ a.slide-nav__sublist-link.slide-nav__sublist-header {
   /* display: block; */
   width: 30px;
   height: 30px;
-
+}
 
   span.icon__fallback-text {
     display: block!important;
     width: 100%!important;
     position: relative!important;
 
-    
 }
 
+a.site-nav__link.site-nav__link--icon.small--hide {
+  display: flex!important;
+  align-content: center;
 
 }
-}
+
 
 
