@@ -492,6 +492,19 @@ span.swatch-title {
   .page-full, .page-width {
   padding: 0 15px;
 }
+
+.swatch-title .unit_price {
+  font-size: 10px;
+
+  }
+
+  .swatch-title .title {
+    font-size: 12px;
+}
+
+.variant-input-wrap label {
+  padding: 15px 0px 10px 0px;
+}
     
 
 
