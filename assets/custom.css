@@ -1208,3 +1208,11 @@ button.btn.btn--full.cart__checkout.cart__checkout--drawer {
   flex-direction: column;
 }
 
+
+p#rk_rating_thanks {
+  font-size: 12px!important;
+}
+
+.rk_container {
+  padding: 0px!important;
+}
