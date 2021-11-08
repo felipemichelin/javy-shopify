@@ -839,6 +839,10 @@ ul#SlideNav {
   justify-content: space-around;
 }
 
+li.slide-nav__item.medium-up--hide {
+  display: none!important;
+}
+
 }
 
 
