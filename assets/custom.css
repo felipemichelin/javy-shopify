@@ -389,7 +389,7 @@ span.swatch-title {
 }
   
   .variant-input-wrap input[type=radio]:checked+label {
-  background-color: #ffc33a;
+  background-color: transparent;
 }
   
   span.product__price.sale-price {
@@ -481,6 +481,14 @@ span.swatch-title {
   
   @media only screen and (max-width:768px){
 
+    h1.h1.product-single__title {
+      text-align: left;
+    }
+
+    .product-single__prices {
+      justify-content: left;
+  }
+
   .page-full, .page-width {
   padding: 0 15px;
 }
@@ -533,3 +541,4 @@ font-family:'Gothampro'!important;
 .product-block.product-block--header.product-single__header.small--text-center {
   margin-top: 0px!important;
 }
+
