@@ -62,7 +62,7 @@
           </div>
           <div class="swiper-pagination"></div>
 
-          
+
         </div>
 
         {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
@@ -93,7 +93,6 @@
         {%- if product_image_type == 'stacked' -%}
           <div class="product__thumbs-sticky">
         {%- else -%}
-          <div class="product__thumbs--scroller" data-product-thumbs-scroller>
         {%- endif -%}
           {%- if product.media.size > 1 -%}
             {%- for media in product.media -%}
