@@ -775,10 +775,6 @@ button.btn.site-nav__thumb-button.js-toggle-slide-nav {
   height: 10%!important;
 }
 
-.bottom_nav_slider {
-  height: 20%!important;
-  border-top: 1px solid #94670036;
-}
 
 
 a.slide-nav__link {
@@ -884,7 +880,9 @@ span.icon__fallback-text {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  border-top: 1px solid #e1e1e1;
   align-content: flex-start;
+  margin-top: 20px;
 }
 
 
