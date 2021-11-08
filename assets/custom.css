@@ -1051,3 +1051,11 @@ button.js-qty__adjust.js-qty__adjust--plus {
 .cart__item--name {
   width: 70%;
 }
+
+
+@media only screen and (min-width: 769px) {
+.drawer--cart {
+    width: 700px;
+    right: -700px;
+}
+}
