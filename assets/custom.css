@@ -980,4 +980,8 @@ nav.slide-nav__wrapper {
   padding: 5px 0px;
 }
 
+nav.slide-nav__wrapper {
+  height: 100%;
+}
+
 }
