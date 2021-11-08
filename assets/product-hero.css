@@ -9,7 +9,6 @@ img {
 
 .hero {
   position: relative;
-  z-index: 100;
   display: -ms-grid;
   display: grid;
   overflow: hidden;
@@ -99,7 +98,7 @@ img {
 
 .previous-hero-slider {
   position: relative;
-  z-index: 350;
+  z-index: 10;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -115,7 +114,7 @@ img {
 
 .next-hero-slider {
   position: relative;
-  z-index: 150;
+  z-index: 10;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
