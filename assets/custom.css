@@ -738,9 +738,9 @@ nav.slide-nav__wrapper {
 }
 
 .slide-nav__overflow.slide-nav__overflow--thumb.js-menu--is-open {
-  display: flex;
+  display: flex!important;
   align-content: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
 }
 
