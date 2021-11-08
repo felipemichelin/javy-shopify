@@ -599,3 +599,8 @@ span.icon-menu-label {
 .quick-view__thumb-cart, .site-nav__thumb-cart {
   background-color: #ffc33a!important;
 }
+
+a.slide-nav__link {
+  font-size: 18px;
+  padding: 10px 0px;
+}
