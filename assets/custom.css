@@ -858,6 +858,14 @@ button.js-toggle-submenu.slide-nav__link {
   font-size: 18px!important;
 }
 
+.slide-nav__table {
+  display: table;
+  width: 100%;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e8d8b6;
+}
+
+
 }
 
 
