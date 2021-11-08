@@ -1047,3 +1047,7 @@ button.js-qty__adjust.js-qty__adjust--plus {
   display: flex;
   flex-wrap: wrap;
 }
+
+.cart__item--name {
+  width: 70%;
+}
