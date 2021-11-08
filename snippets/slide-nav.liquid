@@ -210,9 +210,7 @@
 
             <div class="disclosure" data-disclosure-currency>
               <button type="button" class="faux-select disclosure__toggle" aria-expanded="false" aria-controls="CurrencyList" aria-describedby="CurrencyHeading" data-disclosure-toggle>
-                {%- if section.settings.show_currency_flags -%}
                   <span class="currency-flag currency-flag--small" data-flag="{{ form.current_currency.iso_code }}" aria-hidden="true"></span>
-                {%- endif -%}
                 <span class="multi-picker__label">
                   {{ form.current_currency.iso_code }} {%- if form.current_currency.symbol -%}{{ form.current_currency.symbol }}{%- endif -%}
                 </span>
@@ -222,12 +220,8 @@
                 {%- for currency in form.available_currencies -%}
                   <li class="disclosure-list__item {% if currency.iso_code == form.current_currency.iso_code %}disclosure-list__item--current{% endif %}">
                     <a class="disclosure-list__option" href="#" {% if currency.iso_code == form.current_currency.iso_code %}aria-current="true"{% endif %} data-value="{{ currency.iso_code }}" data-disclosure-option>
-                      {%- if section.settings.show_currency_flags -%}
                         <span class="currency-flag" data-flag="{{ currency.iso_code }}" aria-hidden="true"></span>
-                      {%- endif -%}
-                      <span class="multi-picker__label">
-                        {{ currency.iso_code }} {%- if currency.symbol -%}{{ currency.symbol }}{%- endif -%}
-                      </span>
+
                     </a>
                   </li>
                 {%- endfor -%}
