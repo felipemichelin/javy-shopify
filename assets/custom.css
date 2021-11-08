@@ -886,6 +886,12 @@ span.icon__fallback-text {
 a.site-nav__link.site-nav__link--icon.small--hide {
   display: flex!important;
   align-content: center;
+}
+
+  a.site-nav__link.site-nav__link--icon.js-modal-open-search-modal.js-no-transition {
+    display: flex!important;
+}
+
 
 }
 
