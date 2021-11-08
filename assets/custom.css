@@ -679,7 +679,16 @@ img.medium-up--hide {
   justify-content: space-between!important;
 }
 
-
+.slide-nav__overflow.slide-nav__overflow--thumb.js-menu--is-open {
+  position: fixed!important;
+  width: 100%!important;
+  left: 0px;
+  right: 0px;
+  height: 100vh;
+  bottom: 0px!important;
+  padding-top: 15px!important;
+  max-height:100%!important;
+}
 
 }
 
