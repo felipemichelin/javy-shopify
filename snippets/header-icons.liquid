@@ -16,7 +16,7 @@
           {%- if settings.cart_icon == 'cart' -%}
             <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64"><path d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3"/><circle cx="27" cy="53" r="2"/><circle cx="47" cy="53" r="2"/></svg>
           {%- else -%}
-           <img class="icon icon-hamburger" src="{{ 'coffee-cup.svg' | asset_url}}">
+           <img class="icon icon-bag" src="{{ 'coffee-cup.svg' | asset_url}}">
           {%- endif -%}
           <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}">
             <span class="cart-link__bubble-num" aria-hidden="true">
