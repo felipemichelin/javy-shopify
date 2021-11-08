@@ -958,4 +958,9 @@ span.multi-picker__label {
   display: none!important;
 }
 
+span.icon__fallback-text {
+  font-size: 12px;
+}
+
+
 }
