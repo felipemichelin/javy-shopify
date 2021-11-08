@@ -1003,6 +1003,7 @@ a.logo_swiper {
 
 
 
+
 }
 
 
@@ -1066,4 +1067,15 @@ button.js-qty__adjust.js-qty__adjust--plus {
 .cart__item--image.aos-init.aos-animate img {
   background-color: #fff6e7!important;
   border-radius: 6px;
+}
+
+.drawer__header {
+  display: flex;
+  align-content: center;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.cart-title h3 {
+  text-transform: capitalize;
+  margin-bottom: 0px!important;
 }
