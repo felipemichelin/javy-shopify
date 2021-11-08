@@ -965,3 +965,11 @@ span.icon__fallback-text {
 .quick-view__thumb-cart, .site-nav__thumb-cart {
   padding: 0 10px!important;
 }
+
+button.site-nav__thumb-button.site-nav__thumb-cart.js-toggle-slide-nav {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px!important;
+}
+
+}
