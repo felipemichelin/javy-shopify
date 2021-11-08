@@ -962,5 +962,6 @@ span.icon__fallback-text {
   font-size: 12px;
 }
 
-
+.quick-view__thumb-cart, .site-nav__thumb-cart {
+  padding: 0 10px!important;
 }
