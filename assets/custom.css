@@ -938,4 +938,11 @@ ul.no-bullets.inline-list.footer__social {
   padding: 0px!important;
 }
 
+
+.footer__social li {
+  display: flex!important;
+  align-items: center!important;
+}
+
+
 }
