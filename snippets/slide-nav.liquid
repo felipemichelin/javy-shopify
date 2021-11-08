@@ -189,19 +189,14 @@
         <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
       </a>
     {%- endif -%}
-
-
-
-
-
-
 </div>
+
+
 
 <div class="right-icons">
 
 
 <div class="currency-selector text-center" data-section-id="{{ section.id }}" data-section-type="new-nav-section">
-
       {%- form 'localization', class: 'multi-selectors site-footer__section', data-disclosure-form: '' -%}
 
 
@@ -225,19 +220,14 @@
               </ul>
               <input type="hidden" name="currency_code" value="{{ form.current_currency.iso_code }}" data-disclosure-input>
             </div>
-          </div>
       {%- endform -%}
-
 </div>
 
 
-        {%- render 'social-icons', social_class: 'footer__social' -%}
-
+{%- render 'social-icons', social_class: 'footer__social' -%}
 
 </div>
-
-
-  </div>
+</div>
 
 
 </div>
