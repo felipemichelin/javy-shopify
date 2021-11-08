@@ -1,0 +1,404 @@
+
+
+.hero {
+  position: relative;
+  z-index: 100;
+  display: -ms-grid;
+  display: grid;
+  overflow: hidden;
+  width: 100%;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -ms-grid-columns: 55% 45%;
+  grid-template-columns: 55% 45%;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+  background-color: #fff;
+}
+
+.hero-left {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: auto;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.hero-right {
+  width: auto;
+}
+
+.product-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 580px;
+  padding: 35px 55px 55px 35px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper.slider1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.next-icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin-right: 0px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 0px;
+  background-color: #000;
+  color: #fff;
+  font-size: 24px;
+}
+
+.previous-hero-slider {
+  position: relative;
+  z-index: 350;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.prev-icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin-right: 0px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 0px;
+  background-color: #000;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  color: #fff;
+  font-size: 24px;
+}
+
+.next-hero-slider {
+  position: relative;
+  z-index: 150;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.swiper-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 0px;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.swiper-slide {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  background-color: transparent;
+  text-align: left;
+}
+
+.div-block {
+  position: static;
+  width: 100%;
+  height: 720px;
+  max-width: 100%;
+}
+
+.previous-after {
+  position: absolute;
+  left: auto;
+  top: auto;
+  right: 0%;
+  bottom: 0%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.body {
+  overflow: visible;
+}
+
+.checkout-select-variant {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: visible;
+  width: 100%;
+  padding: 15px 10px 10px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid #e7e7ee;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #02044a;
+}
+
+.checkout-select-variant:hover {
+  box-shadow: 34px 34px 74px -24px rgba(56, 50, 124, 0.08);
+}
+
+.checkout-select-variant.w--current {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #000;
+}
+
+.dropdown {
+  position: relative;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 991px) {
+  .hero {
+    -ms-grid-columns: 100%;
+    grid-template-columns: 100%;
+  }
+
+  .hero-left {
+    width: 100%;
+  }
+
+  .product-info {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .div-block {
+    position: relative;
+    height: auto;
+  }
+
+  .previous-after {
+    display: none;
+  }
+
+  .dropdown {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .product-info {
+    padding-top: 0px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .product-info {
+    padding-bottom: 0px;
+  }
+
+  .swiper.slider1 {
+    position: relative;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  .next-icon {
+    left: auto;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-left: 0px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 100px;
+    background-color: hsla(0, 0%, 100%, 0.62);
+    font-size: 28px;
+  }
+
+  .previous-hero-slider {
+    display: none;
+  }
+
+  .prev-icon {
+    left: auto;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-left: 0px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 100px;
+    background-color: hsla(0, 0%, 100%, 0.62);
+    font-size: 28px;
+  }
+
+  .next-hero-slider {
+    display: none;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+  .swiper-wrapper {
+    position: relative;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  .swiper-slide {
+    width: 100%;
+  }
+
