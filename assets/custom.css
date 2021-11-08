@@ -1096,3 +1096,12 @@ button.js-qty__adjust.js-qty__adjust--plus {
 .drawer__footer.cart__footer {
   border-top: 1px solid #e1e1e1;
 }
+
+
+.btn--loading.btn--tertiary span {
+  color: #000!important;
+}
+
+.btn--loading.btn--tertiary span:after {
+  content: "olocobixo";
+}
