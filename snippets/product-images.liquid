@@ -27,8 +27,8 @@
     <div class="product__photos product__photos--{{ thumbnail_position }}">
 
       <div class="product__main-photos{% if product_image_type == 'slider' %} product__main-photos--slider{% endif %}" data-aos data-product-single-media-group>
-        <div class="product__main-photos-wrapper">
-          <div id="ProductPhotos-{{ section_id }}" class="product-slideshow" data-product-photos>
+        <div class="swiper slider1">
+          <div class="swiper-wrapper">
             {%- for media in product.media -%}
               {%- render 'media',
                 section_id: section_id,
@@ -152,8 +152,8 @@
   </script>
 {%- else -%}
   <div class="product__photos">
-    <div class="product__main-photos" style="width: 100%">
-      <div id="ProductPhotos-{{ section_id }}" class="product-slideshow">
+        <div class="swiper slider1">
+          <div class="swiper-wrapper">
         <div class="product-main-slide" data-index="{{ forloop.index0 }}">
           <a href="#">
             {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
