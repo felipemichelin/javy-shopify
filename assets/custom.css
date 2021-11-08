@@ -843,6 +843,21 @@ li.slide-nav__item.medium-up--hide {
   display: none!important;
 }
 
+button.js-toggle-submenu.slide-nav__link {
+  font-size: 18px;
+  text-align: left;
+  padding: 10px 0px;
+}
+
+.slide-nav__overflow--thumb .slide-nav__dropdown {
+  background-color: transparent!important;
+}
+
+.slide-nav__sublist-link:not(.slide-nav__sublist-header) {
+  text-align: left;
+  font-size: 18px!important;
+}
+
 }
 
 
