@@ -1124,16 +1124,10 @@ button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading span {
   border: 8px solid #0a0a0a;
   border-top-color: transparent;
   border-radius: 50%;
-}
-
-
-
-
-button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading span:after {
   animation: cart_loading_button 0.9615384615384615s linear infinite;
-  top: 50px;
-  left: 50px
 }
+
+
 
 
 
