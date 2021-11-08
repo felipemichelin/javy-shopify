@@ -27,7 +27,6 @@
 
         <div class="swiper slider1 product__main-photos{% if product_image_type == 'slider' %} product__main-photos--slider{% endif %}" data-aos data-product-single-media-group>
           <div class="swiper-wrapper product__main-photos-wrapper">
-                    <div id="ProductPhotos-{{ section_id }}" class="product-slideshow" data-product-photos>
             {%- for media in product.media -%}
               {%- render 'media',
                 section_id: section_id,
@@ -45,7 +44,6 @@
                 video_style: video_style
               -%}
             {%- endfor -%}
-            </div>
           </div>
 
                     <div class="previous-after">
