@@ -529,3 +529,7 @@ font-family: 'Gothampro'!important;
 body {
 font-family:'Gothampro'!important;
 }
+
+.product-block.product-block--header.product-single__header.small--text-center {
+  margin-top: 0px!important;
+}
