@@ -78,23 +78,23 @@ img {
 }
 
 .swiper.slider1 {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
+  position: relative!important;
+  display: -webkit-box!important;
+  display: -webkit-flex!important;
+  display: -ms-flexbox!important;
+  display: flex!important;
+  -webkit-box-orient: vertical!important;
+  -webkit-box-direction: normal!important;
+  -webkit-flex-direction: column!important;
+  -ms-flex-direction: column!important;
+  flex-direction: column!important;
+  -webkit-box-pack: end!important;
+  -webkit-justify-content: flex-end!important;
+  -ms-flex-pack: end!important;
+  justify-content: flex-end!important;
+  -webkit-align-self: center!important;
+  -ms-flex-item-align: center!important;
+  align-self: center!important;
 }
 
 .previous-hero-slider {
