@@ -670,7 +670,7 @@ a.site-nav__link.site-nav__link--icon.site-nav__link--cart.js-drawer-open-cart.j
   align-content: center!important;
 }
 
-img.medium-up--hide {
+img.small--hide {
   display: none!important;
 }
 
@@ -711,6 +711,21 @@ nav.slide-nav__wrapper {
   display: flex;
   align-content: center;
   justify-content: center;
+}
+
+
+.site-nav__icons {
+  z-index: 800;
+}
+
+.site-header {
+  position: relative;
+  padding: 0px!important;
+}
+
+.site-header__logo {
+  margin: 10px!important;
+  display: block;
 }
 
 }
