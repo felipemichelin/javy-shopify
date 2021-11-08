@@ -1199,3 +1199,9 @@ button.btn.btn--full.cart__checkout.cart__checkout--drawer {
   display: flex;
   flex-direction: column;
 }
+
+h2.rk_meta {
+  font-size: 14px!important;
+  margin-bottom: 0px!important;
+  margin-right: 5px;
+}
