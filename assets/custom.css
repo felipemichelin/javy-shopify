@@ -892,6 +892,17 @@ a.site-nav__link.site-nav__link--icon.small--hide {
     display: flex!important;
 }
 
+.left_icons {
+  width: 50%!important;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+span.icon__fallback-text {
+  margin-left: 5px;
+}
+
 
 }
 
