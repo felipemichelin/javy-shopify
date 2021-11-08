@@ -28,7 +28,9 @@
         data-has-slideshow="true"
       {% endif %}
     {% endif %}>
+    <div class="product__photos product__photos--{{ thumbnail_position }}">
 
+      <div class="product__main-photos{% if product_image_type == 'slider' %} product__main-photos--slider{% endif %}" data-aos data-product-single-media-group>
         <div class="swiper slider1">
           <div class="swiper-wrapper">
             {%- for media in product.media -%}
@@ -80,9 +82,10 @@
             </span>
           </button>
         {%- endif -%}
+      </div>
 
 
-
+    </div>
   </div>
 
   <script type="application/json" id="ModelJson-{{ section_id }}">
