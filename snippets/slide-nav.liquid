@@ -200,7 +200,7 @@
 <div class="right-icons">
 
 
-<div class="currency-selector text-center" data-section-id="{{ section.id }}" data-section-type="new-nav-section">
+<footer class="site-footer text-center" data-section-id="{{ section.id }}" data-section-type="footer-section">
 
       {%- form 'localization', class: 'multi-selectors site-footer__section', data-disclosure-form: '' -%}
 
@@ -227,7 +227,8 @@
             </div>
           </div>
       {%- endform -%}
-</div>
+
+</footer>
 
 
         {%- render 'social-icons', social_class: 'footer__social' -%}
