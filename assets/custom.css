@@ -1024,7 +1024,7 @@ button.js-qty__adjust.js-qty__adjust--plus {
 .drawer .js-qty__wrapper {
   background-color: transparent;
   border-color: currentColor;
-  max-width: 80px;
+  max-width: 65px;
   height: 25px;
 }
 
