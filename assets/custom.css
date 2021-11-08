@@ -481,6 +481,15 @@ span.swatch-title {
   
   @media only screen and (max-width:768px){
 
+    .slide-nav__overflow--thumb {
+      left: 20px;
+      right: 20px;
+      bottom: 88px;
+      bottom: calc(98px + env(safe-area-inset-bottom)*1.18)!important;
+      border-radius: 8px!important;
+  }
+
+
     span.swatch-title {
       margin-left: 10px!important;
   }
