@@ -875,11 +875,12 @@ a.slide-nav__sublist-link.slide-nav__sublist-header {
   height: 30px;
 }
 
-.icon__fallback-text {
+span.icon__fallback-text {
     display: block!important;
     width: 100%!important;
     position: relative!important;
-
+    line-height: 30px!important;
+    height:30px!important;
 }
 
 a.site-nav__link.site-nav__link--icon.small--hide {
