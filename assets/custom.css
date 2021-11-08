@@ -961,5 +961,23 @@ button.site-nav__thumb-button.site-nav__thumb-cart.js-toggle-slide-nav {
   display: none;
 }
 
+nav.slide-nav__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.general-links {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid #e1e1e1;
+}
+
+.general-links a {
+  padding: 5px 0px;
+}
 
 }
