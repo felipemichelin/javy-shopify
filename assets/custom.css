@@ -587,10 +587,7 @@ span.icon-menu-label {
   
 }
 
-.site-nav__thumb-menu {
-  display: flex!important;
-  justify-content: space-between!important;
-}
+
 
 .quick-view__thumb-cart, .site-nav__thumb-cart {
   background-color: #ffc33a!important;
@@ -1188,4 +1185,11 @@ button.btn.btn--full.cart__checkout.cart__checkout--drawer {
   height: 55px;
 
 
+}
+
+
+
+.site-nav__thumb-menu {
+  display: none;
+  justify-content: space-between;
 }
