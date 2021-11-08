@@ -653,9 +653,11 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
   display: none!important;
 }
 
-a.site-nav__link.site-nav__link--icon.site-nav__link--cart.js-drawer-open-cart.js-no-transition {
-  display: none!important;
+
+.cart-has-items .site-nav__link--cart.site-nav__link--cart {
+  background-color: transparent!important;
 }
+
 
 .site-nav--icons {
   justify-content: flex-end!important;
@@ -906,6 +908,22 @@ span.icon__fallback-text {
 .bottom_nav_slider {
   padding: 15px;
 }
+
+a.site-nav__link.site-nav__link--icon.js-modal-open-search-modal.js-no-transition {
+  display: none!important;
+}
+
+.cart-link__bubble-num {
+  display: block;
+  font-size: 8px;
+  letter-spacing: -.5px;
+  color: #fde02f;
+  color: #ffffff;
+  background-color: #c8202f;
+  border-radius: 100px;
+}
+
+
 
 
 }

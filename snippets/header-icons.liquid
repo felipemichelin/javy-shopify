@@ -13,16 +13,6 @@
       </a>
     {%- endif -%}
 
-    {%- if menu_alignment == 'left'
-       or menu_alignment == 'left-center'
-       or menu_alignment == 'right' -%}
-      <button
-        type="button"
-        class="site-nav__link site-nav__link--icon js-toggle-slide-nav{% if menu_alignment == 'left' or menu_alignment == 'left-center' or menu_alignment == 'right' %} medium-up--hide{% endif %}{% if mobile_menu_style == 'thumb' %} hide{% endif %}">
-        <img class="icon icon-hamburger" src="{{ 'hamburguer.svg' | asset_url}}">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
-      </button>
-    {%- endif -%}
 
     {%- unless settings.cart_type == 'sticky' -%}
       <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon site-nav__link--cart js-drawer-open-cart js-no-transition" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
@@ -40,5 +30,19 @@
         </span>
       </a>
     {%- endunless -%}
+
+        {%- if menu_alignment == 'left'
+       or menu_alignment == 'left-center'
+       or menu_alignment == 'right' -%}
+      <button
+        type="button"
+        class="site-nav__link site-nav__link--icon js-toggle-slide-nav{% if menu_alignment == 'left' or menu_alignment == 'left-center' or menu_alignment == 'right' %} medium-up--hide{% endif %}{% if mobile_menu_style == 'thumb' %} hide{% endif %}">
+        <img class="icon icon-hamburger" src="{{ 'hamburguer.svg' | asset_url}}">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+      </button>
+    {%- endif -%}
+
+
+
   </div>
 </div>
