@@ -905,6 +905,7 @@ span.icon__fallback-text {
 
 .bottom_nav_slider {
   padding: 15px;
+  display:flex;
 }
 
 
