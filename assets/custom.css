@@ -1176,9 +1176,16 @@ display: none;
 
 
 .btn {
-  height: 55px;
   font-weight: 600!important;
   letter-spacing: 1.5px!important;
   
 }
 
+
+
+
+button.btn.btn--full.cart__checkout.cart__checkout--drawer {
+  height: 55px;
+
+
+}
