@@ -753,7 +753,7 @@ nav.slide-nav__wrapper {
 }
 
 .slide-nav__overflow--thumb.js-menu--is-open {
-  background-color: #fff6e7!important;
+  background-color: #fff!important;
 }
 
 nav.slide-nav__wrapper {
@@ -791,8 +791,8 @@ button.btn.site-nav__thumb-button.js-toggle-slide-nav {
 
 .bottom_nav_slider {
   height: auto!important;
-  margin-bottom: 88px;
-  border-bottom: 1px solid #94670036;
+  margin-bottom: 78px;
+  border-top: 1px solid #94670036;
 }
 
 nav.slide-nav__wrapper {
