@@ -1,4 +1,8 @@
 
+.product-image-main {
+  width: 100%!important;
+}
+
 
 .hero {
   position: relative;
