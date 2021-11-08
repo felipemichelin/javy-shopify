@@ -1177,4 +1177,8 @@ display: none;
 
 .btn {
   height: 55px;
+  font-weight: 600!important;
+  letter-spacing: 1.5px!important;
+  
 }
+
