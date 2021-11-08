@@ -822,6 +822,12 @@ a.slide-nav__link {
   text-align: left;
 }
 
+ul#SlideNav {
+  width: 100%!important;
+  padding-left: 20px!important;
+}
+
+
 }
 
 
