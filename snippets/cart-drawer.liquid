@@ -69,7 +69,7 @@
         {%- endif -%}
 
         <button type="submit" class="btn btn--full cart__checkout cart__checkout--drawer" name="checkout" data-terms-required="{{ settings.cart_terms_conditions_enable }}">
-          <span>{{ 'cart.general.checkout' | t }}</span>
+          <span class="checkout-text">{{ 'cart.general.checkout' | t }}</span>
         </button>
 
         {%- if additional_checkout_buttons and settings.cart_additional_buttons -%}
