@@ -8,6 +8,10 @@
 <div id="CartDrawer" class="drawer drawer--cart{% if static_cart %} drawer--cart--static{% endif %}" data-drawer="true">
   <form id="CartDrawerForm" action="{{ routes.cart_url }}" method="post" novalidate class="drawer__contents{% if cart.items.size == 0 %} cart--empty{% endif %}">
     <div class="drawer__header">
+
+    <div class="cart-title">
+    <h3>Your Shopping Cart</h3>
+    </div>
       <div class="drawer__close text-right">
         <button type="button" class="drawer__close-button js-drawer-close">
           <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
