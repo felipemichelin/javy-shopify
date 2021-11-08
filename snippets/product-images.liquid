@@ -51,6 +51,18 @@
               -%}
             {%- endfor -%}
           </div>
+
+                    <div class="previous-after">
+            <a href="#" class="previous-hero-slider w-inline-block">
+              <div class="prev-icon w-icon-slider-right"></div>
+            </a>
+            <a href="#" class="next-hero-slider w-inline-block">
+              <div class="next-icon w-icon-slider-right"></div>
+            </a>
+          </div>
+          <div class="swiper-pagination"></div>
+
+          
         </div>
 
         {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
