@@ -47,8 +47,10 @@
   <div class="page-content">
     <div class="page-width">
 
-      <div class="grid">
-        <div class="grid__item {{ product_image_width }}">
+      <div class="hero">
+
+      <div class="hero-left">
+        <div class="div-block">
           {%- render 'product-images',
             section_id: section_id,
             product: product,
@@ -61,8 +63,9 @@
             video_style: video_style
           -%}
         </div>
+        </div>
 
-        <div class="grid__item {{ product_description_width }}{% if product_image_type == 'stacked' %} product-single__sticky{% endif %}">
+        <div id="purchase_cards" class="hero-right">
           <div class="product-single__meta">
             <div class="product-block product-block--header product-single__header small--text-center">
               {%- if settings.vendor_enable -%}
