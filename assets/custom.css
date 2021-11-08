@@ -875,6 +875,8 @@ span.icon__fallback-text {
       display: flex;
       align-items: flex-start;
       align-content: flex-start;
+      flex-direction: column;
+      height: 100%!important;
 }
 
 
@@ -979,6 +981,10 @@ nav.slide-nav__wrapper {
 
 nav.slide-nav__wrapper {
   margin-top: 25px;
+}
+
+.general-links {
+  width: 100%!important;
 }
 
 }
