@@ -904,9 +904,7 @@ span.icon__fallback-text {
   padding: 15px;
 }
 
-a.site-nav__link.site-nav__link--icon.js-modal-open-search-modal.js-no-transition {
-  display: none!important;
-}
+
 
 .cart-link__bubble-num {
   display: block;
