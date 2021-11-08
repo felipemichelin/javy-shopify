@@ -728,6 +728,16 @@ nav.slide-nav__wrapper {
   display: block;
 }
 
+.site-header__logo a {
+  max-width: 380px!important;
+}
+
+.site-header__logo {
+  margin: 10px!important;
+  display: block;
+  width: 130px!important;
+}
+
 }
 
 
