@@ -787,7 +787,7 @@ ul#SlideNav {
 }
 
 .main-links {
-  padding: 5px 0px 5px 10px;
+  padding: 10px 0px 5px 5px;
   width: 100%;
   font-size: 14px;
   display: flex;
@@ -986,5 +986,10 @@ nav.slide-nav__wrapper {
 .general-links {
   width: 100%!important;
 }
+
+a.logo_swiper {
+  width: 40px!important;
+}
+
 
 }
