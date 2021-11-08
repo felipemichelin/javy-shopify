@@ -19,7 +19,8 @@
       <button
         type="button"
         class="site-nav__link site-nav__link--icon js-toggle-slide-nav{% if menu_alignment == 'left' or menu_alignment == 'left-center' or menu_alignment == 'right' %} medium-up--hide{% endif %}{% if mobile_menu_style == 'thumb' %} hide{% endif %}">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 64 64"><path d="M7 15h51M7 32h43M7 49h51"/></svg>
+{{ 'hamburguer.svg' | asset_url}}
+
         <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
       </button>
     {%- endif -%}
