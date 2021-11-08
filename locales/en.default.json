@@ -5,7 +5,7 @@
       "close_modal": "Close (esc)",
       "close": "Close",
       "learn_more": "Learn more",
-      "loading": "Loading"
+      "loading": ""
     },
     "meta": {
       "tags": "Tagged \"{{ tags }}\"",
@@ -115,7 +115,7 @@
       "discounts": "Discounts",
       "shipping_at_checkout": "Shipping, taxes, and discount codes calculated at checkout.",
       "update": "Update cart",
-      "checkout": "Proceeed to Checkout →",
+      "checkout": "Checkout →",
       "empty": "Your cart is currently empty.",
       "continue_shopping": "Continue shopping",
       "continue_browsing_html": "Continue browsing <a href='{{ url }}'>here</a>.",
