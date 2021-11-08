@@ -10867,3 +10867,8 @@ h2.rk_heading {
   font-size: 18px!important;
   text-transform: capitalize!important;
 }
+
+h2.okeReviews-review-main-heading {
+  font-weight: 800!important;
+  font-family: Gothampro!important;
+}
