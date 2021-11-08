@@ -1203,5 +1203,18 @@ button.btn.btn--full.cart__checkout.cart__checkout--drawer {
 h2.rk_meta {
   font-size: 14px!important;
   margin-bottom: 0px!important;
-  margin-right: 5px;
+  margin-right: 5px!important;
+}
+
+#rk_parent .rk_modern .rk_container .rk_details .rk_column {
+  padding-bottom: 0!important;
+  flex-grow: 1!important;
+  flex: auto!important;
+  background-color: #fde02f!important;
+  text-align: center!important;
+  padding: 10px!important;
+  display: flex!important;
+  flex-direction: row!important;
+  align-content: center!important;
+  align-items: center!important;
 }
