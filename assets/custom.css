@@ -486,7 +486,7 @@ span.swatch-title {
       right: 20px;
       bottom: 88px;
       bottom: calc(98px + env(safe-area-inset-bottom)*1.18)!important;
-      border-radius: 8px!important;
+      border-radius: 0px!important;
   }
 
 
@@ -747,6 +747,11 @@ nav.slide-nav__wrapper {
 
 .header-item.header-item--icons.small--hide {
   z-index: 800!important;
+}
+
+.header-item.header-item--icons.small--hide {
+  position: absolute;
+  right: 20px;
 }
 
 }
