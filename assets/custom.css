@@ -865,6 +865,10 @@ button.js-toggle-submenu.slide-nav__link {
   border-bottom: 1px solid #e8d8b6;
 }
 
+a.slide-nav__sublist-link.slide-nav__sublist-header {
+  font-size: 18px!important;
+  text-align: left!important;
+}
 
 }
 
