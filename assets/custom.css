@@ -1088,3 +1088,7 @@ button.js-qty__adjust.js-qty__adjust--plus {
   font-weight: 500;
   text-transform: uppercase;
 }
+
+.drawer__footer.cart__footer {
+  border-top: 1px solid #e1e1e1;
+}
