@@ -688,7 +688,7 @@ img.small--hide {
   max-height:100%!important;
 }
 .site-nav__thumb-menu {
-  z-index: 50!important;
+  z-index: 1000!important;
 }
 
 .announcement {
@@ -924,6 +924,9 @@ a.site-nav__link.site-nav__link--icon.js-modal-open-search-modal.js-no-transitio
 }
 
 
+.slide-nav__overflow.slide-nav__overflow--thumb.is-transitioning.js-menu--is-open {
+  z-index: 900!important;
+}
 
 
 }
