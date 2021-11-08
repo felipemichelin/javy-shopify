@@ -23,6 +23,11 @@ img {
   background-color: #fff;
 }
 
+img.lazyautosizes.lazyloaded {
+  background-color:#fff6e7!important;
+}
+
+
 .hero-left {
   position: relative;
   display: -webkit-box;
