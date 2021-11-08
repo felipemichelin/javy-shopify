@@ -684,7 +684,7 @@ img.medium-up--hide {
   width: 100%!important;
   left: 0px;
   right: 0px;
-  height: 100vh;
+  height: 100%!important;
   bottom: 0px!important;
   padding-top: 15px!important;
   max-height:100%!important;
