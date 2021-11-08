@@ -397,24 +397,8 @@ span.swatch-title {
   span.product__price.sale-price {
   font-weight: 800;
 }
-  
-  button.js-qty__adjust.js-qty__adjust--plus {
-  border: 2px solid #000;
-}
-  
-  button.js-qty__adjust.js-qty__adjust--minus {
-        border: 2px solid #000;
 
-}
-  
-  .drawer .js-qty__num {
-  border-top: 2px solid #000;
-}
-  
-  .js-qty__adjust {
-  padding: 0 8px;
 
-}
   
   a.cart__product-name {
   font-size: 14px;
