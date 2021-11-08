@@ -481,6 +481,11 @@ span.swatch-title {
   
   @media only screen and (max-width:768px){
 
+    span.swatch-title {
+      margin-left: 10px!important;
+  }
+
+
     h1.h1.product-single__title {
       text-align: left;
     }
@@ -494,17 +499,37 @@ span.swatch-title {
 }
 
 .swatch-title .unit_price {
-  font-size: 10px!important;
+  font-size: 12px!important;
 
   }
 
+  .check-circle-2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 14px;
+    height: 14px;
+}
+
+.check-white-2 {
+  width: 8px!important;
+}
   .swatch-title .title {
-    font-size: 12px!important;
+    font-size: 13px!important;
+}
+
+
+.check-wrapper-2 {
+  position: absolute;
+  left: 5px!important;
 }
 
 .variant-input-wrap label {
   padding: 15px 0px 10px 0px!important;
 }
+
+
     
 
 
