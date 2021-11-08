@@ -1043,10 +1043,6 @@ button.js-qty__adjust.js-qty__adjust--plus {
   padding: 0 6px;
 }
 
-.cart__item--details {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .cart__item--name {
   width: 70%;
