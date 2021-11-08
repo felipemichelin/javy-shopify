@@ -933,4 +933,9 @@ ul.no-bullets.inline-list.footer__social {
 }
 
 
+.footer__social a {
+  border: 0px!important;
+  padding: 0px!important;
+}
+
 }
