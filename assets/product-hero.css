@@ -180,7 +180,7 @@ img {
 .hero-internal {
   position: static;
   width: 100%;
-  min-height: 720px;
+  height: 100%;
   max-width: 100%;
 }
 
