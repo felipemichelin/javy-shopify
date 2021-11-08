@@ -945,4 +945,12 @@ ul.no-bullets.inline-list.footer__social {
 }
 
 
+
+.right-icons {
+  width: 50%!important;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
 }
