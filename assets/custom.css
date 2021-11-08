@@ -298,7 +298,6 @@ height: 45px;
   
   .check-white-2 {
   position: relative;
-  z-index: 400;
   width: 10px;    
     -o-object-fit: fill;
   object-fit: fill;
