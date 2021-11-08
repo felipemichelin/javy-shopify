@@ -649,9 +649,7 @@ a.site-nav__link.site-nav__link--icon.small--hide {
   display: none!important;
 }
 
-a.site-nav__link.site-nav__link--icon.js-modal-open-search-modal.js-no-transition {
-  display: none!important;
-}
+
 
 .header-item.header-item--navigation.text-center.small--hide {
   display: none!important;
@@ -781,6 +779,31 @@ nav.slide-nav__wrapper {
 
 nav.slide-nav__wrapper {
   background-color: transparent!important;
+}
+a.site-nav__thumb-cart.js-drawer-open-cart.js-no-transition {
+  height: 50px!important;
+  width: 50px!important;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+button.btn.site-nav__thumb-button.js-toggle-slide-nav {
+  width: 50px!important;
+  height: 50px!important;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.btn.site-nav__thumb-button .icon {
+  width: 20px;
+  height: 20px;
+}
+
+
+.site-nav__icons {
+  display: flex!important;
 }
 
 }
