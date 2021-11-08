@@ -812,7 +812,9 @@ button.btn.site-nav__thumb-button.js-toggle-slide-nav {
 }
 
 .bottom_nav_slider {
-  height: 20%!important;
+  height: auto!important;
+  margin-bottom: 88px;
+  border-bottom: 1px solid #94670036;
 }
 
 nav.slide-nav__wrapper {
