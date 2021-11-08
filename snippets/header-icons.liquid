@@ -7,11 +7,7 @@
       </a>
     {%- endif -%}
 
-    {%- if section.settings.header_search_enable -%}
-      <a href="{{ routes.search_url }}" class="site-nav__link site-nav__link--icon js-modal-open-search-modal js-no-transition{% if menu_alignment == 'center' or menu_alignment == 'center-split' %} medium-up--hide{% endif %}">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/></svg>
-      </a>
-    {%- endif -%}
+
 
 
     {%- unless settings.cart_type == 'sticky' -%}
