@@ -48,7 +48,7 @@
     "product_image_type": "slider",
     "cart_type": "drawer",
     "cart_icon": "bag",
-    "cart_additional_buttons": true,
+    "cart_additional_buttons": false,
     "social_instagram_link": "dfsg.com\/sdfsdf",
     "social_facebook_link": "dfsg.com\/sdfsdf",
     "social_twitter_link": "",
