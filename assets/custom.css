@@ -701,6 +701,11 @@ img.medium-up--hide {
   z-index: 15!important;
 }
 
+div#CartDrawer {
+  z-index: 60!important;
+}
+
+
 }
 
 
