@@ -68,8 +68,21 @@
   endif
 -%}
 
+
+
+
+
+code
+
+      <div class="div-block">
+        <div class="swiper slider1">
+          <div class="swiper-wrapper">
+
+
+
+
 <div
-  class="product-main-slide{% if is_featured %} starting-slide{% else %} secondary-slide{% endif %}"
+  class="swiper-slide{% if is_featured %} starting-slide{% else %} secondary-slide{% endif %}"
   data-product-photo
   data-index="{{ loopIndex0 }}"
   data-id="{{ media.id }}"
@@ -193,3 +206,29 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+          </div>
+          <div class="previous-after">
+            <a href="#" class="previous-hero-slider w-inline-block">
+              <div class="prev-icon w-icon-slider-right"></div>
+            </a>
+            <a href="#" class="next-hero-slider w-inline-block">
+              <div class="next-icon w-icon-slider-right"></div>
+            </a>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+

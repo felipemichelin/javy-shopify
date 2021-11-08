@@ -991,5 +991,9 @@ a.logo_swiper {
   width: 40px!important;
 }
 
+.slide-nav__overflow--thumb.js-menu--is-open {
+  transition: background-color 0s ease 0s!important;
+}
+
 
 }
