@@ -741,6 +741,7 @@ nav.slide-nav__wrapper {
   display: flex;
   align-content: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .header-item.header-item--icons.small--hide {
