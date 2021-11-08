@@ -49,7 +49,7 @@
 
 
 
-
+      {% if product.type == "Coffee Concentrate" %}
                         <div class="swiper-slide lozad">
               <div class="container-hero-top _30-percent">
                 <div class="benefits-blocks">
@@ -152,8 +152,7 @@
               </div><img src="{{ 'new-imgs_0000_Layer-6.jpg' | asset_url}}" alt="Javy and a Delicious Iced Coffee" class="hero-image swiper-lazy">
               <div class="swiper-lazy-preloader"></div>
             </div>
-
-
+{% endif %}
           </div>
 
 
