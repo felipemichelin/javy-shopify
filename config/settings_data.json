@@ -101,8 +101,8 @@
           "show_currency_flags": true,
           "show_social_icons": true,
           "menu": "footer",
-          "show_payment_icons": false,
-          "show_copyright": false,
+          "show_payment_icons": true,
+          "show_copyright": true,
           "copyright_text": ""
         }
       },
