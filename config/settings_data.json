@@ -76,7 +76,7 @@
         "settings": {
           "header_style": "bar",
           "main_menu_alignment": "left-center",
-          "sticky_index": true,
+          "sticky_index": false,
           "sticky_collection": false,
           "header_search_enable": true,
           "logo": "shopify:\/\/shop_images\/logo_5d731a41-68f2-4c5e-8e47-f5bff2e78197.png",
