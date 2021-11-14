@@ -1,1 +1,61 @@
-{"sections":{"16359500661ec14ad1":{"type":"slideshow","blocks":{"16359500661ec14ad1-0":{"type":"image","settings":{"title":"Time to make your fall favorites","title_size":58,"subheading":"Javy makes specialty coffee concentrates that are packed with delicious flavor. No more coffee makers, brewing equipment, or time wasted -- just tasty cold brew coffee anyway you like it, at the drop of a hat.","link":"","link_text":"SHOP NOW","color_accent":"#000000","text_align":"vertical-center horizontal-left","image":"shopify:\/\/shop_images\/hero-fall-new.jpg","image_mobile":"shopify:\/\/shop_images\/javy-for-mobile.jpg","focal_point":"20% 90%"}}},"block_order":["16359500661ec14ad1-0"],"settings":{"style":"arrows","desktop_size":0,"mobile_size":40,"autoplay":false,"autoplay_speed":7}},"163597773001c431d6":{"type":"advanced-content","blocks":{"163597773001c431d6-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/microdose-image.png","link":"","width":"50%","alignment":"center"}},"163597773001c431d6-1":{"type":"liquid","settings":{"code":"<h2 class=\"sections_h2\">Coffee Concentrates<\/h2><p>Instantly craft any style coffee that you want. Simply add 1-2 tsp of Microdose and enjoy your favorite drink.\n\n<\/p>\n\n<a href=\"\/collections\/coffee-concentrates\" class=\"btn\">\n              Try Javy Today\n            <\/a>","width":"50%","alignment":"center"}}},"block_order":["163597773001c431d6-0","163597773001c431d6-1"],"settings":{"full_width":false,"space_around":true,"alt":false}},"163597785439fde15d":{"type":"text-and-image","settings":{"image":"shopify:\/\/shop_images\/javynew_205f0e0e-eeae-4481-8ae9-7d7d17d25f8a.png","image2":"shopify:\/\/shop_images\/served_c7b72cff-ec82-49be-bd41-4dd72482582c.jpg","image_width":700,"subtitle":"","title":"DELICIOUS FLAVOR PROFILE","text":"<p>No flavors are extracted and no additives are infused during our proprietary brewing process to ensure a pure coffee flavor with each and every pour.<br\/><\/p>","button_label":"","button_link":"","button_style":"primary","align_text":"center","layout":"right","alt":false}},"163597854783535ff7":{"type":"text-and-image","settings":{"image":"shopify:\/\/shop_images\/consistent-flavor_71f91969-ca96-40fd-a52c-513cd52b7d2d.jpg","image2":"shopify:\/\/shop_images\/served_c7b72cff-ec82-49be-bd41-4dd72482582c.jpg","image_width":700,"subtitle":"","title":"SERVED ANYWAY YOU LIKE IT","text":"<p>The drink of your choice is right at your fingertips because our concentrates are crafted for you to conveniently make all styles of hot or cold coffees.<\/p>","button_label":"","button_link":"","button_style":"primary","align_text":"center","layout":"left","alt":true}},"163597863230895169":{"type":"text-and-image","settings":{"image":"shopify:\/\/shop_images\/javynew_205f0e0e-eeae-4481-8ae9-7d7d17d25f8a.png","image2":"shopify:\/\/shop_images\/consistent-flavor_71f91969-ca96-40fd-a52c-513cd52b7d2d.jpg","image_width":700,"subtitle":"","title":"PUREST FORM OF COFFEE","text":"<p>While our concentrates are complex to make the ingredients are just coffee and water. There are no additives, sugars, or harmful chemicals - just pure flavorful coffee.<\/p>","button_label":"","button_link":"","button_style":"primary","align_text":"center","layout":"right","alt":false}},"16359549315b29ee06":{"type":"hero-video","settings":{"title":"fuss-free coffee \nanyway you like it!","title_size":80,"subheading":"","link_text":"","link":"","color_accent":"rgba(0,0,0,0)","text_align":"vertical-center horizontal-center","video_url":"https:\/\/cdn.shopify.com\/s\/files\/1\/0435\/8216\/1057\/files\/video-section-transcode.mp4","section_height":"100vh","mobile_height":"500px"}},"featured-collections":{"type":"featured-collections","disabled":true,"blocks":{"featured-collections-0":{"type":"collection","settings":{"collection":"","focal_point":"center center"}},"featured-collections-1":{"type":"collection","settings":{"collection":"","focal_point":"center center"}},"featured-collections-2":{"type":"collection","settings":{"collection":"","focal_point":"center center"}},"featured-collections-3":{"type":"collection","settings":{"collection":"","focal_point":"center center"}}},"block_order":["featured-collections-0","featured-collections-1","featured-collections-2","featured-collections-3"],"settings":{"title":"Shop all","alt":false}},"featured-collection":{"type":"featured-collection","settings":{"title":"COFFEE CONCENTRATES","description":"Making delicious coffee at home or on-the-go has only become more of a hassle. Javy reinvented the coffee experience to be easy, affordable, and extremely tasty!","home_featured_products":"coffee-concentrates","rows":1,"per_row_desktop":4,"per_row_mobile":"2","view_all":true,"alt":false}},"163595010444ddb0f5":{"type":"featured-collection","settings":{"title":"COFFEE UPGRADES","description":"","home_featured_products":"coffee-upgrades-v2","rows":2,"per_row_desktop":4,"per_row_mobile":"2","view_all":true,"alt":false}},"featured-collection-slider":{"type":"featured-collection-slider","disabled":true,"settings":{"title":"Featured collection","description":"With infinite scrolling","home_featured_products":"","per_row":"small","alt":false}},"rich-text":{"type":"rich-text","disabled":true,"blocks":{"heading":{"type":"heading","settings":{"title":"Rich text"}},"text":{"type":"text","settings":{"enlarge_text":false,"text":"<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"}}},"block_order":["heading","text"],"settings":{"align_text":"center","narrow_column":true,"alt":false}},"hero-animated":{"type":"hero-animated","disabled":true,"blocks":{"hero-animated-0":{"type":"image","settings":{"focal_point":"center center"}},"hero-animated-1":{"type":"image","settings":{"focal_point":"center center"}}},"block_order":["hero-animated-0","hero-animated-1"],"settings":{"style":"gif","title":"Make an impression","title_size":80,"subheading":"With fading or GIF-style animated images","link":"","link_text":"Optional button","color_accent":"rgba(0,0,0,0)","text_align":"vertical-center horizontal-center","desktop_size":0,"mobile_size":0}},"slideshow":{"type":"slideshow","disabled":true,"blocks":{"slideshow-0":{"type":"image","settings":{"title":"Two line\nslide title.","title_size":70,"subheading":"And an optional subheading","link":"","link_text":"Optional button","color_accent":"rgba(0,0,0,0)","text_align":"vertical-bottom horizontal-left","focal_point":"center center"}}},"block_order":["slideshow-0"],"settings":{"style":"arrows","desktop_size":0,"mobile_size":0,"autoplay":false,"autoplay_speed":7}},"text-and-image":{"type":"text-and-image","disabled":true,"settings":{"image_width":700,"subtitle":"","title":"Image with text","text":"<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>","button_label":"Our story","button_link":"","button_style":"secondary","align_text":"center","layout":"right","alt":false}},"text-and-image-2":{"type":"text-and-image","disabled":true,"settings":{"image_width":700,"subtitle":"","title":"Image with text","text":"<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>","button_label":"Contact us","button_link":"","button_style":"secondary","align_text":"center","layout":"left","alt":false}},"marquee":{"type":"marquee","disabled":true,"settings":{"text":"Follow us for monthly apparel giveaways","link":"","text_size":36,"text_spacing":true,"color_scheme":"button","direction":"left","speed":"normal"}},"16359549338fe9a51a":{"type":"blog-posts","settings":{"title":"MAKE THE MOST DELICIOUS COFFEE","blog":"recipes","post_limit":3,"blog_show_tags":false,"blog_show_date":false,"blog_show_comments":false,"blog_show_author":false,"blog_show_excerpt":false,"blog_image_size":"landscape","view_all":true,"alt":false}},"16359771323de55d56":{"type":"featured-product","disabled":true,"blocks":{"c78bbb47-9b0d-46b8-80f4-635db7c4303e":{"type":"shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/star-rating\/bb689e69-ea70-4661-8fb7-ad24a2e23c29","settings":{}},"16359771323de55d56-0":{"type":"price","settings":{}},"16359771323de55d56-1":{"type":"description","disabled":true,"settings":{"is_tab":false}},"16359771323de55d56-2":{"type":"variant_picker","settings":{"variant_labels":true,"picker_type":"button","color_swatches":false}},"16359771323de55d56-3":{"type":"buy_buttons","settings":{"show_dynamic_checkout":true,"surface_pickup_enable":true}}},"block_order":["c78bbb47-9b0d-46b8-80f4-635db7c4303e","16359771323de55d56-0","16359771323de55d56-1","16359771323de55d56-2","16359771323de55d56-3"],"settings":{"featured_product":"javy-coffee","product_image_size":"large","product_image_type":"slider","product_zoom_enable":false,"enable_video_looping":true,"product_video_style":"muted","sku_enable":false}}},"order":["16359500661ec14ad1","163597773001c431d6","163597785439fde15d","163597854783535ff7","163597863230895169","16359549315b29ee06","featured-collections","featured-collection","163595010444ddb0f5","featured-collection-slider","rich-text","hero-animated","slideshow","text-and-image","text-and-image-2","marquee","16359549338fe9a51a","16359771323de55d56"]}
+{
+  "sections": {
+    "16359771323de55d56": {
+      "type": "featured-product",
+      "disabled": true,
+      "blocks": {
+        "c78bbb47-9b0d-46b8-80f4-635db7c4303e": {
+          "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/star-rating\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+          }
+        },
+        "16359771323de55d56-0": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "16359771323de55d56-1": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "16359771323de55d56-2": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": false
+          }
+        },
+        "16359771323de55d56-3": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true
+          }
+        }
+      },
+      "block_order": [
+        "c78bbb47-9b0d-46b8-80f4-635db7c4303e",
+        "16359771323de55d56-0",
+        "16359771323de55d56-1",
+        "16359771323de55d56-2",
+        "16359771323de55d56-3"
+      ],
+      "settings": {
+        "featured_product": "javy-coffee",
+        "product_image_size": "large",
+        "product_image_type": "slider",
+        "product_zoom_enable": false,
+        "enable_video_looping": true,
+        "product_video_style": "muted",
+        "sku_enable": false
+      }
+    }
+  },
+  "order": [
+    "16359771323de55d56"
+  ]
+}
