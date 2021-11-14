@@ -1,3 +1,7 @@
+h3 {
+  text-transform: inherit!important;
+}
+
 
 .swiper .slider1 .swiper-slide img {
   display: block !important;
