@@ -1,0 +1,123 @@
+
+.swiper .slider1 .swiper-slide img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper.slider3.swiper-slide.swiper-slide-active img.flavor-mob {
+  transform: scale(1.4);
+}
+.swiper-slide .r_recipe_link img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #fde02f;
+  border: 0px;
+}
+.swiper-pagination-bullet {
+  width: 8px;
+  border: 1px solid #000;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+}
+.front_bottle {
+  animation: coffeeFront 6s cubic-bezier(0.32, 0.01, 0.58, 1) infinite;
+  /* position: absolute; */
+  /* left: 0; */
+  /* bottom: 0; */
+}
+.bean_01 {
+  animation: objectOne 6s cubic-bezier(0.32, 0.01, 0.58, 1) infinite;
+  /* position: absolute; */
+  /* left: 0; */
+  /* bottom: 0; */
+}
+.bean_01_right {
+  animation: objectOne_right 6s cubic-bezier(0.32, 0.01, 0.58, 1) infinite;
+  /* position: absolute; */
+  /* left: 0; */
+  /* bottom: 0; */
+}
+.bean_02 {
+  animation: objectTwo 6s cubic-bezier(0.32, 0.01, 0.58, 1) infinite;
+  /* position: absolute; */
+  /* left: 0; */
+  /* bottom: 0; */
+}
+.back_bottle {
+  animation: coffeeBack 6s cubic-bezier(0.32, 0.01, 0.58, 1) infinite;
+  /* position: absolute; */
+  /* left: 0; */
+  /* bottom: 0; */
+}
+@keyframes coffeeFront {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.05);
+  }
+}
+@keyframes objectOne {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+@keyframes objectOne_right {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+@keyframes objectTwo {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+@keyframes coffeeBack {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
