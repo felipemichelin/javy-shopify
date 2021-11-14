@@ -1226,3 +1226,9 @@ p#rk_rating_thanks {
   white-space: normal;
   margin-bottom: 5px!important;
 }
+
+
+.currency-selector.text-center {
+  display: flex;
+  align-items: center;
+}
