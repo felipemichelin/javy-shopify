@@ -16,8 +16,10 @@ h3 {
 
 .bg_flavor_mobile {
   z-index: 1;
+}
 
-
+.div-block-3 {
+  z-index: 1;
 }
 
 .site-header--sticky {
