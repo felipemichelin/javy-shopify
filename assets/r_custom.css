@@ -7,6 +7,32 @@ h3 {
 }
 
 
+.site-header--sticky {
+  z-index: 4000;
+}
+
+
+.site-nav__thumb-menu {
+  z-index: 4000;
+}
+
+.slide-nav__overflow--thumb {
+  z-index: 3000;
+}
+
+@media only screen and (max-width: 768px) {
+div#CartDrawer {
+    z-index: 5000!important;
+}
+}
+
+div#CartDrawer {
+  height: 100%!important;
+}
+
+
+
+
 .swiper .slider1 .swiper-slide img {
   display: block !important;
   width: 100% !important;
