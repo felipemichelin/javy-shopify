@@ -1,59 +1,5 @@
 {
   "sections": {
-    "16359771323de55d56": {
-      "type": "featured-product",
-      "disabled": true,
-      "blocks": {
-        "c78bbb47-9b0d-46b8-80f4-635db7c4303e": {
-          "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/star-rating\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "settings": {
-          }
-        },
-        "16359771323de55d56-0": {
-          "type": "price",
-          "settings": {
-          }
-        },
-        "16359771323de55d56-1": {
-          "type": "description",
-          "disabled": true,
-          "settings": {
-            "is_tab": false
-          }
-        },
-        "16359771323de55d56-2": {
-          "type": "variant_picker",
-          "settings": {
-            "variant_labels": true,
-            "picker_type": "button",
-            "color_swatches": false
-          }
-        },
-        "16359771323de55d56-3": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "surface_pickup_enable": true
-          }
-        }
-      },
-      "block_order": [
-        "c78bbb47-9b0d-46b8-80f4-635db7c4303e",
-        "16359771323de55d56-0",
-        "16359771323de55d56-1",
-        "16359771323de55d56-2",
-        "16359771323de55d56-3"
-      ],
-      "settings": {
-        "featured_product": "javy-coffee",
-        "product_image_size": "large",
-        "product_image_type": "slider",
-        "product_zoom_enable": false,
-        "enable_video_looping": true,
-        "product_video_style": "muted",
-        "sku_enable": false
-      }
-    },
     "1636926059f853904a": {
       "type": "r_hero",
       "blocks": {
@@ -77,15 +23,10 @@
         "16369260596c729a87-1"
       ],
       "settings": {
-        "title": "Custom Hero",
-        "align_text": "center",
-        "round_images": true,
-        "alt": false
       }
     }
   },
   "order": [
-    "16359771323de55d56",
     "1636926059f853904a"
   ]
 }
