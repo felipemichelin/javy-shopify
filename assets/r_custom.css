@@ -28,6 +28,7 @@ div#CartDrawer {
 
 div#CartDrawer {
   height: 100%!important;
+  z-index: 5000;
 }
 
 
