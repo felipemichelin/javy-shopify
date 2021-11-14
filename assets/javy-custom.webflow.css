@@ -193,7 +193,7 @@ p {
   -ms-flex-align: center;
   align-items: center;
   background-color: #fcc83a;
-  background-image: url('../images/bg_hero_desk.jpg');
+  background-image: url('https://cdn.shopify.com/s/files/1/0435/8216/1057/t/28/assets/bg_hero_desk.jpg?v=1636925676');
   background-position: 100% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2755,7 +2755,7 @@ p {
     -ms-flex-align: start;
     align-items: flex-start;
     background-color: #fcc83a;
-    background-image: url('../images/bg_hero_mob.jpg');
+    background-image: url('https://cdn.shopify.com/s/files/1/0435/8216/1057/t/28/assets/bg_hero_mob.jpg?v=1636925678');
     background-position: 50% 100%;
     background-size: contain;
     background-repeat: no-repeat;
@@ -3922,7 +3922,7 @@ p {
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
-    background-image: url('../images/mob_smaller.jpg');
+    background-image: url('https://cdn.shopify.com/s/files/1/0435/8216/1057/t/28/assets/mob_smaller.jpg?v=1636925702');
     background-position: 50% 100%;
     background-size: contain;
     background-repeat: no-repeat;
