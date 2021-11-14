@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 199.1 199.1" style="enable-background:new 0 0 199.1 199.1;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FCDF2F;}
-	.st1{fill:#020200;}
+	.st0{fill:#010101;}
 </style>
-<g>
-	<circle class="st0" cx="17.5" cy="17.5" r="17.5"/>
-	<path class="st1" d="M17.5,6.3c0.4,1.6,0.8,3.1,1.1,4.5c1,4,2,8,3,12.1c0.7,2.8-1.5,5.4-4.4,5.3c-2.6-0.1-4.5-2.6-3.9-5.2
-		C14.7,17.4,16.1,12,17.5,6.3z"/>
-</g>
+<path class="st0" d="M115,112.4l-15-61.2l-15.8,61c-2.6,9.9,4.9,19.6,15.3,19.7C109.8,131.9,117.4,122.3,115,112.4"/>
 </svg>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="80px" height="14px" viewBox="0 0 80 14" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="rating-stars">
+    <g id="Rating-star" transform="translate(5.6665783E-13 0.0004375)">
+      <path d="M9.04563 4.21094L6.90111 0L4.75308 4.21094L0 4.92188L3.45231 8.23734L2.56989 13.0088L6.90114 10.7734L11.2289 13.0088L10.35 8.23734L13.7988 4.92188L9.04563 4.21094Z" transform="matrix(1 0 0 1 -8.881784E-15 -1.9539925E-13)" id="Fill-1" fill="#FFC72E" fill-rule="evenodd" stroke="none" />
+    </g>
+    <g id="Rating-star" transform="translate(16.46361 0.0004375)">
+      <path d="M9.04333 4.21094L6.89935 0L4.75187 4.21094L0 4.92188L3.45143 8.23734L2.56923 13.0088L6.89938 10.7734L11.226 13.0088L10.3473 8.23734L13.7953 4.92188L9.04333 4.21094Z" transform="matrix(1 0 0 1 -8.881784E-15 -1.9539925E-13)" id="Fill-1" fill="#FFC72E" fill-rule="evenodd" stroke="none" />
+    </g>
+    <g id="Rating-star" transform="translate(32.92371 0.0004375)">
+      <path d="M9.04332 4.21094L6.89935 0L4.75187 4.21094L0 4.92188L3.45143 8.23734L2.56923 13.0088L6.89938 10.7734L11.226 13.0088L10.3473 8.23734L13.7953 4.92188L9.04332 4.21094Z" transform="matrix(1 0 0 1 -8.881784E-15 -1.9539925E-13)" id="Fill-1" fill="#FFC72E" fill-rule="evenodd" stroke="none" />
+    </g>
+    <g id="Rating-star" transform="translate(49.38381 0.0004375)">
+      <path d="M9.04333 4.21094L6.89935 0L4.75187 4.21094L0 4.92188L3.45143 8.23734L2.56923 13.0088L6.89938 10.7734L11.226 13.0088L10.3473 8.23734L13.7953 4.92188L9.04333 4.21094Z" transform="matrix(1 0 0 1 -8.881784E-15 -1.9539925E-13)" id="Fill-1" fill="#FFC72E" fill-rule="evenodd" stroke="none" />
+    </g>
+    <g id="Rating-star" transform="translate(65.84382 -6.181722E-13)">
+      <path d="M9.04559 4.21094L6.90108 0L4.75306 4.21094L0 4.92188L3.45229 8.23734L2.56988 13.0088L6.9011 10.7734L11.2288 13.0088L10.3499 8.23734L13.7987 4.92188L9.04559 4.21094Z" transform="matrix(1 0 0 1 -8.881784E-15 -1.9539925E-13)" id="Fill-1" fill="#FFC72E" fill-rule="evenodd" stroke="none" />
+    </g>
+  </g>
+</svg>
