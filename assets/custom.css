@@ -1232,3 +1232,7 @@ p#rk_rating_thanks {
   display: flex;
   align-items: center;
 }
+
+.drawer__cart-empty.text-center {
+  margin-top: 40px!important;
+}
