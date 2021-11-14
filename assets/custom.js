@@ -33,9 +33,6 @@ var slider2 = new Swiper(".slider2", {
           },
           */
 });
-
-
-
 if ($(window).width() < 990) {
   var slider3 = new Swiper(".slider3", {
     centeredSlides: true,
