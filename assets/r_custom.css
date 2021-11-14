@@ -6,6 +6,19 @@ h3 {
   text-transform: none!important;
 }
 
+.r_bg_flavors {
+  z-index: 0;
+}
+
+.bg_flavor_desktop {
+  z-index: 1;
+}
+
+.bg_flavor_mobile {
+  z-index: 1;
+
+
+}
 
 .site-header--sticky {
   z-index: 4000;
