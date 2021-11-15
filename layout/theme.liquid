@@ -164,9 +164,15 @@
 
         <main class="main-content" id="MainContent">
 
+{% if template != product %}
 <div class="r_wrapper">
+{% endif %}
+
           {{ content_for_layout }}
+
+{% if template != product %}
 </div>
+{% endif %}
 
 
 
