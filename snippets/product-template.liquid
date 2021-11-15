@@ -314,8 +314,13 @@
                   <div class="price-list">
                     <div class="price-sec">
                       <div class="youresaving">You&#x27;re saving <span class="checkout-compare-price-savings-pct" data-product-price-savings>
-                      {% assign savings = 0 %} {% for item in cart.items %} {% if item.variant.compare_at_price > item.variant.price %} {% assign difference = item.variant.compare_at_price | minus: item.variant.price %} {% assign savings = savings | plus: difference %} {% assign actualSaving = savings | times: item.quantity %} {% endif %} {% endfor %} {% if savings > 0 %} <p><span style="color: #339966; font-size: medium;">(You SAVE : {{ actualSaving | money }})</span></p> {% endif %}
-                      
+
+{% assign percentage = 0 %}
+{% for variant in product.variants %}
+  {% assign saving = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price | round %}
+  {% assign percentage = saving | at_least: percentage %}
+{% endfor %} 
+Save up to {{ percentage }}%                      
                       </span>%</div>
                     </div>
                     <div class="saving-sec" data-price-wrapper>
