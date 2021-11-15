@@ -1,10 +1,12 @@
-<article class="article-listing" data-aos>
+{%- assign blog = blogs[section.settings.blog] -%}
 
+
+<article class="article-listing" data-aos>
   {%- if article.image -%}
   <a href="{{ article.url }}" class="r_recipe_item w-inline-block">
   <div class="r_recipe_thumbnail_small"><img src="{{ article.image | img_url: '400x' }}" loading="lazy" alt="" class="image-cover"></div>
   {%- endif -%}
-                  <div class="r_recipe_content_wrapper">
+                  <di2v class="r_recipe_content_wrapper">
             {%- for tag in article.tags -%}
             {% if tag contains "_" %}{%- assign tag_starts_with = tag | slice: 0 -%}{% if tag_starts_with == "_" %}{% if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif %}{% continue %}{% endif %}{% endif %}
             {% unless first_item %} &middot; {% endunless %}{%- assign first_item = false -%}
@@ -16,4 +18,6 @@
                   <p class="r_p_smaller m_t_10">{{ article.excerpt }}</p>
                 </div>
               </a>
+
+
 </article>
