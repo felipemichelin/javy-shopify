@@ -635,6 +635,9 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
     display: block!important;
 }
 
+button.btn.btn--full.add-to-cart {
+  height: 65px;
+}
 
 
 
