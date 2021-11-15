@@ -33,6 +33,11 @@
             "inventory_transfers_enable": true
           }
         },
+        "22fc4627-c459-4d9e-8f29-dade3ad51f8f": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -59,6 +64,7 @@
         "variant_picker",
         "sales_point",
         "inventory_status",
+        "22fc4627-c459-4d9e-8f29-dade3ad51f8f",
         "buy_buttons",
         "share",
         "description"
