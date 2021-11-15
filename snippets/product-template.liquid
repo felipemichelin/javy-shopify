@@ -320,7 +320,16 @@
                       <div class="save-text"><span class="checkout-compare-price" data-product-price-compare>{{ current_variant.compare_at_price | money }}</span></div>
 
 
+{% assign amount = 0 %}
+      {% for variant in product.variants %}
+      {% assign saving = variant.compare_at_price | minus: variant.price %}
+      {% assign amount = saving | at_least: amount %}
+      {% endfor %} 
+      {% capture saved_amount %}{{ amount | money_without_trailing_zeros }}{% endcapture %}
 
+      Save up to <br>{{ saved_amount }}
+
+      
                             <span class="visually-hidden" data-compare-a11y>{{ 'products.general.sale_price' | t }}</span>
                             <span class="visually-hidden" data-price-a11y>{{ 'products.general.regular_price' | t }}</span>
 
