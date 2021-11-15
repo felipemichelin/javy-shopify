@@ -313,17 +313,11 @@
                   </ul>
                   <div class="price-list">
                     <div class="price-sec">
-                      <div class="youresaving">You&#x27;re saving <span class="checkout-compare-price-savings-pct" data-product-price-savings></span>%</div>
+                      <div class="youresaving">You&#x27;re saving <span class="checkout-compare-price-savings-pct" data-product-price-savings> {{ current_variant.compare_at_price | minus: current_variant.price | money_without_trailing_zeros }}</span>%</div>
                     </div>
                     <div class="saving-sec" data-price-wrapper>
                       <div class="reg-text">Only <span class="checkout-price" data-product-price>{{ current_variant.price | money }}</span></div>
                       <div class="save-text"><span class="checkout-compare-price" data-product-price-compare>{{ current_variant.compare_at_price | money }}</span></div>
-
-
-    {% if current_variant.compare_at_price > current_variant.price %}(You save {{ current_variant.compare_at_price | minus: current_variant.price | money_without_trailing_zeros }}){% endif %}
-
-
-
                             <span class="visually-hidden" data-compare-a11y>{{ 'products.general.sale_price' | t }}</span>
                             <span class="visually-hidden" data-price-a11y>{{ 'products.general.regular_price' | t }}</span>
 
