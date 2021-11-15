@@ -35,6 +35,7 @@
         },
         "22fc4627-c459-4d9e-8f29-dade3ad51f8f": {
           "type": "quantity_selector",
+          "disabled": true,
           "settings": {
           }
         },
