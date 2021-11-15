@@ -5350,9 +5350,8 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
           // Sale price, if necessary
           if (variant.compare_at_price > variant.price) {
             this.container.querySelector(selectors.comparePrice).innerHTML = theme.Currency.formatMoney(variant.compare_at_price, theme.settings.moneyFormat);
-            var saving_total = (1 - (variant.price) / (variant.compare_at_price)).toFixed(2);
-            console.log(saving_total);
-            this.container.querySelector(selectors.savingsPct).innerHTML = "felipe";
+            var saving_total = ((1 - (variant.price) / (variant.compare_at_price))*100).toFixed(2);
+            this.container.querySelector(selectors.savingsPct).innerHTML = saving_total;
             this.container.querySelector(selectors.priceWrapper).classList.remove(classes.hidden);
             this.container.querySelector(selectors.price).classList.add(classes.onSale);
             this.container.querySelector(selectors.comparePriceA11y).setAttribute('aria-hidden', 'false');
