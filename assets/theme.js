@@ -5115,7 +5115,7 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
   
       blocks: '[data-product-blocks]',
       blocksHolder: '[data-blocks-holder]',
-      formContainer: '.r_product_info',
+      formContainer: '.product-single__form',
       availabilityContainer: '[data-store-availability]'
     };
   
@@ -5351,7 +5351,7 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
           // Sale price, if necessary
           if (variant.compare_at_price > variant.price) {
             this.container.querySelector(selectors.comparePrice).innerHTML = theme.Currency.formatMoney(variant.compare_at_price, theme.settings.moneyFormat);
-            this.container.querySelector(selectors.savingsPct).innerHTML = "teste";
+            this.container.querySelector(selectors.savingsPct).innerHTML = theme.Currency.formatMoney(variant.compare_at_price, theme.settings.moneyFormat);
             this.container.querySelector(selectors.priceWrapper).classList.remove(classes.hidden);
             this.container.querySelector(selectors.price).classList.add(classes.onSale);
             this.container.querySelector(selectors.comparePriceA11y).setAttribute('aria-hidden', 'false');
