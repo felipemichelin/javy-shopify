@@ -393,6 +393,7 @@ span.swatch-title {
   
   .variant-input-wrap input[type=radio]:checked+label {
   background-color: transparent;
+  border: 0px;
 }
   
   span.product__price.sale-price {
