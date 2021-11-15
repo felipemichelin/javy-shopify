@@ -14,7 +14,13 @@
                   </div>
           {%- endfor -%}
                   <h3 class="r_heading r_h3 r_smaller r_m_0">{{ article.title }}</h3>
-                  <p class="r_p_smaller m_t_10">{{ article.excerpt }}</p>
+                  
+
+                      {%- if show_excerpt and article.excerpt.size > 0 -%}
+          <p class="r_p_smaller m_t_10">{{ article.excerpt }}</p>
+    {%- endif -%}
+
+
                 </div>
               </a>
 
