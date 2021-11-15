@@ -1,3 +1,8 @@
+.r_full_width {
+  width: 100%!important;
+}
+
+
 .r_wrapper {
   overflow: hidden;
 }
