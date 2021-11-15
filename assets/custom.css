@@ -1281,3 +1281,8 @@ div#CartDrawer {
 h1.section-header__title {
   text-transform: capitalize;
 }
+
+.product-block {
+  margin-bottom: 10px!important;
+  margin-top: 15px!important;
+}
