@@ -3,11 +3,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "86d8a59e-2ee4-43eb-8abd-72441de66e80": {
-          "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/star-rating\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "settings": {
-          }
-        },
         "price": {
           "type": "price",
           "settings": {
@@ -17,12 +12,6 @@
           "type": "text",
           "settings": {
             "text": "Flavor: {{ product.metafields.my_fields.coffee_flavor.value }}"
-          }
-        },
-        "38bfb5c7-6de4-4312-973a-91fee0ae60d8": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.metafields.my_fields.short_description.value }}"
           }
         },
         "variant_picker": {
@@ -71,10 +60,8 @@
         }
       },
       "block_order": [
-        "86d8a59e-2ee4-43eb-8abd-72441de66e80",
         "price",
         "8c5a0a54-d7de-466f-b027-58e9fd62fdba",
-        "38bfb5c7-6de4-4312-973a-91fee0ae60d8",
         "variant_picker",
         "sales_point",
         "inventory_status",
