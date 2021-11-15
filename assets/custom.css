@@ -10,17 +10,6 @@ button.btn.btn--full.add-to-cart {
 }
 }
 
-.product__quantity {
-  height: 74px;
-  width: 100px;
-  border: none;
-  font-size: 32px;
-  font-family: acumin-pro-extra-condensed;
-  display: flex;
-  background: #fbfbfb;
-  margin-bottom: 0;
-  border-radius: 6px;
-}
     
 .header-wrapper--overlay {
   background: none!important;
