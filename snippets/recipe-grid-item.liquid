@@ -2,7 +2,6 @@
 
 
   {%- if article.image -%}
-  <a href="{{ article.url }}" class="r_recipe_item w-inline-block">
   <div class="r_recipe_thumbnail_small"><img src="{{ article.image | img_url: '400x' }}" loading="lazy" alt="" class="image-cover"></div>
   {%- endif -%}
                   <div class="r_recipe_content_wrapper">
@@ -22,6 +21,5 @@
 
 
                 </div>
-              </a>
 
 
