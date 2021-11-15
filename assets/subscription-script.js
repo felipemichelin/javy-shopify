@@ -103,12 +103,10 @@ jQuery(document).ready(function($) {
         $(this).find(".unit_price").text("$" + sub_variants[pack]['one_unit_price'] + "/each");
       });
     }
+  });
 
-
-    $(".variant-input").click(function(e) {
-      console.log("felipe");
-    });
-
+  $(".variant-input").click(function(e) {
+    console.log("felipe");
   });
   
   $(".shopify-payment-button__button-for_subscription").click(function(e) {
