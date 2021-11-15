@@ -1,4 +1,3 @@
-
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
 
@@ -102,21 +101,18 @@
               {%- endif -%}
 
 
-{% if product.type == "Coffee Concentrate" %}
-
             <div class="r_flavor">Flavor: <span class="r_flavor_tag">{{ product.metafields.my_fields.coffee_flavor }}</span></div>
             <p class="r_p r_product_description">{{ product.metafields.my_fields.short_description }}</p>
           </div>
-              {%- endif -%}
 
-{% if product.type == "Coffee Concentrate" %}
+
 
 
 
           <div data-current="one_tab" data-easing="ease" data-duration-in="0" data-duration-out="0" class="r_product_tabs w-tabs">
             <div class="r_tabs_menu w-tab-menu">
               <a data-w-tab="sub_tab" data-frequency="sub" data-w-id="33b1871f-8e87-e501-9cf9-14bd5babeb9f" class="tab_frequency w-inline-block w-tab-link">
-                <div class="selector"><strong>Javy Club:</strong> Sub &amp; Save</div>
+                <div class="selector"><strong>Javy Club:</strong> Sub &amp; Save</div>
                 <div class="r_freq_check_wrapper">
                   <div class="r_freq_circle"><img style="opacity:0" loading="lazy" src="{{ 'yellowradio.svg' | asset_url}}" alt="" class="r_freq_radio"></div>
                 </div>
@@ -301,12 +297,6 @@
                           {%- endfor -%}
                         {%- endunless -%}
                       </div>
-
-
-
-
-
-
 <!--
                                         <ul role="list" class="r_product_features r_one_time w-list-unstyled">
                     <li class="r_product_features_item"><img loading="lazy" src="https://uploads-ssl.webflow.com/61325340b9cecc1855901179/61893b8b8f80ad621ceb731f_checkmark.svg" alt="check-icon" class="r_check_item">
@@ -336,15 +326,11 @@
 
                   <script>
     jQuery(document).ready(function($) {
-
                   var sale_price_old = $(".checkout-price").html().substr(1);
                   var compare_price_old = $(".checkout-compare-price").html().substr(1);
-
                   var new_savings = ((1 - sale_price_old/compare_price_old)*100).toFixed(0);;
-
                   $(".checkout-compare-price-savings-pct").html(new_savings);
                       });
-
 </script>
 
 
