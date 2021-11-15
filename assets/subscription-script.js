@@ -95,6 +95,8 @@ jQuery(document).ready(function($) {
       $(".shopify-payment-button").show();
       $(".payment_button-row-for_subscription").hide();
       $(".shoppay").show();
+      $(".youresaving").hide();
+
       $(".badge-freeshipping").hide();
       
       
