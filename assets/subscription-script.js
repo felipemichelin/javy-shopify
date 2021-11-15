@@ -105,8 +105,8 @@ jQuery(document).ready(function($) {
     }
   });
 
-  $(".variant-input").click(function(e) {
-    console.log("felipe");
+  $(".variant-input").click(function() {
+    $(".checkout-compare-price-savings-pct").text("$" + (obj.reg_price - obj.price).toFixed(2));
   });
   
   $(".shopify-payment-button__button-for_subscription").click(function(e) {
