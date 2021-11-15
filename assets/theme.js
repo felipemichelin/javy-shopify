@@ -5350,7 +5350,7 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
           // Sale price, if necessary
           if (variant.compare_at_price > variant.price) {
             this.container.querySelector(selectors.comparePrice).innerHTML = theme.Currency.formatMoney(variant.compare_at_price, theme.settings.moneyFormat);
-            var saving_total = (selectors.price) / (selectors.comparePrice);
+            var saving_total = (variant.price) / (variant.compare_at_price);
             console.log(saving_total);
             this.container.querySelector(selectors.savingsPct).innerHTML = "felipe";
             this.container.querySelector(selectors.priceWrapper).classList.remove(classes.hidden);
