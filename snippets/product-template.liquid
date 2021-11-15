@@ -314,7 +314,7 @@
                       
                             {% assign saving = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price | round %}
       {% assign percentage = saving | at_least: percentage %}
-
+{{ percentage }}
                       
                       
                       </span>%</div>
