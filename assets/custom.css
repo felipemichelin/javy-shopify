@@ -1277,3 +1277,6 @@ div#CartDrawer {
   z-index: 5000;
 }
 
+.site-nav__thumb-menu {
+  z-index: 4900;
+}
