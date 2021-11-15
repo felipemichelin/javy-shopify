@@ -109,7 +109,7 @@
           </div>
               {%- endif -%}
 
-{% unless product.type == "Coffee Concentrate" %}
+{% if product.type == "Coffee Concentrate" %}
 
 
 
@@ -347,7 +347,7 @@
 
 </script>
 
-{%- enduless -%}
+{%- endif -%}
 
                     {%- when 'buy_buttons' -%}
                       <div class="product-block" {{ block.shopify_attributes }}>
