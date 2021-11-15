@@ -13,7 +13,7 @@
           <div class="r_javy_gear_container">
             <div class="w-layout-grid grid-21">
               <div class="gear-item">
-                <div class="gear-image"><img src="images/tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png" loading="lazy" alt=""></div>
+                <div class="gear-image"><img src="{{ 'tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png' | asset_url}}" loading="lazy" alt=""></div>
                 <div class="gear-text">
                   <div class="product-title">
                     <div class="r_item_title">Thermal Travel Tumbler</div>
@@ -24,7 +24,7 @@
                 </div>
               </div>
               <div class="gear-item">
-                <div class="gear-image"><img src="images/tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png" loading="lazy" alt=""></div>
+                <div class="gear-image"><img src="{{ 'tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png' | asset_url}}" loading="lazy" alt=""></div>
                 <div class="gear-text">
                   <div class="product-title">
                     <div class="r_item_title">Thermal Travel Tumbler</div>
@@ -35,7 +35,7 @@
                 </div>
               </div>
               <div class="gear-item">
-                <div class="gear-image"><img src="images/tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png" loading="lazy" alt=""></div>
+                <div class="gear-image"><img src="{{ 'tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png' | asset_url}}" loading="lazy" alt=""></div>
                 <div class="gear-text">
                   <div class="product-title">
                     <div class="r_item_title">Thermal Travel Tumbler</div>
@@ -46,7 +46,7 @@
                 </div>
               </div>
               <div class="gear-item">
-                <div class="gear-image"><img src="images/tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png" loading="lazy" alt=""></div>
+                <div class="gear-image"><img src="{{ 'tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png' | asset_url}}" loading="lazy" alt=""></div>
                 <div class="gear-text">
                   <div class="product-title">
                     <div class="r_item_title">Thermal Travel Tumbler</div>
@@ -61,6 +61,64 @@
         </div>
       </div>
     </div>
+
+
+{% schema %}
+  {
+    "name": "[R] Custom Home",
+    "name": "[R] Hero",
+    "max_blocks": 10,
+    "settings": [],
+    "blocks": [
+
+
+
+
+{% schema %}
+  {
+    "name": "[R] Flavor Selector",
+    "max_blocks": 10,
+    "settings": [],
+    "blocks": [
+      {
+        "type": "testimonial",
+        "name": "Testimonial",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "testimonial",
+            "label": "Text",
+            "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Author's image"
+          },
+          {
+            "type": "text",
+            "id": "author",
+            "label": "Author",
+            "default": "Author's name"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonials",
+        "blocks": [
+          {
+            "type": "testimonial"
+          },
+          {
+            "type": "testimonial"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
 
 
 {% schema %}
