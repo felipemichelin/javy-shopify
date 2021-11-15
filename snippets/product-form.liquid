@@ -28,7 +28,7 @@
       {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
       name="add"
       data-add-to-cart
-      class="btn btn--full add-to-cart{% if enable_dynamic_buttons and product.selling_plan_groups == empty %} btn--tertiary{% endif %}"
+      class="btn hero w-inline-block{% if enable_dynamic_buttons and product.selling_plan_groups == empty %} btn--tertiary{% endif %}"
       {% unless current_variant.available %} disabled="disabled"{% endunless %}>
       <div class="crossell-button-text">ADD TO CART →</div>
     </button>
