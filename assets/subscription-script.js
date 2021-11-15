@@ -97,11 +97,18 @@ jQuery(document).ready(function($) {
       $(".shoppay").show();
       $(".badge-freeshipping").hide();
       
+      
       $.each($(".variant-input"), function() {
         var pack = $(this).attr("data-value");        
         $(this).find(".unit_price").text("$" + sub_variants[pack]['one_unit_price'] + "/each");
       });
     }
+
+
+    $(".variant-input").click(function(e) {
+      console.log("felipe");
+    });
+
   });
   
   $(".shopify-payment-button__button-for_subscription").click(function(e) {
