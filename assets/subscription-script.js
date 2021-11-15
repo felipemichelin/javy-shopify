@@ -89,6 +89,7 @@ jQuery(document).ready(function($) {
     }
     else {
       update_product_info();
+      console.log("felipe");
       $(".variant-input-wrap input[type=radio]:checked").trigger("change");
       $(".es_frequency_cycle").hide();
       $(".product__checkout_row").show();
