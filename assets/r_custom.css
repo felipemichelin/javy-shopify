@@ -20,6 +20,10 @@ a.btn.hero {
   opacity: 100!important;
 }
 
+.r_product_hero {
+  z-index: 0!important;
+}
+
 p {
   margin-bottom: 10px;
   line-height: 34px;
