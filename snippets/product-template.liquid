@@ -115,6 +115,10 @@
 
 
           <div data-current="one_tab" data-easing="ease" data-duration-in="0" data-duration-out="0" class="r_product_tabs w-tabs">
+
+
+{% unless product.type == "Coffee Concentrate" %}
+
             <div class="r_tabs_menu w-tab-menu">
               <a data-w-tab="sub_tab" data-frequency="sub" data-w-id="33b1871f-8e87-e501-9cf9-14bd5babeb9f" class="tab_frequency w-inline-block w-tab-link">
                 <div class="selector"><strong>Javy Club:</strong> Sub &amp; Save</div>
@@ -129,6 +133,11 @@
                 </div>
               </a>
             </div>
+
+      {%- endunless -%}
+
+
+
             <div class="r_freq_tab_content w-tab-content">
               <div data-w-tab="sub_tab" class="r_prod_tab w-tab-pane">
                 <p class="r_freq_desc"><strong>Like a coffee club, but better.</strong> Get Javy delivered to your door monthly. Dollars will be saved, fun will be had. Easy to Cancel.<br></p>
