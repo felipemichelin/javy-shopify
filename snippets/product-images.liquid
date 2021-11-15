@@ -221,46 +221,4 @@
 {%- endunless -%}
 
 
-        <script>
-var slider1 = new Swiper(".slider1", {
-  loop: true,
-  // Enable lazy loading
-  lazy: true,
-  navigation: {
-    nextEl: ".next-hero-slider",
-    prevEl: ".previous-hero-slider",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  keyboard: {
-    enabled: true,
-  },
-  breakpoints: {
-    0: {
-      /* when window >=0px - webflow mobile landscape/portriat */
-      slidesPerView: 1,
-      centeredSlides: true,
-      spaceBetween: 0,
-    },
-    767: {
-      /* when window >= 767px - webflow tablet */ slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    988: {
-      /* when window >= 988px - webflow desktop */ slidesPerView: 1,
-      centeredSlides: false,
-      spaceBetween: 0,
-    },
-  },
-  /* uncomment if you want autoplay slider
-      autoplay: {
-        delay: 3000,
-      },
-      */
-  scrollbar: {
-    el: ".swiper-scrollbar",
-    hide: true,
-  },
-});
-</script>
+      
