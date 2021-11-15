@@ -53,7 +53,7 @@ jQuery(document).ready(function($) {
   function update_product_info(obj) {
     $(".checkout-compare-price").text("$" + obj.reg_price.toFixed(2));
     $(".checkout-price").text("$" + obj.price.toFixed(2));
-    $(".savingprice").text("$" + (obj.reg_price - obj.price).toFixed(2));
+    $(".checkout-compare-price-savings-pct").text("$" + (obj.reg_price - obj.price).toFixed(2));
     console.log(obj.freeshipping);
     console.log(typeof obj.freeshipping);
     if(obj.freeshipping) {
@@ -82,7 +82,7 @@ jQuery(document).ready(function($) {
       
       $.each($(".variant-input"), function() {
         var pack = $(this).attr("data-value");        
-        $(this).find(".unit_price").text("$" + sub_variants[pack]['sub_unit_price'] + "/unit");
+        $(this).find(".unit_price").text("$" + sub_variants[pack]['sub_unit_price'] + "/each");
       });
     }
     else {
@@ -96,7 +96,7 @@ jQuery(document).ready(function($) {
       
       $.each($(".variant-input"), function() {
         var pack = $(this).attr("data-value");        
-        $(this).find(".unit_price").text("$" + sub_variants[pack]['one_unit_price'] + "/unit");
+        $(this).find(".unit_price").text("$" + sub_variants[pack]['one_unit_price'] + "/each");
       });
     }
   });
