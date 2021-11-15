@@ -5352,7 +5352,7 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
           if (variant.compare_at_price > variant.price) {
             this.container.querySelector(selectors.comparePrice).innerHTML = theme.Currency.formatMoney(variant.compare_at_price, theme.settings.moneyFormat);
             
-            this.container.querySelector(selectors.savingsPct).innerHTML = "felipe";
+            this.container.querySelector(selectors.savingsPct).innerHTML = ((theme.Currency.formatMoney(variant.price, theme.settings.moneyFormat)/(theme.Currency.formatMoney(variant.compare_at_price, theme.settings.moneyFormat)));
             this.container.querySelector(selectors.priceWrapper).classList.remove(classes.hidden);
             this.container.querySelector(selectors.price).classList.add(classes.onSale);
             this.container.querySelector(selectors.comparePriceA11y).setAttribute('aria-hidden', 'false');
