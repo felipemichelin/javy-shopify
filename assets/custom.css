@@ -636,7 +636,7 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
 }
 
 button.btn.btn--full.add-to-cart {
-  height: 65px;
+  height: 65px!important;
 }
 
 
