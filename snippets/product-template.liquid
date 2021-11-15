@@ -316,6 +316,23 @@
                       <div class="youresaving">You&#x27;re saving <span class="checkout-compare-price-savings-pct" data-product-price-savings>
 
 
+<script>
+var selectCallback = function(variant, selector) {
+var $discount = $('#offpercent'),
+    $productPrice = $('#productPrice'),
+    $comparePrice = $('#comparePrice');
+
+alert(Shopify.formatMoney(variant.price, Shopify.money_format));
+alert(Shopify.formatMoney(variant.compare_at_price, Shopify.money_format));
+
+var percDiff =  Math.round((variant.compare_at_price-variant.price)/variant.compare_at_price * 100);
+
+alert(percDiff);
+
+$discount.html(percDiff);
+};
+</script>
+
 
                       
                       </span>%</div>
