@@ -5115,7 +5115,7 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
   
       blocks: '[data-product-blocks]',
       blocksHolder: '[data-blocks-holder]',
-      formContainer: '.product-single__form',
+      formContainer: '.r_product_info',
       availabilityContainer: '[data-store-availability]'
     };
   
