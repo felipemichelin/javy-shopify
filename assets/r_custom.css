@@ -2,6 +2,9 @@
   width: 100%!important;
 }
 
+.r_h1.r_product_title {
+  text-transform: capitalize;
+}
 
 .r_wrapper {
   overflow: hidden;
