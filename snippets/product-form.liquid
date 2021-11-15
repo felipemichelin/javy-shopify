@@ -52,6 +52,14 @@
           selected="selected"{% endif %}>
           {{ variant.title }} - {{ variant.price | money_with_currency }}
         </option>
+
+    {% capture discount %}
+    {{ variant.compare_at_price | minus:variant.price | money }}
+    ({{ variant.compare_at_price | minus:variant.price | times: 100.0 | divided_by:variant.compare_at_price | money_without_currency | times: 100 | remove: '.0'}}%)
+    {% endcapture %}
+
+
+
       {%- else -%}
         <option disabled="disabled">
           {{ variant.title }} - {{ 'products.product.sold_out' | t }}
