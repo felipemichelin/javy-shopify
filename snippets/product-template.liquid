@@ -318,9 +318,8 @@
                   -->
 
 
-                  {%- else -%}
 
-                  
+
                   <div class="price-list">
                     <div class="price-sec">
                       <div class="youresaving">You&#x27;re saving <span class="checkout-compare-price-savings-pct" data-product-price-savings>28</span>%</div>
@@ -343,6 +342,10 @@
                   $(".checkout-compare-price-savings-pct").html(new_savings);
                       });
 </script>
+
+
+              {%- endif -%}
+
 
 
 
@@ -431,7 +434,6 @@
             </div>
           </div>
  
-              {%- endif -%}
 
 
 
