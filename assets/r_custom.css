@@ -6,6 +6,12 @@
   text-transform: capitalize;
 }
 
+a.btn.hero {
+  background-color: #ffc33a;
+  text-align: center;
+  display: flex;
+}
+
 .r_wrapper {
   overflow: hidden;
 }
