@@ -5082,7 +5082,6 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
       priceWrapper: '[data-price-wrapper]',
       price: '[data-product-price]',
       comparePrice: '[data-product-price-compare]',
-      savingsPct: '[data-product-price-savings]',
       priceA11y: '[data-price-a11y]',
       comparePriceA11y: '[data-compare-a11y]',
       sku: '[data-sku]',
@@ -5345,9 +5344,6 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
   
           // Sale price, if necessary
           if (variant.compare_at_price > variant.price) {
-
-            
-
             this.container.querySelector(selectors.comparePrice).innerHTML = theme.Currency.formatMoney(variant.compare_at_price, theme.settings.moneyFormat);
             this.container.querySelector(selectors.priceWrapper).classList.remove(classes.hidden);
             this.container.querySelector(selectors.price).classList.add(classes.onSale);
