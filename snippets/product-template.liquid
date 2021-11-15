@@ -147,50 +147,8 @@
                 <div class="tab-content-inner"><img loading="lazy" src="images/saveupto.svg" alt="" class="save-up">
 
                 
-                   {%- render 'variant-button',
-                                product: product,
-                                form_id: form_id,
-                                section_id: section_id,
-                                variant_labels: block.settings.variant_labels,
-                                option: option,
-                                forloop: forloop,
-                                is_color: is_color,
-                                color_option_index: color_option_index
-                              -%}
 
-                  <ul role="list" class="r_product_features r_one_time w-list-unstyled">
-                    <li class="r_product_features_item"><img loading="lazy" src="https://uploads-ssl.webflow.com/61325340b9cecc1855901179/61893b8b8f80ad621ceb731f_checkmark.svg" alt="check-icon" class="r_check_item">
-                      <div class="r_p_benefits r_smaller m_0">Never have to think about reordering<strong><br></strong></div>
-                    </li>
-                    <li class="r_product_features_item"><img loading="lazy" src="https://uploads-ssl.webflow.com/61325340b9cecc1855901179/61893b8b8f80ad621ceb731f_checkmark.svg" alt="check-icon" class="r_check_item">
-                      <div class="r_p_benefits r_smaller m_0">Save up to 36%<strong><br></strong></div>
-                    </li>
-                    <li class="r_product_features_item"><img loading="lazy" src="https://uploads-ssl.webflow.com/61325340b9cecc1855901179/61893b8b8f80ad621ceb731f_checkmark.svg" alt="check-icon" class="r_check_item">
-                      <div class="r_p_benefits r_smaller m_0">Never have to think about reordering<strong><br></strong></div>
-                    </li>
-                  </ul>
-                  <div class="price-list">
-                    <div class="price-sec">
-                      <div class="youresaving">You&#x27;re saving <span data-variant-id="41010670862497" class="checkout-compare-price-savings-pct">50</span>%</div>
-                    </div>
-                    <div class="saving-sec">
-                      <div class="reg-text">Only <span data-variant-id="41010670862497" class="checkout-price" data-product-price>{{ current_variant.price | money }}</span></div>
-                      <div class="save-text"><span class="checkout-compare-price" data-product-price-compare>{{ current_variant.compare_at_price | money }}</span></div>
-                    </div>
-                  </div>
-
-btn
-
-
-
-                </div>
-              </div>
-            </div>
-          </div>
- 
-
-
-            <div data-product-blocks class="r_full_width">
+                            <div data-product-blocks class="r_full_width">
               {% capture form_id %}AddToCartForm-{{ section_id }}{% endcapture %}
               {%- if blocks -%}
                 {%- for block in blocks -%}
@@ -418,6 +376,42 @@ btn
                 </div>
               {%- endif -%}
             </div>
+
+            
+                
+                  <ul role="list" class="r_product_features r_one_time w-list-unstyled">
+                    <li class="r_product_features_item"><img loading="lazy" src="https://uploads-ssl.webflow.com/61325340b9cecc1855901179/61893b8b8f80ad621ceb731f_checkmark.svg" alt="check-icon" class="r_check_item">
+                      <div class="r_p_benefits r_smaller m_0">Never have to think about reordering<strong><br></strong></div>
+                    </li>
+                    <li class="r_product_features_item"><img loading="lazy" src="https://uploads-ssl.webflow.com/61325340b9cecc1855901179/61893b8b8f80ad621ceb731f_checkmark.svg" alt="check-icon" class="r_check_item">
+                      <div class="r_p_benefits r_smaller m_0">Save up to 36%<strong><br></strong></div>
+                    </li>
+                    <li class="r_product_features_item"><img loading="lazy" src="https://uploads-ssl.webflow.com/61325340b9cecc1855901179/61893b8b8f80ad621ceb731f_checkmark.svg" alt="check-icon" class="r_check_item">
+                      <div class="r_p_benefits r_smaller m_0">Never have to think about reordering<strong><br></strong></div>
+                    </li>
+                  </ul>
+                  <div class="price-list">
+                    <div class="price-sec">
+                      <div class="youresaving">You&#x27;re saving <span data-variant-id="41010670862497" class="checkout-compare-price-savings-pct">50</span>%</div>
+                    </div>
+                    <div class="saving-sec">
+                      <div class="reg-text">Only <span data-variant-id="41010670862497" class="checkout-price" data-product-price>{{ current_variant.price | money }}</span></div>
+                      <div class="save-text"><span class="checkout-compare-price" data-product-price-compare>{{ current_variant.compare_at_price | money }}</span></div>
+                    </div>
+                  </div>
+
+btn
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+
+
+
 
           </div>
         </div>
