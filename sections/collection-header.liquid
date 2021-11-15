@@ -1,52 +1,12 @@
-{%- if section.settings.collection_image_enable and collection.image -%}
-  <div class="collection-hero"
-    data-aos="hero__animation">
-    <div
-      class="collection-hero__image lazyload"
-      data-bgset="{% render 'bgset', image: collection.image %}"
-      data-sizes="auto">
-    </div>
-    <noscript>
-      <div
-        class="collection-hero__image"
-        style="background-image: url({{ collection.image | img_url: '1400x' }});";
-        ></div>
-    </noscript>
 
-    <div class="collection-hero__content">
-      <div class="page-width text-center">
-        <div class="hero__text-shadow" data-aos>
-          <header class="section-header section-header--hero" data-aos>
-            <h1 class="section-header__title appear-delay">
-              {{ collection.title }}
-            </h1>
-            {%- if collection.description != blank and section.settings.description_enable -%}
-              {%- assign desc_length = collection.description | size -%}
-              <div class="rte section-header__description{% if desc_length < 200 %} section-header__description--large{% endif %} appear-delay-1">
-                {{ collection.description }}
-              </div>
-            {%- endif -%}
-          </header>
+        <div class="r_section r_collection">
+      <div class="r_container middle_aligned">
+        <div class="r_title_wrapper r_centered r_bigger no_m">
+          <h1 data-w-id="0178c60a-474c-2879-0c55-50acfc2ae501" style="opacity:0" class="r_h1 m_0">{{ collection.title }}</h1>
+          <p data-w-id="0178c60a-474c-2879-0c55-50acfc2ae503" style="opacity:0" class="r_p r_bigger no_m_b">{{ collection.description }}</p>
         </div>
       </div>
     </div>
-  </div>
-{%- else -%}
-  <div class="page-width page-content page-content--flush-bottom">
-    <header class="section-header" data-aos>
-      <h1 class="section-header__title appear-delay">
-        {{ collection.title }}
-      </h1>
-
-      {%- if collection.description != blank and section.settings.description_enable -%}
-        {%- assign desc_length = collection.description | size -%}
-        <div class="rte section-header__description{% if desc_length < 200 %} section-header__description--large{% endif %} appear-delay-1">
-          {{ collection.description }}
-        </div>
-      {%- endif -%}
-    </header>
-  </div>
-{%- endif -%}
 
 {% schema %}
   {
