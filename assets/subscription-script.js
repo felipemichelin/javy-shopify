@@ -100,8 +100,6 @@ jQuery(document).ready(function($) {
       $(".badge-freeshipping").hide();
       
       $.each($(".r_product_info"), function() {
-        var pack = $(this).attr("data-value");        
-        $(this).find(".unit_price").text("$" + sub_variants[pack]['one_unit_price'] + "/each");
         $(".youresaving").hide();
 
       });
