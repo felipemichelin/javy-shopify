@@ -22,6 +22,19 @@
 {% schema %}
   {
     "name": "[R] Collection header",
-    "settings": []
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "collection_image_enable",
+        "label": "Show collection image",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "description_enable",
+        "label": "Show description in header",
+        "default": true
+      }
+    ]
   }
 {% endschema %}
