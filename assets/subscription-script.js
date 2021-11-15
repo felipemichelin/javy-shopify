@@ -51,6 +51,8 @@ jQuery(document).ready(function($) {
   };
   
   function update_product_info(obj) {
+    console.log("felipe");
+
     $(".checkout-compare-price").text("$" + obj.reg_price.toFixed(2));
     $(".checkout-price").text("$" + obj.price.toFixed(2));
     $(".checkout-compare-price-savings-pct").text("$" + (obj.reg_price - obj.price).toFixed(2));
@@ -89,7 +91,6 @@ jQuery(document).ready(function($) {
     }
     else {
       update_product_info();
-      console.log("felipe");
       $(".variant-input-wrap input[type=radio]:checked").trigger("change");
       $(".es_frequency_cycle").hide();
       $(".product__checkout_row").show();
