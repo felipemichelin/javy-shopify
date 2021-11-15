@@ -58,7 +58,7 @@
     "1636938087dade00c5": {
       "type": "r_recipes",
       "settings": {
-        "title": "",
+        "title": "Latest Recipes",
         "blog": "recipes",
         "post_limit": 6,
         "blog_show_tags": false,
