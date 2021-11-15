@@ -793,6 +793,7 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
   
       _updatePrice: function(variant) {
         if (variant.price === this.currentVariant.price && variant.compare_at_price === this.currentVariant.compare_at_price) {
+          this.container.querySelector(selectors.savingsPct).innerHTML = "teste";
           return;
         }
   
@@ -5347,7 +5348,6 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
           if (variant.compare_at_price > variant.price) {
 
             
-            this.container.querySelector(selectors.savingsPct).innerHTML = theme.Currency.formatMoney(variant.compare_at_price, theme.settings.moneyFormat);
 
             this.container.querySelector(selectors.comparePrice).innerHTML = theme.Currency.formatMoney(variant.compare_at_price, theme.settings.moneyFormat);
             this.container.querySelector(selectors.priceWrapper).classList.remove(classes.hidden);
