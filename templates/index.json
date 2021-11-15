@@ -2,26 +2,6 @@
   "sections": {
     "1636926059f853904a": {
       "type": "r_hero",
-      "blocks": {
-        "16369260596c729a87-0": {
-          "type": "testimonial",
-          "settings": {
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-            "author": "Author's name"
-          }
-        },
-        "16369260596c729a87-1": {
-          "type": "testimonial",
-          "settings": {
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-            "author": "Author's name"
-          }
-        }
-      },
-      "block_order": [
-        "16369260596c729a87-0",
-        "16369260596c729a87-1"
-      ],
       "settings": {
       }
     }
