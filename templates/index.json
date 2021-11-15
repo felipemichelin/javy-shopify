@@ -58,6 +58,17 @@
     "1636938087dade00c5": {
       "type": "r_recipes",
       "settings": {
+        "title": "",
+        "blog": "recipes",
+        "post_limit": 3,
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "blog_show_excerpt": false,
+        "blog_image_size": "wide",
+        "view_all": false,
+        "alt": false
       }
     }
   },

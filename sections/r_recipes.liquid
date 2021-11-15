@@ -29,7 +29,7 @@
 
 
 
-        {%- for article in blog.articles limit: section.settings.post_limit -%}
+        {%- for article in blog.articles limit: 3 -%}
           <div class="grid__item medium-up--one-third">
             {%- render 'recipe-grid-item',
               blog: blog,
