@@ -103,6 +103,8 @@ jQuery(document).ready(function($) {
       $.each($(".variant-input"), function() {
         var pack = $(this).attr("data-value");        
         $(this).find(".unit_price").text("$" + sub_variants[pack]['one_unit_price'] + "/each");
+        $(".youresaving").hide();
+
       });
     }
   });
