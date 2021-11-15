@@ -24,10 +24,10 @@
         
       <div class="tag_list">
         {%- for tag in blog.all_tags -%}
-        
+        <a href="{{ blog.url }}/tagged/{{ tag | handle }}">
         <div class="r_category_badge">
-          <a class="r_category_text" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %} {% endunless %}
-          </div>
+          <div class="r_category_text>{{ tag }}</div>
+          </div></a>{% unless forloop.last %} {% endunless %}
         {%- endfor -%}
       </div>
     
