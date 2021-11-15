@@ -2,6 +2,12 @@
   overflow: hidden;
 }
 
+
+p {
+  margin-bottom: 10px;
+  line-height: 34px;
+}
+
 .r_category_badge {
   width: auto;
   display: inline-block;
