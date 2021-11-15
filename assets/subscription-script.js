@@ -51,8 +51,8 @@ jQuery(document).ready(function($) {
   };
   
   function update_product_info(obj) {
-    $(".product__price--compare").text("$" + obj.reg_price.toFixed(2));
-    $(".sale-price").text("$" + obj.price.toFixed(2));
+    $(".checkout-compare-price").text("$" + obj.reg_price.toFixed(2));
+    $(".checkout-price").text("$" + obj.price.toFixed(2));
     $(".savingprice").text("$" + (obj.reg_price - obj.price).toFixed(2));
     console.log(obj.freeshipping);
     console.log(typeof obj.freeshipping);
