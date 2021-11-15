@@ -74,7 +74,7 @@
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
   </script>
 
-  {% if template == 'index' and template != product %}
+  {% if template != product %}
 <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 <link rel="stylesheet" href="{{ 'normalize.css' | asset_url}}">
 <link rel="stylesheet" href="{{ 'webflow.css' | asset_url}}">
