@@ -103,7 +103,7 @@
 
 
             <div class="r_flavor">Flavor: <span class="r_flavor_tag">Original</span></div>
-            <p class="r_p r_product_description">{%- render 'product-description', id: id, product: product, is_tab: block.settings.is_tab -%}</p>
+            <p class="r_p r_product_description">{{ product.metafields.my_fields.short_description }}</p>
           </div>
 
 
