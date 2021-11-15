@@ -251,13 +251,6 @@
                           </div>
                         {%- endif -%}
                       </div>
-                    {%- when 'quantity_selector' -%}
-                      <div class="product-block" {{ block.shopify_attributes }}>
-                        <div class="product__quantity">
-                          <label for="Quantity-{{ section_id }}" class="variant__label">{{ 'products.product.quantity' | t }}</label>
-                          <input type="number" id="Quantity-{{ section_id }}" name="quantity" value="1" min="1" form="{{ form_id }}">
-                        </div>
-                      </div>
                     {%- when 'variant_picker' -%}
                       <div class="product-block" {{ block.shopify_attributes }}>
                         {%- unless product.has_only_default_variant -%}
@@ -342,6 +335,13 @@
 
                     {%- when 'buy_buttons' -%}
                       <div class="product-block" {{ block.shopify_attributes }}>
+
+                                              <div class="product__quantity">
+                          <label for="Quantity-{{ section_id }}" class="variant__label">{{ 'products.product.quantity' | t }}</label>
+                          <input type="number" id="Quantity-{{ section_id }}" name="quantity" value="1" min="1" form="{{ form_id }}">
+                        </div>
+
+                        
                         {%- unless product.empty? -%}
                           <div class="product-block">
                             {%- render 'product-form',
