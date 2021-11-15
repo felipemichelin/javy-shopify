@@ -10,13 +10,6 @@
   grid-column-gap: 16px;
 }
 
-body {
-  font-family: Gothampro, sans-serif;
-  color: #000;
-  font-size: 14px;
-  line-height: 20px;
-}
-
 h1 {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -203,7 +196,7 @@ a {
   -ms-flex-align: center;
   align-items: center;
   background-color: #fcc83a;
-  background-image: url('../images/bg_hero_desk.jpg');
+  background-image: url('https://cdn.shopify.com/s/files/1/0435/8216/1057/t/28/assets/bg_hero_desk.jpg?v=1636925676');
   background-position: 100% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -244,6 +237,7 @@ a {
 
 .r_h2 {
   max-width: 100%;
+  margin-top: 20px;
   margin-bottom: 10px;
   font-family: Gothampro, sans-serif;
   font-size: 42px;
@@ -2791,6 +2785,15 @@ a {
   background-color: transparent;
 }
 
+.r_h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #000;
+  font-size: 46px;
+  line-height: 54px;
+  font-weight: 700;
+}
+
 .faq-item-toggle {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2882,7 +2885,7 @@ a {
     -ms-flex-align: start;
     align-items: flex-start;
     background-color: #fcc83a;
-    background-image: url('../images/bg_hero_mob.jpg');
+    background-image: url('https://cdn.shopify.com/s/files/1/0435/8216/1057/t/28/assets/bg_hero_mob.jpg?v=1636925678');
     background-position: 50% 100%;
     background-size: contain;
     background-repeat: no-repeat;
@@ -3945,6 +3948,11 @@ a {
     padding-bottom: 20px;
   }
 
+  .r_section.r_cream.r_p_40 {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
   .four-column {
     -webkit-box-align: stretch;
     -webkit-align-items: stretch;
@@ -4069,7 +4077,7 @@ a {
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
-    background-image: url('../images/mob_smaller.jpg');
+    background-image: url('https://cdn.shopify.com/s/files/1/0435/8216/1057/t/28/assets/mob_smaller.jpg?v=1636925702');
     background-position: 50% 100%;
     background-size: contain;
     background-repeat: no-repeat;
