@@ -78,10 +78,11 @@
 }
   
   a.tag_item {
-  font-size: 12px;
-  padding: 5px 10px;
-  background-color: #fcdf31;
-  border-radius: 100px;
+    margin-bottom: 8px;
+    padding: 4px 14px;
+    border-radius: 0;
+    background-color: #fde02f;
+    color: #000;
 }
   
   
