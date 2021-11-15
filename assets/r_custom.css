@@ -16,6 +16,9 @@ a.btn.hero {
   overflow: hidden;
 }
 
+.w-tab-link.w--current .r_freq_check_wrapper .r_freq_circle img {
+  opacity: 100!important;
+}
 
 p {
   margin-bottom: 10px;
