@@ -29,6 +29,20 @@
 
 
 
+        {%- for article in blog.articles limit: section.settings.post_limit -%}
+          <div class="grid__item medium-up--one-third">
+            {%- render 'recipe-grid-item',
+              blog: blog,
+              article: article,
+              image_size: section.settings.blog_image_size,
+              show_excerpt: section.settings.blog_show_excerpt,
+              show_author: section.settings.blog_show_author,
+              show_date: section.settings.blog_show_date,
+              show_comments: section.settings.blog_show_comments,
+              show_tags: section.settings.blog_show_tags -%}
+          </div>
+        {%- endfor -%}
+
 
 
 
@@ -41,50 +55,104 @@
     </div>
 
 
-
 {% schema %}
   {
-    "name": "[R] Recipes",
-    "max_blocks": 10,
-    "settings": [],
-    "blocks": [
+    "name": "Blog posts",
+    "settings": [
       {
-        "type": "testimonial",
-        "name": "Testimonial",
-        "settings": [
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Blog posts"
+      },
+      {
+        "id": "blog",
+        "type": "blog",
+        "label": "Blog"
+      },
+      {
+        "type": "range",
+        "id": "post_limit",
+        "label": "Posts",
+        "default": 3,
+        "min": 3,
+        "max": 12,
+        "step": 3
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_tags",
+        "label": "Show tags"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_comments",
+        "label": "Show comment count"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_excerpt",
+        "label": "Show excerpt"
+      },
+      {
+        "type": "select",
+        "id": "blog_image_size",
+        "label": "Image size",
+        "default": "wide",
+        "options": [
           {
-            "type": "richtext",
-            "id": "testimonial",
-            "label": "Text",
-            "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+            "value": "natural",
+            "label": "Natural"
           },
           {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Author's image"
+            "value": "square",
+            "label": "Square (1:1)"
           },
           {
-            "type": "text",
-            "id": "author",
-            "label": "Author",
-            "default": "Author's name"
+            "value": "landscape",
+            "label": "Landscape (4:3)"
+          },
+          {
+            "value": "portrait",
+            "label": "Portrait (2:3)"
+          },
+          {
+            "value": "wide",
+            "label": "Wide (16:9)"
           }
         ]
+      },
+      {
+        "type": "checkbox",
+        "id": "view_all",
+        "label": "Show 'View all' button",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "alt",
+        "label": "Use alternate section color"
       }
     ],
     "presets": [
       {
         "name": "[R] Recipes",
-        "blocks": [
-          {
-            "type": "testimonial"
-          },
-          {
-            "type": "testimonial"
-          }
-        ]
+        "settings": {
+          "blog": "Recipes",
+          "post_limit": 3
+        }
       }
     ]
   }
 {% endschema %}
-
