@@ -797,7 +797,6 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
         }
 
 
-        console.log("felipe");
         this.container.dispatchEvent(new CustomEvent('variantPriceChange', {
 
           
@@ -5351,7 +5350,9 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
           // Sale price, if necessary
           if (variant.compare_at_price > variant.price) {
             this.container.querySelector(selectors.comparePrice).innerHTML = theme.Currency.formatMoney(variant.compare_at_price, theme.settings.moneyFormat);
-            this.container.querySelector(selectors.savingsPct).innerHTML = ((theme.Currency.formatMoney(variant.price, theme.settings.moneyFormat)/(theme.Currency.formatMoney(variant.compare_at_price, theme.settings.moneyFormat))));
+            var saving_total = (selectors.price) / (selectors.comparePrice);
+            console.log(saving_total);
+            this.container.querySelector(selectors.savingsPct).innerHTML = "felipe";
             this.container.querySelector(selectors.priceWrapper).classList.remove(classes.hidden);
             this.container.querySelector(selectors.price).classList.add(classes.onSale);
             this.container.querySelector(selectors.comparePriceA11y).setAttribute('aria-hidden', 'false');
