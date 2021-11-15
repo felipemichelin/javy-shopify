@@ -1236,3 +1236,8 @@ p#rk_rating_thanks {
 .drawer__cart-empty.text-center {
   margin-top: 40px!important;
 }
+
+.grid__item.medium-up--three-quarters.medium-up--push-one-eighth {
+  width: 100%!important;
+  left: 0px!important;
+}
