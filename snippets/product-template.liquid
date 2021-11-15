@@ -312,14 +312,10 @@
                     <div class="price-sec">
                       <div class="youresaving">You&#x27;re saving <span data-variant-id="41010670862497" class="checkout-compare-price-savings-pct" data-product-price-savings>
                       
-                            {% assign saving = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price | round %}
-      {% assign percentage = saving | at_least: percentage %}
-{{ percentage }}
-                      
                       
                       </span>%</div>
                     </div>
-                    <div class="saving-sec">
+                    <div class="saving-sec" data-price-wrapper>
                       <div class="reg-text">Only <span data-variant-id="41010670862497" class="checkout-price" data-product-price>{{ current_variant.price | money }}</span></div>
                       <div class="save-text"><span class="checkout-compare-price" data-product-price-compare>{{ current_variant.compare_at_price | money }}</span></div>
                     </div>
