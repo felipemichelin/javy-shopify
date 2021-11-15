@@ -1,5 +1,8 @@
 
-
+button.btn.btn--full.add-to-cart {
+  width: 100%!important;
+  max-width: 100%!important;
+}
 
 @media only screen and (min-width: 769px) {
 .product-single__header {
