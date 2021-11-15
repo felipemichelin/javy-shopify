@@ -1241,3 +1241,7 @@ p#rk_rating_thanks {
   width: 100%!important;
   left: 0px!important;
 }
+
+span.icon__fallback-text {
+  display: none!important;
+}
