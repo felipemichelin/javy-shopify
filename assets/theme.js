@@ -795,8 +795,14 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
         if (variant.price === this.currentVariant.price && variant.compare_at_price === this.currentVariant.compare_at_price) {
           return;
         }
-  
+
+
+        console.log("felipe");
         this.container.dispatchEvent(new CustomEvent('variantPriceChange', {
+
+          
+
+
           detail: {
             variant: variant
           }
