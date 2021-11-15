@@ -1,4 +1,6 @@
-
+.r_wrapper {
+  overflow: hidden;
+}
 
 .r_wrapper {
   font-family: Gothampro, sans-serif;
