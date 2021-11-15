@@ -54,6 +54,8 @@ jQuery(document).ready(function($) {
     $(".checkout-compare-price").text("$" + obj.reg_price.toFixed(2));
     $(".checkout-price").text("$" + obj.price.toFixed(2));
     $(".checkout-compare-price-savings-pct").text("$" + (obj.reg_price - obj.price).toFixed(2));
+      $(".youresaving").hide();
+
     console.log(obj.freeshipping);
     console.log(typeof obj.freeshipping);
     if(obj.freeshipping) {
@@ -99,10 +101,7 @@ jQuery(document).ready(function($) {
 
       $(".badge-freeshipping").hide();
       
-      $.each($(".r_product_info"), function() {
-        $(".youresaving").hide();
 
-      });
 
       
       $.each($(".variant-input"), function() {
