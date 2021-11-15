@@ -65,7 +65,10 @@
         </div>
 
         <div id="purchase_cards" class="r_hero_lift">
-          <div class="product-info">
+          <div class="r_product_info">
+
+
+
             <div class="product-block product-block--header product-single__header small--text-center">
               {%- if settings.vendor_enable -%}
                 <div class="product-single__vendor">
@@ -86,7 +89,7 @@
                   {{ product.title }}
                 </p>
               {%- else -%}
-                <h1 class="h1 product-single__title">
+                <h1 class="r_h1 r_product_title">
                   {%- unless product.empty? -%}
                     {{ product.title }}
                   {%- else -%}
