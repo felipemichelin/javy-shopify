@@ -1,0 +1,111 @@
+    <div class="r_section">
+      <div class="r_container">
+        <div class="r_container_btn">
+          <div class="r_title_wrapper">
+            <h2 class="r_h2 m_t_0">Shop Javy Gear</h2>
+            <p class="r_p r_bigger">Blablablalbaa<br></p>
+          </div>
+          <a href="#" class="r_btn r_btn_desktop w-inline-block">
+            <div class="crossell-button-text">VIEW ALL</div>
+          </a>
+        </div>
+        <div class="r_product_section">
+          <div class="r_javy_gear_container">
+            <div class="w-layout-grid grid-21">
+              <div class="gear-item">
+                <div class="gear-image"><img src="images/tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png" loading="lazy" alt=""></div>
+                <div class="gear-text">
+                  <div class="product-title">
+                    <div class="r_item_title">Thermal Travel Tumbler</div>
+                  </div>
+                  <div class="product-price">
+                    <div class="r_item_price">$19.95</div>
+                  </div>
+                </div>
+              </div>
+              <div class="gear-item">
+                <div class="gear-image"><img src="images/tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png" loading="lazy" alt=""></div>
+                <div class="gear-text">
+                  <div class="product-title">
+                    <div class="r_item_title">Thermal Travel Tumbler</div>
+                  </div>
+                  <div class="product-price">
+                    <div class="r_item_price">$19.95</div>
+                  </div>
+                </div>
+              </div>
+              <div class="gear-item">
+                <div class="gear-image"><img src="images/tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png" loading="lazy" alt=""></div>
+                <div class="gear-text">
+                  <div class="product-title">
+                    <div class="r_item_title">Thermal Travel Tumbler</div>
+                  </div>
+                  <div class="product-price">
+                    <div class="r_item_price">$19.95</div>
+                  </div>
+                </div>
+              </div>
+              <div class="gear-item">
+                <div class="gear-image"><img src="images/tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png" loading="lazy" alt=""></div>
+                <div class="gear-text">
+                  <div class="product-title">
+                    <div class="r_item_title">Thermal Travel Tumbler</div>
+                  </div>
+                  <div class="product-price">
+                    <div class="r_item_price">$19.95</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% schema %}
+  {
+    "name": "[R] Gear",
+    "max_blocks": 10,
+    "settings": [],
+    "blocks": [
+      {
+        "type": "testimonial",
+        "name": "Testimonial",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "testimonial",
+            "label": "Text",
+            "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Author's image"
+          },
+          {
+            "type": "text",
+            "id": "author",
+            "label": "Author",
+            "default": "Author's name"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "[R] Gear",
+        "blocks": [
+          {
+            "type": "testimonial"
+          },
+          {
+            "type": "testimonial"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
