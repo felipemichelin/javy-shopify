@@ -331,6 +331,8 @@
                   var sale_price_old = $(".checkout-price").html();
                   console.log(sale_price_old);
                   var compare_price_old = $(".checkout-compare-price").html();
+                  console.log(compare_price_old);
+
                   var new_savings = 1 - sale_price_old/compare_price_old;
                   $(".checkout-compare-price-savings-pct").html(new_savings);
                   console.log(new_savings);
