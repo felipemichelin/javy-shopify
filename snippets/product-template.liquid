@@ -334,9 +334,18 @@
 
                       <div class="product-block checkout_row" {{ block.shopify_attributes }}>
 
-                         <div class="product__quantity">
-                          <input type="number" id="Quantity-{{ section_id }}" name="quantity" value="1" min="1" form="{{ form_id }}">
-                        </div>
+      <div class="product__quantity product__quantity--{{ variant_type }}">
+        {% comment %} <label for="Quantity-{{ section_id }}" class="variant__label">{{ 'products.product.quantity' | t }}</label> 
+        <input type="number" id="Quantity-{{ section_id }}" name="quantity" value="1" min="1">
+        {% endcomment %}
+        <button type="button" class="js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="" data-qty="0" aria-label="Reduce item quantity by one">
+          <span class="fallback-text" aria-hidden="true">−</span>
+        </button>
+        <input type="number" id="Quantity-{{ section_id }}" min="1" pattern="[0-9]*" name="quantity" value="1">
+        <button type="button" class="js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="" data-qty="11" aria-label="Increase item quantity by one">
+          <span class="fallback-text" aria-hidden="true">+</span>
+        </button>
+      </div>
 
 
                         {%- unless product.empty? -%}
