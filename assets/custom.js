@@ -77,7 +77,7 @@ var slider2 = new Swiper(".slider2", {
           */
 });
 if ($(window).width() < 990) {
-  var slider3 = new Swiper(".slider3", {
+  var slider_flavors = new Swiper(".slider_flavors", {
     centeredSlides: true,
     loop: true,
     // Enable lazy loading
