@@ -793,7 +793,6 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
   
       _updatePrice: function(variant) {
         if (variant.price === this.currentVariant.price && variant.compare_at_price === this.currentVariant.compare_at_price) {
-          this.container.querySelector(selectors.savingsPct).innerHTML = "teste";
           return;
         }
   
