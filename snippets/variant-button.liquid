@@ -84,7 +84,7 @@
             
             
             {% if bottle_cnt > 0 %}
-            <span class="swatch-title"> <span class="title">{{ value | escape }}</span> <span class="unit_price"> {{current_variant.price | divided_by: bottle_cnt | money }}/unit </span> </span>
+            <span class="swatch-title"> <span class="title">{{ value | escape }}</span> <span class="unit_price"> {{current_variant.price | divided_by: bottle_cnt | money }}/each </span> </span>
             {% else %}
             {{ value | escape }}
             {% endif %}
