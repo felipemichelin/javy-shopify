@@ -101,11 +101,6 @@ jQuery(document).ready(function($) {
         var pack = $(this).attr("data-value");        
         $(this).find(".unit_price").text("$" + sub_variants[pack]['one_unit_price'] + "/each");
       });
-
-      $.each($(".price-list"), function() {
-        $(this).find(".checkout-compare-price-savings-pct").text("$" + sub_variants[pack]['one_unit_price'] + "/each");
-      });
-
     }
   });
   
