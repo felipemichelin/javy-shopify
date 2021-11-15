@@ -69,7 +69,7 @@
 
 
 
-            <div class="product-block product-block--header product-single__header small--text-center">
+
               {%- if settings.vendor_enable -%}
                 <div class="product-single__vendor">
                   {{ product.vendor }}
@@ -97,7 +97,7 @@
                   {%- endunless -%}
                 </h1>
               {%- endif -%}
-            </div>
+
 
             <div data-product-blocks>
               {% capture form_id %}AddToCartForm-{{ section_id }}{% endcapture %}
