@@ -6682,7 +6682,6 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
       },
   
       initPriceRange: function() {
-        console.log("felipe");
         const priceRangeEls = document.querySelectorAll(selectors.priceRange)
         priceRangeEls.forEach((el) => new theme.PriceRange(el, {
         
