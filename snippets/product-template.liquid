@@ -146,24 +146,8 @@
               <div data-w-tab="one_tab" class="r_prod_tab w-tab-pane w--tab-active">
                 <div class="tab-content-inner"><img loading="lazy" src="images/saveupto.svg" alt="" class="save-up">
 
-                                      <div class="product-block" {{ block.shopify_attributes }}>
-                        {%- unless product.has_only_default_variant -%}
-                          {%- for option in product.options_with_values -%}
-                            {%- if block.settings.color_swatches -%}
-                              {%- assign is_color = false -%}
-                              {%- assign color_option_index = 0 -%}
-                              {%- assign swatch_trigger = 'products.general.color_swatch_trigger' | t | downcase-%}
-                              {%- assign color_option_index = forloop.index0 -%}
-                              {%- assign downcased_option = option.name | downcase -%}
-                              {%- if downcased_option contains swatch_trigger -%}
-                                {%- assign is_color = true -%}
-                              {%- elsif swatch_trigger == 'color' and downcased_option contains 'colour' -%}
-                                {%- assign is_color = true -%}
-                              {%- endif -%}
-                            {%- endif -%}
-
-                            {%- if block.settings.picker_type == 'button' -%}
-                              {%- render 'variant-button',
+                
+                   {%- render 'variant-button',
                                 product: product,
                                 form_id: form_id,
                                 section_id: section_id,
@@ -173,21 +157,7 @@
                                 is_color: is_color,
                                 color_option_index: color_option_index
                               -%}
-                            {%- else -%}
-                              {%- render 'variant-dropdown',
-                                product: product,
-                                form_id: form_id,
-                                section_id: section_id,
-                                variant_labels: block.settings.variant_labels,
-                                option: option,
-                                forloop: forloop
-                              -%}
-                            {%- endif -%}
-                          {%- endfor -%}
-                        {%- endunless -%}
-                      </div>
 
-                      
                   <ul role="list" class="r_product_features r_one_time w-list-unstyled">
                     <li class="r_product_features_item"><img loading="lazy" src="https://uploads-ssl.webflow.com/61325340b9cecc1855901179/61893b8b8f80ad621ceb731f_checkmark.svg" alt="check-icon" class="r_check_item">
                       <div class="r_p_benefits r_smaller m_0">Never have to think about reordering<strong><br></strong></div>
