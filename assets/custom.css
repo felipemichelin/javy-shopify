@@ -1248,7 +1248,7 @@ span.icon__fallback-text {
 }
 
 .slide-nav__overflow.slide-nav__overflow--thumb.js-menu--is-open {
-  z-index: 5000;
+  z-index: 4700;
 }
 
 
