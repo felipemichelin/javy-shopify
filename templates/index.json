@@ -30,17 +30,29 @@
       "settings": {
       }
     },
-    "16369380127c0c4afe": {
-      "type": "featured-collection",
+    "1636938299d92ccfd5": {
+      "type": "r_gear",
+      "blocks": {
+        "1636938299dd76fa37-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name"
+          }
+        },
+        "1636938299dd76fa37-1": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name"
+          }
+        }
+      },
+      "block_order": [
+        "1636938299dd76fa37-0",
+        "1636938299dd76fa37-1"
+      ],
       "settings": {
-        "title": "Featured collection grid",
-        "description": "",
-        "home_featured_products": "coffee-upgrades-v2",
-        "rows": 1,
-        "per_row_desktop": 4,
-        "per_row_mobile": "2",
-        "view_all": true,
-        "alt": false
       }
     },
     "1636938087dade00c5": {
@@ -56,7 +68,7 @@
     "1636937926242c9bd3",
     "1636937952ab6f11d9",
     "163693796607e2c395",
-    "16369380127c0c4afe",
+    "1636938299d92ccfd5",
     "1636938087dade00c5"
   ]
 }
