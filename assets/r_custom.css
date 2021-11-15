@@ -2,6 +2,11 @@
   overflow: hidden;
 }
 
+.r_category_badge {
+  width: auto;
+  display: inline-block;
+}
+
 .r_wrapper {
   font-family: Gothampro, sans-serif;
   color: #000;
