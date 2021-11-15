@@ -23,11 +23,17 @@
             </a>
           </div>
           <div class="r_recipes_container">
-            <h3 class="r_h3 m_b_30 m_t_0">Latest Recipes
-            </h3>
-            <div class="w-layout-grid r_recipe_list_grid">
+
+              {%- if section.settings.title != blank -%}
+      <header class="section-header" data-aos>
+        <h3 class="r_h3 m_b_30 m_t_0">
+          {{ section.settings.title | escape }}
+        </h3>
+      </header>
+    {%- endif -%}
 
 
+   <div class="w-layout-grid r_recipe_list_grid">
 
         {%- for article in blog.articles limit: 3 -%}
           <div class="grid__item medium-up--one-third">
@@ -43,7 +49,7 @@
           </div>
         {%- endfor -%}
 
-
+</div>
 
 
 
