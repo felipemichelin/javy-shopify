@@ -6,8 +6,6 @@
   {%- endif -%}
                   <div class="r_recipe_content_wrapper">
             {%- for tag in article.tags -%}
-            {% if tag contains "_" %}{%- assign tag_starts_with = tag | slice: 0 -%}{% if tag_starts_with == "_" %}{% if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif %}{% continue %}{% endif %}{% endif %}
-            {% unless first_item %} &middot; {% endunless %}{%- assign first_item = false -%}
                               <div class="r_category_badge">
                     <div class="r_category_text">{{ tag }}</div>
                   </div>
