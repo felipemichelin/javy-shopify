@@ -59,11 +59,11 @@
               {% if variant.option1 == value %}
                 {% assign current_variant = variant %}
                   {% assign bottle_cnt = 0 %}
-                {% if current_variant.sku == 'Javy-6oz-1' %}
+                {% if current_variant.title == '1 Bottle' %}
                   {% assign bottle_cnt = 1 %}
-                {% elsif current_variant.sku == 'Javy-6oz-2' %}
+                {% elsif current_variant.title == '2 Bottles' %}
                   {% assign bottle_cnt = 2 %}
-                {% elsif current_variant.sku == 'Javy-6oz-3' %}
+                {% elsif current_variant.title == '3 Bottles' %}
                   {% assign bottle_cnt = 3 %}                        		
                 {% endif %}
               {% endif %}
