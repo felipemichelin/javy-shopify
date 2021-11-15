@@ -32,6 +32,16 @@
   text-transform: none!important;
 }
 
+.r_h3 {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 20px;
+  padding-left: 0px;
+  font-family: Gothampro, sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+}
 
 
 .r_wrapper h1,
