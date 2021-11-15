@@ -37,8 +37,6 @@
    <div class="w-layout-grid r_recipe_list_grid">
 
         {%- for article in blog.articles limit: 3 -%}
-        <a href="#" class="r_recipe_item w-inline-block">
-            {%- render 'recipe-grid-item',
               blog: blog,
               article: article,
               image_size: section.settings.blog_image_size,
