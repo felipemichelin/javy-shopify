@@ -8221,7 +8221,7 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
     theme.sections.register('footer-section', theme.FooterSection);
     theme.sections.register('new-nav-section', theme.FooterSection);
     theme.sections.register('store-availability', theme.StoreAvailability);
-
+    $('.checkout-compare-price-savings-pct').html(saving_total);
     if (document.body.classList.contains('template-cart')) {
       var cartPageForm = document.getElementById('CartPageForm');
       if (cartPageForm) {
