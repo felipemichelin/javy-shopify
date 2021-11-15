@@ -1,0 +1,84 @@
+
+    <div class="r_section">
+      <div class="r_container r_center">
+        <div class="r_seen_inner">
+          <div class="r_seen_swiper">
+            <div class="r_seen_gradient"></div>
+            <div class="r_seen_gradient r_right"></div>
+            <div class="swiper slider2">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="r_seen_card"><img src="{{ 'usa-today-01.svg' | asset_url}}" loading="lazy" alt="" class="r_company_logo lozad">
+                    <p class="r_p r_smaller m_b_0">Instantly craft any style coffee that you want in seconds.<br></p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="r_seen_card"><img src="{{ 'cbs-04.svg' | asset_url}}" loading="lazy" alt="" class="r_company_logo lozad">
+                    <p class="r_p r_smaller m_b_0">Instantly craft any style coffee that you want in seconds.<br></p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="r_seen_card"><img src="{{ 'fox-02.svg' | asset_url}}" loading="lazy" alt="" class="r_company_logo lozad">
+                    <p class="r_p r_smaller m_b_0">Instantly craft any style coffee that you want in seconds.<br></p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="r_seen_card"><img src="{{ 'nbc-03.svg' | asset_url}}" loading="lazy" alt="" class="r_company_logo lozad">
+                    <p class="r_p r_smaller m_b_0">Instantly craft any style coffee that you want in seconds.<br></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+{% schema %}
+  {
+    "name": "[R] SeenOn",
+    "max_blocks": 10,
+    "settings": [],
+    "blocks": [
+      {
+        "type": "testimonial",
+        "name": "Testimonial",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "testimonial",
+            "label": "Text",
+            "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Author's image"
+          },
+          {
+            "type": "text",
+            "id": "author",
+            "label": "Author",
+            "default": "Author's name"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonials",
+        "blocks": [
+          {
+            "type": "testimonial"
+          },
+          {
+            "type": "testimonial"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+

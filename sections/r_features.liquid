@@ -1,0 +1,98 @@
+
+    <div class="r_section r_p_t_0">
+      <div class="r_container">
+        <div data-w-id="607527d3-1c66-7fda-fffd-54f9339f4bbf" class="four-column">
+          <div class="w-layout-grid r_content_grid">
+            <div class="r_content_wrapper">
+              <div class="r_line_wrapper">
+                <div class="r_content_line"></div>
+                <div class="r_line_text">Features</div>
+              </div>
+              <div class="r_title_wrapper r_h3">
+                <h3 class="r_heading r_h3 r_m_0">Feel the difference or it&#x27;s free</h3>
+              </div>
+              <p class="r_p">Instantly craft any style coffee that you want in seconds. Simply add 1-2 tsp of Javy Coffee Concentrate and enjoy your favorite drink.<br></p>
+            </div>
+            <div id="w-node-fdb25ca6-9f4e-e0cd-9062-8a78f2add3c1-33e8faaa" class="r_inner_full r_first_child">
+              <div class="r_content_img_wrap"><img src="{{ 'feature_03.jpg' | asset_url}}" loading="lazy" alt="Photo" class="r_feature_img"></div>
+            </div>
+          </div>
+          <div class="w-layout-grid r_content_grid">
+            <div id="w-node-_76857134-c823-feee-6800-3b429818dec3-33e8faaa" class="r_inner_full">
+              <div class="r_content_img_wrap r_left_justified"><img src="{{ 'feature_02.jpg' | asset_url}}" loading="lazy" alt="Photo" class="r_feature_img"></div>
+            </div>
+            <div class="r_content_wrapper">
+              <div class="r_line_wrapper">
+                <div class="r_content_line"></div>
+                <div class="r_line_text">Features</div>
+              </div>
+              <h3 class="r_heading r_h3 r_m_0">Feel the difference or it&#x27;s free</h3>
+              <p class="r_p">Instantly craft any style coffee that you want in seconds. Simply add 1-2 tsp of Javy Coffee Concentrate and enjoy your favorite drink.<br></p>
+              <a href="#" class="r_btn r_auto">See More</a>
+            </div>
+          </div>
+          <div class="w-layout-grid r_content_grid">
+            <div class="r_content_wrapper">
+              <div class="r_line_wrapper">
+                <div class="r_content_line"></div>
+                <div class="r_line_text">Features</div>
+              </div>
+              <h3 class="r_heading r_h3 r_m_0">Feel the difference or it&#x27;s free</h3>
+              <p class="r_p">Instantly craft any style coffee that you want in seconds. Simply add 1-2 tsp of Javy Coffee Concentrate and enjoy your favorite drink.<br></p>
+            </div>
+            <div id="w-node-fcbc23f4-234d-3c01-279c-bc99908ce8ea-33e8faaa" class="r_inner_full r_first_child">
+              <div class="r_content_img_wrap"><img src="{{ 'feature_01.jpg' | asset_url}}" loading="lazy" alt="Photo" class="r_feature_img"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+
+{% schema %}
+  {
+    "name": "[R] Features",
+    "max_blocks": 10,
+    "settings": [],
+    "blocks": [
+      {
+        "type": "testimonial",
+        "name": "Testimonial",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "testimonial",
+            "label": "Text",
+            "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Author's image"
+          },
+          {
+            "type": "text",
+            "id": "author",
+            "label": "Author",
+            "default": "Author's name"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonials",
+        "blocks": [
+          {
+            "type": "testimonial"
+          },
+          {
+            "type": "testimonial"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+

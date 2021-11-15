@@ -1,0 +1,93 @@
+    <div class="r_section">
+      <div class="r_container">
+        <div class="r_title_wrapper r_centered">
+          <h2 class="r_h2 m_t_0">Bundle &amp; Save</h2>
+          <p class="r_p r_bigger">Making delicious coffee at home or on-the-go has only become more of a hassle. Javy reinvented the coffee experience to be easy, affordable, and extremely tasty!<br></p>
+        </div>
+        <div class="w-layout-grid r_deals_grid">
+          <div class="r_bundle_save_item set_kit">
+            <div class="img-container"><img src="{{ 'new-imgs_0005_Layer-1.jpg' | asset_url}}" loading="lazy" sizes="(max-width: 479px) 94vw, (max-width: 767px) 95vw, (max-width: 1041px) 96vw, 1000px" srcset="{{ 'new-imgs_0005_Layer-1-p-500.jpeg' | asset_url}} 500w, {{ 'new-imgs_0005_Layer-1.jpg' | asset_url}} 1000w" alt=""></div>
+            <div class="desc-container">
+              <h3 class="r_h3 m_0">Bundle &amp; Save<a href="https://drinkolipop.com/pages/subscription#featured-product"><strong><br></strong></a>
+              </h3>
+              <p class="r_p r_medium">Life is all about what you make of it.<br></p>
+              <a href="#" data-w-id="f04ec705-8a95-6042-743c-17ddb3fce378" style="opacity:0" class="r_btn r_btn_desktop w-inline-block">
+                <div class="crossell-button-text">SHOP NOW →</div>
+              </a>
+            </div>
+          </div>
+          <div class="r_bundle_save_item set_kit">
+            <div class="img-container"><img src="{{ 'new-imgs_0005_Layer-1.jpg' | asset_url}}" loading="lazy" sizes="(max-width: 479px) 94vw, (max-width: 767px) 95vw, (max-width: 1041px) 96vw, 1000px" srcset="{{ 'new-imgs_0005_Layer-1-p-500.jpeg' | asset_url}} 500w, {{ 'new-imgs_0005_Layer-1.jpg' | asset_url}} 1000w" alt=""></div>
+            <div class="desc-container">
+              <h4 class="r_h3 m_0">Bundle &amp; Save<a href="https://drinkolipop.com/pages/subscription#featured-product"><strong><br></strong></a>
+              </h4>
+              <p class="r_p r_medium">Life is all about what you make of it.<br></p>
+              <a href="#" data-w-id="60a19be8-f65a-9ca7-cb48-166f2b52dc54" style="opacity:0" class="r_btn r_btn_desktop w-inline-block">
+                <div class="crossell-button-text">SHOP NOW →</div>
+              </a>
+            </div>
+          </div>
+          <div class="r_bundle_save_item set_kit">
+            <div class="img-container"><img src="{{ 'new-imgs_0005_Layer-1.jpg' | asset_url}}" loading="lazy" sizes="(max-width: 479px) 94vw, (max-width: 767px) 95vw, (max-width: 1041px) 96vw, 1000px" srcset="{{ 'new-imgs_0005_Layer-1-p-500.jpeg' | asset_url}} 500w, {{ 'new-imgs_0005_Layer-1.jpg' | asset_url}} 1000w" alt=""></div>
+            <div class="desc-container">
+              <h4 class="r_h3 m_0">Bundle &amp; Save<a href="https://drinkolipop.com/pages/subscription#featured-product"><strong><br></strong></a>
+              </h4>
+              <p class="r_p r_medium">Life is all about what you make of it.<br></p>
+              <a href="#" data-w-id="59329e44-e714-5b70-d38c-4ee1461df1f1" style="opacity:0" class="r_btn r_btn_desktop w-inline-block">
+                <div class="crossell-button-text">SHOP NOW →</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+{% schema %}
+  {
+    "name": "[R] Deals",
+    "max_blocks": 10,
+    "settings": [],
+    "blocks": [
+      {
+        "type": "testimonial",
+        "name": "Testimonial",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "testimonial",
+            "label": "Text",
+            "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Author's image"
+          },
+          {
+            "type": "text",
+            "id": "author",
+            "label": "Author",
+            "default": "Author's name"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonials",
+        "blocks": [
+          {
+            "type": "testimonial"
+          },
+          {
+            "type": "testimonial"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
