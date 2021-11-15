@@ -4,9 +4,59 @@
       "type": "r_hero",
       "settings": {
       }
+    },
+    "163693788401f3ab80": {
+      "type": "r_seen_on",
+      "settings": {
+      }
+    },
+    "163693791121f66794": {
+      "type": "r_flavors",
+      "settings": {
+      }
+    },
+    "1636937926242c9bd3": {
+      "type": "r_deals",
+      "settings": {
+      }
+    },
+    "1636937952ab6f11d9": {
+      "type": "r_brewed_up",
+      "settings": {
+      }
+    },
+    "163693796607e2c395": {
+      "type": "r_features",
+      "settings": {
+      }
+    },
+    "16369380127c0c4afe": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection grid",
+        "description": "",
+        "home_featured_products": "coffee-upgrades-v2",
+        "rows": 1,
+        "per_row_desktop": 4,
+        "per_row_mobile": "2",
+        "view_all": true,
+        "alt": false
+      }
+    },
+    "1636938087dade00c5": {
+      "type": "r_recipes",
+      "settings": {
+      }
     }
   },
   "order": [
-    "1636926059f853904a"
+    "1636926059f853904a",
+    "163693788401f3ab80",
+    "163693791121f66794",
+    "1636937926242c9bd3",
+    "1636937952ab6f11d9",
+    "163693796607e2c395",
+    "16369380127c0c4afe",
+    "1636938087dade00c5"
   ]
 }
