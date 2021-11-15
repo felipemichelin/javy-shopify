@@ -1,3 +1,7 @@
+body {
+  letter-spacing: 0px!important;
+}
+
 .r_full_width {
   width: 100%!important;
 }
