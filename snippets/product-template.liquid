@@ -315,17 +315,19 @@
                     <div class="price-sec">
                       <div class="youresaving">You&#x27;re saving <span class="checkout-compare-price-savings-pct" data-product-price-savings>
 
-{% assign sortedVariants = product.variants %}
-{% for variant in sortedVariants %}
-  {% if variant.available %}
-    {% capture discount %}
-    {{ variant.compare_at_price | minus:variant.price | money }}
-    ({{ variant.compare_at_price | minus:variant.price | times: 100.0 | divided_by:variant.compare_at_price | money_without_currency | times: 100 | remove: '.0'}}%)
-    {% endcapture %}
 
-    You save: {{ discount }}
-  {% endif %}
-{% endfor %}                 
+   {%- if product.compare_at_price_max > product.price -%}
+
+   youre saving
+                            {%- liquid
+                              assign hide_sale_price = true
+                              if current_variant.compare_at_price
+                                assign hide_sale_price = false
+                              endif
+                            -%}
+
+
+                      
                       </span>%</div>
                     </div>
                     <div class="saving-sec" data-price-wrapper>
