@@ -8,12 +8,6 @@
           "settings": {
           }
         },
-        "8c5a0a54-d7de-466f-b027-58e9fd62fdba": {
-          "type": "text",
-          "settings": {
-            "text": "Flavor: {{ product.metafields.my_fields.coffee_flavor.value }}"
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -61,7 +55,6 @@
       },
       "block_order": [
         "price",
-        "8c5a0a54-d7de-466f-b027-58e9fd62fdba",
         "variant_picker",
         "sales_point",
         "inventory_status",
