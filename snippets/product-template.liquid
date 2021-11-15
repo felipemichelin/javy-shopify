@@ -313,7 +313,7 @@
                   </ul>
                   <div class="price-list">
                     <div class="price-sec">
-                      <div class="youresaving">You&#x27;re saving <span class="checkout-compare-price-savings-pct" data-product-price-savings>{{ variant.compare_at_price | minus:variant.price | money }} ({{ variant.compare_at_price | minus:variant.price | times: 100.0 | divided_by:variant.compare_at_price | money_without_currency | times: 100 | remove: '.0'}}</span>%</div>
+                      <div class="youresaving">You&#x27;re saving <span class="checkout-compare-price-savings-pct" data-product-price-savings>28</span>%</div>
                     </div>
                     <div class="saving-sec" data-price-wrapper>
                       <div class="reg-text">Only <span class="checkout-price" data-product-price>{{ current_variant.price | money }}</span></div>
@@ -323,6 +323,15 @@
 
                     </div>
                   </div>
+
+
+                  <script>
+
+                  var sale_price_old = $(".sale-price").html();
+                  var compare_price_old = $(".checkout-compare-price").html();
+                  var new_savings = 1 - sale_price_old/compare_price_old;
+                  $(".checkout-compare-price-savings-pct").html(new_savings);
+</script>
 
 
 
