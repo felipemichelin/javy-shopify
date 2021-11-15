@@ -54,7 +54,7 @@
           </label>
         {%- else -%}
           {% assign current_variant = product.selected_or_first_available_variant %}
-          {% if product.handle == "javy-coffee" %}
+          {% if product.type == "Coffee Concentrate" %}
             {% for variant in product.variants %}
               {% if variant.option1 == value %}
                 {% assign current_variant = variant %}
