@@ -10,6 +10,11 @@ button.btn.btn--full.add-to-cart {
 }
 }
 
+button.btn.btn--full.cart__checkout.cart__checkout--drawer {
+  max-width: 100%!important;
+  width: 100%!important;
+}
+
     
 .header-wrapper--overlay {
   background: none!important;
