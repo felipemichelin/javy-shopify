@@ -3,6 +3,8 @@
 .r_wrapper {
   font-family: Gothampro, sans-serif;
   color: #000;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .r_wrapper h1 {
