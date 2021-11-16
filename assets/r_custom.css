@@ -89,6 +89,20 @@ ul.r_product_features.r_one_time.w-list-unstyled.r_general_product {
   opacity: 100!important;
 }
 
+@media screen and (max-width: 991px) {
+.r_hero_left {
+    width: 100%;
+    background-color: #fff6e7!important;
+    padding-top: 90px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+}
+
+
 .r_product_hero {
   z-index: 0!important;
 }

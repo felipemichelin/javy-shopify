@@ -504,4 +504,20 @@
 
 {% endif %}
 
+<style>
+@media screen and (max-width: 991px) {
+header.site-header {
+    position: absolute;
+    z-index: 50;
+    width: 100%!important;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: transparent;
+}
+}
+</style>
+
     <link rel="stylesheet" href="{{ 'product-hero.css' | asset_url }}">
