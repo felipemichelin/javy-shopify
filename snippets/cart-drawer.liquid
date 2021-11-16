@@ -55,42 +55,6 @@
   background-color: tomato; 
 }
 </style>
-<!-- Free shipping progress markup -->
-<div class="cart-shipping__wrapper">
-  <p class="cart-shipping__numOuter">You're $<span class="cart-shipping__num"></span> away from free shipping!</p>
-  <p class="cart-shipping__success">You're eligible for Free Shipping!</p>
-  <div class="cart-shippingThreshold__bar">
-    <span class="cart-shippingThreshold__progress"></span>
-  </div>
-</div>
-
-<style>
-/*  Style the progress bar  */
-.cart-shipping__wrapper {
-  padding: 15px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.cart-shippingThreshold__bar {
-  position: relative;
-  /*  Progress bar background color  */
-  background-color: #d8d8d8;
-  height: 1rem;
-}
-
-.cart-shippingThreshold__progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 0;
-  max-width: 100%;
-  height: 100%;
-  display: block;
-  /*  Progress bar fill color  */
-  background-color: tomato; 
-}
-</style>
 
 <script>
 // Calculate the progress number, and the width of the progress bar. Compiled to ES5.
@@ -133,7 +97,7 @@ function calculateProgress(currentVal, targetVal) {
 // NOTE: If you make this ajax request outside of the functions that update the cart, the calculator won't sync with the current cart state without refreshing the page. You need to specify that you want to read the current cart data AFTER the new items are added/removed.
   $.ajax({
   type: 'GET',
-  url: '/cart.js',
+  url: '/change.js',
   dataType: 'json',
   success: function(cart){
     // run the calculator with a target price of $75
@@ -142,8 +106,6 @@ function calculateProgress(currentVal, targetVal) {
 });
   
 </script>
-
-
 
       <div class="drawer__scrollable">
         <div data-products></div>
