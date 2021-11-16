@@ -22,13 +22,14 @@
             <div class="r_title_wrapper r_centered r_bigger">
           <h1 class="r_h2 m_t_0">              {{ collection.title }}
 </h1>
-          <p class="r_p r_bigger">            {%- if collection.description != blank and section.settings.description_enable -%}
+          {%- if collection.description != blank and section.settings.description_enable -%}
+          <p class="r_p r_bigger">            
               {%- assign desc_length = collection.description | size -%}
               <div class="rte section-header__description{% if desc_length < 200 %} section-header__description--large{% endif %} appear-delay-1">
                 {{ collection.description }}
               </div>
-            {%- endif -%}<br></p>
-
+           </p>
+ {%- endif -%}
 
 
         </div>
@@ -42,17 +43,24 @@
   </div>
 {%- else -%}
   <div class="page-width page-content page-content--flush-bottom">
-    <header class="section-header" data-aos>
-      <h1 class="section-header__title appear-delay">
-        {{ collection.title }}
-      </h1>
+  
+  
+             <div class="r_title_wrapper r_centered r_bigger">
+          <h1 class="r_h2 m_t_0">              {{ collection.title }}
+</h1>
+          {%- if collection.description != blank and section.settings.description_enable -%}
+          <p class="r_p r_bigger">            
+              {%- assign desc_length = collection.description | size -%}
+              <div class="rte section-header__description{% if desc_length < 200 %} section-header__description--large{% endif %} appear-delay-1">
+                {{ collection.description }}
+              </div>
+           </p>
+ {%- endif -%}
 
-      {%- if collection.description != blank and section.settings.description_enable -%}
-        {%- assign desc_length = collection.description | size -%}
-        <div class="rte section-header__description{% if desc_length < 200 %} section-header__description--large{% endif %} appear-delay-1">
-          {{ collection.description }}
+
         </div>
-      {%- endif -%}
+
+        
     </header>
   </div>
 {%- endif -%}
