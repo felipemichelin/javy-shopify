@@ -748,6 +748,43 @@
     ]
   },
   {
+    "name": "Freeshipping",
+    "settings": [
+      {
+        "type": "text",
+        "id": "freeshipping_price",
+        "label": "FreeShipping Price"
+      }
+    ]
+  },
+  {
+    "name": "Free Addon Product",
+    "settings": [
+      {
+        "type": "product",
+        "id": "freeaddon_product",
+        "label": "Free Addon Product"
+      },
+      {
+        "type": "text",
+        "id": "freeaddon_price",
+        "label": "Free Addon Price",
+        "default": "5000"
+      }
+    ]
+  },
+  {
+    "name": "Addon Products",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_addon",
+        "label": "Show Addon Products on Ajax Cart",
+        "default": true
+      }
+    ]
+  },
+  {
     "name": "Extras",
     "settings": [
       {
