@@ -1275,7 +1275,7 @@ div#CartDrawer {
 }
 
 
-
+}
 
 
 @media screen and (max-width: 768px) {
@@ -1386,12 +1386,7 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
   height: 65px!important;
 }
 
-.grid-product__tag.grid-product__tag--sale {
-  display: none;
-}
-
 .product-block {
   margin-bottom: 0px!important;
   margin-top: 10px!important;
-}
 }
