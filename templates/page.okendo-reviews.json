@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "r_reviews",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
