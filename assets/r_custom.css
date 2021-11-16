@@ -33,6 +33,9 @@ div#swiper-wrapper-bbe627a435f5a47d {
   object-fit: cover;
 }
 
+img.lazyautosizes.lazyloaded {
+  width: 100%!important;
+}
 
 .fixer_slider {
   height: 100%!important;
