@@ -19,84 +19,26 @@
       </div>
     </div>
     <div class="drawer__inner">
-<!-- Free shipping progress markup -->
-<div class="cart-shipping__wrapper">
-  <p class="cart-shipping__numOuter">You're $<span class="cart-shipping__num"></span> away from free shipping!</p>
-  <p class="cart-shipping__success">You're eligible for Free Shipping!</p>
-  <div class="cart-shippingThreshold__bar">
-    <span class="cart-shippingThreshold__progress"></span>
-  </div>
-</div>
-
-<style>
-/*  Style the progress bar  */
-.cart-shipping__wrapper {
-  padding: 15px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.cart-shippingThreshold__bar {
-  position: relative;
-  /*  Progress bar background color  */
-  background-color: #d8d8d8;
-  height: 1rem;
-}
-
-.cart-shippingThreshold__progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 0;
-  max-width: 100%;
-  height: 100%;
-  display: block;
-  /*  Progress bar fill color  */
-  background-color: tomato; 
-}
-</style>
-
-<script>
-// Calculate the progress number, and the width of the progress bar. Compiled to ES5.
-function calculateProgress(currentVal, targetVal) {
-    var progressBar = document.querySelectorAll('.cart-shippingThreshold__progress');
-    var progressNum = document.querySelectorAll('.cart-shipping__num');
-    var progressOuter = document.querySelectorAll('.cart-shipping__numOuter');
-    var successMsg = document.querySelectorAll('.cart-shipping__success');
-    // calculate how far progress is from the total as a percentage
-    var result = Math.round(100 * currentVal / targetVal);
-    progressBar.forEach(function(el){
-      el.setAttribute('style', "width: ".concat(result, "%"));
-    })
-     // Update the progess text. If threshold is met, show success message
-    var newProgressNum = (targetVal - currentVal) / 100;
-    if(newProgressNum <= 0){
-      successMsg.forEach(function(el){
-        el.setAttribute('style', 'display: block;');
-      });
-      progressOuter.forEach(function(el){
-        el.setAttribute('style', 'display: none;');
-      });
-      progressNum.forEach(function(el){
-        el.textContent = newProgressNum;
-      });
-    } else {
-      successMsg.forEach(function(el){
-        el.setAttribute('style', 'display: none;');
-      });
-      progressOuter.forEach(function(el){
-        el.setAttribute('style', 'display: block;');
-      });
-      progressNum.forEach(function(el){
-        el.textContent = newProgressNum;
-      });
-    }
-  };
 
 
-  
-</script>
+      <div class="drawer__freeshipping-bar">
+        {% assign short_amount = settings.freeshipping_price | times: 100 | minus: cart.total_price %}
+        {% assign progress = cart.total_price | divided_by: settings.freeshipping_price | floor %}
+        {% if progress > 100 %}
+          {% assign progress = 100 %}
+        {% endif %}
+        <input type="hidden" value="{{settings.freeshipping_price}}" id="cart_freeshipping_limit" />
+        <label class="commment-failed {% if short_amount <= 0 %} hide {% endif %}">You're  <span class="short_amount">{{short_amount | money}}</span> away to get free shipping</label>
+        <label class="commment-success {% if short_amount > 0 %} hide {% endif %}">You've earned free shipping!</label>
+        
+        <label class="progressbar">
+          <div class="progress-wrapper">
+          	<span class="progress" style="width: {{progress}}%;"></span>
+          </div>
+        </label>
+      </div>
 
+      
       <div class="drawer__scrollable">
         <div data-products></div>
 
