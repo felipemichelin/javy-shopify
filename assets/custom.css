@@ -117,6 +117,7 @@ label.commment-success {
   float: right;
   text-align: center;
   font-size: 12px!important;
+  height: 45px;
   padding: 5px;
   cursor: pointer;
   width: 100%;
