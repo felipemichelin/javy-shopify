@@ -1295,6 +1295,11 @@ div#CartDrawer {
   display: flex!important;
 }
 
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+  display: none!important;
+}
+
+
 .previous-hero-slider {
   position: relative;
   z-index: 100;
