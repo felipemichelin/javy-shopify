@@ -89,12 +89,7 @@
     data-group="{{image_set_full}}"
   {%endif%}>
 
-  <div class="product-image-main">
-    <div
-      class="image-wrap"
-      style="height: 0; padding-bottom: {{ 100 | divided_by: media_aspect_ratio }}%;"
-      {% if media.media_type == 'model' %}data-product-media-type-model data-media-id="{{ section_id }}-{{ media.id }}"{% endif %}
-      >
+
       <img
           class="lazyload{% if product_zoom_enable %} photoswipe__image{% endif %}{% if has_video and video_modal == false %} hide{% endif %}"
           data-photoswipe-src="{{ zoom_img_url }}"
@@ -201,8 +196,7 @@
           {%- endunless -%}
         {%- endif -%}
       {%- endif -%}
-    </div>
-  </div>
+
 </div>
 
 
