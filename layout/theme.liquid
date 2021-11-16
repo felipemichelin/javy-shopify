@@ -2,15 +2,15 @@
 <html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
 
   
-  {% if template.name !== "index" %} 
+  {% if template.name == "index" %} 
 
 
 <html data-wf-page="61917f46cc60944533e8faaa" data-wf-site="61917ec4c8a471b172e2f375">
     {%- endif -%}
 
   
-{% if template == "page.okendo-reviews" %} 
-  
+  {% if template.name !== "index" %} 
+
 <html data-wf-page="6193badf379679270fc7daef" data-wf-site="61917ec4c8a471b172e2f375"> 
 
   {%- endif -%}
