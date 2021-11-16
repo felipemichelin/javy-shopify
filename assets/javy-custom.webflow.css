@@ -1338,6 +1338,10 @@ a {
   grid-template-rows: auto auto;
 }
 
+.r_title_wrapper.r_collections {
+  max-width: 680px;
+}
+
 .r_recipe_content_wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1414,13 +1418,13 @@ a {
 
 .r_section.r_collection {
   height: 260px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  background-color: transparent;
+  background-color: #fff6e7;
 }
 
 .r_section.r_s_0 {
@@ -1732,6 +1736,7 @@ a {
 
 .r_sub_h2.m_t_15 {
   margin-top: 15px;
+  margin-bottom: 0px;
 }
 
 .faq_club {
@@ -1784,6 +1789,10 @@ a {
   margin-top: 15px;
   font-size: 28px;
   line-height: 32px;
+}
+
+.r_h1.r_inner_pages {
+  margin-top: 0px;
 }
 
 .faq-item-toggle {
@@ -2711,7 +2720,6 @@ a {
 .review-text {
   margin-bottom: 12px;
   padding-bottom: 20px;
-  color: #5e728a;
   font-size: 13px;
   line-height: 16px;
 }
@@ -2782,7 +2790,6 @@ a {
 
 .item-text-2 {
   margin-bottom: 2px;
-  color: #5e728a;
   font-size: 10px;
   line-height: 14px;
   font-weight: 900;
@@ -2795,13 +2802,8 @@ a {
 
 .sm-text-2 {
   margin-bottom: 0px;
-  color: #05285c;
   font-size: 12px;
   line-height: 14px;
-}
-
-.sm-text-2.text-gray {
-  color: #5e728a;
 }
 
 .review-info-head-2 {
@@ -3587,6 +3589,12 @@ a {
 
   .r_section.r_p_t_0 {
     padding-top: 0px;
+  }
+
+  .r_section.r_collection {
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .four-column {
@@ -4708,7 +4716,9 @@ a {
   }
 
   .r_section.r_collection {
-    height: 240px;
+    height: auto;
+    padding-top: 35px;
+    padding-bottom: 35px;
   }
 
   .outline-circle-wrapper {
@@ -4765,6 +4775,11 @@ a {
     line-height: 28px;
   }
 
+  .r_sub_h2.m_t_15 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
   .r_h1 {
     font-size: 38px;
     line-height: 44px;
@@ -4773,6 +4788,13 @@ a {
   .r_h1.m_0 {
     margin-top: 0px;
     margin-bottom: 0px;
+  }
+
+  .r_h1.r_inner_pages {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 28px;
+    line-height: 36px;
   }
 
   .faq-name {
