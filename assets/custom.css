@@ -1,4 +1,46 @@
 
+  
+.drawer__freeshipping-bar {
+  text-align: center;
+  width: 100%;
+  padding: 10px 30px;
+  color: #000;
+  background-color: #ffffff;
+  font-family: 'acumin-pro';
+  font-size: 18px !important;
+  text-transform: capitalize !important;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.drawer__freeshipping-bar .progressbar {
+border: solid 2px;
+height: 24px;
+border-radius: 20px;
+margin-top: 10px;
+margin-bottom: 10px;
+position: relative;
+padding: 4px 6px;
+}
+
+.drawer__freeshipping-bar .progressbar .progress-wrapper {
+position: relative;
+width: 100%;
+height: 100%;
+float: left;
+}
+
+.drawer__freeshipping-bar .progressbar .progress-wrapper .progress {
+  background: #29af5c;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+
 button.btn.btn--full.add-to-cart {
   width: 100%!important;
   max-width: 100%!important;
