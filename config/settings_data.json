@@ -50,7 +50,7 @@
     "cart_type": "drawer",
     "cart_icon": "bag",
     "cart_additional_buttons": false,
-    "cart_notes_enable": true,
+    "cart_notes_enable": false,
     "social_instagram_link": "dfsg.com\/sdfsdf",
     "social_facebook_link": "dfsg.com\/sdfsdf",
     "social_twitter_link": "",
@@ -137,6 +137,13 @@
           "enable_collection": false,
           "title": "On social",
           "description": "<p>Send us yours <a href=\"https:\/\/instagram.com\/youraccount\/\">@youraccount<\/a><\/p>"
+        }
+      },
+      "giftcard-header": {
+        "type": "giftcard-header",
+        "settings": {
+          "desktop_logo_width": 200,
+          "mobile_logo_width": 140
         }
       }
     },
