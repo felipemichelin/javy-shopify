@@ -454,14 +454,7 @@ span.swatch-title {
   .variant-input-wrap label {
   overflow: visible;
 }
-  
-  label.bestseller.variant-swatch:after {
-    
-    
-    
-  }
-  
-  
+
 
   
   
@@ -1400,4 +1393,5 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
 .product-block {
   margin-bottom: 0px!important;
   margin-top: 10px!important;
+}
 }
