@@ -5022,6 +5022,7 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
       },
   
       buildCart: function(cart, open) {
+        console.log("buildCart");
 
         
         // Custom code for updating freeshipping bar
