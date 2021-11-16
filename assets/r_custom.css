@@ -89,6 +89,12 @@ ul.r_product_features.r_one_time.w-list-unstyled.r_general_product {
   opacity: 100!important;
 }
 
+.r_all_tags {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+
 @media screen and (max-width: 991px) {
 .r_hero_left {
     width: 100%;
