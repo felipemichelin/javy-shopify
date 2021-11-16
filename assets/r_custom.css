@@ -194,6 +194,11 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: transparent;
   opacity: 1;
 }
+
+.r_title_wrapper.r_centered.r_bigger.r_m_b_25 {
+  margin-bottom: 45px!important;
+}
+
 .front_bottle {
   animation: coffeeFront 6s cubic-bezier(0.32, 0.01, 0.58, 1) infinite;
   /* position: absolute; */
