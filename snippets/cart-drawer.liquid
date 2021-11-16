@@ -28,17 +28,21 @@
           {% assign progress = 100 %}
         {% endif %}
         <input type="hidden" value="{{settings.freeshipping_price}}" id="cart_freeshipping_limit" />
-        <label class="commment-failed {% if short_amount <= 0 %} hide {% endif %}">You're  <span class="short_amount">{{short_amount | money}}</span> away to get free shipping</label>
-        <label class="commment-success {% if short_amount > 0 %} hide {% endif %}">You've earned free shipping!</label>
-        
-        <label class="progressbar">
+
+                <label class="progressbar">
           <div class="progress-wrapper">
           	<span class="progress" style="width: {{progress}}%;"></span>
           </div>
         </label>
+
+        
+        <label class="commment-failed {% if short_amount <= 0 %} hide {% endif %}">You're  <span class="short_amount">{{short_amount | money}}</span> away to get free shipping</label>
+        <label class="commment-success {% if short_amount > 0 %} hide {% endif %}">You've earned free shipping!</label>
+        
+
       </div>
 
-      
+
       <div class="drawer__scrollable">
         <div data-products></div>
 
