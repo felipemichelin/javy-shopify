@@ -1550,8 +1550,8 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
 
 @media only screen and (max-width:768px){
   .cart-addons {
-    margin-left: -20px;
-    margin-right: -20px;
+    margin-left: -20px!important;
+    margin-right: -20px!important;
   }
 
 }
