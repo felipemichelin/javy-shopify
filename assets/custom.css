@@ -112,16 +112,17 @@ label.commment-success {
 }
 
 .addon_products .addon_product .addon_addtocart {
-    background: #ffc33a;
-    color: #010100;
-    float: right;
-    text-align: center;
-    font-size: 16px !important;
-    padding: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-weight: 800;
-    letter-spacing: 0px;
+  background: #ffc33a;
+  color: #010100;
+  float: right;
+  text-align: center;
+  font-size: 12px!important;
+  padding: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 800;
+  letter-spacing: 0;
+  border-radius: 6px;
 }
 
 .addon_products .addon_product .addon_addtocart:hover {
