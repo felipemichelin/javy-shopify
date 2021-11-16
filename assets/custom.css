@@ -1271,7 +1271,7 @@ span.icon__fallback-text {
   display: none!important;
 }
 
-.swiper-slide.starting-slide.swiper-slide-active img {
+.swiper-slide.starting-slide img {
   object-fit: contain!important;
   width: 100%!important;
 }
