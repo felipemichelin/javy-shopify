@@ -61,13 +61,48 @@
 
 
 
+        {% if template == 'product' and settings.show_addon %}
+          <div class="addon_products">
+            {% assign handles = product.metafields.global.addon_products | split: "|" %}
+            {% for handle in handles %}
+              {% assign break = 0 %}
+              {% for item in cart.items %}
+                {% if handle == item.product.handle %}
+                  {% assign break = 1 %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+
+              {% if break == 1 %}
+                {% continue %}
+              {% endif %}
+
+              {% assign addon = all_products[handle] %}
+              <div class="addon_product">
+                <div class="col">
+                  <div href="{{addon.url}}" class="addon_image"> <img src="{{addon.featured_image | img_url : '200x'}}" /> </div>
+                </div>
+                <div class="col">
+                  <div href="{{addon.url}}"> <h3 class="addon_heading"> {{addon.title}} </h3> </div>
+                  <div href="{{addon.url}}" class="addon_title">
+                    <span class="addon_saleprice"> {{addon.price | money}} </span>
+                    <span class="addon_regprice"> {{addon.selected_or_first_available_variant.compare_at_price | money}} </span>
+                  </div>
+                </div>
+                <div class="col">
+                  <button class="addon_addtocart" data-variantid="{{addon.selected_or_first_available_variant.id}}">Add</button>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      
+
 
       <div class="drawer__footer cart__footer">
-asdfasdf
 
-<div data-page="cart" data-location="popup">
-    <span zoorix-widget="upsell"></span>
-</div>
 
 
 
