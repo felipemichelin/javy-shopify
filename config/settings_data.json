@@ -157,6 +157,12 @@
         "settings": {
           "show_preview_data": true
         }
+      },
+      "17595556821664008138": {
+        "type": "shopify:\/\/apps\/zoorix-cross-sell-cart-upsell\/blocks\/zoorix-head\/51fffd07-f9df-4d6a-b901-6d14b243dcad",
+        "disabled": false,
+        "settings": {
+        }
       }
     }
   },
