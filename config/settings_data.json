@@ -41,7 +41,7 @@
     "product_hover_details": false,
     "product_hover_image": false,
     "product_image_scatter": false,
-    "product_grid_image_size": "natural",
+    "product_grid_image_size": "landscape",
     "product_save_amount": false,
     "product_save_type": "percent",
     "enable_product_reviews": false,
