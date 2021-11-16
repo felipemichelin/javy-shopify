@@ -1399,3 +1399,8 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
 .grid-product__tag.grid-product__tag--sale {
   display: none;
 }
+
+.product-block {
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
