@@ -1743,13 +1743,9 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
       ==============================================================================*/
       updateSubtotal: function(subtotal) {
         this.form.querySelector(selectors.subTotal).innerHTML = theme.Currency.formatMoney(subtotal, theme.settings.moneyFormat);
-      },
-  
 
 
-      updateShipping: function(shipping) {
-
-  // Custom code for updating freeshipping bar
+          // Custom code for updating freeshipping bar
   var freeshipping_limit = parseFloat($("#cart_freeshipping_limit").val()) * 100;
   var short_amount = freeshipping_limit - cart.total_price;
 
@@ -1769,8 +1765,10 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
     $(".drawer__freeshipping-bar .short_amount").text("$" + (short_amount / 100).toFixed(2));
   }
 
+  
       },
-            
+  
+
 
 
       updateSavings: function(savings) {
