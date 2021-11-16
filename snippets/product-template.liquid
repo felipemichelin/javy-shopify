@@ -452,7 +452,7 @@
                     {%- when 'trust_badge' -%}
                       <div class="product-block" {{ block.shopify_attributes }}>
                         <div class="aos-animate" style="max-width: {{ block.settings.trust_image.width }}px; margin: 0 auto;">
-                          <div class="image-wrap " style="height: 100%; padding-bottom: 0%;">
+                          <div class="image-wrap " style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.trust_image.aspect_ratio }}%;">
                             {%- assign img_url = block.settings.trust_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
                             <img class="lazyload"
                                 data-src="{{ img_url }}"

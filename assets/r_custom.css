@@ -2,11 +2,7 @@ body {
   letter-spacing: 0px!important;
 }
 
-img.lazyautosizes.lazyloaded {
-  width: auto;
-  object-fit: cover;
-  height: 100%!important;
-}
+
 
 .swiper-wrapper {
   margin-bottom: 0px!important;
@@ -17,10 +13,6 @@ img.lazyautosizes.lazyloaded {
   margin-left: 5px;
 }
 
-.image-wrap.loaded {
-  display: flex;
-  justify-content: center;
-}
 
 .r_full_width {
   width: 100%!important;
