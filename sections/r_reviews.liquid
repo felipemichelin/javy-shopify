@@ -1,5 +1,3 @@
-{{ shop.metafields.okendo.ReviewsWidgetStyleTag }}
-{{ shop.metafields.okendo.StyleCustomizations }}
     <div class="r_section r_collection">
       <div class="r_container">
         <div class="r_title_wrapper r_collections">
@@ -12,15 +10,15 @@
       <div class="r_container r_center">
         <div class="reviews-list">
           <div class="review-item-2">
-            <div class="review-item-image-wrapper"><img src="{{ '01.jpg" loading="lazy" alt="" class="review-person"></div>
+            <div class="review-item-image-wrapper"><img src="{{ '01.jpg' | asset_url}}" loading="lazy" alt="" class="review-person"></div>
             <div class="review-info">
               <div class="review-info-head-2">
                 <div class="review-info-head-block">
                   <div class="person-name-2">Marina P.</div>
-                  <div class="verified-sc"><img src="{{ 'check-testimonials.svg" loading="lazy" alt="" class="check-green">
+                  <div class="verified-sc"><img src="{{ 'check-testimonials.svg' | asset_url}}" loading="lazy" alt="" class="check-green">
                     <div class="verified-text">VERIFIED BUYER</div>
                   </div>
-                </div><img src="{{ 'rating-stars_1.svg" loading="lazy" alt="">
+                </div><img src="{{ 'rating-stars_1.svg' | asset_url}}" loading="lazy" alt="">
               </div>
               <p class="review-text">&quot;Javy is rich and smooth. You can&#x27;t beat the convenience and Javy doesn&#x27;t compromise quality at all. It is now a big part of my morning routine and saves this working mama in grad school so much valuable time.&quot;</p>
               <div class="review-type">
@@ -30,15 +28,15 @@
             </div>
           </div>
           <div class="review-item-2">
-            <div class="review-item-image-wrapper"><img src="https://uploads-ssl.webflow.com/60579d9371d6bfc7726617a0/608f514c223a1438a34569f1_08.jpg" loading="lazy" alt="" class="review-person"></div>
+            <div class="review-item-image-wrapper"><img src="{{ 'review05.jpg' | asset_url}}" loading="lazy" alt="" class="review-person"></div>
             <div class="review-info">
               <div class="review-info-head-2">
                 <div class="review-info-head-block">
                   <div class="person-name-2">Artur S.</div>
-                  <div class="verified-sc"><img src="{{ 'check-testimonials.svg" loading="lazy" alt="" class="check-green">
+                  <div class="verified-sc"><img src="{{ 'check-testimonials.svg' | asset_url}}" loading="lazy" alt="" class="check-green">
                     <div class="verified-text">VERIFIED BUYER</div>
                   </div>
-                </div><img src="{{ 'rating-stars_1.svg" loading="lazy" alt="">
+                </div><img src="{{ 'rating-stars_1.svg' | asset_url}}" loading="lazy" alt="">
               </div>
               <p class="review-text">This coffee offers a pleasant taste which I have increased from 1 cup to 3 cups daily. It replaces all the equipment that it takes to make a cup of coffee. Also, waste amounts don’t exist anymore.</p>
               <div class="review-type">
@@ -48,15 +46,15 @@
             </div>
           </div>
           <div class="review-item-2">
-            <div class="review-item-image-wrapper"><img src="{{ '03.jpg" loading="lazy" alt="" class="review-person"></div>
+            <div class="review-item-image-wrapper"><img src="{{ '03.jpg' | asset_url}}" loading="lazy" alt="" class="review-person"></div>
             <div class="review-info">
               <div class="review-info-head-2">
                 <div class="review-info-head-block">
                   <div class="person-name-2">Sabrina P.</div>
-                  <div class="verified-sc"><img src="{{ 'check-testimonials.svg" loading="lazy" alt="" class="check-green">
+                  <div class="verified-sc"><img src="{{ 'check-testimonials.svg' | asset_url}}" loading="lazy" alt="" class="check-green">
                     <div class="verified-text">VERIFIED BUYER</div>
                   </div>
-                </div><img src="{{ 'rating-stars_1.svg" loading="lazy" alt="">
+                </div><img src="{{ 'rating-stars_1.svg' | asset_url}}" loading="lazy" alt="">
               </div>
               <p class="review-text">I am telling others about this product it is great in protein shakes, water or even in milk and way cheaper then buying an iced coffee at other places.</p>
               <div class="review-type">
@@ -66,15 +64,15 @@
             </div>
           </div>
           <div class="review-item-2">
-            <div class="review-item-image-wrapper"><img src="{{ '04.jpg" loading="lazy" alt="" class="review-person"></div>
+            <div class="review-item-image-wrapper"><img src="{{ '04.jpg' | asset_url}}" loading="lazy" alt="" class="review-person"></div>
             <div class="review-info">
               <div class="review-info-head-2">
                 <div class="review-info-head-block">
                   <div class="person-name-2">Angela A.</div>
-                  <div class="verified-sc"><img src="{{ 'check-testimonials.svg" loading="lazy" alt="" class="check-green">
+                  <div class="verified-sc"><img src="{{ 'check-testimonials.svg' | asset_url}}" loading="lazy" alt="" class="check-green">
                     <div class="verified-text">VERIFIED BUYER</div>
                   </div>
-                </div><img src="{{ 'rating-stars_1.svg" loading="lazy" alt="">
+                </div><img src="{{ 'rating-stars_1.svg' | asset_url}}" loading="lazy" alt="">
               </div>
               <p class="review-text">Absolutely love the coffee. It’s easy and quick. I can make it to my own strength and recipes perfectly. I do not like the spout on the bottle as it tends to drip and I waste product and make a mess. 😊</p>
               <div class="review-type">
@@ -133,9 +131,22 @@
               </div>
             </div>
           </div>
+          
+          <div data-oke-reviews-widget=""></div>
+
+          
+          
         </div>
       </div>
     </div>
+                
+                
+<style>
+  .page-full.page-content {
+    display: none;
+}
+</style>
+
 
 
 {% schema %}
