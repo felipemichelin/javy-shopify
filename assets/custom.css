@@ -1265,6 +1265,21 @@ span.icon__fallback-text {
 div#CartDrawer {
     z-index: 5000!important;
 }
+
+button.site-nav__link.site-nav__link--icon.js-toggle-slide-nav.medium-up--hide {
+  display: none!important;
+}
+
+a.site-nav__link.site-nav__link--icon.site-nav__link--cart.js-drawer-open-cart.js-no-transition {
+  padding: 0px!important;
+  margin-left: 10px;
+}
+
+a.site-nav__link.site-nav__link--icon.small--hide {
+  padding: 0px;
+}
+
+
 }
 
 div#CartDrawer {
