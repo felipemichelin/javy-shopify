@@ -52,7 +52,7 @@ img.lazyautosizes.lazyloaded {
 
 img.lazyautosizes.lazyloaded {
   height: 100%;
-  width: auto!important;
+  width: 100%!important;
   object-fit: cover;
 }
 
