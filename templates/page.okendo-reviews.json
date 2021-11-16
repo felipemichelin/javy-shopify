@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "r_reviews",
+      "type": "main-page-full-width",
       "settings": {
       }
     }
