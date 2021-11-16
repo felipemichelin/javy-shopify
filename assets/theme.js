@@ -1492,7 +1492,11 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
         data: JSON.stringify({
           id: key,
           quantity: qty
-        })
+        }),
+        success: function(cart){
+          // run the calculator with a target price of $75
+          calculateProgress(cart.total_price, 7500);
+        }
       })
     },
   

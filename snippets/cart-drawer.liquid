@@ -93,17 +93,6 @@ function calculateProgress(currentVal, targetVal) {
     }
   };
 
-// Most themes use jquery to make ajax requests, so that's how we'll do it. In your theme's main JS file, find each ajax call where your store adds to, deletes from, and updates the cart. Put this in the success function of each. 
-// NOTE: If you make this ajax request outside of the functions that update the cart, the calculator won't sync with the current cart state without refreshing the page. You need to specify that you want to read the current cart data AFTER the new items are added/removed.
-  $.ajax({
-  type: 'GET',
-  url: '/cart.js',
-  dataType: 'json',
-  success: function(cart){
-    // run the calculator with a target price of $75
-    calculateProgress(cart.total_price, 7500);
-  }
-});
   
 </script>
 
