@@ -44,6 +44,7 @@ a {
 }
 
 .r_information {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -171,7 +172,8 @@ a {
   display: flex;
   overflow: hidden;
   height: auto;
-  min-height: 100vh;
+  max-height: 880px;
+  min-height: 680px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -2972,7 +2974,7 @@ a {
   position: absolute;
   left: auto;
   top: 0%;
-  right: -20%;
+  right: 0%;
   bottom: 0%;
   z-index: 1;
   width: auto;
@@ -2987,6 +2989,7 @@ a {
   right: 0%;
   bottom: 0%;
   z-index: 1;
+  display: none;
 }
 
 .feature-list-stars {
@@ -3058,6 +3061,22 @@ a {
   margin-bottom: 15px;
   font-size: 12px;
   font-weight: 900;
+}
+
+.r_bg_gradient {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 2;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e2e7eb), color-stop(19%, #e2e7eb), color-stop(38%, rgba(240, 242, 244, 0.42)), color-stop(67%, rgba(245, 247, 248, 0)), to(hsla(0, 0%, 100%, 0)));
+  background-image: linear-gradient(90deg, #e2e7eb, #e2e7eb 19%, rgba(240, 242, 244, 0.42) 38%, rgba(245, 247, 248, 0) 67%, hsla(0, 0%, 100%, 0));
+}
+
+.r_inner_relative {
+  position: relative;
+  z-index: 2;
 }
 
 @media screen and (max-width: 991px) {
@@ -3854,6 +3873,7 @@ a {
     top: auto;
     right: 0%;
     bottom: -80px;
+    display: block;
   }
 
   .text-block-35 {
