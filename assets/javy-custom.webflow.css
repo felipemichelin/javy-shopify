@@ -180,7 +180,7 @@ a {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #eae7e6;
+  background-color: #e2e7eb;
   background-clip: border-box;
   -webkit-text-fill-color: inherit;
 }
@@ -1420,7 +1420,7 @@ a {
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  background-color: #fff6e7;
+  background-color: transparent;
 }
 
 .r_section.r_s_0 {
@@ -1431,6 +1431,10 @@ a {
 .r_section.r_p_0 {
   height: 140px;
   padding: 0px;
+}
+
+.r_section.m_t_25 {
+  padding-top: 25px;
 }
 
 .r_container {
@@ -2714,7 +2718,6 @@ a {
 
 .review-item-2 {
   overflow: hidden;
-  border-radius: 6px;
   box-shadow: 0 3px 11px 5px rgba(0, 0, 0, 0.06);
 }
 
@@ -2773,8 +2776,8 @@ a {
   grid-row-gap: 30px;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: auto auto;
-  grid-template-rows: auto auto;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
 }
 
 .item-text-2 {
@@ -2975,6 +2978,71 @@ a {
   z-index: 1;
 }
 
+.feature-list-stars {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.star-para {
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.star-para.dr {
+  margin-bottom: 0px;
+}
+
+.stars-review {
+  margin-right: 10px;
+  font-family: 'Fa solid 900', sans-serif;
+  color: #fdc10c;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.feature-title {
+  text-transform: uppercase;
+}
+
+.div-block-269-copy {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  padding: 20px 20px 10px;
+  background-color: #fff6e7;
+}
+
+.average-rating {
+  font-weight: 800;
+}
+
+.title-for-feature {
+  font-weight: 700;
+}
+
+.feature-stars {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 991px) {
   .r_hero_grid {
     grid-column-gap: 36px;
@@ -3030,6 +3098,9 @@ a {
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
+    background-color: #e2e7eb;
+    background-clip: border-box;
+    -webkit-text-fill-color: inherit;
   }
 
   .r_inner {
@@ -3764,6 +3835,15 @@ a {
 
   .text-block-35 {
     font-size: 16px;
+  }
+
+  .stars-review {
+    font-size: 15px;
+  }
+
+  .feature-title {
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 
@@ -4960,6 +5040,10 @@ a {
 
   .text-block-35 {
     font-size: 14px;
+  }
+
+  .stars-review {
+    font-size: 16px;
   }
 }
 
