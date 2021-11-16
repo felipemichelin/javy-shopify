@@ -1266,6 +1266,18 @@ div#CartDrawer {
     z-index: 5000!important;
 }
 
+button.site-nav__link.site-nav__link--icon.js-toggle-slide-nav.medium-up--hide {
+  padding: 0px;
+  margin-left: 10px;
+}
+
+
+.header-item.header-item--icons.small--hide {
+  width: 100%;
+  display: flex!important;
+  align-items: center;
+  align-content: center!important;
+}
 
 
 a.site-nav__link.site-nav__link--icon.site-nav__link--cart.js-drawer-open-cart.js-no-transition {
