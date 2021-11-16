@@ -1261,14 +1261,21 @@ span.icon__fallback-text {
   z-index: 3000;
 }
 
+
+.prev-icon {
+  transform: rotate(360deg)!important;
+}
+
+
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+  display: none!important;
+}
+
 @media only screen and (max-width: 768px) {
 div#CartDrawer {
     z-index: 5000!important;
 }
 
-.prev-icon {
-  transform: rotate(360deg)!important;
-}
 
 
 @media screen and (max-width: 768px) {}
@@ -1300,9 +1307,7 @@ div#CartDrawer {
   display: flex!important;
 }
 
-.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
-  display: none!important;
-}
+
 
 
 .previous-hero-slider {
