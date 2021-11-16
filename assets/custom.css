@@ -1291,6 +1291,10 @@ div#CartDrawer {
     font-size: 28px;
 }
 
+.next-hero-slider {
+  display: flex!important;
+}
+
 .previous-hero-slider {
   position: relative;
   z-index: 100;
