@@ -5,13 +5,33 @@
       "settings": {
       }
     },
-    "163693788401f3ab80": {
-      "type": "r_seen_on",
+    "16370770736eab6e65": {
+      "type": "r_flavors",
+      "blocks": {
+        "16370770733316d662-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name"
+          }
+        },
+        "16370770733316d662-1": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name"
+          }
+        }
+      },
+      "block_order": [
+        "16370770733316d662-0",
+        "16370770733316d662-1"
+      ],
       "settings": {
       }
     },
-    "163693791121f66794": {
-      "type": "r_flavors",
+    "163693788401f3ab80": {
+      "type": "r_seen_on",
       "settings": {
       }
     },
@@ -74,8 +94,8 @@
   },
   "order": [
     "1636926059f853904a",
+    "16370770736eab6e65",
     "163693788401f3ab80",
-    "163693791121f66794",
     "1636937926242c9bd3",
     "1636937952ab6f11d9",
     "163693796607e2c395",
