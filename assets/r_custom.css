@@ -26,6 +26,11 @@ a.btn.hero {
   overflow: hidden;
 }
 
+ul.r_product_features.r_one_time.w-list-unstyled.r_general_product {
+  padding-left: 5px;
+  margin-bottom: -10px!important;
+}
+
 .w-tab-link.w--current .r_freq_check_wrapper .r_freq_circle img {
   opacity: 100!important;
 }
