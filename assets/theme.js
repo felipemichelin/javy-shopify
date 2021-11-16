@@ -1610,6 +1610,37 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
           });
         }
   
+
+        
+        // Custom code for addon products add
+        var ajaxcart = this;
+        $(".addon_addtocart").click(function(e) {
+          e.preventDefault();
+          var varid = $(this).attr("data-variantid");
+          var btn = $(this);
+          var addon = btn.parents(".addon_product");
+
+          var data = {
+            "quantity": 1,
+            "id": varid
+          };
+
+          jQuery.ajax({
+            type: 'POST',
+            url: '/cart/add.js',
+            data: data,
+            dataType: 'json',
+            success: function(cart) {
+              addon.addClass("hide");
+              theme.cart.getCart().then(function(cart) {
+                ajaxcart.buildCart(cart);
+              });
+            }
+          });
+        });
+        //////////////////////////////////////////////////////////
+
+        
         // Dev-friendly way to build the cart
         document.addEventListener('cart:build', function() {
           this.buildCart();
@@ -1805,7 +1836,7 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
 
           }
         });
-        
+
 
         var countEls = document.querySelectorAll('.cart-link__bubble-num');
   
