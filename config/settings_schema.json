@@ -4,8 +4,8 @@
     "theme_name": "Streamline",
     "theme_author": "Archetype Themes",
     "theme_version": "4.1.1",
-    "theme_documentation_url": "https://archetypethemes.co/blogs/streamline",
-    "theme_support_url": "https://archetypethemes.co/blogs/streamline"
+    "theme_documentation_url": "https:\/\/archetypethemes.co\/blogs\/streamline",
+    "theme_support_url": "https:\/\/archetypethemes.co\/blogs\/streamline"
   },
   {
     "name": "Colors",
@@ -473,7 +473,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Add reviews by enabling the setting below and installing the [Shopify Product Reviews app](https://apps.shopify.com/product-reviews) and following our [setup guide](https://archetypethemes.co/blogs/support/installing-shopifys-product-reviews-app)"
+        "content": "Add reviews by enabling the setting below and installing the [Shopify Product Reviews app](https:\/\/apps.shopify.com\/product-reviews) and following our [setup guide](https:\/\/archetypethemes.co\/blogs\/support\/installing-shopifys-product-reviews-app)"
       },
       {
         "type": "checkbox",
@@ -627,61 +627,61 @@
         "type": "text",
         "id": "social_instagram_link",
         "label": "Instagram",
-        "info": "https://instagram.com/shopify"
+        "info": "https:\/\/instagram.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_facebook_link",
         "label": "Facebook",
-        "info": "https://www.facebook.com/shopify"
+        "info": "https:\/\/www.facebook.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_twitter_link",
         "label": "Twitter",
-        "info": "https://twitter.com/shopify"
+        "info": "https:\/\/twitter.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_pinterest_link",
         "label": "Pinterest",
-        "info": "https://www.pinterest.com/shopify"
+        "info": "https:\/\/www.pinterest.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_snapchat_link",
         "label": "Snapchat",
-        "info": "https://www.snapchat.com/add/shopify"
+        "info": "https:\/\/www.snapchat.com\/add\/shopify"
       },
       {
         "type": "text",
         "id": "social_tiktok_link",
         "label": "TikTok",
-        "info": "https://www.tiktok.com/@shopify"
+        "info": "https:\/\/www.tiktok.com\/@shopify"
       },
       {
         "type": "text",
         "id": "social_tumblr_link",
         "label": "Tumblr",
-        "info": "http://shopify.tumblr.com"
+        "info": "http:\/\/shopify.tumblr.com"
       },
       {
         "type": "text",
         "id": "social_linkedin_link",
         "label": "LinkedIn",
-        "info": "https://www.linkedin.com/in/shopify"
+        "info": "https:\/\/www.linkedin.com\/in\/shopify"
       },
       {
         "type": "text",
         "id": "social_youtube_link",
         "label": "YouTube",
-        "info": "https://www.youtube.com/user/shopify"
+        "info": "https:\/\/www.youtube.com\/user\/shopify"
       },
       {
         "type": "text",
         "id": "social_vimeo_link",
         "label": "Vimeo",
-        "info": "https://vimeo.com/shopify"
+        "info": "https:\/\/vimeo.com\/shopify"
       },
       {
         "type": "header",
