@@ -136,16 +136,104 @@
 
 
 
-
 {% schema %}
   {
     "name": "[R] Reviews",
-    "settings": []
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Blog posts"
+      },
+      {
+        "id": "blog",
+        "type": "blog",
+        "label": "Blog"
+      },
+      {
+        "type": "range",
+        "id": "post_limit",
+        "label": "Posts",
+        "default": 3,
+        "min": 3,
+        "max": 12,
+        "step": 3
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_tags",
+        "label": "Show tags"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_comments",
+        "label": "Show comment count"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_excerpt",
+        "label": "Show excerpt"
+      },
+      {
+        "type": "select",
+        "id": "blog_image_size",
+        "label": "Image size",
+        "default": "wide",
+        "options": [
+          {
+            "value": "natural",
+            "label": "Natural"
+          },
+          {
+            "value": "square",
+            "label": "Square (1:1)"
+          },
+          {
+            "value": "landscape",
+            "label": "Landscape (4:3)"
+          },
+          {
+            "value": "portrait",
+            "label": "Portrait (2:3)"
+          },
+          {
+            "value": "wide",
+            "label": "Wide (16:9)"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "view_all",
+        "label": "Show 'View all' button",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "alt",
+        "label": "Use alternate section color"
+      }
+    ],
+    "presets": [
+      {
+        "name": "[R] Reviews",
+        "settings": {
+          "blog": "Recipes",
+          "post_limit": 3
+        }
+      }
+    ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
