@@ -46,6 +46,11 @@
       <div class="drawer__scrollable">
         <div data-products></div>
 
+
+      <div class="limespot_recommentations"></div>
+
+
+
         {%- if settings.cart_notes_enable -%}
           <div class="cart__note" data-cart-note-container>
             <label for="CartDrawerSpecialInstructions">{{ 'cart.general.note' | t }}</label>
@@ -60,7 +65,6 @@
 
       <div class="drawer__footer cart__footer">
 
-      <div class="limespot_recommentations"></div>
         <div data-discounts>
           {% if cart.cart_level_discount_applications != blank %}
             <div class="cart__item-sub cart__item-row">
