@@ -1514,7 +1514,6 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
       .then(response => response.json())
       .then(function(cart) {
         return cart;
-        calculateProgress(cart.total_price, 7500);
       });
     },
   
