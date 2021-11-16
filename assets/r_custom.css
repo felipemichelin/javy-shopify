@@ -17,6 +17,10 @@ img.lazyautosizes.lazyloaded {
   margin-left: 5px;
 }
 
+.image-wrap.loaded {
+  display: flex;
+  justify-content: center;
+}
 
 .r_full_width {
   width: 100%!important;
