@@ -13,13 +13,13 @@
 }
 
 .drawer__freeshipping-bar .progressbar {
-border: solid 2px;
-height: 24px;
-border-radius: 20px;
-margin-top: 10px;
-margin-bottom: 10px;
-position: relative;
-padding: 4px 6px;
+  border: solid 1px #000;
+  height: 14px;
+  border-radius: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  padding: 4px 6px;
 }
 
 .drawer__freeshipping-bar .progressbar .progress-wrapper {
@@ -36,7 +36,7 @@ float: left;
   position: absolute;
   left: 0;
   top: 0;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 
