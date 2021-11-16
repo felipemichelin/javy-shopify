@@ -126,8 +126,9 @@ label.commment-success {
   border-radius: 6px;
 }
 
+
 .addon_products .addon_product .addon_addtocart:hover {
-  color: #FFF;
+  color: #000;
   opacity: .8;
 }
 
