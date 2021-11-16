@@ -467,9 +467,6 @@ a {
   align-items: center;
   border-top: 1px none #000;
   border-bottom: 1px none #000;
-  background-image: none;
-  background-size: auto;
-  background-repeat: repeat;
 }
 
 .flavor-name {
@@ -2964,7 +2961,9 @@ a {
   right: 0%;
   bottom: 0%;
   z-index: 1;
+  width: auto;
   height: 100%;
+  max-width: none;
 }
 
 .bg_hero_mob {
@@ -4955,7 +4954,7 @@ a {
 
   .bg_hero_mob {
     bottom: 0px;
-    width: 400px;
+    width: 100%;
     max-width: none;
   }
 
