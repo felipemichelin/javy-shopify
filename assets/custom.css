@@ -1395,3 +1395,7 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
   max-width: 100%!important;
   height: 65px!important;
 }
+
+.grid-product__tag.grid-product__tag--sale {
+  display: none;
+}
