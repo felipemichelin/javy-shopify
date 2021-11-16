@@ -4,9 +4,35 @@
       "type": "main-page-full-width",
       "settings": {
       }
+    },
+    "16370856167cebc4ea": {
+      "type": "r_reviews",
+      "blocks": {
+        "1637085616314d39e5-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name"
+          }
+        },
+        "1637085616314d39e5-1": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name"
+          }
+        }
+      },
+      "block_order": [
+        "1637085616314d39e5-0",
+        "1637085616314d39e5-1"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "16370856167cebc4ea"
   ]
 }
