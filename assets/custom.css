@@ -1285,7 +1285,7 @@ div#CartDrawer {
 
 
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
 .prev-icon {
     left: auto;
     top: 0;
@@ -1308,6 +1308,10 @@ div#CartDrawer {
     -ms-flex-align: center;
     align-items: center;
     font-size: 28px;
+}
+
+.hero-internal {
+  max-height: 280px!important;
 }
 
 .next-hero-slider {
