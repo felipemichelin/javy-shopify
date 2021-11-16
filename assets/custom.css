@@ -1401,6 +1401,6 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
 }
 
 .product-block {
-  margin-bottom: 0px;
-  margin-top: 10px;
+  margin-bottom: 0px!important;
+  margin-top: 10px!important;
 }
