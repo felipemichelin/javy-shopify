@@ -1486,17 +1486,18 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
       .then(function(response) {return response.text()});
     },
   
+
+
+
+
     changeItem: function(key, qty) {
       return this._updateCart({
         url: ''.concat(theme.routes.cartChange, '?t=').concat(Date.now()),
         data: JSON.stringify({
           id: key,
           quantity: qty
-        }),
-        success: function(cart){
-          // run the calculator with a target price of $75
-          calculateProgress(cart.total_price, 7500);
-        }
+        })
+
       })
     },
   
@@ -1513,6 +1514,7 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
       .then(response => response.json())
       .then(function(cart) {
         return cart;
+        calculateProgress(cart.total_price, 7500);
       });
     },
   
