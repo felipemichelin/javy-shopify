@@ -74,8 +74,8 @@ a {
   -ms-flex: 0 auto;
   flex: 0 auto;
   grid-column-gap: 16px;
-  -ms-grid-columns: 1.25fr 1fr;
-  grid-template-columns: 1.25fr 1fr;
+  -ms-grid-columns: 0.75fr 1fr;
+  grid-template-columns: 0.75fr 1fr;
   -ms-grid-rows: auto;
   grid-template-rows: auto;
 }
@@ -1339,7 +1339,13 @@ a {
 }
 
 .r_title_wrapper.r_collections {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   max-width: 680px;
+  margin-left: auto;
+  text-align: center;
 }
 
 .r_recipe_content_wrapper {
@@ -1417,14 +1423,16 @@ a {
 }
 
 .r_section.r_collection {
-  height: 260px;
+  height: auto;
   padding-top: 60px;
   padding-bottom: 60px;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  background-color: #fff6e7;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 
 .r_section.r_s_0 {
@@ -2726,7 +2734,8 @@ a {
 
 .review-item-2 {
   overflow: hidden;
-  box-shadow: 0 3px 11px 5px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  box-shadow: 0 3px 11px 11px rgba(0, 0, 0, 0.02);
 }
 
 .verified-sc {
@@ -2963,7 +2972,7 @@ a {
   position: absolute;
   left: auto;
   top: 0%;
-  right: 0%;
+  right: -20%;
   bottom: 0%;
   z-index: 1;
   width: auto;
@@ -3043,6 +3052,12 @@ a {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.r_top_title_small {
+  margin-bottom: 15px;
+  font-size: 12px;
+  font-weight: 900;
 }
 
 @media screen and (max-width: 991px) {
