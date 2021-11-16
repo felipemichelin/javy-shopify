@@ -1544,6 +1544,16 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
   border-top: 1px solid #dddcd8;
   border-bottom: 1px solid #dddcd8;
   background-color: #fffcf7;
+  margin-left: -40px;
+  margin-right: -40px;
+}
+
+@media only screen and (max-width:768px){
+  .cart-addons {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
 }
 
 
