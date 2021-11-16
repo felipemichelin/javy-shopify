@@ -1527,3 +1527,88 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
   margin-bottom: 0px!important;
   margin-top: 10px!important;
 }
+
+
+.cart-addons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: auto;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 1px solid #dddcd8;
+  border-bottom: 1px solid #dddcd8;
+  background-color: #fffcf7;
+}
+
+
+.addon-badge {
+  color: #c8102e;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+
+
+.addon-subtitle {
+  color: #646464;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.addon_image {
+  border-radius: 10px;
+}
+
+.checkout-addon-toggle.checkout-selected-addon {
+  background-color: #ff5050;
+  color: #fff;
+}
+
+.crossell-link.checkout-addon-toggle {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.checkout-addon-toggle {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.crossell-link {
+  z-index: 450;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  height: 45px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: #ffc33a;
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
