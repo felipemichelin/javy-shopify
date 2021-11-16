@@ -1266,6 +1266,54 @@ div#CartDrawer {
     z-index: 5000!important;
 }
 
+@media screen and (max-width: 768px) {}
+.prev-icon {
+    left: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin-right: 0px;
+    margin-left: 0;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 28px;
+}
+
+.previous-hero-slider {
+  position: relative;
+  z-index: 100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: flex; */
+  width: 100%;
+  /* -webkit-box-align: end; */
+  /* -webkit-align-items: flex-end; */
+  -ms-flex-align: end;
+  /* align-items: flex-end; */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.previous-after {
+  display: flex!important;
+  flex-direction: row;
+}
+}
+
+
 button.site-nav__link.site-nav__link--icon.js-toggle-slide-nav.medium-up--hide {
   padding: 0px;
   margin-left: 10px;
