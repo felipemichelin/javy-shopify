@@ -48,6 +48,12 @@ div#swiper-wrapper-bbe627a435f5a47d {
   object-fit: cover;
 }
 
+img.lazyautosizes.lazyloaded {
+  height: 100%;
+  width: auto!important;
+  object-fit: cover;
+}
+
 .r_flavor_tag {
   font-size: 12px;
   margin-left: 5px;
