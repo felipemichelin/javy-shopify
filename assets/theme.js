@@ -1487,6 +1487,31 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
     },
   
     changeItem: function(key, qty) {
+
+      
+        // Custom code for updating freeshipping bar
+        var freeshipping_limit = parseFloat($("#cart_freeshipping_limit").val()) * 100;
+        var short_amount = freeshipping_limit - cart.total_price;
+
+        var progress_percent = parseInt(cart.total_price * 100 / freeshipping_limit);
+        if(progress_percent > 100) {
+          progress_percent = 100;
+        }
+        $(".drawer__freeshipping-bar .progressbar .progress-wrapper .progress").css("width", progress_percent + "%");
+
+        if(short_amount <= 0) {
+          $(".drawer__freeshipping-bar .commment-failed").addClass("hide");
+          $(".drawer__freeshipping-bar .commment-success").removeClass("hide");
+        }
+        else {
+          $(".drawer__freeshipping-bar .commment-failed").removeClass("hide");
+          $(".drawer__freeshipping-bar .commment-success").addClass("hide");
+          $(".drawer__freeshipping-bar .short_amount").text("$" + (short_amount / 100).toFixed(2));
+        }
+        ///////////////////////////////////////////////////
+        
+
+        
       return this._updateCart({
         url: ''.concat(theme.routes.cartChange, '?t=').concat(Date.now()),
         data: JSON.stringify({
@@ -5024,27 +5049,6 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
       buildCart: function(cart, open) {
         console.log("buildCart");
 
-        
-        // Custom code for updating freeshipping bar
-        var freeshipping_limit = parseFloat($("#cart_freeshipping_limit").val()) * 100;
-        var short_amount = freeshipping_limit - cart.total_price;
-
-        var progress_percent = parseInt(cart.total_price * 100 / freeshipping_limit);
-        if(progress_percent > 100) {
-          progress_percent = 100;
-        }
-        $(".drawer__freeshipping-bar .progressbar .progress-wrapper .progress").css("width", progress_percent + "%");
-
-        if(short_amount <= 0) {
-          $(".drawer__freeshipping-bar .commment-failed").addClass("hide");
-          $(".drawer__freeshipping-bar .commment-success").removeClass("hide");
-        }
-        else {
-          $(".drawer__freeshipping-bar .commment-failed").removeClass("hide");
-          $(".drawer__freeshipping-bar .commment-success").addClass("hide");
-          $(".drawer__freeshipping-bar .short_amount").text("$" + (short_amount / 100).toFixed(2));
-        }
-        ///////////////////////////////////////////////////
         
 
         
