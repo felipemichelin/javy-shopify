@@ -1271,10 +1271,17 @@ span.icon__fallback-text {
   display: none!important;
 }
 
+.swiper-slide.starting-slide.swiper-slide-active img {
+  object-fit: contain!important;
+  width: 100%!important;
+}
+
 @media only screen and (max-width: 768px) {
 div#CartDrawer {
     z-index: 5000!important;
 }
+
+
 
 
 
