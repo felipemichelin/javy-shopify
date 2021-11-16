@@ -83,7 +83,7 @@
           "header_search_enable": true,
           "logo": "shopify:\/\/shop_images\/logo_5d731a41-68f2-4c5e-8e47-f5bff2e78197.png",
           "desktop_logo_width": 180,
-          "mobile_logo_width": 140,
+          "mobile_logo_width": 100,
           "logo_hide_mobile": false,
           "main_menu_link_list": "javy-2-0-menu",
           "show_announcement": true,
