@@ -39,6 +39,16 @@ float: left;
   border-radius: 0px;
 }
 
+label.commment-failed {
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+
+label.commment-success {
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+
 
 button.btn.btn--full.add-to-cart {
   width: 100%!important;
