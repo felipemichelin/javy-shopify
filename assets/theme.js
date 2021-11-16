@@ -1712,6 +1712,16 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
       },
   
       quantityChanged: function(evt) {
+        $.ajax({
+          type: 'GET',
+          url: '/cart.js',
+          dataType: 'json',
+          success: function(cart){
+            // run the calculator with a target price of $75
+            calculateProgress(cart.total_price, 7500);
+          }
+        });
+
         var key = evt.detail[0];
         var qty = evt.detail[1];
         var el = evt.detail[2];
@@ -1744,6 +1754,8 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
           .catch(function(XMLHttpRequest){});
       },
   
+
+      
       /*============================================================================
         Update elements of the cart
       ==============================================================================*/
@@ -1770,6 +1782,17 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
       },
   
       updateCount: function(count) {
+        $.ajax({
+          type: 'GET',
+          url: '/cart.js',
+          dataType: 'json',
+          success: function(cart){
+            // run the calculator with a target price of $75
+            calculateProgress(cart.total_price, 7500);
+          }
+        });
+
+        
         var countEls = document.querySelectorAll('.cart-link__bubble-num');
   
         if (countEls.length) {
