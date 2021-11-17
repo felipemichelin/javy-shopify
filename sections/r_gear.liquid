@@ -12,50 +12,38 @@
         <div class="r_product_section">
           <div class="r_javy_gear_container">
             <div class="w-layout-grid grid-21">
-              <div class="gear-item">
-                <div class="gear-image"><img src="{{ 'tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png' | asset_url}}" loading="lazy" alt=""></div>
+
+
+
+
+
+{% assign gear_collection = collections['coffee-upgrades'] %}
+            {% for product1 in gear_collection.products limit: 4 %}
+            <div class="gear-item">
+              <a href="{{product1.url}}">
+                <div class="gear-image"><img src="{{product1.featured_image | img_url:'500x'}}" loading="lazy" alt=""></div>
                 <div class="gear-text">
                   <div class="product-title">
-                    <div class="r_item_title">Thermal Travel Tumbler</div>
+                    <div class="r_item_title">{{product1.title}}</div>
                   </div>
                   <div class="product-price">
-                    <div class="r_item_price">$19.95</div>
+                    <div class="r_item_price">{{product1.price | money}}</div>
                   </div>
                 </div>
-              </div>
-              <div class="gear-item">
-                <div class="gear-image"><img src="{{ 'tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png' | asset_url}}" loading="lazy" alt=""></div>
-                <div class="gear-text">
-                  <div class="product-title">
-                    <div class="r_item_title">Thermal Travel Tumbler</div>
-                  </div>
-                  <div class="product-price">
-                    <div class="r_item_price">$19.95</div>
-                  </div>
-                </div>
-              </div>
-              <div class="gear-item">
-                <div class="gear-image"><img src="{{ 'tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png' | asset_url}}" loading="lazy" alt=""></div>
-                <div class="gear-text">
-                  <div class="product-title">
-                    <div class="r_item_title">Thermal Travel Tumbler</div>
-                  </div>
-                  <div class="product-price">
-                    <div class="r_item_price">$19.95</div>
-                  </div>
-                </div>
-              </div>
-              <div class="gear-item">
-                <div class="gear-image"><img src="{{ 'tumbler_750x_30d05feb-9edc-4776-b894-13e77933a9de_590x.png' | asset_url}}" loading="lazy" alt=""></div>
-                <div class="gear-text">
-                  <div class="product-title">
-                    <div class="r_item_title">Thermal Travel Tumbler</div>
-                  </div>
-                  <div class="product-price">
-                    <div class="r_item_price">$19.95</div>
-                  </div>
-                </div>
-              </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+          {% if gear_collection.products.size > 4 %}
+          <a href="gear_collection.url" class="btn yellow w-button">SHOP ALL</a>
+          {% endif %}
+
+
+
+
+
+
+
             </div>
           </div>
         </div>
