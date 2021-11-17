@@ -6046,12 +6046,11 @@ svg.icon:not(.icon--full-color) circle,svg.icon:not(.icon--full-color) ellipse,s
 }
 
 [data-button_style=shadow] .index-section--alt .btn--tertiary:active{
-      box-shadow:1px 1px 0 0 #000000;
-      box-shadow:1px 1px 0 0 var(--colorAltText);
-      background-color:#fff6e7;
-      background-color:var(--colorAlt);
-      color:#000000;
-      color:var(--colorAltText);
+  border: 0px;
+  background-color: #ffc33a;
+  color: #000;
+  width: 100%;
+  max-width: 100%;
     }
 
 .index-section--alt .product-slider.slick-initialized:after{
