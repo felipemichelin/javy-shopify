@@ -48,7 +48,6 @@
 
 
         {% if template == 'product' and settings.show_addon %}
-          <div class="addon_products">
             {% assign handles = product.metafields.global.addon_products | split: "|" %}
             {% for handle in handles %}
               {% assign break = 0 %}
@@ -77,11 +76,9 @@
                                   <button class="addon_addtocart crossell-button" data-variantid="{{addon.selected_or_first_available_variant.id}}">Add</button>
            </div>
             </div>
-          </div>
 
 
       {% endfor %}
-          </div>
         {% endif %}
       </div>
 
