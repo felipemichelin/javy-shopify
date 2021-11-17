@@ -1240,6 +1240,9 @@ display: none;
   
 }
 
+.addon-title.addon_heading {
+  font-weight: 500;
+}
 
 
 
