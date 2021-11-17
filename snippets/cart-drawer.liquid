@@ -51,6 +51,30 @@
 
 
 
+
+
+
+
+        {%- if settings.cart_notes_enable -%}
+          <div class="cart__note" data-cart-note-container>
+            <label for="CartDrawerSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+            <textarea name="note" class="input-full" id="CartDrawerSpecialInstructions" data-cart-note>{{ cart.note }}</textarea>
+          </div>
+        {%- endif -%}
+      </div>
+
+
+
+
+
+      
+
+
+      <div class="drawer__footer cart__footer">
+
+
+
+
         {% if template == 'product' and settings.show_addon %}
         <div class="addon_products">
             {% assign handles = product.metafields.global.addon_products | split: "|" %}
@@ -90,30 +114,6 @@
             {% endfor %}
           </div>
         {% endif %}
-
-
-
-
-
-        {%- if settings.cart_notes_enable -%}
-          <div class="cart__note" data-cart-note-container>
-            <label for="CartDrawerSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-            <textarea name="note" class="input-full" id="CartDrawerSpecialInstructions" data-cart-note>{{ cart.note }}</textarea>
-          </div>
-        {%- endif -%}
-      </div>
-
-
-
-
-
-      
-
-
-      <div class="drawer__footer cart__footer">
-
-
-
 
 
         <div data-discounts>
