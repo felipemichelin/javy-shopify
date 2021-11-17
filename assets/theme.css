@@ -1182,6 +1182,10 @@ body,html{
   color:var(--colorTextBody);
 }
 
+.btn {
+  width: 100%!important;
+  max-width: 100%!important
+}
 .page-width{
   max-width:1300px;
   margin:0 auto;
