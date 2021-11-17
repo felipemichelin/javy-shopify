@@ -1,0 +1,146 @@
+<div class="ot-tiktok-multi-pixel"></div>
+{% if template contains "product" %}
+	<meta property="omega:tags" content="{% for tag in product.tags %}{{ tag }}, {% endfor %}">
+	<meta property="omega:product" content="{{product.id}}">
+	<meta property="omega:product_type" content="{{product.product_type}}">
+	<meta property="omega:collections" content="{% for collection in product.collections %}{{ collection.id }}, {% endfor %}">
+{% endif %}
+{% if template contains "cart" %} 
+	<meta property="omega:tags" content="{% for line_item in cart.items %} {% for tag in line_item.product.tags %}{{ tag}},{% endfor %}{% endfor %}">
+	<meta property="omega:product" content="{% for line_item in cart.items %} {{line_item.product.id}}, {% endfor %}">
+	<meta property="omega:product_type" content="{% for line_item in cart.items %} {{line_item.product_type}}, {% endfor %}">
+	<meta property="omega:collections" content="{% for line_item in cart.items %}  {% for collection in line_item.product.collections %}{{ collection.id }},{% endfor %}{% endfor %} ">
+{% endif %}
+{% if template contains "collection" %}
+	<meta property="omega:collections" content="{{ collection.id }}">
+{% endif %}
+
+{%if shop.metafields.OmegaTikTokPixel != blank %} 
+ 	 
+	<script>
+		var arrayTikTokPixelTrack = [];
+        var arrayTikTokPixelCapiTrack = [];
+	</script>
+    {%- for field in shop.metafields.OmegaTikTokPixel -%}  
+
+        {%assign key = field | first %}
+        {%assign value = field | last %}  
+		{%assign isCapiArray = value | split:"_" %} 
+		{%assign typePixel = isCapiArray[2] %} 
+		{%if value contains "collection_" %} 
+		{%assign value = value | split:"_" %}
+		{%assign TikTokPixelID = value[1] %}
+			 <script>  
+               var otArrayCollection = '{{key}}'.trim().split(","); 
+               if(document.querySelector("meta[property='omega:collections']") != null){
+               	 var metaCollection = document.querySelector("meta[property='omega:collections']").getAttribute("content");
+                 
+                 if(metaCollection != ""){
+                   metaCollection = metaCollection.split(",");  
+                   for(let i =0; i < metaCollection.length; i++){  
+                     if(otArrayCollection.indexOf(metaCollection[i].trim()) > -1){ 
+                        if(`{{typePixel}}`=="isCapi"){
+                         arrayTikTokPixelCapiTrack.push('{{TikTokPixelID}}'); 
+                       	 break; 
+                       }else{
+                         arrayTikTokPixelTrack.push('{{TikTokPixelID}}'); 
+                       	 break;  
+                       }
+                      
+                     } 
+                   }
+
+                 }
+               }
+                
+             </script> 
+		{%endif%}   
+		{%if value contains "product_" %} 
+		{%assign value = value | split:"_" %}
+		{%assign TikTokPixelID = value[1] %}  
+			<script> 
+               var otArrayProduct = '{{key}}'.split(",");
+               if(document.querySelector("meta[property='omega:product']") != null){
+               var metaProduct = document.querySelector("meta[property='omega:product']").getAttribute("content");
+                 if(metaProduct != ""){
+                    metaProduct = metaProduct.split(",");  
+                    for(let i =0; i < metaProduct.length; i++){  
+                      if(otArrayProduct.indexOf(metaProduct[i].trim()) > -1){ 
+                         if(`{{typePixel}}`=="isCapi"){
+                         	arrayTikTokPixelCapiTrack.push('{{TikTokPixelID}}'); 
+                       	 	break; 
+                       	 }else{
+                         	arrayTikTokPixelTrack.push('{{TikTokPixelID}}'); 
+                        	break;   
+                       	 }
+                      } 
+                    }
+                 }
+               }
+			</script>
+		{%endif%} 
+		{%if value contains "tag_" %} 
+		{%assign value = value | split:"_" %}
+		{%assign TikTokPixelID = value[1] %}   
+			<script> 
+               var otArrayTag = '{{key}}'.split(","); 
+               if(document.querySelector("meta[property='omega:tags']") != null){
+                 var metaTag = document.querySelector("meta[property='omega:tags']").getAttribute("content"); 
+                 if(metaTag != ""){
+                    metaTag = metaTag.split(","); 
+                    for(let i =0; i < metaTag.length; i++){  
+                      if(otArrayTag.indexOf(metaTag[i].trim()) > -1){   
+                        if(`{{typePixel}}`=="isCapi"){
+                         	arrayTikTokPixelCapiTrack.push('{{TikTokPixelID}}'); 
+                       	 	break; 
+                       	 }else{
+                         	arrayTikTokPixelTrack.push('{{TikTokPixelID}}'); 
+                        	break;   
+                       	 }
+                      } 
+                    }
+                 }
+               }
+			</script>
+		{%endif%} 
+		{%if value contains "type_" %} 
+		{%assign value = value | split:"_" %}
+		{%assign TikTokPixelID = value[1] %}   
+			<script> 
+               var otArrayType = '{{key}}'.split(",");
+               if(document.querySelector("meta[property='omega:product_type']") != null){
+                 var metaType = document.querySelector("meta[property='omega:product_type']").getAttribute("content"); 
+                 if(metaType != ""){
+                    metaType = metaType.split(","); 
+                    for(let i =0; i < metaType.length; i++){  
+					  console.log("metaType",metaType);
+                      if(otArrayTag.indexOf(metaType[i].trim()) > -1){  
+                         if(`{{typePixel}}`=="isCapi"){
+                         	arrayTikTokPixelCapiTrack.push('{{TikTokPixelID}}'); 
+                            trackingType();
+                       	 	break; 
+                       	 }else{
+                         	 arrayTikTokPixelTrack.push('{{TikTokPixelID}}');
+                        	 trackingType();
+                        	 break;    
+                       	 }
+                        
+                      } 
+                    }
+                  } 
+               }
+			</script>
+		{%endif%}
+		{%if value contains "master" %} 
+ 		{%assign TikTokPixelID = key %}   
+			<script>
+              if(`{{typePixel}}`=="isCapi"){
+                    arrayTikTokPixelCapiTrack.push('{{key}}'); 
+              }else{
+                  arrayTikTokPixelTrack.push('{{key}}');
+              }
+               
+			</script>
+		{%endif%} 
+    {%- endfor -%}  
+{%endif%} 
