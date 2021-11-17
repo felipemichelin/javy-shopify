@@ -1446,12 +1446,14 @@ h1.section-header__title {
 }
 
 
-
 button.btn.btn--full.add-to-cart.btn--tertiary {
   width: 100%!important;
-  display: block!important;
+  display: flex!important;
   max-width: 100%!important;
   height: 65px!important;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-block {
