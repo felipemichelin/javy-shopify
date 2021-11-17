@@ -1,7 +1,4 @@
-.swiper-slide.starting-slide img {
-  object-fit: contain!important;
-  width: 100%!important;
-}
+
   
 .drawer__freeshipping-bar {
   text-align: center;
@@ -55,10 +52,22 @@ label.commment-success {
 
 
 
+
+button.btn.btn--full.add-to-cart {
+  width: 100%!important;
+  max-width: 100%!important;
+  height: 65px!important;
+}
+
 @media only screen and (min-width: 769px) {
 .product-single__header {
     margin-top: 0px!important;
 }
+}
+
+button.btn.btn--full.cart__checkout.cart__checkout--drawer {
+  max-width: 100%!important;
+  width: 100%!important;
 }
 
     
@@ -664,6 +673,11 @@ a.slide-nav__link {
   padding: 0px!important;
 }
 
+button.btn.btn--full.add-to-cart.btn--tertiary {
+  border: 0px;
+  background-color: #ffc33a;
+  color: #000;
+}
 
 .shopify-payment-terms.product__policies {
   display: none!important;
@@ -674,6 +688,9 @@ a.slide-nav__link {
     display: block!important;
 }
 
+button.btn.btn--full.add-to-cart {
+  height: 65px!important;
+}
 
 
 
@@ -1149,9 +1166,16 @@ button.js-qty__adjust.js-qty__adjust--plus {
 
 
 
+.btn--loading.btn--tertiary span {
+  color: transparent!important;
+}
 
 
-
+button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
 
 button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading span {
     /* top: auto; */
@@ -1178,7 +1202,12 @@ button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading span {
 
 
 
+button.btn.btn--full.cart__checkout.cart__checkout--drawer.btn--loading {
+  display: flex;
+  align-content: center;
+  justify-content: center;
 
+}
 
 
 button.btn.btn--full.cart__checkout.cart__checkout--drawer.btn--loading span.loader {
@@ -1206,6 +1235,10 @@ display: none;
 }
 
 
+.btn {
+  font-weight: 600!important;
+  
+}
 
 .addon-title.addon_heading {
   font-weight: 500;
@@ -1213,6 +1246,11 @@ display: none;
 
 
 
+button.btn.btn--full.cart__checkout.cart__checkout--drawer {
+  height: 55px;
+
+
+}
 
 
 
@@ -1294,7 +1332,10 @@ span.icon__fallback-text {
   display: none!important;
 }
 
-
+.swiper-slide.starting-slide img {
+  object-fit: contain!important;
+  width: 100%!important;
+}
 
 @media only screen and (max-width: 768px) {
 div#CartDrawer {
@@ -1405,7 +1446,15 @@ h1.section-header__title {
 }
 
 
-
+button.btn.btn--full.add-to-cart.btn--tertiary {
+  width: 100%!important;
+  display: flex!important;
+  max-width: 100%!important;
+  height: 55px!important;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
 
 .product-block {
   margin-bottom: 0px!important;
