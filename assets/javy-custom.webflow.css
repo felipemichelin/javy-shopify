@@ -126,7 +126,7 @@ a {
   height: 100%;
 }
 
-.swiper.slider3 {
+.swiper.slider_flavor {
   z-index: 50;
   display: -webkit-box;
   display: -webkit-flex;
@@ -257,10 +257,6 @@ a {
 
 .r_p.r_bigger {
   max-width: 1200px;
-}
-
-.r_p.r_bigger.no_m_b {
-  margin-bottom: 0px;
 }
 
 .r_p.r_for_hero {
@@ -1722,6 +1718,7 @@ a {
   color: #000;
   font-size: 14px;
   line-height: 20px;
+  letter-spacing: 0px;
 }
 
 .tab-content {
@@ -2092,7 +2089,7 @@ a {
   width: 100%;
   height: 100%;
   max-width: 580px;
-  padding: 125px 55px 55px 35px;
+  padding: 65px 55px 55px 35px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -3783,6 +3780,8 @@ a {
 
   .r_sticky_right {
     width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .r_full_sticky_section {
@@ -3887,6 +3886,10 @@ a {
   .feature-title {
     margin-top: 0px;
     margin-bottom: 0px;
+  }
+
+  .r_bg_gradient {
+    display: none;
   }
 }
 
@@ -4012,7 +4015,7 @@ a {
   }
 
   .r_btn.btn-mobile.r_negative_margin {
-    margin-top: -20px;
+    margin-top: 0px;
   }
 
   .r_flavors_mobile {
@@ -4520,7 +4523,7 @@ a {
 
   .r_flavors {
     position: relative;
-    min-height: 100%;
+    min-height: auto;
     padding-top: 0px;
     background-color: transparent;
   }
@@ -4591,6 +4594,10 @@ a {
     max-width: 280px;
   }
 
+  .r_btn.btn-mobile.r_negative_margin {
+    margin-top: 0px;
+  }
+
   .r_btn.r_btn_mobile {
     font-size: 12px;
   }
@@ -4624,7 +4631,7 @@ a {
   }
 
   .r_title_container {
-    margin-top: 85px;
+    margin-top: 35px;
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -4965,7 +4972,6 @@ a {
 
   .r_sticky_right {
     padding-top: 50px;
-    padding-bottom: 50px;
   }
 
   .section-heading {
@@ -5087,6 +5093,11 @@ a {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    background-image: radial-gradient(circle farthest-corner at 50% 50%, #fff 38%, rgba(255, 255, 255, 0.73) 61%, rgba(247, 252, 253, 0));
+  }
+
+  .star-icon {
+    height: 10px;
   }
 
   .bg_hero_mob {
@@ -5096,7 +5107,7 @@ a {
   }
 
   .text-block-35 {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .stars-review {
