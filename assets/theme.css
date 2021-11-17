@@ -1876,14 +1876,9 @@ button[disabled],html input[disabled]{
   }
 
 .btn--tertiary,.rte .btn--tertiary{
-  background-color:#ffffff;
-  background-color:var(--colorBody);
-  border:2px solid;
-  border-color:#000000;
-  border-color:var(--colorTextBody);
-  color:#000000;
-  color:var(--colorTextBody);
-  font-weight:400
+  border: 0px;
+  background-color: #ffc33a;
+  color: #000;
 }
 
 .btn--tertiary:hover,.rte .btn--tertiary:hover{
@@ -1959,7 +1954,9 @@ button[disabled],html input[disabled]{
 }
 
 .btn--full{
-  width:100%;
+  width: 100%!important;
+  max-width: 100%!important;
+  height: 65px!important;
 }
 
 .btn--inverse{
@@ -2014,9 +2011,10 @@ button[disabled],html input[disabled]{
       color:#000;
     }
 
-.btn--loading.btn--tertiary span{
-    color:#000;
-  }
+
+    .btn--loading.btn--tertiary span {
+      color: transparent;
+    }
 
 .btn--loading.btn--tertiary span:after{
       color:#000000;
