@@ -240,7 +240,7 @@ var slider3 = new Swiper(".slider3", {
      }
  }
 
- const targetNode = document.querySelector('.site-nav__thumb-button');
+ const targetNode = document.querySelector('.js-toggle-slide-nav');
  const config = { attributes: true, childList: false, subtree: false };
  const callback = function (mutationsList, observer) {
      for (let i = 0; i < mutationsList.length; i++) {
