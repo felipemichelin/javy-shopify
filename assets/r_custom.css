@@ -2,7 +2,10 @@ body {
   letter-spacing: 0px!important;
 }
 
-
+a.previous-flavor.w-inline-block {
+  transform: rotate(
+180deg);
+}
 
 .swiper-wrapper {
   margin-bottom: 0px!important;
