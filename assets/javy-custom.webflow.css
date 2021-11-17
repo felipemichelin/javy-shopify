@@ -1476,7 +1476,7 @@ a {
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  background-color: #fde02f;
+  background-color: #000;
 }
 
 .r_container {
@@ -3194,6 +3194,9 @@ a {
 .r_bf_sale_title {
   margin-top: 0px;
   margin-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #fff;
   color: #000;
   font-size: 34px;
   line-height: 38px;
@@ -3202,28 +3205,22 @@ a {
 
 .r_sub_bf_bar {
   margin-bottom: 0px;
-  color: #000;
+  color: #fff;
   font-size: 16px;
   line-height: 26px;
   font-weight: 500;
 }
 
-.bf_left {
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  right: auto;
-  bottom: 0%;
-  height: 100%;
-}
-
-.bf_right {
-  position: absolute;
-  left: auto;
-  top: 0%;
-  right: 0%;
-  bottom: 0%;
-  height: 100%;
+.r_coupon_code {
+  display: inline-block;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-style: dashed;
+  border-width: 2px;
+  border-color: #fff;
+  border-radius: 100px;
+  background-color: transparent;
+  color: #fff;
 }
 
 @media screen and (max-width: 991px) {
@@ -4064,14 +4061,6 @@ a {
   .r_sub_bf_bar {
     max-width: 500px;
   }
-
-  .bf_left {
-    left: -50%;
-  }
-
-  .bf_right {
-    right: -50%;
-  }
 }
 
 @media screen and (max-width: 767px) {
@@ -4329,6 +4318,11 @@ a {
   .r_section.r_cream.r_p_40 {
     padding-top: 40px;
     padding-bottom: 20px;
+  }
+
+  .r_section.r_bf_sale {
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   .four-column {
@@ -4608,20 +4602,8 @@ a {
     margin-bottom: 0px;
   }
 
-  .bf_left {
-    left: -25%;
-    top: 0%;
-    right: auto;
-    bottom: auto;
-    height: 80px;
-  }
-
-  .bf_right {
-    left: auto;
-    top: 0%;
-    right: -25%;
-    bottom: auto;
-    height: 80px;
+  .r_sub_bf_bar {
+    margin-top: 10px;
   }
 }
 
@@ -5382,23 +5364,14 @@ a {
   }
 
   .r_bf_sale_title {
-    font-size: 24px;
-    line-height: 44px;
+    font-size: 20px;
+    line-height: 34px;
   }
 
   .r_sub_bf_bar {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 28px;
-  }
-
-  .bf_left {
-    left: -20%;
-    height: 45px;
-  }
-
-  .bf_right {
-    right: -20%;
-    height: 45px;
+    font-weight: 700;
   }
 }
 
