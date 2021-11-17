@@ -67,15 +67,7 @@
 
 
 
-      
-
-
-      <div class="drawer__footer cart__footer">
-
-
-
-
-        {% if template == 'product' and settings.show_addon %}
+              {% if template == 'product' and settings.show_addon %}
         <div class="addon_products">
             {% assign handles = product.metafields.global.addon_products | split: "|" %}
             {% for handle in handles %}
@@ -114,6 +106,16 @@
             {% endfor %}
           </div>
         {% endif %}
+
+        
+
+
+      <div class="drawer__footer cart__footer">
+
+
+
+
+
 
 
         <div data-discounts>
