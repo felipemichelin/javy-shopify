@@ -1,4 +1,7 @@
-
+.swiper-slide.starting-slide img {
+  object-fit: contain!important;
+  width: 100%!important;
+}
   
 .drawer__freeshipping-bar {
   text-align: center;
@@ -1291,10 +1294,7 @@ span.icon__fallback-text {
   display: none!important;
 }
 
-.swiper-slide.starting-slide img {
-  object-fit: contain!important;
-  width: 100%!important;
-}
+
 
 @media only screen and (max-width: 768px) {
 div#CartDrawer {
