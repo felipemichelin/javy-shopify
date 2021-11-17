@@ -299,7 +299,7 @@ observer.observe();
   
 
   
- {% include 'smile-initializer' %}
+
 
 
 
@@ -330,6 +330,31 @@ $(document).scroll(function () {
 </script>
 
 
+  
+     {% include 'smile-initializer' %}
+{% comment %}
+<!--Gorgias Chat Widget Start--><script>!function(_){_.GORGIAS_CHAT_APP_ID="2015",_.GORGIAS_CHAT_BASE_URL="us-east1-898b.production.gorgias.chat",_.GORGIAS_API_BASE_URL="config.gorgias.chat";var e=new XMLHttpRequest;e.open("GET","https://config.gorgias.chat/applications/2015",!0),e.onload=function(n){if(4===e.readyState)if(200===e.status){var t=JSON.parse(e.responseText);if(!t.application||!t.bundleVersion)throw new Error("Missing fields in the response body - https://config.gorgias.chat/applications/2015");if(_.GORGIAS_CHAT_APP=t.application,_.GORGIAS_CHAT_BUNDLE_VERSION=t.bundleVersion,t&&t.texts&&(_.GORGIAS_CHAT_TEXTS=t.texts),!document.getElementById("gorgias-chat-container")){var o=document.createElement("div");o.id="gorgias-chat-container",document.body.appendChild(o);var r=document.createElement("script");r.setAttribute("defer",!0),r.src="https://storage.googleapis.com/gorgias-chat-production-client-builds/{bundleVersion}/static/js/main.js".replace("{bundleVersion}",t.bundleVersion),document.body.appendChild(r)}}else console.error("Failed request GET - https://config.gorgias.chat/applications/2015")},e.onerror=function(_){console.error(_)},e.send()}(window||{});</script><script>!function(I){I.IS_SHOPIFY=!0,I.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",I.SHOPIFY_CUSTOMER_ID="{{customer.id}}",I.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});</script><!--Gorgias Chat Widget End-->
+  {% endcomment %}
+  
+  <script src="https://cdn.attn.tv/javy/dtag.js"></script>
+
+  <!--
+  
+  <script async defer data-pin-hover="true" data-pin-tall="true" data-pin-round="true" src="//assets.pinterest.com/js/pinit.js"></script>
+  --> 
+  
+  <script>(function(){ var s = document.createElement('script'), e = ! document.body ? document.querySelector('head') : document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : false, hideTrigger : false, language : 'en', position : 'left', leadColor : '#146ff8', triggerColor : '#146ff8', triggerRadius : '50%', triggerPositionX : 'right', triggerPositionY : 'center', triggerIcon : 'people', triggerSize : 'medium', triggerOffsetX : 20, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'right', triggerPositionY : 'center', triggerOffsetX : 10, triggerOffsetY : 10, triggerRadius : '50%' } }); }; e.appendChild(s);}());</script>
+    
+  <!-- Twitter universal website tag code -->
+    <script>
+    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+    // Insert Twitter Pixel ID and Standard Event data below
+    twq('init','o6q9y');
+    twq('track','PageView');
+    </script>
+    <!-- End Twitter universal website tag code -->
 
 
 
