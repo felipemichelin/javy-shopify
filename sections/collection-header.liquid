@@ -44,18 +44,38 @@
     </div>
   </div>
 {%- else -%}
-  <div class="page-width page-content page-content--flush-bottom">
-    <header class="section-header" data-aos>
-      <h1 class="section-header__title appear-delay">
-        {{ collection.title }}
-      </h1>
 
-      {%- if collection.description != blank and section.settings.description_enable -%}
+
+
+  <div class="page-width page-content page-content--flush-bottom">
+
+
+
+
+
+    <header class="section-header" data-aos>
+
+
+          <div class="r_section r_collection">
+      <div class="r_container middle_aligned">
+        <div class="r_title_wrapper r_centered r_bigger no_m">
+          <h1 class="r_h1 m_0"> {{ collection.title }}</h1>
+
+           {%- if collection.description != blank and section.settings.description_enable -%}
         {%- assign desc_length = collection.description | size -%}
-        <div class="rte section-header__description{% if desc_length < 200 %} section-header__description--large{% endif %} appear-delay-1">
-          {{ collection.description }}
+          <p class="r_sub_h2 m_t_15">  {{ collection.description }}</p>
+
+        
         </div>
       {%- endif -%}
+
+
+        </div>
+      </div>
+    </div>
+
+
+     
     </header>
   </div>
 {%- endif -%}

@@ -12,6 +12,11 @@
   letter-spacing: -1px;
 }
 
+.rte.section-header__description.appear-delay-1 {
+  line-height: 26px!important;
+}
+
+
 .drawer__freeshipping-bar .progressbar {
   border: none;
   background-color: #e1e1e1;
