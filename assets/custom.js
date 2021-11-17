@@ -227,3 +227,30 @@ var slider3 = new Swiper(".slider3", {
     hide: true,
   },
 });
+
+
+
+ // Stop body scroll when mobile menu is open
+ const body = document.body;
+ function letBodyScroll(bool) {
+     if (bool) {
+             body.style.overflow = 'hidden';
+     } else {
+         body.style.overflow = 'auto';
+     }
+ }
+
+ const targetNode = document.querySelector('.site-nav__thumb-button');
+ const config = { attributes: true, childList: false, subtree: false };
+ const callback = function (mutationsList, observer) {
+     for (let i = 0; i < mutationsList.length; i++) {
+         if (mutationsList[i].type === 'attributes') {
+             const menuIsOpen = mutationsList[i].target.classList.contains('is-active');
+             letBodyScroll(menuIsOpen);
+         }
+     }
+ };
+ const menu_check = new MutationObserver(callback);
+ menu_check.observe(targetNode, config);
+
+ 
