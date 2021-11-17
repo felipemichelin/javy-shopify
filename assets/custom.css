@@ -1468,15 +1468,14 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
   display: -ms-flexbox;
   display: flex;
   min-height: auto;
-  padding: 10px 20px;
+  padding: 15px 30px;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   border-top: 1px solid #dddcd8;
-  border-bottom: 0px solid #dddcd8;
+  border-bottom: 0 solid #dddcd8;
   background-color: #fffcf7;
-
 }
 
 @media only screen and (max-width:768px){
