@@ -1182,10 +1182,6 @@ body,html{
   color:var(--colorTextBody);
 }
 
-.btn {
-  width: 100%!important;
-  max-width: 100%!important
-}
 .page-width{
   max-width:1300px;
   margin:0 auto;
@@ -1770,8 +1766,6 @@ button[disabled],html input[disabled]{
 
 [data-button_type_style=caps] .btn,[data-button_type_style=caps] .product-reviews .spr-button,[data-button_type_style=caps] .product-reviews .spr-summary-actions a,[data-button_type_style=caps] .rte .btn,[data-button_type_style=caps] .shopify-payment-button .shopify-payment-button__button--unbranded{
     letter-spacing:0.2em;
-    width: 100%;
-    max-width: 100%!important;
     text-transform:uppercase;
     font-size:calc(var(--typeBaseSize) - 2px)
 }
@@ -1882,9 +1876,14 @@ button[disabled],html input[disabled]{
   }
 
 .btn--tertiary,.rte .btn--tertiary{
-  border: 0px;
-  background-color: #ffc33a;
-  color: #000;
+  background-color:#ffffff;
+  background-color:var(--colorBody);
+  border:2px solid;
+  border-color:#000000;
+  border-color:var(--colorTextBody);
+  color:#000000;
+  color:var(--colorTextBody);
+  font-weight:400
 }
 
 .btn--tertiary:hover,.rte .btn--tertiary:hover{
@@ -1960,9 +1959,7 @@ button[disabled],html input[disabled]{
 }
 
 .btn--full{
-  width: 100%!important;
-  max-width: 100%!important;
-  height: 65px!important;
+  width:100%;
 }
 
 .btn--inverse{
@@ -2017,10 +2014,9 @@ button[disabled],html input[disabled]{
       color:#000;
     }
 
-
-    .btn--loading.btn--tertiary span {
-      color: transparent;
-    }
+.btn--loading.btn--tertiary span{
+    color:#000;
+  }
 
 .btn--loading.btn--tertiary span:after{
       color:#000000;
@@ -6027,12 +6023,11 @@ svg.icon:not(.icon--full-color) circle,svg.icon:not(.icon--full-color) ellipse,s
   }
 
 .index-section--alt .btn--tertiary{
-  background-color:#fff6e7;
-  background-color:var(--colorAlt);
-  border-color:#000000;
-  border-color:var(--colorAltText);
-  color:#000000;
-  color:var(--colorAltText)
+  border: 0px;
+  background-color: #ffc33a;
+  color: #000;
+  width: 100%;
+  max-width: 100%;
 }
 
 .index-section--alt .btn--tertiary:hover{

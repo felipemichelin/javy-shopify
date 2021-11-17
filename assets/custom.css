@@ -54,7 +54,9 @@ label.commment-success {
 
 
 button.btn.btn--full.add-to-cart {
-
+  width: 100%!important;
+  max-width: 100%!important;
+  height: 65px!important;
 }
 
 @media only screen and (min-width: 769px) {
@@ -63,6 +65,10 @@ button.btn.btn--full.add-to-cart {
 }
 }
 
+button.btn.btn--full.cart__checkout.cart__checkout--drawer {
+  max-width: 100%!important;
+  width: 100%!important;
+}
 
     
 
@@ -667,7 +673,11 @@ a.slide-nav__link {
   padding: 0px!important;
 }
 
-
+button.btn.btn--full.add-to-cart.btn--tertiary {
+  border: 0px;
+  background-color: #ffc33a;
+  color: #000;
+}
 
 .shopify-payment-terms.product__policies {
   display: none!important;
@@ -1156,6 +1166,9 @@ button.js-qty__adjust.js-qty__adjust--plus {
 
 
 
+.btn--loading.btn--tertiary span {
+  color: transparent!important;
+}
 
 
 button.btn.btn--full.add-to-cart.btn--tertiary.btn--loading {
