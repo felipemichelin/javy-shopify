@@ -1,3 +1,6 @@
+    {% assign gear_collection = collections['coffee-upgrades'] %}
+
+    
     <div class="r_section">
       <div class="r_container">
         <div class="r_container_btn">
@@ -17,7 +20,6 @@
 
 
 
-{% assign gear_collection = collections['coffee-upgrades'] %}
             {% for product1 in gear_collection.products limit: 4 %}
             <div class="gear-item">
               <a href="{{product1.url}}">
@@ -35,7 +37,7 @@
             {% endfor %}
           </div>
           {% if gear_collection.products.size > 4 %}
-          <a class="btn yellow w-button">SHOP ALL</a>
+          <a href="gear_collection.url" class="btn yellow w-button">SHOP ALL</a>
           {% endif %}
 
 
