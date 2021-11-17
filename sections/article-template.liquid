@@ -42,7 +42,7 @@
 
     {%- if section.settings.blog_show_image and article.image -%}
       <div class="article__image-wrap">
-        <div class="image-wrap aos-animate article__featured-image" style="height: 0; padding-bottom: {{ 100 | divided_by: article.image.aspect_ratio }}%;">
+        <div class="image-wrap aos-animate article__featured-image" style="height: 100%; padding-bottom: 0%;">
           {%- assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
           <img class="lazyload"
               data-src="{{ img_url }}"
