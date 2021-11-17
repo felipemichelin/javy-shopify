@@ -48,37 +48,11 @@
 
 
 
-<div class="cart-addons">
-            <div class="addon_w-layout-grid addon_grid">
-              <div class="addon-image"><img src="https://assets.website-files.com/61895bdcdd6b38d3899b94da/618e96f280919a7f7de9cfe2_flavor.png" loading="lazy" alt="" class="addon_image"></div>
-              <div class="upsell-description">
-                <div class="addon-badge">BEST SELLER</div>
-                <div class="addon-title">Javy Flavored</div>
-                <div class="addon-subtitle"><strong class="subtitle-bold">Flavor:</strong> Caramel Craze</div>
-              </div>
-              <div class="crossell-button"><a data-variant-id="41004121718945" href="#" class="crossell-link checkout-addon-toggle w-inline-block checkout-selected-addon">
-                  <div class="crossell-button-text add_to_order">ADD &nbsp;- $19</div>
-                  <div class="crossell-button-text remove_from_order">REMOVE</div>
-                </a></div>
-            </div>
-          </div>
-
-
-
-        {%- if settings.cart_notes_enable -%}
-          <div class="cart__note" data-cart-note-container>
-            <label for="CartDrawerSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-            <textarea name="note" class="input-full" id="CartDrawerSpecialInstructions" data-cart-note>{{ cart.note }}</textarea>
-          </div>
-        {%- endif -%}
-      </div>
-
-
 
 
 
         {% if template == 'product' and settings.show_addon %}
-          <div class="addon_products">
+        <div class="cart-addons addon_products">
             {% assign handles = product.metafields.global.addon_products | split: "|" %}
             {% for handle in handles %}
               {% assign break = 0 %}
@@ -94,6 +68,45 @@
               {% endif %}
 
               {% assign addon = all_products[handle] %}
+
+
+            <div class="addon_w-layout-grid addon_grid addon_product">
+              <div class="addon-image addon_image"><img src="{{addon.featured_image | img_url : '200x'}} " loading="lazy" alt="" class="addon_image"></div>
+              <div class="upsell-description">
+                <div class="addon-badge">BEST SELLER</div>
+                <div class="addon-title addon_heading">{{addon.title}}</div>
+                <div class="addon-subtitle"> 
+                
+                 <span class="addon_saleprice"> {{addon.price | money}} </span>
+                    <span class="addon_regprice"> {{addon.selected_or_first_available_variant.compare_at_price | money}} </span>
+                    
+                    </div>
+              </div>
+              <div class="crossell-button"><a data-variant-id="41004121718945" href="#" class="crossell-link checkout-addon-toggle w-inline-block checkout-selected-addon">
+                  <div class="crossell-button-text add_to_order addon_addtocart" data-variantid="{{addon.selected_or_first_available_variant.id}}>ADD &nbsp;- $19</div>
+                </a></div>
+            </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+
+
+
+
+        {%- if settings.cart_notes_enable -%}
+          <div class="cart__note" data-cart-note-container>
+            <label for="CartDrawerSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+            <textarea name="note" class="input-full" id="CartDrawerSpecialInstructions" data-cart-note>{{ cart.note }}</textarea>
+          </div>
+        {%- endif -%}
+      </div>
+
+
+
+
+
+
               <div class="addon_product">
                 <div class="col">
                   <div href="{{addon.url}}" class="addon_image"> <img src="{{addon.featured_image | img_url : '200x'}}" /> </div>
