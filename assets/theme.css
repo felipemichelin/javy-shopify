@@ -1770,6 +1770,8 @@ button[disabled],html input[disabled]{
 
 [data-button_type_style=caps] .btn,[data-button_type_style=caps] .product-reviews .spr-button,[data-button_type_style=caps] .product-reviews .spr-summary-actions a,[data-button_type_style=caps] .rte .btn,[data-button_type_style=caps] .shopify-payment-button .shopify-payment-button__button--unbranded{
     letter-spacing:0.2em;
+    width: 100%;
+    max-width: 100%!important;
     text-transform:uppercase;
     font-size:calc(var(--typeBaseSize) - 2px)
 }
