@@ -918,9 +918,8 @@ a.site-nav__link.site-nav__link--icon.small--hide {
 .left_icons {
   width: 50%!important;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
-
 
 span.icon__fallback-text {
   margin-left: 5px;
