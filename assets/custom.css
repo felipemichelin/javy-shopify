@@ -71,6 +71,18 @@ button.btn.btn--full.cart__checkout.cart__checkout--drawer {
 }
 
     
+
+span.addon_saleprice {
+  font-weight: 600;
+}
+
+
+span.addon_regprice {
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+
+
 .header-wrapper--overlay {
   background: none!important;
 }

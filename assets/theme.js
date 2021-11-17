@@ -1618,7 +1618,7 @@ matchMedia(theme.config.mediaQuerySmall).addListener(function(mql) {
           e.preventDefault();
           var varid = $(this).attr("data-variantid");
           var btn = $(this);
-          var addon = btn.parents(".addon_product");
+          var addon = btn.parents(".addon_products");
 
           var data = {
             "quantity": 1,
