@@ -1237,7 +1237,6 @@ display: none;
 
 .btn {
   font-weight: 600!important;
-  letter-spacing: 1.5px!important;
   
 }
 
@@ -1506,7 +1505,7 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
 }
 
 .checkout-addon-toggle.checkout-selected-addon {
-  background-color: #ff5050;
+  background-color: #ffc33a;
   color: #fff;
 }
 
