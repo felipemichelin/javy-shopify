@@ -1471,8 +1471,8 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 0px solid #dddcd8;
-  border-bottom: 1px solid #dddcd8;
+  border-top: 1px solid #dddcd8;
+  border-bottom: 0px solid #dddcd8;
   background-color: #fffcf7;
   margin-left: -40px;
   margin-right: -40px;
