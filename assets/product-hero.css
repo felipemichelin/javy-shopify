@@ -1225,3 +1225,9 @@ img {
   justify-self: center;
 }
 
+
+
+
+footer.site-footer.text-center {
+  margin-top: 0px!important;
+}
