@@ -1466,7 +1466,6 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
   display: -ms-flexbox;
   display: flex;
   min-height: auto;
-  margin-bottom: 10px;
   padding: 10px 20px;
   -webkit-box-align: center;
   -webkit-align-items: center;
