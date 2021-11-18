@@ -1464,6 +1464,10 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
 
 }
 
+.addon_products:last-child {
+  border-bottom: 1px solid #dddcd8;
+}
+
 
 .addon-badge {
   color: #c8102e;
