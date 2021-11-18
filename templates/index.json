@@ -37,6 +37,7 @@
     },
     "1636937926242c9bd3": {
       "type": "r_deals",
+      "disabled": true,
       "settings": {
       }
     },
