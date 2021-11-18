@@ -92,6 +92,7 @@
         "a8d31eec-040e-4244-82d1-1d83ececa9e4": {
           "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/reviews-widget\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
           "settings": {
+            "product": "{{ product }}",
             "widget_type": "reviews_widget"
           }
         }
