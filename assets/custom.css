@@ -2,16 +2,13 @@
 
   
 .drawer__freeshipping-bar {
-  text-align: center;
-  width: 100%;
-  /* padding: 10px 30px; */
-  color: #000;
-  background-color: #fff;
-  font-size: 14px!important;
-  text-transform: capitalize!important;
-  font-weight: 700;
-  letter-spacing: -1px;
+  letter-spacing: 0px;
 }
+
+span.short_amount {
+  margin: 0px 4px;
+}
+
 
 .rte.section-header__description.appear-delay-1 {
   line-height: 26px!important;
