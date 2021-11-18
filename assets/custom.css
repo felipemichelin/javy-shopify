@@ -1487,6 +1487,9 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
   margin-top: 2px;
 }
 
+.variant-input-wrap {
+  grid-column-gap: 6px;
+}
 
 a.cart__product-name {
   font-size: 12px;
