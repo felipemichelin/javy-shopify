@@ -1449,6 +1449,20 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
 }
 
 
+
+.cart__item--image.aos-init.aos-animate {
+  height: 80px;
+  width: 80px;
+  object-fit: contain;
+  position: relative;
+}
+
+
+.cart__item--image.aos-init.aos-animate img.lazyautosizes.lazyloaded {
+  object-fit: contain;
+}
+
+
 @media only screen and (max-width:768px){
   .addon_products {
     margin-left: -20px;
@@ -1474,18 +1488,6 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
 }
 
 
-
-.cart__item--image.aos-init.aos-animate {
-  height: 80px;
-  width: 80px;
-  object-fit: contain;
-  position: relative;
-}
-
-
-.cart__item--image.aos-init.aos-animate img.lazyautosizes.lazyloaded {
-  object-fit: contain;
-}
 
 
 
