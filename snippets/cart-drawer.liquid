@@ -20,27 +20,38 @@
     </div>
     <div class="drawer__inner">
 
-
-      <div class="drawer__freeshipping-bar">
-        {% assign short_amount = settings.freeshipping_price | times: 100 | minus: cart.total_price %}
+            <div class="drawer__freeshipping-bar">
+                    {% assign short_amount = settings.freeshipping_price | times: 100 | minus: cart.total_price %}
         {% assign progress = cart.total_price | divided_by: settings.freeshipping_price | floor %}
         {% if progress > 100 %}
           {% assign progress = 100 %}
         {% endif %}
         <input type="hidden" value="{{settings.freeshipping_price}}" id="cart_freeshipping_limit" />
-
-                <label class="progressbar">
+        <div class="progressbar">
           <div class="progress-wrapper">
-          	<span class="progress" style="width: {{progress}}%;"></span>
+            <div class="progress" style="width: {{progress}}%;"></div>
           </div>
-        </label>
-
-
-        <label class="commment-failed {% if short_amount <= 0 %} hide {% endif %}">You're  <span class="short_amount">{{short_amount | money}}</span> away from free shipping!</label>
-        <label class="commment-success {% if short_amount > 0 %} hide {% endif %}">YAY! You've earned free shipping!</label>
-        
-
+        </div>
+        <div class="commment-failed {% if short_amount <= 0 %} hide {% endif %}">
+          <div class="comment-inner">
+            <div class="w-layout-grid grid-22">
+              <div class="r_icon_inner"><img src="{{ 'shipping.svg' | asset_url}}" loading="lazy" alt="" class="image"></div>
+              <div>
+                <p class="r_shipping_message">You're  <span class="short_amount">{{short_amount | money}}</span> away from free shipping!<br></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="comment-success {% if short_amount > 0 %} hide {% endif %}">
+          <div class="comment-inner">
+            <div>
+              <p class="r_shipping_message">YAY! You've earned free shipping!<br></p>
+            </div>
+          </div>
+        </div>
       </div>
+
+
 
 
       <div class="drawer__scrollable">

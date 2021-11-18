@@ -3223,6 +3223,95 @@ a {
   color: #fff;
 }
 
+.div-block-6 {
+  height: 100vh;
+  max-width: 420px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 60px;
+}
+
+.drawer__freeshipping-bar {
+  font-size: 14px;
+}
+
+.progressbar {
+  background-color: #e0e0e0;
+}
+
+.progress {
+  width: 50%;
+  height: 5px;
+  background-color: #000;
+}
+
+.commment-failed {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.comment-success {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #ffc33a;
+  background-image: url('../images/stars_shipping.svg');
+  background-position: 0px 0px;
+  background-size: auto;
+  font-weight: 700;
+}
+
+.comment-inner {
+  padding: 5px;
+}
+
+.grid-22 {
+  grid-column-gap: 8px;
+  grid-row-gap: 0px;
+  -ms-grid-columns: 40px 1fr;
+  grid-template-columns: 40px 1fr;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+}
+
+.r_icon_inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.r_shipping_message {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #000;
+  line-height: 27px;
+}
+
+.image {
+  width: 30px;
+}
+
 @media screen and (max-width: 991px) {
   .r_hero_grid {
     grid-column-gap: 36px;
@@ -5372,6 +5461,11 @@ a {
     font-size: 14px;
     line-height: 28px;
     font-weight: 700;
+  }
+
+  .r_shipping_message {
+    font-size: 12px;
+    line-height: 26px;
   }
 }
 
