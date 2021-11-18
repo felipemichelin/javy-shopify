@@ -1483,6 +1483,11 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
 }
 
 
+.save-text {
+  margin-top: 2px;
+}
+
+
 a.cart__product-name {
   font-size: 12px;
 }
