@@ -1476,8 +1476,8 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
 
 
 .cart__item--image.aos-init.aos-animate {
-  height: 45px;
-  width: 45px;
+  height: 60px;
+  width: 60px;
   object-fit: contain;
   position: relative;
 }
