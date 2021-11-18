@@ -1476,12 +1476,25 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
 
 
 .cart__item--image.aos-init.aos-animate {
-  height: 60px;
-  width: 60px;
+  height: 65px;
+  width: 65px;
   object-fit: contain;
   position: relative;
 }
 
+
+a.cart__product-name {
+  font-size: 12px;
+}
+
+.cart__variant-meta {
+  margin-bottom: 0px;
+}
+
+.drawer .cart__item {
+  grid-template-columns: 65px 1fr;
+  grid-gap: 15px;
+}
 
 
 
