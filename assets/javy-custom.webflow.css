@@ -3225,7 +3225,7 @@ a {
 
 .div-block-6 {
   height: 100vh;
-  max-width: 420px;
+  max-width: 560px;
   margin-right: auto;
   margin-left: auto;
   padding-top: 60px;
@@ -3249,14 +3249,6 @@ a {
 .commment-failed {
   padding-top: 5px;
   padding-bottom: 5px;
-}
-
-.comment-success {
-  position: relative;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-color: #ffc33a;
-  font-weight: 700;
 }
 
 .comment-inner {
@@ -3314,9 +3306,35 @@ a {
 .image-2 {
   position: absolute;
   left: 0%;
-  top: 0%;
+  top: auto;
   right: 0%;
-  bottom: 0%;
+  bottom: auto;
+}
+
+.commment-success {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #ffc33a;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 991px) {
