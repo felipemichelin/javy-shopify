@@ -1464,6 +1464,25 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
 
 }
 
+
+
+.cart__item--image.aos-init.aos-animate {
+  height: 80px;
+  width: 80px;
+  object-fit: contain;
+  position: relative;
+}
+
+
+.cart__item--image.aos-init.aos-animate img.lazyautosizes.lazyloaded {
+  object-fit: contain;
+}
+
+
+
+
+
+
 .addon_products:last-child {
   border-bottom: 1px solid #dddcd8;
 }
