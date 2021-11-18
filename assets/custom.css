@@ -47,6 +47,8 @@ float: left;
 
 
 label.commment-failed {
+  text-transform: uppercase;
+
   background-color: #eca5a5;
   color: #fff;
   padding: 5px 0px;
