@@ -3233,6 +3233,7 @@ a {
 
 .drawer__freeshipping-bar {
   font-size: 14px;
+  letter-spacing: 0px;
 }
 
 .progressbar {
@@ -3251,12 +3252,10 @@ a {
 }
 
 .comment-success {
+  position: relative;
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: #ffc33a;
-  background-image: url('../images/stars_shipping.svg');
-  background-position: 0px 0px;
-  background-size: auto;
   font-weight: 700;
 }
 
@@ -3310,6 +3309,14 @@ a {
 
 .image {
   width: 30px;
+}
+
+.image-2 {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
 }
 
 @media screen and (max-width: 991px) {
@@ -5626,4 +5633,82 @@ a {
     -ms-flex-order: 9999;
     order: 9999;
   }
+}
+
+@font-face {
+  font-family: 'Gothampro';
+  src: url('../fonts/gothampro-webfont.woff2') format('woff2'), url('../fonts/gothampro-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gothampro';
+  src: url('../fonts/gothampro-mediumitalic-webfont.woff2') format('woff2'), url('../fonts/gothampro-mediumitalic-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gothampro';
+  src: url('../fonts/gothampro-blackitalic-webfont.woff2') format('woff2'), url('../fonts/gothampro-blackitalic-webfont.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gothampro';
+  src: url('../fonts/gothampro-light-webfont.woff2') format('woff2'), url('../fonts/gothampro-light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gothampro';
+  src: url('../fonts/gothampro-medium-webfont.woff2') format('woff2'), url('../fonts/gothampro-medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gothampro';
+  src: url('../fonts/gothampro-lightitalic-webfont.woff2') format('woff2'), url('../fonts/gothampro-lightitalic-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gothampro';
+  src: url('../fonts/gothampro-italic-webfont.woff2') format('woff2'), url('../fonts/gothampro-italic-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gothampro';
+  src: url('../fonts/gothampro-bolditalic-webfont.woff2') format('woff2'), url('../fonts/gothampro-bolditalic-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gothampro';
+  src: url('../fonts/gothampro-black-webfont.woff2') format('woff2'), url('../fonts/gothampro-black-webfont.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fa solid 900';
+  src: url('../fonts/fa-solid-900.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fa brands 400';
+  src: url('../fonts/fa-brands-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
