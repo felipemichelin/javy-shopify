@@ -1455,6 +1455,13 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
     margin-right: -20px;
 }
 
+.addon_grid {
+  -ms-grid-columns: 40px 1fr 0.5fr;
+  grid-template-columns: 40px 1fr 0.5fr;
+}
+
+
+
 }
 
 
