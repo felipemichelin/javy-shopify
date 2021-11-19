@@ -10,6 +10,12 @@ span.short_amount {
 }
 
 
+.price-list {
+  margin-bottom: -10px!important;
+
+}
+
+
 .rte.section-header__description.appear-delay-1 {
   line-height: 26px!important;
 }
