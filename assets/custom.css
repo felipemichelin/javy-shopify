@@ -16,6 +16,12 @@ span.short_amount {
 }
 
 
+
+.cart-title h3 {
+  font-size: 18px;
+}
+
+
 .rte.section-header__description.appear-delay-1 {
   line-height: 26px!important;
 }
