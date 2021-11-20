@@ -13,7 +13,7 @@
       "@type": "Product",
       "name": "{{ product.title }}",
       "image": "https:{{ product.featured_image | product_img_url: '450x450' }}",
-      "description": "{{ product.description | strip_html | strip | escape | replace: newline, ' ' }}",
+      "description": "{{ product.metafields.my_fields.short_description }}",
       "mpn": "{{ product.id }}",
       "brand": {
         "@type": "Thing",
