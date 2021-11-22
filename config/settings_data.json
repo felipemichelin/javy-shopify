@@ -91,7 +91,7 @@
           "main_menu_link_list": "javy-2-0-menu",
           "show_announcement": true,
           "show_announcement_home_only": true,
-          "announcement_text": "LIMITED TIME FALL SALE! USE BFCM20 FOR 20% OFF!",
+          "announcement_text": "EARLY BF SALE! USE BFCM20 FOR 20% OFF AND GET A FREE FALL CUP ON ORDERS OVER $50",
           "announcement_link": ""
         }
       },
@@ -157,12 +157,6 @@
         "disabled": true,
         "settings": {
           "show_preview_data": true
-        }
-      },
-      "17595556821664008138": {
-        "type": "shopify:\/\/apps\/zoorix-cross-sell-cart-upsell\/blocks\/zoorix-head\/51fffd07-f9df-4d6a-b901-6d14b243dcad",
-        "disabled": true,
-        "settings": {
         }
       }
     }
