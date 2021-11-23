@@ -3,7 +3,6 @@
       <a href="{{ section.settings.announcement_link }}" class="announcement__link">
     {%- endif -%}
 
-    <div class="announcement__text" data-text="{{ section.settings.announcement_text | strip_html | handle }}">
 
         <div class="promo-bar">
     <div class="promo-inner">
@@ -13,7 +12,6 @@
   </div>
 
 
-    </div>
 
     {%- if section.settings.announcement_link != blank -%}
       </a>
