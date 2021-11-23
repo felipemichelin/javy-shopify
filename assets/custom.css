@@ -1479,6 +1479,11 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
     margin-right: -20px;
 }
 
+iframe#chat-button {
+  bottom: 65px!important;
+  right: 15px!important;
+}
+
 .addon_grid {
   -ms-grid-columns: 40px 1fr 0.5fr;
   grid-template-columns: 40px 1fr 0.5fr;
