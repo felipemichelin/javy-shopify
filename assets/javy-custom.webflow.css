@@ -3337,7 +3337,7 @@ a {
 
 .sale_bar {
   width: auto;
-  color: #000;
+  color: #fff;
   text-align: center;
 }
 
@@ -3347,7 +3347,11 @@ a {
 
 .sale_bar.right_10.not_bold {
   margin-top: -2px;
-  font-weight: 800;
+  font-weight: 400;
+}
+
+.sale_bar.right_10.bold_section {
+  margin-right: 0px;
 }
 
 .text-span-50 {
@@ -3356,10 +3360,10 @@ a {
   padding: 0px;
   border-style: none none solid;
   border-width: 2px;
-  border-color: #000;
-  color: #000;
-  font-style: italic;
-  font-weight: 800;
+  border-color: #000 #000 #fff;
+  color: #fff;
+  font-style: normal;
+  font-weight: 700;
 }
 
 .promo-bar {
@@ -3368,8 +3372,8 @@ a {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -3378,7 +3382,7 @@ a {
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  background-color: #ffc33a;
+  background-color: #000;
   color: #fff;
 }
 
@@ -3410,6 +3414,14 @@ a {
 
 .text-span-52 {
   font-weight: 700;
+}
+
+.text-span-53 {
+  font-weight: 700;
+}
+
+.sale_countdown {
+  font-weight: 400;
 }
 
 @media screen and (max-width: 991px) {
@@ -4266,8 +4278,8 @@ a {
   }
 
   .promo-bar {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 15px;
+    padding-bottom: 10px;
   }
 
   .promo-inner {
@@ -4825,6 +4837,10 @@ a {
   .sale_bar {
     width: 100%;
     margin-right: 0px;
+  }
+
+  .sale_bar.right_10.bold_section {
+    padding-top: 3px;
   }
 
   .promo-inner {
@@ -5625,6 +5641,10 @@ a {
     font-size: 12px;
     line-height: 18px;
     text-align: center;
+  }
+
+  .sale_bar.right_10.not_bold {
+    font-size: 14px;
   }
 
   .promo-bar {
