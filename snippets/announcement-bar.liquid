@@ -18,20 +18,3 @@
     {%- endif -%}
 
 
-  <script>
-      function calculateHMSleft() {
-        //calculate
-        var now = new Date();
-        var hoursleft = 23 - now.getHours();
-        var minutesleft = 59 - now.getMinutes();
-        var secondsleft = 59 - now.getSeconds();
-        //format 0 prefixes
-        if (hoursleft < 10) hoursleft = "0" + hoursleft;
-        if (minutesleft < 10) minutesleft = "0" + minutesleft;
-        if (secondsleft < 10) secondsleft = "0" + secondsleft;
-        //display
-        $('.sale_countdown').html(hoursleft + "H " + minutesleft + "M " + secondsleft + "S ");
-      }
-      calculateHMSleft();
-      setInterval(calculateHMSleft, 1000);
-    </script>
