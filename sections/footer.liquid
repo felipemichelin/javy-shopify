@@ -122,6 +122,9 @@
     {%- if linklists[section.settings.menu].links.size > 0 -%}
       <div class="site-footer__section">
         <ul class="no-bullets inline-list site-footer__linklist">
+          <li><a data-acsb-custom-trigger="true" href="#">Accessbility</a></li>
+
+
           {%- for link in linklists[section.settings.menu].links -%}
             <li><a href="{{ link.url }}">{{ link.title }}</a></li>
           {%- endfor -%}
