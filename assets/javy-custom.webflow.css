@@ -3335,6 +3335,83 @@ a {
   width: 240px;
 }
 
+.sale_bar {
+  width: auto;
+  color: #000;
+  text-align: center;
+}
+
+.sale_bar.right_10 {
+  margin-right: 10px;
+}
+
+.sale_bar.right_10.not_bold {
+  margin-top: -2px;
+  font-weight: 800;
+}
+
+.text-span-50 {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 0px;
+  border-style: none none solid;
+  border-width: 2px;
+  border-color: #000;
+  color: #000;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.promo-bar {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  background-color: #ffc33a;
+  color: #fff;
+}
+
+.promo-inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.countdown_sale {
+  font-weight: 400;
+}
+
+.text-span-52 {
+  font-weight: 700;
+}
+
 @media screen and (max-width: 991px) {
   .r_hero_grid {
     grid-column-gap: 36px;
@@ -4182,6 +4259,28 @@ a {
     height: 100%;
     max-width: none;
   }
+
+  .sale_bar {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .promo-bar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .promo-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -4721,6 +4820,18 @@ a {
 
   .r_sub_bf_bar {
     margin-top: 10px;
+  }
+
+  .sale_bar {
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  .promo-inner {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 }
 
@@ -5507,6 +5618,38 @@ a {
     right: auto;
     bottom: 0%;
   }
+
+  .sale_bar {
+    width: 100%;
+    margin-right: 0px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  .promo-bar {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .promo-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 14px;
+  }
 }
 
 #w-node-_607527d3-1c66-7fda-fffd-54f9339f4bc8-33e8faaa {
@@ -5558,6 +5701,13 @@ a {
   align-self: center;
 }
 
+#w-node-_20342f7c-be7c-6978-b98c-7658b7ed1ba4-33e8faaa {
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  -ms-grid-row-align: stretch;
+  align-self: stretch;
+}
+
 #w-node-_78655c51-d255-6ce2-5b49-cbba3ec14b4d-33e8faaa {
   -ms-grid-column-align: center;
   justify-self: center;
@@ -5571,13 +5721,6 @@ a {
 #w-node-_9154f807-c3de-f03e-779f-c5acf3c57d24-33e8faaa {
   -ms-grid-column-align: center;
   justify-self: center;
-}
-
-#w-node-_20342f7c-be7c-6978-b98c-7658b7ed1ba4-33e8faaa {
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
-  align-self: stretch;
 }
 
 @media screen and (max-width: 991px) {

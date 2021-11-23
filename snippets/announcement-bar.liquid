@@ -5,7 +5,15 @@
     {%- endif -%}
 
     <div class="announcement__text" data-text="{{ section.settings.announcement_text | strip_html | handle }}">
-      {{ section.settings.announcement_text | strip_html }}
+
+        <div class="promo-bar">
+    <div class="promo-inner">
+      <div class="sale_bar right_10 not_bold">BLACK FRIDAY SALE ENDS IN <span class="countdown_sale">24H 00M 00S</span></div>
+      <div class="sale_bar right_10 bold_section">Get a <span class="text-span-52">Free Gift + Extra 20% OFF</span> using code<span class="text-span-50">BFCM20</span></div>
+    </div>
+  </div>
+
+
     </div>
 
     {%- if section.settings.announcement_link != blank -%}
