@@ -530,3 +530,24 @@ header.site-header {
 </style>
 
     <link rel="stylesheet" href="{{ 'product-hero.css' | asset_url }}">
+
+
+<script>
+mixpanel.track(
+    "Store - Product Viewed",
+    {"name": "{{product.title}}",
+    "price": "{{ product.price | money_without_currency }}",
+    "brand": "{{product.vendor}}",
+    "category": "{{ collection.title }}",
+    "variant": "{% for variant in product.variants %}{{ variant.sku }}{% endfor %}"
+    });
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+  $( document ).ready(function() {
+    $("#add-to-cart").click(function(){
+        mixpanel.track("Added to Cart", {"name": "{{ product.title }}"});
+    });
+});
+</script>
