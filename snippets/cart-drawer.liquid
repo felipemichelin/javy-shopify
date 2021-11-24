@@ -179,7 +179,7 @@
           Uncomment to show continue shopping button
         {% endcomment %}
         {% comment %}
-        <a href="{{ routes.all_products_collection_url }}" class="btn btn--secondary btn--full">
+        <a href="{{ routes.javy_collection_url }}" class="btn btn--secondary btn--full">
           {{ 'cart.general.continue_shopping' | t }}
         </a>
         {% endcomment %}
@@ -188,7 +188,7 @@
     </div>
     <div class="drawer__cart-empty text-center">
       <p>{{ 'cart.general.empty' | t }}</p>
-      <p class="rte">{{ 'cart.general.continue_browsing_html' | t: url: routes.all_products_collection_url }}</p>
+      <p class="rte">{{ 'cart.general.continue_browsing_html' | t: url: routes.javy_collection_url }}</p>
     </div>
   </form>
 </div>
