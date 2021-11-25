@@ -1,5 +1,14 @@
 
-
+button.cbb-frequently-bought-add-button {
+  width: 100%!important;
+  display: flex!important;
+  max-width: 100%!important;
+  height: 55px!important;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%!important;
+}
   
 .drawer__freeshipping-bar {
   letter-spacing: 0px;
