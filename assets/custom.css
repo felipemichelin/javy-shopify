@@ -1526,6 +1526,10 @@ button.btn.btn--full.add-to-cart.btn--tertiary {
   object-fit: contain;
 }
 
+.cart__item--image.aos-init.aos-animate img {
+  object-fit: contain;
+}
+
 iframe#chat-button {
   z-index: 10;
 }
