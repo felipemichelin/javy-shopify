@@ -4,14 +4,14 @@ button.cbb-frequently-bought-add-button {
   display: flex!important;
   max-width: 100%!important;
   height: 55px!important;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+  align-content: center!important;
+  justify-content: center!important;
+  align-items: center!important;
   max-width: 100%!important;
 }
 
 .cbb-frequently-bought-recommendations-container {
-  margin-top: 10px;
+  margin-top: 10px!important;
 }
 
 .cbb-frequently-bought-form {
@@ -34,8 +34,8 @@ ul.cbb-frequently-bought-products {
 
 
 .cbb-frequently-bought-recommendations-container {
-  display: flex;
-  flex-direction: column;
+  display: flex!important;
+  flex-direction: column!important;
 }
 
 
