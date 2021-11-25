@@ -65,6 +65,20 @@
       <div class="grid-product__tag grid-product__tag--custom">
         {{ custom_label }}
       </div>
+
+               <div class="grid-product__tag grid-product__tag--sale bit_top">
+BLACK FRIDAY
+        </div>
+
+<style>
+
+.grid-product__tag.grid-product__tag--sale.bit_top {
+    top: 30px;
+    background-color: #000!important;
+}
+
+</style>
+
     {%- else -%}
       {%- if sold_out -%}
         <div class="grid-product__tag grid-product__tag--sold-out">
@@ -72,10 +86,6 @@
         </div>
       {%- endif -%}
       {%- if on_sale and sold_out == false -%}
-
-         <div class="grid-product__tag grid-product__tag--sale bit_top">
-BLACK FRIDAY
-        </div>
 
         <div class="grid-product__tag grid-product__tag--sale">
           {%- if settings.product_save_amount -%}
@@ -90,14 +100,9 @@ BLACK FRIDAY
           {%- endif -%}
         </div>
 
-<style>
 
-.grid-product__tag.grid-product__tag--sale.bit_top {
-    top: 30px;
-    background-color: #000!important;
-}
 
-</style>
+
 
 
       {%- endif -%}
