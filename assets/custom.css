@@ -82,6 +82,11 @@ span.short_amount {
   font-weight: 800;
 }
 
+span.text-span-53 {
+  color: #fcdf2f;
+}
+
+
 button.btn.btn--full.add-to-cart {
   width: 100%!important;
   max-width: 100%!important;
