@@ -1904,10 +1904,6 @@ a {
   display: grid;
   overflow: hidden;
   width: 100%;
-  -webkit-box-align: start;
-  -webkit-align-items: start;
-  -ms-flex-align: start;
-  align-items: start;
   grid-auto-columns: 1fr;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
