@@ -72,6 +72,11 @@
         </div>
       {%- endif -%}
       {%- if on_sale and sold_out == false -%}
+
+         <div class="grid-product__tag grid-product__tag--sale">
+BLACK FRIDAY
+        </div>
+
         <div class="grid-product__tag grid-product__tag--sale">
           {%- if settings.product_save_amount -%}
             {%- if settings.product_save_type == 'dollar' -%}
@@ -85,9 +90,7 @@
           {%- endif -%}
         </div>
 
-         <div class="grid-product__tag grid-product__tag--sale">
-BLACK FRIDAY SALE
-        </div>
+
 
       {%- endif -%}
 
