@@ -1,0 +1,95 @@
+<div class="ot-tiktok-multi-pixel"></div>
+{% if template contains "product" %}
+	<meta property="omega:tags" content="{% for tag in product.tags %}{{ tag }}, {% endfor %}">
+	<meta property="omega:product" content="{{product.id}}">
+	<meta property="omega:product_type" content="{{product.product_type}}">
+	<meta property="omega:collections" content="{% for collection in product.collections %}{{ collection.id }}, {% endfor %}">
+{% endif %}
+{% if template contains "cart" %}
+	<meta property="omega:tags" content="{% for line_item in cart.items %} {% for tag in line_item.product.tags %}{{ tag}},{% endfor %}{% endfor %}">
+	<meta property="omega:product" content="{% for line_item in cart.items %} {{line_item.product.id}}, {% endfor %}">
+	<meta property="omega:product_type" content="{% for line_item in cart.items %} {{line_item.product_type}}, {% endfor %}">
+	<meta property="omega:collections" content="{% for line_item in cart.items %}  {% for collection in line_item.product.collections %}{{ collection.id }},{% endfor %}{% endfor %} ">
+{% endif %}
+{% if template contains "collection" %}
+	<meta property="omega:collections" content="{{ collection.id }}">
+{% endif %}
+
+{%if shop.metafields.OmegaTikTokPixel != blank %}
+	<script>
+		var arrayTikTokPixelTrack = [];
+		var arrayTikTokPixelCapiTrack = [];
+	</script>
+    {%- for field in shop.metafields.OmegaTikTokPixel -%}
+        {%assign key = field | first %}
+        {%assign value = field | last %}
+		{%if key contains "OmegaTikTokPixel" %}
+            <script>
+                var tikTokPixelData = JSON.parse('{{value}}')
+                var arrayTikTokPixel = tikTokPixelData && tikTokPixelData.pixels.length ? tikTokPixelData.pixels : []
+                var metaCollection = []
+                var metaProduct = []
+                var metaTag = []
+                var metaType = []
+                if (document.querySelector("meta[property='omega:collections']") != null) {
+                    metaCollection = document.querySelector("meta[property='omega:collections']").getAttribute("content").split(",")
+                }
+                if (document.querySelector("meta[property='omega:product']") != null) {
+                    metaProduct = document.querySelector("meta[property='omega:product']").getAttribute("content").split(",")
+                }
+                if (document.querySelector("meta[property='omega:tags']") != null) {
+                    metaTag = document.querySelector("meta[property='omega:tags']").getAttribute("content").split(",")
+                }
+                if (document.querySelector("meta[property='omega:product_type']") != null) {
+                    metaType = document.querySelector("meta[property='omega:product_type']").getAttribute("content").split(",")
+                }
+
+                function arrayContainsMapping(metaMappings, mappings) {
+                    mappings = mappings.map(item => item.toString())
+                    if (mappings.length && metaMappings.length) {
+                        for (let i = 0; i < metaMappings.length; i++){
+                            if (mappings.includes(metaMappings[i].trim())) {
+                                return true;
+                            }
+                        }
+                    }
+
+                    return false;
+                }
+
+                function checkPixelSelectedPage(pixel) {
+                    let checkCollection = arrayContainsMapping(metaCollection, pixel.mapping_collections)
+                    let checkProduct = arrayContainsMapping(metaProduct, pixel.mapping_products)
+                    let checkTag = arrayContainsMapping(metaTag, pixel.mapping_tags)
+                    let checkType = arrayContainsMapping(metaType, pixel.mapping_types)
+                    if (checkCollection || checkProduct || checkTag || checkType) {
+                        return true
+                    }
+                    return false
+                }
+                for (let i = 0; i < arrayTikTokPixel.length; i++){
+                    if (arrayTikTokPixel[i].is_master) {
+                        if (arrayTikTokPixel[i].is_conversion_api) {
+                            arrayTikTokPixelCapiTrack.push(arrayTikTokPixel[i].pixel_id)
+                        } else {
+                            arrayTikTokPixelTrack.push(arrayTikTokPixel[i].pixel_id)
+                        }
+                        continue;
+                    } else {
+                        if (checkPixelSelectedPage(arrayTikTokPixel[i])) {
+                            if (arrayTikTokPixel[i].is_conversion_api) {
+                                arrayTikTokPixelCapiTrack.push(arrayTikTokPixel[i].pixel_id)
+                            } else {
+                                arrayTikTokPixelTrack.push(arrayTikTokPixel[i].pixel_id)
+                            }
+                        }
+                    }
+                }
+                console.log({arrayTikTokPixelCapiTrack})
+                console.log({arrayTikTokPixelTrack})
+            </script>
+        {%endif%}
+    {%- endfor -%}
+{%endif%}
+
+
