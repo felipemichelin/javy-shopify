@@ -17,8 +17,8 @@
 
 {%if shop.metafields.OmegaTikTokPixel != blank %}
 	<script>
-		var arrayTikTokPixelTrack = [];
-		var arrayTikTokPixelCapiTrack = [];
+		var arrayTikTokPixelTrackNew = [];
+		var arrayTikTokPixelCapiTrackNew = [];
 	</script>
     {%- for field in shop.metafields.OmegaTikTokPixel -%}
         {%assign key = field | first %}
@@ -70,23 +70,23 @@
                 for (let i = 0; i < arrayTikTokPixel.length; i++){
                     if (arrayTikTokPixel[i].is_master) {
                         if (arrayTikTokPixel[i].is_conversion_api) {
-                            arrayTikTokPixelCapiTrack.push(arrayTikTokPixel[i].pixel_id)
+                            arrayTikTokPixelCapiTrackNew.push(arrayTikTokPixel[i].pixel_id)
                         } else {
-                            arrayTikTokPixelTrack.push(arrayTikTokPixel[i].pixel_id)
+                            arrayTikTokPixelTrackNew.push(arrayTikTokPixel[i].pixel_id)
                         }
                         continue;
                     } else {
                         if (checkPixelSelectedPage(arrayTikTokPixel[i])) {
                             if (arrayTikTokPixel[i].is_conversion_api) {
-                                arrayTikTokPixelCapiTrack.push(arrayTikTokPixel[i].pixel_id)
+                                arrayTikTokPixelCapiTrackNew.push(arrayTikTokPixel[i].pixel_id)
                             } else {
-                                arrayTikTokPixelTrack.push(arrayTikTokPixel[i].pixel_id)
+                                arrayTikTokPixelTrackNew.push(arrayTikTokPixel[i].pixel_id)
                             }
                         }
                     }
                 }
-                console.log({arrayTikTokPixelCapiTrack})
-                console.log({arrayTikTokPixelTrack})
+                console.log({arrayTikTokPixelCapiTrackNew})
+                console.log({arrayTikTokPixelTrackNew})
             </script>
         {%endif%}
     {%- endfor -%}
