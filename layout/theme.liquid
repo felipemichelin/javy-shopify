@@ -197,7 +197,23 @@ jumbleberry("track", "Lead", { hid_param: "click_id" });
 {% include "omega_tiktok_multi_pixel" %}
 
 
-{% include "omega-tiktok-multi-pixels" %} </head>
+{% include "omega-tiktok-multi-pixels" %} 
+
+
+<!-- Hotjar Tracking Code for https://javycoffee.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2704048,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+</head>
 
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}{% if settings.cart_type == 'sticky' and cart.item_count > 0 and template != 'cart' %} body--sticky-cart-open{% endif %}{% if cart.item_count > 0 %} cart-has-items{% endif %}" ontouchstart="return true;" data-transitions="{{settings.animate_page_transitions}}" data-animate_underlines="true" data-animate_images="{{settings.animate_images}}" data-button_style="{{settings.button_style}}" data-type_product_capitalize="{{settings.type_product_capitalize}}" data-type_header_capitalize="{{settings.type_header_capitalize}}" data-product_image_scatter="{{settings.product_image_scatter}}" data-button_type_style="{{settings.button_type_style}}">
   <div id="OverscrollLoader" class="overscroll-loader" aria-hidden="true">
