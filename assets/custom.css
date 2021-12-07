@@ -1717,3 +1717,8 @@ a.cart__product-name {
   -ms-grid-rows: auto;
   grid-template-rows: auto;
 }
+
+
+.r_tabs_menu.w-tab-menu {
+  display: none!important;
+}
