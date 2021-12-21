@@ -118,6 +118,27 @@
       "disabled": true,
       "settings": {
       }
+    },
+    "1640110385188d80a9": {
+      "type": "advanced-content",
+      "blocks": {
+        "1640110385b5e9b4ab-1": {
+          "type": "liquid",
+          "settings": {
+            "code": "<script type=\"text\/javascript\">\nvar _learnq = _learnq || [];\n\tdocument.getElementById(\"AddToCart\").addEventListener('click',function (){\n \t\t_learnq.push(['track', 'Added to Cart', item]);\n\t});<\/script>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "1640110385b5e9b4ab-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "alt": false
+      }
     }
   },
   "order": [
@@ -125,6 +146,7 @@
     "sub",
     "163596158968dc95a0",
     "product-recommendations",
-    "collection-return"
+    "collection-return",
+    "1640110385188d80a9"
   ]
 }
