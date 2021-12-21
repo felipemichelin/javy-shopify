@@ -125,7 +125,7 @@
         "1640110385b5e9b4ab-1": {
           "type": "liquid",
           "settings": {
-            "code": "<script type=\"text\/javascript\">\nvar _learnq = _learnq || [];\n\tdocument.getElementById(\"AddToCart\").addEventListener('click',function (){\n \t\t_learnq.push(['track', 'Added to Cart', item]);\n\t});<\/script>`",
+            "code": "<script type=\"text\/javascript\">\nvar _learnq = _learnq || [];\n\tdocument.getElementById(\"AddToCart\").addEventListener('click',function (){\n \t\t_learnq.push(['track', 'Added to Cart', item]);\n\t});<\/script>",
             "width": "50%",
             "alignment": "center"
           }
