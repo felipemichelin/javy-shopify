@@ -26,7 +26,8 @@
 
     <button
       {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
-      name="add"
+      name="add" 
+      id="AddToCart" 
       data-add-to-cart
       class="btn btn--full add-to-cart{% if enable_dynamic_buttons and product.selling_plan_groups == empty %} btn--tertiary{% endif %}"
       {% unless current_variant.available %} disabled="disabled"{% endunless %}>
