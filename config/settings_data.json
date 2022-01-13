@@ -99,7 +99,7 @@
         "type": "footer",
         "settings": {
           "show_newsletter": true,
-          "newsletter_title": "Join the club",
+          "newsletter_title": "Don't miss our exclusive offers",
           "newsletter_richtext": "",
           "show_locale_selector": true,
           "show_currency_selector": true,
