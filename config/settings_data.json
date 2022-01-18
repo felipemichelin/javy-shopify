@@ -158,6 +158,12 @@
         "settings": {
           "show_preview_data": true
         }
+      },
+      "11349500561483629931": {
+        "type": "shopify:\/\/apps\/restock-back-in-stock-alerts\/blocks\/app-embed\/b399b727-6c85-44fc-9e21-63114bd72054",
+        "disabled": false,
+        "settings": {
+        }
       }
     }
   },
