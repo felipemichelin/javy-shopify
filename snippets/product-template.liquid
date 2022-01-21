@@ -128,6 +128,13 @@
         </div>
       </div>
 -->
+
+  {% if current_tags contains 'out_of_stock' %}
+
+
+  out of stock
+
+  {% else %}
 {% if product.metafields.my_fields.list_01 != blank %}
 
                  <ul role="list" class="r_product_features r_one_time w-list-unstyled r_general_product">
@@ -163,7 +170,7 @@
           <div data-current="one_tab" data-easing="ease" data-duration-in="0" data-duration-out="0" class="r_product_tabs w-tabs">
 
 
-
+{% endif %}
 
 {% if product.type == "Coffee Concentrate" %}
 
