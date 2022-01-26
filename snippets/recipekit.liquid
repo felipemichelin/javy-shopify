@@ -2,7 +2,7 @@
 {%- assign rk_mf = article.metafields.recipekit[rk_resource_id] -%}
 {%- assign rk_settings = shop.metafields.recipekit.settings -%}
 {%- if rk_settings.widget_status == "enabled" and rk_mf != blank -%}
-  {{- 'recipekit.scss.css' | asset_url | stylesheet_tag -}}
+  {{- 'recipekit.css' | asset_url | stylesheet_tag -}}
   {%- assign recipe_design = rk_settings.recipe_design -%}
   {%- assign design_colour = rk_settings.design_colour -%}
   {%- assign current_rating = rk_mf.recipe_rating | ceil | default: 5 | at_most: 5 -%}
@@ -11,17 +11,21 @@
   {%- if rating_count == '0' -%}
     {%- assign rating_count = '1' -%}
   {%- endif -%}
-  {%- if current_rating == 0 -%}
+  {%- if current_rating == 0 or current_rating == '0' -%}
     {%- assign current_rating = 5 -%}
   {%- endif -%}
   {%- if current_decimal_rating == 0 -%}
-    {%- assign current_decimal_rating = 5 -%}
+    {%- assign current_decimal_rating = 5 | round: 1 -%}
   {%- endif -%}
+  {%- if current_decimal_rating == 5 -%}
+    {%- assign current_decimal_rating = '5.0' -%}
+  {%- endif -%}
+  {%- assign current_decimal_rating = current_decimal_rating | round: 1 -%}
   {%- assign servings_array = rk_mf.serving_size | split: ' ' -%}
   {%- assign json_serving_size = servings_array[0] -%}
   {%- assign global_is_in_cart = false -%}
   {%- assign extra_domain = '' -%}
-  
+
   {% comment %}
     Liquid URL Transformations
   {% endcomment %}
@@ -33,10 +37,11 @@
     {% assign rk_2_3_recipe_image =  rk_last_url[1] | prepend: 'https://res.cloudinary.com/hsxfx8igq/image/upload/ar_2:3,c_limit,f_auto,w_600,q_auto:best/' %}
   {% elsif rk_mf.recipe_image contains 'https://f000.backblazeb2.com/file/recipekit-bucket/' %}
     {% assign rk_last_url = rk_mf.recipe_image | split: 'https://f000.backblazeb2.com/file/recipekit-bucket/' %}
-    {% assign rk_16_9_recipe_image = 'https://images.getrecipekit.com/' | append: rk_last_url[1] | append: '?aspect_ratio=16:9&quality=90' %}
-    {% assign rk_1_1_recipe_image = 'https://images.getrecipekit.com/' | append: rk_last_url[1] | append: '?aspect_ratio=1:1&quality=90' %}
-    {% assign rk_4_3_recipe_image = 'https://images.getrecipekit.com/' | append: rk_last_url[1] | append: '?aspect_ratio=4:3&quality=90' %}
-    {% assign rk_2_3_recipe_image = 'https://images.getrecipekit.com/' | append: rk_last_url[1] | append: '?width=650&quality=90' %}
+    {% assign rk_16_9_recipe_image = 'https://images.getrecipekit.com/' | append: rk_last_url[1] | append: '?aspect_ratio=16:9&quality=90&' %}
+    {% assign rk_1_1_recipe_image = 'https://images.getrecipekit.com/' | append: rk_last_url[1] | append: '?aspect_ratio=1:1&quality=90&' %}
+    {% assign rk_4_3_recipe_image = 'https://images.getrecipekit.com/' | append: rk_last_url[1] | append: '?aspect_ratio=4:3&quality=90&' %}
+    {% assign rk_2_3_recipe_image = 'https://images.getrecipekit.com/' | append: rk_last_url[1] | append: '?width=650&quality=90&' %}
+    {% assign rk_uptown_recipe_image = 'https://images.getrecipekit.com/' | append: rk_last_url[1] | append: '?class=16x9' %}
   {% endif %}
   {% if rk_mf.recipe_video contains '/watch?v=' %}
     {% assign rk_video_split = rk_mf.recipe_video | split: 'https://www.youtube.com/watch?v=' %}
@@ -59,7 +64,7 @@
   {%- assign rk_lang_serving = rk_settings.rk_lang_serving | default: 'Servings' -%}   
   {%- assign rk_lang_prep_time = rk_settings.rk_lang_prep_time | default: 'Prep Time' -%}
   {%- assign rk_lang_cook_time = rk_settings.rk_lang_cook_time | default: 'Cook Time' -%}
-  {%- assign rk_lang_author = rk_settings.rk_lang_author | default: 'Author: ' -%}
+  {%- assign rk_lang_author = rk_settings.rk_lang_author | default: 'Author' -%}
   {%- assign rk_lang_rating_thanks = rk_settings.rk_lang_rating_thanks | default: 'Thanks for rating!' -%}
   {%- assign rk_lang_rating_count = rk_settings.rk_lang_rating_count | default: 'Rated current_rating stars by rating_count users' | replace: 'current_rating', current_decimal_rating | replace: 'rating_count', rating_count -%}
   {%- assign rk_lang_note = rk_settings.rk_lang_note | default: 'Recipe Note' -%}
@@ -70,7 +75,12 @@
   {%- assign rk_lang_hour = rk_settings.rk_lang_hour | default: 'hour' -%}
   {%- assign rk_lang_calories = rk_settings.rk_lang_calories | default: 'Calories' -%}
   {%- assign rk_lang_nutrition = rk_settings.rk_lang_nutrition | default: 'Nutrition' -%}
-  {%- assign rk_lang_carbohydrates = rk_settings.rk_lang_carbohydrates | default: 'Carbs' -%}
+  {%- assign rk_lang_serving_size = rk_settings.rk_lang.service_size | default: 'Serving Size' -%}
+  {%- assign rk_lang_nutrition_serving_size = rk_settings.rk_lang.nutrition_serving_size | default: 'Serving Size' -%}
+  {%- assign rk_lang_amount_per_serving = rk_settings.rk_lang.amount_per_serving | default: 'Amount/Serving' -%}
+  {%- assign rk_lang_daily_value = rk_settings.rk_lang.daily_value | default: '% Daily Value' -%}
+  {%- assign rk_lang_per_serving = rk_settings.rk_lang.per_serving | default: 'per serving' -%}
+  {%- assign rk_lang_carbohydrates = rk_settings.rk_lang_carbohydrates | default: 'Carbs' -%} 
   {%- assign rk_lang_cholesterol = rk_settings.rk_lang_cholesterol | default: 'Cholesterol' -%}
   {%- assign rk_lang_fat = rk_settings.rk_lang_fat | default: 'Fat' -%}
   {%- assign rk_lang_fiber = rk_settings.rk_lang_fiber | default: 'Fiber' -%}
@@ -86,14 +96,15 @@
   {%- assign rk_lang_quantity = rk_settings.rk_lang_quantity | default: 'Remove quantity in cart' -%}
   {%- assign rk_lang_cart = rk_settings.rk_lang_cart | default: 'View Cart' -%}
   {%- assign rk_lang_checkout = rk_settings.rk_lang_checkout | default: 'Checkout' -%}
-  {%- assign rk_lang_added = rk_settings.rk_lang_added | default: 'Added' -%}
+  {%- assign rk_lang_added = rk_settings.rk_lang_added | default: 'Added' -%} 
   {%- assign rk_lang_removed = rk_settings.rk_lang_removed | default: 'Removed' -%}
+  {%- assign rk_lang_step = rk_settings.rk_lang.step | default: 'Step' -%}
   {%- comment -%}
-    End Translations / Languages
-  {%- endcomment -%}
-
+    End Translations / Languages 
+  {%- endcomment -%} 
+  
   {%- comment -%}
-    Time Formatting
+    Time Formatting 
   {%- endcomment -%}
   {% assign rk_prep_time_split = rk_mf.prep_time | split: ' ' %}
   {% assign rk_prep_time = rk_prep_time_split | first %}
@@ -198,11 +209,9 @@
         {%- if rk_mf.recipe_calories != blank -%}
           ,"calories": "{{- rk_mf.recipe_calories -}}"
         {%- endif -%}
-        {%- for nutrition_field in rk_mf.nutrition_data -%}
-          {%- unless nutrition_field.dynamic == true -%} 
-            ,"{{- nutrition_field.value -}}": "{{ nutrition_field.content }}"
-          {%- endunless -%}
-        {%- endfor -%}
+        {%- unless nutrition_field.dynamic == true -%} 
+          ,"{{- nutrition_field.value -}}": "{{ nutrition_field.content }}"
+        {%- endunless -%}
       },
       "recipeCuisine": "{{- rk_mf.recipe_cuisine | strip_html | escape -}}" 
       {%- if rk_mf.enable_rating == true or rk_mf.enable_rating == 'true' -%}
@@ -271,13 +280,13 @@
                       {%- assign variant_id = item.variant_id -%}
                       {%- break -%}
                   {% endif %}
-              {% endfor %} 
-            {% endfor %}
-
-            {%- if rk_settings.enable_atc == true and default_variant.available -%}
+              {% endfor %}
+            {% endfor %}   
+ 
+            {%- if rk_settings.rk_plan == 'business' and rk_settings.enable_atc == true and default_variant.available -%}
               <li>
-                <a target="_blank" class="rk_has_link {% if is_in_cart == true %}is_in_cart{% endif %}" href="/products/{{- ingredient.selected_product.handle -}}">{{- ingredient.ingredient | replace: '<br>', '' -}}</a>
-                <div class="select_div rk_print_hide">
+                <a target="_blank" class="rk_has_link {% if is_in_cart == true %}is_in_cart{% endif %}" href="/products/{{- ingredient.selected_product.handle -}}">{{- ingredient.ingredient -}}</a>
+                <div class="select_div rk_print_hide"> 
                     {% if ingredient.selected_product.variants_length > 1 and ingredient_product.variants.size > 1  %}
                       <select name="id" id="{{ ingredient_product.id }}_original_ids" class="original_id_select">
                         {% for variant in ingredient_product.variants %}
@@ -308,7 +317,7 @@
               </li>
             {%- endif -%}
 
-          {%- elsif rk_settings.enable_atc == true and ingredient.ingredient contains shop.domain or ingredient.ingredient contains shop.permanent_domain or ingredient.ingredient contains extra_domain and ingredient.ingredient contains '/products/' -%}
+          {%- elsif rk_settings.rk_plan == 'business' and rk_settings.enable_atc == true and ingredient.ingredient contains shop.domain or ingredient.ingredient contains shop.permanent_domain or ingredient.ingredient contains extra_domain and ingredient.ingredient contains '/products/' -%}
             {% assign split_product_link = ingredient.ingredient | split:'"' %}
             {% assign product_title = split_product_link[2] | split:'>' | last %}
             {% assign product_handle = split_product_link[1] | split: '/' | last %}
@@ -394,7 +403,7 @@
         {%- endif -%}
       {%- endfor -%}
     </ul>
-    {% if rk_settings.enable_atc == true %}
+    {% if rk_settings.rk_plan == 'business' and rk_settings.enable_atc == true %}
       <div id="rk_checkout_div" class="{% if global_is_in_cart == true %}show_checkout_div{% endif %} rk_print_hide">
         <a id="rk_cart_btn" class="rk_cart_btn rk_print_hide" href="/cart">
           {{- rk_lang_cart | append: ' (1)' | replace: '1', cart.item_count -}}
@@ -414,63 +423,168 @@
           <h4 class="rk_group_heading">{{- direction.heading_text -}}</h4>
           <ol>
         {%- else -%}
-          <li id="step-{{- forloop.index -}}">{{- direction.direction -}}</li>
-          {% if direction.image != blank %}
+          
+        <li id="step-{{- forloop.index -}}">
+          {{- direction.direction -}}
+          {% if rk_settings.rk_plan == 'business' and direction.image != blank %}
             <div class="rk_direction_image">
               {% assign modified_image_url = direction.image | replace: 'https://f000.backblazeb2.com/file/recipekit-bucket/' ,'https://images.getrecipekit.com/' | append: '?width=750' %}
-              <img src="{{ modified_image_url }}" alt="Image of {{ direction.direction | strip_html | truncatewords: 10, '...'}}"/>
+              <img src="{{ modified_image_url }}" width="400" height="400" alt="Image of {{ direction.direction | strip_html | truncatewords: 10, '...'}}"/>
             </div>
           {% endif %}
+        </li>
         {%- endif -%}
       {%- endfor -%}
     </ol>
   {%- endcapture -%}
 
   {%- capture rk_nutrition_capture -%}
-    <p>
-      {%- if rk_mf.recipe_calories != blank -%}
-        <b>{{- rk_lang_calories -}}</b> {{ rk_mf.recipe_calories }}, 
-      {%- endif -%}
-      {%- for nutrition_field in rk_mf.nutrition_data -%}
-        {% case nutrition_field.title %}
-          {% when 'Calories' %}
-            {% assign current_nutrition_field_lang = rk_lang_calories %}
-          {% when 'Carbs' %}
-            {% assign current_nutrition_field_lang = rk_lang_carbohydrates %}
-          {% when 'Cholesterol' %}
-            {% assign current_nutrition_field_lang = rk_lang_cholesterol %}
-          {% when 'Fat' %}
-            {% assign current_nutrition_field_lang = rk_lang_fat %}
-          {% when 'Fiber' %}
-            {% assign current_nutrition_field_lang = rk_lang_fiber %}
-          {% when 'Protein' %}
-            {% assign current_nutrition_field_lang = rk_lang_protein %}
-          {% when 'Saturated Fat' %}
-            {% assign current_nutrition_field_lang = rk_lang_sat_fat %}
-          {% when 'Sodium' %}
-            {% assign current_nutrition_field_lang = rk_lang_sodium %}
-          {% when 'Sugar' %}
-            {% assign current_nutrition_field_lang = rk_lang_sugar %}
-          {% when 'Trans Fat' %}
-            {% assign current_nutrition_field_lang = rk_lang_trans_fat %}
-          {% when 'Unsaturated Fat' %}
-            {% assign current_nutrition_field_lang = rk_lang_unsat_fat %}
-          {% else %}
-            {% assign current_nutrition_field_lang = nutrition_field.title %}
-        {% endcase %}
-        {% case nutrition_field.type %}
-          {% when 'grams' %}
-            {% assign current_nutrition_field_type = nutrition_field.type | replace: 'grams', rk_lang_grams %}
-          {% when 'milligrams' %}
-            {% assign current_nutrition_field_type = nutrition_field.type | replace: 'milligrams', rk_lang_milligrams %}
-          {% when 'calories' %}
-            {% assign current_nutrition_field_type = nutrition_field.type | replace: 'calories', '' %}
-          {% else %}
-            {% assign current_nutrition_field_type = '' %}
-        {% endcase %}
-        <span class="rk_nutrition_field"><b>{{ current_nutrition_field_lang }}</b> {{ nutrition_field.content }} {{ current_nutrition_field_type -}}{%- unless forloop.last -%},{%- endunless -%}</span>
-      {%- endfor -%}
-    </p>
+    {% if rk_mf.nutrition_template == 'linear' or rk_mf.nutrition_template == blank %}
+      <p>
+        {% if rk_mf.nutrition_serving_size != blank %}
+          <b>{{ rk_lang_nutrition_serving_size }}</b>
+          <span>{{ rk_mf.nutrition_serving_size }}</span><br>
+        {% endif %}
+        {%- if rk_mf.recipe_calories != blank -%}
+          <b>{{- rk_lang_calories -}}</b> {{ rk_mf.recipe_calories }}, 
+        {%- endif -%}
+        {%- for nutrition_field in rk_mf.nutrition_data -%}
+          {% case nutrition_field.title %}
+            {% when 'Calories' %}
+              {% assign current_nutrition_field_lang = rk_lang_calories %}
+            {% when 'Carbs' %}
+              {% assign current_nutrition_field_lang = rk_lang_carbohydrates %}
+            {% when 'Cholesterol' %}
+              {% assign current_nutrition_field_lang = rk_lang_cholesterol %}
+            {% when 'Fat' %}
+              {% assign current_nutrition_field_lang = rk_lang_fat %}
+            {% when 'Fiber' %}
+              {% assign current_nutrition_field_lang = rk_lang_fiber %}
+            {% when 'Protein' %}
+              {% assign current_nutrition_field_lang = rk_lang_protein %}
+            {% when 'Saturated Fat' %}
+              {% assign current_nutrition_field_lang = rk_lang_sat_fat %}
+            {% when 'Sodium' %}
+              {% assign current_nutrition_field_lang = rk_lang_sodium %}
+            {% when 'Sugar' %}
+              {% assign current_nutrition_field_lang = rk_lang_sugar %}
+            {% when 'Trans Fat' %}
+              {% assign current_nutrition_field_lang = rk_lang_trans_fat %}
+            {% when 'Unsaturated Fat' %}
+              {% assign current_nutrition_field_lang = rk_lang_unsat_fat %}
+            {% else %}
+              {% assign current_nutrition_field_lang = nutrition_field.title %}
+          {% endcase %}
+          {% case nutrition_field.type %}
+            {% when 'grams' %}
+              {% assign current_nutrition_field_type = nutrition_field.type | replace: 'grams', rk_lang_grams %}
+            {% when 'milligrams' %}
+              {% assign current_nutrition_field_type = nutrition_field.type | replace: 'milligrams', rk_lang_milligrams %}
+            {% when 'calories' %}
+              {% assign current_nutrition_field_type = nutrition_field.type | replace: 'calories', '' %}
+            {% else %}
+              {% assign current_nutrition_field_type = '' %}
+          {% endcase %}
+          <span class="rk_nutrition_field">
+            <b>{{ current_nutrition_field_lang }}</b> 
+            {{ nutrition_field.content }} {{ current_nutrition_field_type -}}
+            {% if nutrition_field.dailyValue != blank %}
+              ({{- nutrition_field.dailyValue -}}%)
+            {%- endif -%}
+            {%- unless forloop.last -%},{%- endunless -%}</span>
+        {%- endfor -%}
+      </p>
+    {% else %}
+      <div class="mast">
+        <h2 class="mast__title"><span>{{- rk_lang_nutrition -}}</span></h2>
+        <dl class="mast__list">
+          {%- if rk_mf.nutrition_serving_size != blank -%}
+          <div class="nut-size">
+            <dt>{{ rk_lang_nutrition_serving_size }}</dt>
+            <dd>{{ rk_mf.nutrition_serving_size }}</dd>
+          </div>
+          {%- endif -%}
+          <div class="calories">
+            <div>
+              <dt>{{ rk_lang_per_serving }}</dt>
+              <dd class="calories__label">{{- rk_lang_calories -}}</dd>
+            </div>
+            <dd class="calories__value">{{ rk_mf.recipe_calories }}</dd>
+          </div>
+        </dl>
+      </div>
+      {% if rk_mf.nutrition_data.size > 0 %}
+        <div class="values">
+          <div class="values--a">
+            <div class="values__title">
+              <span>{{ rk_lang_amount_per_serving }}</span>
+              <span>{{ rk_lang_daily_value }}</span>
+            </div>
+            <dl class="values__list">
+              {%- for nutrition_field in rk_mf.nutrition_data -%}
+                {% case nutrition_field.title %}
+                  {% when 'Calories' %}
+                    {% assign current_nutrition_field_lang = rk_lang_calories %}
+                  {% when 'Carbs' %}
+                    {% assign current_nutrition_field_lang = rk_lang_carbohydrates %}
+                  {% when 'Cholesterol' %}
+                    {% assign current_nutrition_field_lang = rk_lang_cholesterol %}
+                  {% when 'Fat' %}
+                    {% assign current_nutrition_field_lang = rk_lang_fat %}
+                  {% when 'Fiber' %}
+                    {% assign current_nutrition_field_lang = rk_lang_fiber %}
+                  {% when 'Protein' %}
+                    {% assign current_nutrition_field_lang = rk_lang_protein %}
+                  {% when 'Saturated Fat' %}
+                    {% assign current_nutrition_field_lang = rk_lang_sat_fat %}
+                  {% when 'Sodium' %}
+                    {% assign current_nutrition_field_lang = rk_lang_sodium %}
+                  {% when 'Sugar' %}
+                    {% assign current_nutrition_field_lang = rk_lang_sugar %}
+                  {% when 'Trans Fat' %}
+                    {% assign current_nutrition_field_lang = rk_lang_trans_fat %}
+                  {% when 'Unsaturated Fat' %}
+                    {% assign current_nutrition_field_lang = rk_lang_unsat_fat %}
+                  {% else %}
+                    {% assign current_nutrition_field_lang = nutrition_field.title %}
+                {% endcase %}
+                {% case nutrition_field.type %}
+                  {% when 'grams' %}
+                    {% assign current_nutrition_field_type = nutrition_field.type | replace: 'grams', rk_lang_grams %}
+                  {% when 'milligrams' %}
+                    {% assign current_nutrition_field_type = nutrition_field.type | replace: 'milligrams', rk_lang_milligrams %}
+                  {% when 'calories' %}
+                    {% assign current_nutrition_field_type = nutrition_field.type | replace: 'calories', '' %}
+                  {% else %}
+                    {% assign current_nutrition_field_type = '' %}
+                {% endcase %}
+                  <div>
+                    <dt>{{ current_nutrition_field_lang }}</dt>
+                    <dd>{{ nutrition_field.content }} {{ current_nutrition_field_type -}}</dd>
+                    {% if nutrition_field.dailyValue != blank %}
+                    <dd>{{ nutrition_field.dailyValue }}%</dd>
+                    {% endif %}
+                  </div>
+                {% comment %} <span class="rk_nutrition_field"><b>{{ current_nutrition_field_lang }}</b> {{ nutrition_field.content }} {{ current_nutrition_field_type -}}{%- unless forloop.last -%},{%- endunless -%}</span> {% endcomment %}
+              {%- endfor -%}
+            </dl>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  {%- endcapture -%}
+
+  {%- capture rk_nutrition_template_capture -%}
+    {% case rk_mf.nutrition_template %}
+      {% when 'vertical' %}
+      rk_nutrition_vertical
+      {% when 'horizontal' %}
+      rk_nutrition_horizontal
+      {% when 'linear' %}
+      rk_nutrition_linear
+      {% else %}
+      rk_nutrition_linear
+    {% endcase %}
   {%- endcapture -%}
 
   {%- comment -%}
@@ -504,7 +618,7 @@
             <div class="rk_header">
               <div class="rk_grid">
                 <div class="rk_column rk_primary">
-                  <h2 class="rk_heading">{{- rk_mf.recipe_title -}}</h2>
+                  <h1 class="rk_heading">{{- rk_mf.recipe_title -}}</h1>
                   {% if rk_mf.enable_rating == true or rk_mf.enable_rating == 'true' %}
                     <div class="rk_rating">
                       <div class="stars">
@@ -594,7 +708,7 @@
                 </div>
                 {%- if rk_mf.recipe_image != blank -%}
                   <div class="rk_column rk_image">
-                    <img src="{{- rk_16_9_recipe_image -}}" alt="Image of {{ rk_mf.recipe_title -}}">
+                    <img width="100" height="100" src="{{- rk_16_9_recipe_image -}}" alt="Image of {{ rk_mf.recipe_title -}}">
                   </div>
                 {%- endif -%}
               </div>
@@ -611,7 +725,7 @@
               </div>
             </div>
             {%- if rk_mf.recipe_video != blank -%}
-            <div class="rk_print_hide" id="rk_video">
+            <div class="rk_print_hide">
               <span class="rk_hr"></span>
               <div class="rk_column">
                 <h2 class="rk_column_heading">{{- rk_lang_video -}}</h2>
@@ -630,7 +744,11 @@
               <span class="rk_hr"></span>
               <div class="rk_column">
                 <h2 class="rk_column_heading"><span>{{- rk_lang_nutrition -}}</span></h2>
-                {{- rk_nutrition_capture -}}
+                <div class="rk_nutrition_column">
+                  <div class="rk_nutrition_card {{- rk_nutrition_template_capture -}}">
+                    {{- rk_nutrition_capture -}}
+                  </div>
+                </div>
               </div>
             {%- endif -%}
           </div>
@@ -645,15 +763,15 @@
             <div class="rk_header"> 
               <div class="rk_grid">
                 <div class="rk_column rk_primary">
-                  <h2 class="rk_heading">{{- rk_mf.recipe_title -}}</h2>
+                  <h1 class="rk_heading">{{- rk_mf.recipe_title -}}</h1>
                   {% if rk_mf.enable_rating == true or rk_mf.enable_rating == 'true' %}
                     <div class="rk_rating">
                       <div class="stars">
-                        <span class="star {% if current_rating == 5 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></span>
-                        <span class="star {% if current_rating == 4 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></span>
-                        <span class="star {% if current_rating == 3 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></span>
-                        <span class="star {% if current_rating == 2 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></span>
-                        <span class="star {% if current_rating == 1 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></span>
+                        <a class="star {% if current_rating == 5 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
+                        <a class="star {% if current_rating == 4 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
+                        <a class="star {% if current_rating == 3 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
+                        <a class="star {% if current_rating == 2 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
+                        <a class="star {% if current_rating == 1 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
                       </div>
                       <p id="rk_rating_thanks">{{- rk_lang_rating_count -}}</p>
                     </div>
@@ -734,7 +852,7 @@
                 </div>
                 {%- if rk_mf.recipe_image != blank -%}
                   <div class="rk_column rk_image">
-                    <img src="{{- rk_16_9_recipe_image -}}" alt="Image of {{ rk_mf.recipe_title -}}">
+                    <img width="100" height="100" src="{{- rk_16_9_recipe_image -}}" alt="Image of {{ rk_mf.recipe_title -}}">
                   </div>
                 {%- endif -%}
               </div>
@@ -751,7 +869,7 @@
                 {{- rk_direction_capture -}}
               </div>
               {%- if rk_mf.recipe_video != blank -%}
-              <div class="rk_print_hide" id="rk_video">
+              <div class="rk_print_hide">
                 <span class="rk_hr"></span>
                 <div class="rk_column">
                   <h2 class="rk_column_heading">{{- rk_lang_video -}}</h2>
@@ -770,7 +888,11 @@
                 <span class="rk_hr"></span>
                 <div class="rk_column">
                   <h2 class="rk_column_heading"><span>{{- rk_lang_nutrition -}}</span></h2>
-                  {{- rk_nutrition_capture -}}
+                  <div class="rk_nutrition_column">
+                    <div class="rk_nutrition_card {{- rk_nutrition_template_capture -}}">
+                      {{- rk_nutrition_capture -}}
+                    </div>
+                  </div>
                 </div>
               {%- endif -%}
             </div>
@@ -786,15 +908,15 @@
             <div class="rk_header"> 
               <div class="rk_grid">
                 <div class="rk_column rk_primary">
-                  <h2 class="rk_heading">{{- rk_mf.recipe_title -}}</h2>
+                  <h1 class="rk_heading">{{- rk_mf.recipe_title -}}</h1>
                   {% if rk_mf.enable_rating == true or rk_mf.enable_rating == 'true' %}
                     <div class="rk_rating">
                       <div class="stars">
-                        <span class="star {% if current_rating == 5 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></span>
-                        <span class="star {% if current_rating == 4 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></span>
-                        <span class="star {% if current_rating == 3 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></span>
-                        <span class="star {% if current_rating == 2 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></span>
-                        <span class="star {% if current_rating == 1 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></span>
+                        <a class="star {% if current_rating == 5 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
+                        <a class="star {% if current_rating == 4 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
+                        <a class="star {% if current_rating == 3 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
+                        <a class="star {% if current_rating == 2 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
+                        <a class="star {% if current_rating == 1 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
                       </div>
                       <p id="rk_rating_thanks">{{- rk_lang_rating_count -}}</p>
                     </div>
@@ -878,7 +1000,7 @@
                 </div>
                 {%- if rk_mf.recipe_image != blank -%}
                   <div class="rk_column rk_image">
-                    <img src="{{- rk_2_3_recipe_image -}}" alt="Image of {{ rk_mf.recipe_title }}">
+                    <img width="100" height="100" src="{{- rk_2_3_recipe_image -}}" alt="Image of {{ rk_mf.recipe_title }}">
                   </div>
                 {%- endif -%}
               </div>
@@ -893,7 +1015,7 @@
                 {{- rk_direction_capture -}}
               </div>
               {%- if rk_mf.recipe_video != blank -%}
-              <div class="rk_print_hide" id="rk_video">
+              <div class="rk_print_hide">
                 <div class="rk_column">
                   <h2 class="rk_column_heading"><span>{{- rk_lang_video -}}</span></h2>
                   <iframe class="rk_video" src="{{- rk_video_embed_url -}}" width="100%" allowfullscreen></iframe>
@@ -909,7 +1031,155 @@
               {%- if rk_mf.nutrition_data != blank -%}
                 <div class="rk_column">
                   <h2 class="rk_column_heading"><span>{{- rk_lang_nutrition -}}</span></h2>
-                  {{- rk_nutrition_capture -}}
+                  <div class="rk_nutrition_column">
+                    <div class="rk_nutrition_card {{- rk_nutrition_template_capture -}}">
+                      {{- rk_nutrition_capture -}}
+                    </div>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+        </div>
+      </div>
+      </div>
+    {%- endif -%}
+
+    {%- if recipe_design == 'rk_uptown' -%}
+      <div id="rk_design" class="rk_uptown" style="display: none;">
+        <div class="rk_container">
+          <div class="rk_card">
+            <div class="rk_header">
+            {%- if rk_mf.recipe_image != blank -%}
+                  <div class="rk_column rk_image">
+                    <img src="{{- rk_uptown_recipe_image -}}" width="100" height="100" alt="Image of {{ rk_mf.recipe_title }}">
+                  </div>
+                {%- endif -%}
+              <div class="rk_grid">
+                <div class="rk_column rk_primary">
+                  <h2 class="rk_heading">{{- rk_mf.recipe_title -}}</h2>
+                  {%- if rk_mf.recipe_author != blank -%}
+                  <div class="rk_subheading">{{ rk_mf.recipe_author }}</div>
+                  {%- endif -%}
+                  {% if rk_mf.enable_rating == true or rk_mf.enable_rating == 'true' %}
+                    <div class="rk_rating_wrapper">
+                      <div class="rk_rating">
+                        <div class="stars">
+                          <a class="star {% if current_rating == 5 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
+                          <a class="star {% if current_rating == 4 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
+                          <a class="star {% if current_rating == 3 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
+                          <a class="star {% if current_rating == 2 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
+                          <a class="star {% if current_rating == 1 %} is-selected {% endif %}"><svg><use xlink:href="#star"></use></svg></a>
+                        </div>
+                      </div>
+                      <p id="rk_rating_thanks">{{- rk_lang_rating_count -}}</p>
+                    </div>
+                    {% endif %}
+                </div>
+              </div>
+              <div class="rk_grid rk_secondary">
+                <div class="rk_column rk_details {% if rk_mf.recipe_image != blank %}rk_has_image{% endif %}">
+                  <div class="rk_grid">
+                    {%- if rk_mf.recipe_category != blank -%}
+                      <div class="rk_column rk_meta_column">
+                        <p class="rk_meta">{{- rk_lang_category -}}</p>
+                        <p>{{- rk_mf.recipe_category -}}</p>
+                      </div>
+                    {%- endif -%}
+                    {%- if rk_mf.serving_size != blank -%}
+                      <div class="rk_column rk_meta_column">
+                        <p class="rk_meta">{{- rk_lang_serving -}}</p>
+                        <p>{{- rk_mf.serving_size -}}</p>
+                      </div>
+                    {%- endif -%}
+                    {%- if rk_prep_time != blank -%}
+                      <div class="rk_column rk_meta_column">
+                        <p class="rk_meta">{{- rk_lang_prep_time -}}</p>
+                        <p>{{ rk_prep_time }}</p>
+                      </div>
+                    {%- endif -%}
+                    {%- if rk_cook_time != blank -%}
+                      <div class="rk_column rk_meta_column">
+                        <p class="rk_meta">{{- rk_lang_cook_time -}}</p>
+                        <p>{{ rk_cook_time }}</p>
+                      </div>
+                    {%- endif -%}
+                    {%- if rk_mf.recipe_calories != blank -%}
+                      <div class="rk_column rk_meta_column">
+                        <p class="rk_meta">{{- rk_lang_calories -}}</p>
+                        <p>{{ rk_mf.recipe_calories }}</p>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                  <div>
+                    {%- if rk_mf.recipe_description != blank -%}
+                      <div class="rk_description">
+                        {{- rk_mf.recipe_description -}}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                  <div>
+                    <div class="rk_column rk_actions">
+                      <ul class="rk_social">
+                        <li>
+                          <span onclick="rk_print_function()" class="rk_print">
+                            <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 640 640"><path fill-rule="nonzero" d="M120.84 176.116V25.536a2.735 2.735 0 0 1 2.74-2.74h301.067c.46 0 .886.106 1.263.295l10.052 4.146-1.051 2.539 1.05-2.54c.414.166.745.426 1.028.745l67.336 66.437 4.358 4.288-1.913 1.96 1.925-1.96c.543.543.815 1.252.815 1.96v75.45a2.742 2.742 0 0 1-2.74 2.74h-29.245a2.745 2.745 0 0 1-2.752-2.74v-35.858h-77.352a2.757 2.757 0 0 1-2.763-2.752c0-.071.012-.154.012-.237v-14.433h-.012V57.65H155.683v118.466a2.745 2.745 0 0 1-2.752 2.74h-29.35a2.735 2.735 0 0 1-2.74-2.74zm40.382 200.058h317.555c.225 0 .426.035.638.07 4.335.084 8.48.993 12.272 2.564a33.659 33.659 0 0 1 10.96 7.358 33.53 33.53 0 0 1 7.3 10.926 33.137 33.137 0 0 1 2.528 12.224c.059.2.094.425.094.638v48.154h68.529c.189 0 .39.024.578.047a23.44 23.44 0 0 0 8.54-1.842c2.94-1.229 5.598-3.048 7.866-5.292a24.553 24.553 0 0 0 5.291-7.866 23.459 23.459 0 0 0 1.831-8.575c-.023-.189-.059-.366-.059-.543V249.629c0-.213.036-.39.071-.59a23.74 23.74 0 0 0-1.843-8.54 24.502 24.502 0 0 0-5.29-7.855c-2.269-2.244-4.926-4.063-7.867-5.303a23.342 23.342 0 0 0-8.599-1.83 2.503 2.503 0 0 1-.52.047H58.904c-.19 0-.39-.012-.58-.06-2.987.072-5.87.721-8.539 1.843-2.94 1.24-5.598 3.06-7.866 5.303a24.502 24.502 0 0 0-5.291 7.855 23.635 23.635 0 0 0-1.831 8.598c.024.166.035.343.035.532v184.42c0 .189-.011.39-.047.567.071 3 .72 5.882 1.843 8.54a24.553 24.553 0 0 0 5.291 7.865c2.268 2.244 4.925 4.063 7.866 5.292a23.592 23.592 0 0 0 8.599 1.842c.165-.035.342-.047.52-.047h68.528v-48.142c0-.225.035-.45.07-.638a33.877 33.877 0 0 1 2.552-12.26 34.303 34.303 0 0 1 6.945-10.56c.106-.153.224-.295.354-.413a33.631 33.631 0 0 1 10.95-7.299 33.94 33.94 0 0 1 12.271-2.551c.213-.036.414-.071.638-.071h.012zM512.57 492.963v90.474c0 .224-.035.425-.094.637a32.978 32.978 0 0 1-2.551 12.272c-1.701 4.122-4.229 7.843-7.347 10.961a33.53 33.53 0 0 1-10.925 7.3 33.886 33.886 0 0 1-12.237 2.539c-.2.035-.413.059-.626.059H161.211c-.213 0-.425-.024-.626-.06a33.886 33.886 0 0 1-12.237-2.539 33.53 33.53 0 0 1-10.925-7.299c-3.118-3.118-5.646-6.839-7.346-10.96a32.977 32.977 0 0 1-2.552-12.273 2.315 2.315 0 0 1-.094-.637v-90.474H58.902c-.2 0-.413-.035-.625-.07a58.839 58.839 0 0 1-21.875-4.454 58.909 58.909 0 0 1-31.89-31.902c-2.8-6.744-4.37-14.126-4.453-21.862a2.827 2.827 0 0 1-.07-.626v-184.42c0-.224.023-.437.07-.626.083-7.748 1.654-15.142 4.453-21.886a59.11 59.11 0 0 1 12.768-19.11 58.66 58.66 0 0 1 19.122-12.768 58.613 58.613 0 0 1 21.875-4.465c.2-.047.401-.071.625-.071h522.195c.201 0 .414.024.626.07a58.661 58.661 0 0 1 21.875 4.466 58.66 58.66 0 0 1 19.122 12.767 59.11 59.11 0 0 1 12.768 19.11c2.8 6.745 4.37 14.139 4.453 21.887.047.189.07.402.07.626v184.408c0 .224-.023.425-.07.626-.083 7.748-1.654 15.13-4.453 21.874a58.96 58.96 0 0 1-12.768 19.134 59.035 59.035 0 0 1-19.122 12.768 58.839 58.839 0 0 1-21.875 4.453c-.2.036-.425.071-.626.071H512.57zm-46.571-387.56l-36.485-35.977v35.977h36.485zm11.705 305.626H162.298V582.35h315.405V411.029z"/></svg>
+                          </span>
+                        </li>
+                        <li>
+                          <a target="_blank" href="//twitter.com/share?text={{- rk_mf.recipe_title | url_param_escape -}}&amp;url={{- shop.url -}}{{- article.url -}}">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3333 3333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><path d="M1667 0c460 0 877 187 1179 488 302 302 488 718 488 1179 0 460-187 877-488 1179-302 302-718 488-1179 488-460 0-877-187-1179-488C186 2544 0 2128 0 1667c0-460 187-877 488-1179C790 186 1206 0 1667 0zm867 1129c-64 29-132 47-204 56 74-44 130-114 157-197-69 41-145 70-226 86-65-69-157-112-260-112-197 0-356 159-356 356 0 28 3 55 9 81-296-15-558-157-733-372-31 54-48 116-48 179 0 123 63 232 158 296-58-2-113-18-161-44v4c0 172 123 316 286 349-30 8-61 13-94 13-23 0-45-2-67-6 46 141 177 244 332 247-122 96-275 152-442 152-29 0-57-2-85-5 158 101 345 160 546 160 654 0 1013-542 1013-1013 0-16 0-31-1-46 70-50 130-112 177-184zm226-555c-280-280-666-453-1093-453S853 294 574 574c-280 280-453 666-453 1093s173 814 453 1093c280 280 666 453 1093 453s814-173 1093-453c280-280 453-666 453-1093s-173-814-453-1093z" fill-rule="nonzero"/></svg>
+                            <span class="visually-hidden">Share on Twitter</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a target="_blank" href="//www.facebook.com/sharer.php?u={{- shop.url -}}{{- article.url -}}">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3333 3333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><path d="M1667 0c460 0 877 187 1179 488 302 302 488 718 488 1179 0 460-187 877-488 1179-302 302-718 488-1179 488-460 0-877-187-1179-488C186 2544 0 2128 0 1667c0-460 187-877 488-1179C790 186 1206 0 1667 0zm181 1137h301V776h-301c-232 0-421 189-421 421v181h-241v361h241v963h361v-963h301l60-361h-361v-181c0-33 28-60 60-60zm913-563c-280-280-666-453-1093-453S854 294 575 574c-280 280-453 666-453 1093s173 814 453 1093c280 280 666 453 1093 453s814-173 1093-453c280-280 453-666 453-1093s-173-814-453-1093z" fill-rule="nonzero"/></svg>
+                            <span class="visually-hidden">Share on Facebook</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a target="_blank" href="//pinterest.com/pin/create/button/?url={{- shop.url -}}{{- article.url -}}&amp;media={{- rk_2_3_recipe_image -}}&amp;description={{- rk_mf.recipe_title | url_param_escape-}}">
+                            <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 333333 333333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><path d="M166667 0c46023 0 87690 18655 117851 48816s48816 71828 48816 117851-18655 87690-48816 117851-71828 48816-117851 48816-87690-18655-117851-48816S0 212690 0 166667 18655 78977 48816 48816 120644 0 166667 0zm-40764 260628c10431-9304 17591-22553 21087-36141 1409-5356 7160-27289 7160-27289 3721 7160 14716 13194 26274 13194 34619 0 59540-31800 59540-71437 0-37945-30954-66306-70760-66306-49560 0-75834 33265-75834 69463 0 16802 8965 37776 23286 44429 2143 1071 3326 564 3834-1579 339-1635 2312-9359 3214-13024 281-1128 169-2199-789-3326-4736-5751-8570-16351-8570-26161 0-25316 19170-49842 51815-49842 28191 0 47925 19170 47925 46685 0 31067-15674 52605-36085 52605-11276 0-19734-9304-16971-20749 3270-13644 9528-28361 9528-38171 0-8796-4680-16125-14547-16125-11558 0-20748 11896-20748 27909 0 10149 3383 17028 3383 17028s-11389 48094-13476 57059c-2312 9923-1409 23850-394 32927l1015 8908 113-56zM273296 60038c-27287-27287-64987-44165-106628-44165-41642 0-79341 16878-106628 44165s-44165 64987-44165 106628c0 41642 16878 79341 44165 106628s64987 44165 106628 44165c41642 0 79341-16878 106628-44165s44165-64987 44165-106628c0-41642-16878-79341-44165-106628z" fill-rule="nonzero"/></svg>
+                            <span class="visually-hidden">Share on Pinterest</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="rk_body">
+              <div class="rk_ingredients">
+                <h3 class="rk_column_heading rk_section_header"><span>{{- rk_lang_ingredients -}}</span></h3>
+                {{- rk_ingredient_capture -}}
+              </div>
+              <div class="rk_directions rk_column">
+                <h3 class="rk_column_heading rk_section_header"><span>{{- rk_lang_directions -}}</span></h3>
+                {{- rk_direction_capture -}}
+              </div>
+              {%- if rk_mf.recipe_video != blank -%}
+              <div class="rk_print_hide" id="rk_video">
+                <div class="rk_column">
+                  <h3 class="rk_column_heading rk_section_header"><span>{{- rk_lang_video -}}</span></h3>
+                  <iframe class="rk_video" src="{{- rk_video_embed_url -}}" width="100%" allowfullscreen></iframe>
+                </div>
+              </div>
+              {%- endif -%}
+              {%- if rk_mf.recipe_note != blank -%}
+                <div class="rk_column">
+                  <h3 class="rk_column_heading rk_section_header"><span>{{- rk_lang_note -}}</span></h3>
+                  <p>{{- rk_mf.recipe_note -}}</p>
+                </div>
+              {%- endif -%}
+              {%- if rk_mf.nutrition_data != blank -%}
+                <div class="rk_column">
+                  <h3 class="rk_column_heading rk_section_header"><span>{{- rk_lang_nutrition -}}</span></h3>
+                  <div class="rk_nutrition_column">
+                    <div class="rk_nutrition_card {{- rk_nutrition_template_capture -}}">
+                      {{- rk_nutrition_capture -}}
+                    </div>
+                  </div>
                 </div>
               {%- endif -%}
             </div>
@@ -924,7 +1194,6 @@
     Print Javascript
   {% endcomment %}
   <script>
-
     var rk_lang_added = '{{ rk_lang_added }}';
     var rk_lang_removed = '{{ rk_lang_removed }}';
     var rk_lang_atc = '{{ rk_lang_atc }}';
@@ -1012,6 +1281,12 @@
     .star:hover ~ .star svg {
       opacity: 0.8;
       fill: {{- design_colour -}} !important;
+    }
+    .rk_uptown .rk_directions ol li:before {
+      content: "{{ rk_lang_step }} " counter(elementcounter);
+    }
+    #rk_parent .rk_uptown .rk_container .rk_secondary {
+      border-color: {{- design_colour -}} !important;
     }
   </style>
   {%- if rk_settings.custom_css != blank -%}
