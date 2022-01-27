@@ -278,12 +278,7 @@ Currently out of stock.
                                 assign hide_sale_price = false
                               endif
                             -%}
-                            <span
-                              class="visually-hidden"
-                              aria-hidden="{{ hide_sale_price }}"
-                              data-price-a11y>
-                                {{ 'products.general.regular_price' | t }}
-                            </span>
+
                             <span class="" data-price-wrapper>
                               <span class="product__price product__price--compare" data-product-price-compare>
                                 {%- if current_variant.compare_at_price > current_variant.price -%}
