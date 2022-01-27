@@ -417,57 +417,13 @@ Currently out of stock.
 
                     <div class="saving-sec" data-price-wrapper>
                       <div class="reg-text"><span class="checkout-price" data-product-price>{{ current_variant.price | money }}</span></div>
-                      <div class="save-text"><span class="checkout-compare-price" data-product-price-compare>
-                        
-                        
-                                                  <span
-                            class="product__price{% if current_variant.compare_at_price > current_variant.price %} sale-price{% endif %}"
-                            data-product-price>
-                            {%- unless product.empty? -%}
-                              {{ current_variant.price | money }}
-                            {%- else -%}
-                              {{ 1999 | money }}
-                            {%- endunless -%}
-                          </span>
-                        
-                        </span></div>
+                      <div class="save-text"><span class="checkout-compare-price" data-product-price-compare>{{ current_variant.compare_at_price | money }}</span></div>
                             <span class="visually-hidden" data-compare-a11y>{{ 'products.general.sale_price' | t }}</span>
                             <span class="visually-hidden" data-price-a11y>{{ 'products.general.regular_price' | t }}</span>
 
                     </div>
                   </div>
 
-                
-                                        <div class="product-single__prices">
-                          {%- if product.compare_at_price_max > product.price -%}
-                            {%- liquid
-                              assign hide_sale_price = true
-                              if current_variant.compare_at_price
-                                assign hide_sale_price = false
-                              endif
-                            -%}
-                            <span
-                              class="visually-hidden"
-                              aria-hidden="{{ hide_sale_price }}"
-                              data-price-a11y>
-                                {{ 'products.general.regular_price' | t }}
-                            </span>
-                            <span class="{% if hide_sale_price %} hide{% endif %}" data-price-wrapper>
-                              <span class="product__price product__price--compare" data-product-price-compare>
-                                {%- if current_variant.compare_at_price > current_variant.price -%}
-                                  {{ current_variant.compare_at_price | money }}
-                                {%- endif -%}
-                              </span>
-                            </span>
-                            <span class="visually-hidden" data-compare-a11y>{{ 'products.general.sale_price' | t }}</span>
-                          {%- else -%}
-                            <span class="visually-hidden" data-price-a11y>{{ 'products.general.regular_price' | t }}</span>
-                          {%- endif -%}
-
-
-                        </div>
-                
-                
 
                   <script>
     jQuery(document).ready(function($) {
