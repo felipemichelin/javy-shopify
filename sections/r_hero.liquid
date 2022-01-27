@@ -11,31 +11,25 @@
             </div>
           </div>
         </div>
-      </div><img src="{{ 'valentinesdaybg.svg' | asset_url}}" loading="lazy" alt="" class="new_trees"><img src="{{ 'baixo.png' | asset_url}}" loading="lazy" sizes="(max-width: 806px) 100vw, (max-width: 991px) 806px, 100vw" srcset="{{ 'baixo-p-500.png' | asset_url}} 500w, {{ 'baixo-p-800.png' | asset_url}} 800w, {{ 'baixo.png' | asset_url}} 806w" alt="" class="new_baixo"><img src="{{ 'cima-mobo.png' | asset_url}}" loading="lazy" sizes="(max-width: 805px) 100vw, (max-width: 991px) 805px, 100vw" srcset="{{ 'cima-mobo-p-500.png' | asset_url}} 500w, {{ 'cima-mobo-p-800.png' | asset_url}} 800w, {{ 'cima-mobo.png' | asset_url}} 805w" alt="" class="new_cima"><img src="{{ 'javy-left.png' | asset_url}}" loading="lazy" sizes="(max-width: 991px) 100vw, 700px" srcset="{{ 'javy-left-p-500.png' | asset_url}} 500w, {{ 'javy-left.png' | asset_url}} 700w" alt="" class="new_left-image"><img src="{{ 'righttt.png' | asset_url}}" loading="lazy" sizes="(max-width: 991px) 100vw, 806px" srcset="{{ 'righttt-p-500.png' | asset_url}} 500w, {{ 'righttt-p-800.png' | asset_url}} 800w, {{ 'righttt.png' | asset_url}} 806w" alt="" class="new_right_image"><img src="{{ 'hearts.svg' | asset_url}}" loading="lazy" alt="" class="new_snowflakes">
+      </div><img src="{{ 'valentinesdaybg.svg' | asset_url}}" alt="" class="new_trees">
+      
+      <img src="{{ 'baixo.png' | asset_url}}"  alt="" class="new_baixo">
+      <img src="{{ 'cima-mobo.png' | asset_url}}" alt="" class="new_cima">
+      <img src="{{ 'javy-left.png' | asset_url}}" alt="" class="new_left-image">
+      <img src="{{ 'righttt.png' | asset_url}}" alt="" class="new_right_image">
+      <img src="{{ 'hearts.svg' | asset_url}}" loading="lazy" alt="" class="new_snowflakes">
     </div>
 
 
     <style>
 
 @media screen and (min-width: 980px) {          
-.new_left-image {
-    position: absolute!important;
-    left: -120px!important;
-    top: 0%!important;
-    right: auto!important;
-    bottom: 0%!important;
-    z-index: 50!important;
-        display: block!important;
+img.new_left-image {
+    margin-left: -150px;
 }
 
-.new_right_image {
-    position: absolute!important;
-    left: auto!important;
-    top: 0%!important;
-    right: -150px!important;
-    bottom: 0%!important;
-    z-index: 50!important;
-    display: block!important;
+img.new_right_image {
+    margin-right: -130px;
 }
     }
 
