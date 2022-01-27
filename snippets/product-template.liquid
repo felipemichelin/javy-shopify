@@ -278,8 +278,13 @@ Currently out of stock.
                                 assign hide_sale_price = false
                               endif
                             -%}
-
-                            <span class="" data-price-wrapper>
+                            <span
+                              class="visually-hidden"
+                              aria-hidden="{{ hide_sale_price }}"
+                              data-price-a11y>
+                                {{ 'products.general.regular_price' | t }}
+                            </span>
+                            <span class="{% if hide_sale_price %} hide{% endif %}" data-price-wrapper>
                               <span class="product__price product__price--compare" data-product-price-compare>
                                 {%- if current_variant.compare_at_price > current_variant.price -%}
                                   {{ current_variant.compare_at_price | money }}
@@ -302,7 +307,7 @@ Currently out of stock.
                           </span>
                         </div>
 
-                        <div data-product-unit-wrapper class="product__unit-price{% unless current_variant.unit_price_measurement %}{% endunless %}">
+                        <div data-product-unit-wrapper class="product__unit-price{% unless current_variant.unit_price_measurement %} hide{% endunless %}">
                           {%- capture unit_price_base_unit -%}
                             {%- if current_variant.unit_price_measurement -%}
                               {%- if current_variant.unit_price_measurement.reference_value != 1 -%}
@@ -412,12 +417,7 @@ Currently out of stock.
 
                     <div class="saving-sec" data-price-wrapper>
                       <div class="reg-text"><span class="checkout-price" data-product-price>{{ current_variant.price | money }}</span></div>
-                      
-                      {%- if current_variant.compare_at_price > current_variant.price -%}
-
                       <div class="save-text"><span class="checkout-compare-price" data-product-price-compare>{{ current_variant.compare_at_price | money }}</span></div>
-                          {%- endif -%}
-                      
                             <span class="visually-hidden" data-compare-a11y>{{ 'products.general.sale_price' | t }}</span>
                             <span class="visually-hidden" data-price-a11y>{{ 'products.general.regular_price' | t }}</span>
 
