@@ -396,22 +396,6 @@ Currently out of stock.
 
 
 
-                  <div class="price-list">
-
-{%- if current_variant.compare_at_price > current_variant.price -%}
-
-                            {%- else -%}
-
-
-                    <style>
-.saving-sec {
-    justify-content: flex-start!important;
-}
-                    </style>
-
-
-
-    {%- endif -%}
 
                     <div class="saving-sec" data-price-wrapper>
                       <div class="reg-text"><span class="checkout-price" data-product-price>{{ current_variant.price | money }}</span></div>
