@@ -270,36 +270,7 @@ Currently out of stock.
                       </div>
                     {%- when 'price' -%}
                       <div class="product-block product-block--price" {{ block.shopify_attributes }}>
-                        <div class="product-single__prices">
-                          {%- if product.compare_at_price_max > product.price -%}
-                            {%- liquid
-                              assign hide_sale_price = true
-                              if current_variant.compare_at_price
-                                assign hide_sale_price = false
-                              endif
-                            -%}
-                            <span
-                              class="visually-hidden"
-                              aria-hidden="{{ hide_sale_price }}"
-                              data-price-a11y>
-                                {{ 'products.general.regular_price' | t }}
-                            </span>
 
-                            <span class="visually-hidden" data-compare-a11y>{{ 'products.general.sale_price' | t }}</span>
-                          {%- else -%}
-                            <span class="visually-hidden" data-price-a11y>{{ 'products.general.regular_price' | t }}</span>
-                          {%- endif -%}
-
-                          <span
-                            class="product__price{% if current_variant.compare_at_price > current_variant.price %} sale-price{% endif %}"
-                            data-product-price>
-                            {%- unless product.empty? -%}
-                              {{ current_variant.price | money }}
-                            {%- else -%}
-                              {{ 1999 | money }}
-                            {%- endunless -%}
-                          </span>
-                        </div>
 
                         <div data-product-unit-wrapper class="product__unit-price{% unless current_variant.unit_price_measurement %} hide{% endunless %}">
                           {%- capture unit_price_base_unit -%}
