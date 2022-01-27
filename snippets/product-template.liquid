@@ -402,6 +402,9 @@ Currently out of stock.
                     <div class="price-sec">
                       <div class="youresaving">You&#x27;re saving <span class="checkout-compare-price-savings-pct" data-product-price-savings>28</span>%</div>
                     </div>
+                    <script>
+                    console.log ("teste");
+                    </script>
                             {%- else -%}
 
 
@@ -425,6 +428,14 @@ Currently out of stock.
                   </div>
 
 
+                  <script>
+    jQuery(document).ready(function($) {
+                  var sale_price_old = $(".checkout-price").html().substr(1);
+                  var compare_price_old = $(".checkout-compare-price").html().substr(1);
+                  var new_savings = ((1 - sale_price_old/compare_price_old)*100).toFixed(0);;
+                  $(".checkout-compare-price-savings-pct").html(new_savings);
+                      });
+</script>
 
 
 
