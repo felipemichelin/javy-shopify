@@ -284,13 +284,7 @@ Currently out of stock.
                               data-price-a11y>
                                 {{ 'products.general.regular_price' | t }}
                             </span>
-                            <span class="{% if hide_sale_price %} hide{% endif %}" data-price-wrapper>
-                              <span class="product__price product__price--compare" data-product-price-compare>
-                                {%- if current_variant.compare_at_price > current_variant.price -%}
-                                  {{ current_variant.compare_at_price | money }}
-                                {%- endif -%}
-                              </span>
-                            </span>
+
                             <span class="visually-hidden" data-compare-a11y>{{ 'products.general.sale_price' | t }}</span>
                           {%- else -%}
                             <span class="visually-hidden" data-price-a11y>{{ 'products.general.regular_price' | t }}</span>
