@@ -15,9 +15,13 @@
       
       <img src="{{ 'baixo.png' | asset_url}}"  alt="" class="new_baixo">
       <img src="{{ 'cima-mobo.png' | asset_url}}" alt="" class="new_cima">
+      <div class="left-side">
       <img src="{{ 'javy-left.png' | asset_url}}" alt="" class="new_left-image">
+      </div>
       <img src="{{ 'righttt.png' | asset_url}}" alt="" class="new_right_image">
+      div class="right-side">
       <img src="{{ 'hearts.svg' | asset_url}}" loading="lazy" alt="" class="new_snowflakes">
+      </div>
     </div>
 
 
@@ -30,6 +34,13 @@ img.new_left-image {
 
 img.new_right_image {
     margin-right: -130px;
+}
+
+.right-side {
+  right: -100px;
+}
+.left-side {
+  left: -100px;
 }
     }
 
