@@ -284,7 +284,7 @@ Currently out of stock.
                               data-price-a11y>
                                 {{ 'products.general.regular_price' | t }}
                             </span>
-                            <span class="{% if hide_sale_price %}{% endif %}" data-price-wrapper>
+                            <span class="{% if hide_sale_price %} hide{% endif %}" data-price-wrapper>
                               <span class="product__price product__price--compare" data-product-price-compare>
                                 {%- if current_variant.compare_at_price > current_variant.price -%}
                                   {{ current_variant.compare_at_price | money }}
@@ -395,7 +395,50 @@ Currently out of stock.
 
 
 
-                        <div class="product-single__prices">
+
+                  <div class="price-list">
+
+{%- if current_variant.compare_at_price > current_variant.price -%}
+                    <div class="price-sec">
+                      <div class="youresaving">You&#x27;re saving <span class="checkout-compare-price-savings-pct" data-product-price-savings>28</span>%</div>
+                    </div>
+                            {%- else -%}
+
+
+                    <style>
+.saving-sec {
+    justify-content: flex-start!important;
+}
+                    </style>
+
+
+
+    {%- endif -%}
+
+                    <div class="saving-sec" data-price-wrapper>
+                      <div class="reg-text"><span class="checkout-price" data-product-price>{{ current_variant.price | money }}</span></div>
+                      <div class="save-text"><span class="checkout-compare-price" data-product-price-compare>
+                        
+                        
+                                                  <span
+                            class="product__price{% if current_variant.compare_at_price > current_variant.price %} sale-price{% endif %}"
+                            data-product-price>
+                            {%- unless product.empty? -%}
+                              {{ current_variant.price | money }}
+                            {%- else -%}
+                              {{ 1999 | money }}
+                            {%- endunless -%}
+                          </span>
+                        
+                        </span></div>
+                            <span class="visually-hidden" data-compare-a11y>{{ 'products.general.sale_price' | t }}</span>
+                            <span class="visually-hidden" data-price-a11y>{{ 'products.general.regular_price' | t }}</span>
+
+                    </div>
+                  </div>
+
+                
+                                        <div class="product-single__prices">
                           {%- if product.compare_at_price_max > product.price -%}
                             {%- liquid
                               assign hide_sale_price = true
@@ -409,7 +452,7 @@ Currently out of stock.
                               data-price-a11y>
                                 {{ 'products.general.regular_price' | t }}
                             </span>
-                            <span class="{% if hide_sale_price %}{% endif %}" data-price-wrapper>
+                            <span class="{% if hide_sale_price %} hide{% endif %}" data-price-wrapper>
                               <span class="product__price product__price--compare" data-product-price-compare>
                                 {%- if current_variant.compare_at_price > current_variant.price -%}
                                   {{ current_variant.compare_at_price | money }}
@@ -421,16 +464,10 @@ Currently out of stock.
                             <span class="visually-hidden" data-price-a11y>{{ 'products.general.regular_price' | t }}</span>
                           {%- endif -%}
 
-                          <span
-                            class="product__price{% if current_variant.compare_at_price > current_variant.price %} sale-price{% endif %}"
-                            data-product-price>
-                            {%- unless product.empty? -%}
-                              {{ current_variant.price | money }}
-                            {%- else -%}
-                              {{ 1999 | money }}
-                            {%- endunless -%}
-                          </span>
+
                         </div>
+                
+                
 
                   <script>
     jQuery(document).ready(function($) {
