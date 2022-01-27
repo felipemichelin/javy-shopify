@@ -405,6 +405,13 @@ Currently out of stock.
                             {%- else -%}
 
 
+                    <style>
+.saving-sec {
+    justify-content: flex-start!important;
+}
+                    </style>
+
+
 
     {%- endif -%}
 
@@ -427,7 +434,7 @@ Currently out of stock.
                       });
 </script>
 
-
+{{ current_variant.price | money }}
 
                     {%- when 'buy_buttons' -%}
                       <div class="product-block" {{ block.shopify_attributes }}>
