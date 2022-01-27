@@ -272,7 +272,12 @@ Currently out of stock.
                       <div class="product-block product-block--price" {{ block.shopify_attributes }}>
                         <div class="product-single__prices">
                           {%- if product.compare_at_price_max > product.price -%}
-
+                            {%- liquid
+                              assign hide_sale_price = true
+                              if current_variant.compare_at_price
+                                assign hide_sale_price = false
+                              endif
+                            -%}
                             <span
                               class="visually-hidden"
                               aria-hidden="{{ hide_sale_price }}"
@@ -398,13 +403,6 @@ Currently out of stock.
                       <div class="youresaving">You&#x27;re saving <span class="checkout-compare-price-savings-pct" data-product-price-savings>28</span>%</div>
                     </div>
                             {%- else -%}
-
-
-                    <style>
-.saving-sec {
-    justify-content: flex-start!important;
-}
-                    </style>
 
 
 
