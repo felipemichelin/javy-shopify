@@ -284,7 +284,7 @@ Currently out of stock.
                               data-price-a11y>
                                 {{ 'products.general.regular_price' | t }}
                             </span>
-                            <span class="{% if hide_sale_price %} {% endif %}" data-price-wrapper>
+                            <span class="{% if hide_sale_price %} hide{% endif %}" data-price-wrapper>
                               <span class="product__price product__price--compare" data-product-price-compare>
                                 {%- if current_variant.compare_at_price > current_variant.price -%}
                                   {{ current_variant.compare_at_price | money }}
@@ -405,11 +405,11 @@ Currently out of stock.
                             {%- else -%}
 
 
-                  <script>
-    jQuery(document).ready(function($) {
-                  $(".price-sec").hide();
-                  });
-</script>
+                    <style>
+.saving-sec {
+    justify-content: flex-start!important;
+}
+                    </style>
 
 
 
@@ -429,7 +429,7 @@ Currently out of stock.
     jQuery(document).ready(function($) {
                   var sale_price_old = $(".checkout-price").html().substr(1);
                   var compare_price_old = $(".checkout-compare-price").html().substr(1);
-                  var new_savings = ((1 - sale_price_old/compare_price_old)*100).toFixed(0);
+                  var new_savings = ((1 - sale_price_old/compare_price_old)*100).toFixed(0);;
                   $(".checkout-compare-price-savings-pct").html(new_savings);
                       });
 </script>
