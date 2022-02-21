@@ -19,6 +19,7 @@
 	<script>
 		var arrayTikTokPixelTrackNew = [];
 		var arrayTikTokPixelCapiTrackNew = [];
+		var tikTokPixelCheckExpireApp = {};
 	</script>
     {%- for field in shop.metafields.OmegaTikTokPixel -%}
         {%assign key = field | first %}
@@ -87,6 +88,13 @@
                 }
                 console.log({arrayTikTokPixelCapiTrackNew})
                 console.log({arrayTikTokPixelTrackNew})
+            </script>
+        {%endif%}
+
+        {%if key contains "checkExpireApp" %}
+            <script>
+                var tikTokPixelCheckExpireApp = JSON.parse('{{value}}')
+                console.log(tikTokPixelCheckExpireApp)
             </script>
         {%endif%}
     {%- endfor -%}
