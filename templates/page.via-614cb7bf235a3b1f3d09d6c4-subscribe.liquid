@@ -1,0 +1,1653 @@
+
+<div class="page-width">
+    <div style="text-align:center;padding-top:20px">{{ page.content }}
+        <div style="max-width:400px;margin:auto;padding:20px" id="via__subscribe-form">
+            <form target="dummyframe">
+                <input id="via__keyword_id" name="keywordId" type="hidden" value="614cb7bf235a3b1f3d09d6c4">
+                <div style="text-align:center">
+                <div style="position: relative">
+                    <select class="region-selector" value="1" style="position: absolute; background: transparent; width: 115px; border: none; padding: 10px 15px; height: calc(100% - 10px); color: inherit; font-size: inherit;" onchange="cleave(this.value)">
+                       <!-- Dynamic Country Options -->
+                    </select>
+                    <input id="via__phone-subscribe" name="phoneNumber" required type="tel"  pattern="^d{10}$" placeholder="Phone Number" style="width:100%;height:100%;margin-bottom:10px;padding:.75em .75em .75em 123px;font-size:1.5em;" autofocus>
+                </div>
+                    <input id="via__first-name" name="firstName" type="text" placeholder="First Name" style="width:100%;height:100%;margin-bottom:10px;padding:.75em;font-size:1.5em;">
+
+                    
+                    
+                </div>
+                <div style="max-width:100%;font-size:10px;margin-bottom:25px;margin-top:15px;text-align:center;line-height:1.2;">*By subscribing, you agree to receive recurring automated marketing messages at this phone number. Reply STOP to unsubscribe. Msg & data rates may apply. View our <a href="{{shop.privacy_policy.url}}">Privacy Policy</a> and <a href="{{shop.terms_of_service.url}}">Terms of Service</a>.
+            </div>
+            <div>
+            <input type="button" value="Subscribe" class="btn" style="width:100%;height:100%;padding:.75em;font-size:1.5em;" onclick="subscribe(event)">
+            </div>
+            </form>
+        </div>
+        <div style="max-width:400px;margin:auto;padding:20px;display:none;" id="via__sent-message">
+            <h4>Thanks for subscribing! We'll send you a message shortly.</h4>
+        </div>
+        <div style="max-width: 600px;margin:auto;padding:20px;display:none;" id="via__error-message">
+            <h4>Something went wrong submitting the form. Please check to make sure your information is correct or try again later.</h4>
+        </div>
+    </div>
+    </div>
+<iframe hidden="hidden" width="0" height="0" name="dummyframe" id="ps__dummyframe"></iframe>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.za.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.yt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ye.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.xk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ws.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.wf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.vu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.vn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.vi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.vg.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ve.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.vc.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.va.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.uz.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.uy.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.us.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ug.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ua.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.zw.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.zm.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.tz.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.tw.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.tv.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.tt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.tr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.to.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.tn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.tm.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.tl.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.tk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.tj.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.th.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.tg.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.td.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.tc.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ta.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sz.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sy.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sv.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sx.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.st.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ss.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.so.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sm.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sl.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sj.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.si.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sh.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sg.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.se.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sc.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sb.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.sa.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.rw.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ru.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.rs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ro.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.re.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.qa.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.py.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.pw.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.pt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ps.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.pr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.pm.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.pl.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.pk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ph.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.pg.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.pf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.pe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.pa.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.om.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.nz.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.nr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.nu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.np.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.no.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.nl.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ni.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ng.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.nf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ne.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.nc.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.na.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mz.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.my.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mx.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mv.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mw.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ms.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mq.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mp.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mo.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mm.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mh.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mg.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.me.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.md.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.mc.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ma.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ly.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.lv.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.lu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.lt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ls.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.lr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.lk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.li.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.lc.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.lb.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.la.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.kz.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ky.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.kw.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.kr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.kp.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.kn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.km.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ki.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.kh.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.kg.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ke.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ac.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ad.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ae.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.af.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ag.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ai.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.al.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.am.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ao.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ar.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.as.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.at.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.au.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.au-cn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.aw.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.az.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ba.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bb.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.be.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bg.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bh.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bj.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bl.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bm.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bo.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bq.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.br.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bw.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.by.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.bz.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ca.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cc.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cg.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ci.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ck.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cl.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cm.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.co.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cv.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cw.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cx.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cy.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.cz.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.de.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.dj.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.dk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.dm.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.do.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.dz.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ec.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ee.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.eg.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.eh.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.er.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.es.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.et.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.fi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.fj.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.fk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.fm.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.fo.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.fr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ga.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gb.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ge.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gg.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gh.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gl.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gm.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gp.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gq.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gw.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.gy.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.hk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.hn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.hr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ht.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.hu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.i18n.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.id.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.il.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.im.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.in.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.io.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.iq.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.ir.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.is.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.it.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.je.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.jm.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.jo.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.jp.min.js"></script>
+<script>
+
+    const data = {"isUsOnly":true,"postSubmissionUrl":null}; // interpolated value
+    const countries = [
+      {
+        "prefix": 1,
+        "alpha2code": "US",
+        "name": "US"
+      },
+      {
+        "prefix": 1,
+        "alpha2code": "CA",
+        "name": "Canada"
+      },
+      {
+        "prefix": 886,
+        "alpha2code": "TW",
+        "name": "Taiwan"
+      },
+      {
+        "prefix": 93,
+        "alpha2code": "AF",
+        "name": "Afghanistan"
+      },
+      {
+        "prefix": 355,
+        "alpha2code": "AL",
+        "name": "Albania"
+      },
+      {
+        "prefix": 213,
+        "alpha2code": "DZ",
+        "name": "Algeria"
+      },
+      {
+        "prefix": "1-684",
+        "alpha2code": "AS",
+        "name": "American Samoa"
+      },
+      {
+        "prefix": 376,
+        "alpha2code": "AD",
+        "name": "Andorra"
+      },
+      {
+        "prefix": 244,
+        "alpha2code": "AO",
+        "name": "Angola"
+      },
+      {
+        "prefix": "1-264",
+        "alpha2code": "AI",
+        "name": "Anguilla"
+      },
+      {
+        "prefix": 672,
+        "alpha2code": "AQ",
+        "name": "Antarctica"
+      },
+      {
+        "prefix": "1-268",
+        "alpha2code": "AG",
+        "name": "Antigua & Barbuda"
+      },
+      {
+        "prefix": 54,
+        "alpha2code": "AR",
+        "name": "Argentina"
+      },
+      {
+        "prefix": 374,
+        "alpha2code": "AM",
+        "name": "Armenia"
+      },
+      {
+        "prefix": 297,
+        "alpha2code": "AW",
+        "name": "Aruba"
+      },
+      {
+        "prefix": 61,
+        "alpha2code": "AU",
+        "name": "Australia"
+      },
+      {
+        "prefix": 43,
+        "alpha2code": "AT",
+        "name": "Austria"
+      },
+      {
+        "prefix": 994,
+        "alpha2code": "AZ",
+        "name": "Azerbaijan"
+      },
+      {
+        "prefix": "1-242",
+        "alpha2code": "BS",
+        "name": "Bahamas"
+      },
+      {
+        "prefix": 973,
+        "alpha2code": "BH",
+        "name": "Bahrain"
+      },
+      {
+        "prefix": 880,
+        "alpha2code": "BD",
+        "name": "Bangladesh"
+      },
+      {
+        "prefix": "1-246",
+        "alpha2code": "BB",
+        "name": "Barbados"
+      },
+      {
+        "prefix": 375,
+        "alpha2code": "BY",
+        "name": "Belarus"
+      },
+      {
+        "prefix": 32,
+        "alpha2code": "BE",
+        "name": "Belgium"
+      },
+      {
+        "prefix": 501,
+        "alpha2code": "BZ",
+        "name": "Belize"
+      },
+      {
+        "prefix": 229,
+        "alpha2code": "BJ",
+        "name": "Benin"
+      },
+      {
+        "prefix": "1-441",
+        "alpha2code": "BM",
+        "name": "Bermuda"
+      },
+      {
+        "prefix": 975,
+        "alpha2code": "BT",
+        "name": "Bhutan"
+      },
+      {
+        "prefix": 591,
+        "alpha2code": "BO",
+        "name": "Bolivia"
+      },
+      {
+        "prefix": 599,
+        "alpha2code": "BQ",
+        "name": "Caribbean Netherlands"
+      },
+      {
+        "prefix": 387,
+        "alpha2code": "BA",
+        "name": "Bosnia"
+      },
+      {
+        "prefix": 267,
+        "alpha2code": "BW",
+        "name": "Botswana"
+      },
+      {
+        "prefix": 47,
+        "alpha2code": "BV",
+        "name": "Bouvet Island"
+      },
+      {
+        "prefix": 55,
+        "alpha2code": "BR",
+        "name": "Brazil"
+      },
+      {
+        "prefix": 246,
+        "alpha2code": "IO",
+        "name": "British Indian Ocean Territory"
+      },
+      {
+        "prefix": "1-284",
+        "alpha2code": "VG",
+        "name": "British Virgin Islands"
+      },
+      {
+        "prefix": 673,
+        "alpha2code": "BN",
+        "name": "Brunei"
+      },
+      {
+        "prefix": 359,
+        "alpha2code": "BG",
+        "name": "Bulgaria"
+      },
+      {
+        "prefix": 226,
+        "alpha2code": "BF",
+        "name": "Burkina Faso"
+      },
+      {
+        "prefix": 257,
+        "alpha2code": "BI",
+        "name": "Burundi"
+      },
+      {
+        "prefix": 238,
+        "alpha2code": "CV",
+        "name": "Cape Verde"
+      },
+      {
+        "prefix": 855,
+        "alpha2code": "KH",
+        "name": "Cambodia"
+      },
+      {
+        "prefix": 237,
+        "alpha2code": "CM",
+        "name": "Cameroon"
+      },
+      {
+        "prefix": "1-345",
+        "alpha2code": "KY",
+        "name": "Cayman Islands"
+      },
+      {
+        "prefix": 236,
+        "alpha2code": "CF",
+        "name": "Central African Republic"
+      },
+      {
+        "prefix": 235,
+        "alpha2code": "TD",
+        "name": "Chad"
+      },
+      {
+        "prefix": 56,
+        "alpha2code": "CL",
+        "name": "Chile"
+      },
+      {
+        "prefix": 86,
+        "alpha2code": "CN",
+        "name": "China"
+      },
+      {
+        "prefix": 852,
+        "alpha2code": "HK",
+        "name": "Hong Kong"
+      },
+      {
+        "prefix": 853,
+        "alpha2code": "MO",
+        "name": "Macau"
+      },
+      {
+        "prefix": 61,
+        "alpha2code": "CX",
+        "name": "Christmas Island"
+      },
+      {
+        "prefix": 61,
+        "alpha2code": "CC",
+        "name": "Cocos (Keeling) Islands"
+      },
+      {
+        "prefix": 57,
+        "alpha2code": "CO",
+        "name": "Colombia"
+      },
+      {
+        "prefix": 269,
+        "alpha2code": "KM",
+        "name": "Comoros"
+      },
+      {
+        "prefix": 242,
+        "alpha2code": "CG",
+        "name": "Congo - Brazzaville"
+      },
+      {
+        "prefix": 682,
+        "alpha2code": "CK",
+        "name": "Cook Islands"
+      },
+      {
+        "prefix": 506,
+        "alpha2code": "CR",
+        "name": "Costa Rica"
+      },
+      {
+        "prefix": 385,
+        "alpha2code": "HR",
+        "name": "Croatia"
+      },
+      {
+        "prefix": 53,
+        "alpha2code": "CU",
+        "name": "Cuba"
+      },
+      {
+        "prefix": 599,
+        "alpha2code": "CW",
+        "name": "Curaçao"
+      },
+      {
+        "prefix": 357,
+        "alpha2code": "CY",
+        "name": "Cyprus"
+      },
+      {
+        "prefix": 420,
+        "alpha2code": "CZ",
+        "name": "Czechia"
+      },
+      {
+        "prefix": 225,
+        "alpha2code": "CI",
+        "name": "Côte d’Ivoire"
+      },
+      {
+        "prefix": 850,
+        "alpha2code": "KP",
+        "name": "North Korea"
+      },
+      {
+        "prefix": 243,
+        "alpha2code": "CD",
+        "name": "Congo - Kinshasa"
+      },
+      {
+        "prefix": 45,
+        "alpha2code": "DK",
+        "name": "Denmark"
+      },
+      {
+        "prefix": 253,
+        "alpha2code": "DJ",
+        "name": "Djibouti"
+      },
+      {
+        "prefix": "1-767",
+        "alpha2code": "DM",
+        "name": "Dominica"
+      },
+      {
+        "prefix": "1-809,1-829,1-849",
+        "alpha2code": "DO",
+        "name": "Dominican Republic"
+      },
+      {
+        "prefix": 593,
+        "alpha2code": "EC",
+        "name": "Ecuador"
+      },
+      {
+        "prefix": 20,
+        "alpha2code": "EG",
+        "name": "Egypt"
+      },
+      {
+        "prefix": 503,
+        "alpha2code": "SV",
+        "name": "El Salvador"
+      },
+      {
+        "prefix": 240,
+        "alpha2code": "GQ",
+        "name": "Equatorial Guinea"
+      },
+      {
+        "prefix": 291,
+        "alpha2code": "ER",
+        "name": "Eritrea"
+      },
+      {
+        "prefix": 372,
+        "alpha2code": "EE",
+        "name": "Estonia"
+      },
+      {
+        "prefix": 268,
+        "alpha2code": "SZ",
+        "name": "Eswatini"
+      },
+      {
+        "prefix": 251,
+        "alpha2code": "ET",
+        "name": "Ethiopia"
+      },
+      {
+        "prefix": 500,
+        "alpha2code": "FK",
+        "name": "Falkland Islands"
+      },
+      {
+        "prefix": 298,
+        "alpha2code": "FO",
+        "name": "Faroe Islands"
+      },
+      {
+        "prefix": 679,
+        "alpha2code": "FJ",
+        "name": "Fiji"
+      },
+      {
+        "prefix": 358,
+        "alpha2code": "FI",
+        "name": "Finland"
+      },
+      {
+        "prefix": 33,
+        "alpha2code": "FR",
+        "name": "France"
+      },
+      {
+        "prefix": 594,
+        "alpha2code": "GF",
+        "name": "French Guiana"
+      },
+      {
+        "prefix": 689,
+        "alpha2code": "PF",
+        "name": "French Polynesia"
+      },
+      {
+        "prefix": 262,
+        "alpha2code": "TF",
+        "name": "French Southern Territories"
+      },
+      {
+        "prefix": 241,
+        "alpha2code": "GA",
+        "name": "Gabon"
+      },
+      {
+        "prefix": 220,
+        "alpha2code": "GM",
+        "name": "Gambia"
+      },
+      {
+        "prefix": 995,
+        "alpha2code": "GE",
+        "name": "Georgia"
+      },
+      {
+        "prefix": 49,
+        "alpha2code": "DE",
+        "name": "Germany"
+      },
+      {
+        "prefix": 233,
+        "alpha2code": "GH",
+        "name": "Ghana"
+      },
+      {
+        "prefix": 350,
+        "alpha2code": "GI",
+        "name": "Gibraltar"
+      },
+      {
+        "prefix": 30,
+        "alpha2code": "GR",
+        "name": "Greece"
+      },
+      {
+        "prefix": 299,
+        "alpha2code": "GL",
+        "name": "Greenland"
+      },
+      {
+        "prefix": "1-473",
+        "alpha2code": "GD",
+        "name": "Grenada"
+      },
+      {
+        "prefix": 590,
+        "alpha2code": "GP",
+        "name": "Guadeloupe"
+      },
+      {
+        "prefix": "1-671",
+        "alpha2code": "GU",
+        "name": "Guam"
+      },
+      {
+        "prefix": 502,
+        "alpha2code": "GT",
+        "name": "Guatemala"
+      },
+      {
+        "prefix": 44,
+        "alpha2code": "GG",
+        "name": "Guernsey"
+      },
+      {
+        "prefix": 224,
+        "alpha2code": "GN",
+        "name": "Guinea"
+      },
+      {
+        "prefix": 245,
+        "alpha2code": "GW",
+        "name": "Guinea-Bissau"
+      },
+      {
+        "prefix": 592,
+        "alpha2code": "GY",
+        "name": "Guyana"
+      },
+      {
+        "prefix": 509,
+        "alpha2code": "HT",
+        "name": "Haiti"
+      },
+      {
+        "prefix": 672,
+        "alpha2code": "HM",
+        "name": "Heard & McDonald Islands"
+      },
+      {
+        "prefix": "39-06",
+        "alpha2code": "VA",
+        "name": "Vatican City"
+      },
+      {
+        "prefix": 504,
+        "alpha2code": "HN",
+        "name": "Honduras"
+      },
+      {
+        "prefix": 36,
+        "alpha2code": "HU",
+        "name": "Hungary"
+      },
+      {
+        "prefix": 354,
+        "alpha2code": "IS",
+        "name": "Iceland"
+      },
+      {
+        "prefix": 91,
+        "alpha2code": "IN",
+        "name": "India"
+      },
+      {
+        "prefix": 62,
+        "alpha2code": "ID",
+        "name": "Indonesia"
+      },
+      {
+        "prefix": 98,
+        "alpha2code": "IR",
+        "name": "Iran"
+      },
+      {
+        "prefix": 964,
+        "alpha2code": "IQ",
+        "name": "Iraq"
+      },
+      {
+        "prefix": 353,
+        "alpha2code": "IE",
+        "name": "Ireland"
+      },
+      {
+        "prefix": 44,
+        "alpha2code": "IM",
+        "name": "Isle of Man"
+      },
+      {
+        "prefix": 972,
+        "alpha2code": "IL",
+        "name": "Israel"
+      },
+      {
+        "prefix": 39,
+        "alpha2code": "IT",
+        "name": "Italy"
+      },
+      {
+        "prefix": "1-876",
+        "alpha2code": "JM",
+        "name": "Jamaica"
+      },
+      {
+        "prefix": 81,
+        "alpha2code": "JP",
+        "name": "Japan"
+      },
+      {
+        "prefix": 44,
+        "alpha2code": "JE",
+        "name": "Jersey"
+      },
+      {
+        "prefix": 962,
+        "alpha2code": "JO",
+        "name": "Jordan"
+      },
+      {
+        "prefix": 7,
+        "alpha2code": "KZ",
+        "name": "Kazakhstan"
+      },
+      {
+        "prefix": 254,
+        "alpha2code": "KE",
+        "name": "Kenya"
+      },
+      {
+        "prefix": 686,
+        "alpha2code": "KI",
+        "name": "Kiribati"
+      },
+      {
+        "prefix": 965,
+        "alpha2code": "KW",
+        "name": "Kuwait"
+      },
+      {
+        "prefix": 996,
+        "alpha2code": "KG",
+        "name": "Kyrgyzstan"
+      },
+      {
+        "prefix": 856,
+        "alpha2code": "LA",
+        "name": "Laos"
+      },
+      {
+        "prefix": 371,
+        "alpha2code": "LV",
+        "name": "Latvia"
+      },
+      {
+        "prefix": 961,
+        "alpha2code": "LB",
+        "name": "Lebanon"
+      },
+      {
+        "prefix": 266,
+        "alpha2code": "LS",
+        "name": "Lesotho"
+      },
+      {
+        "prefix": 231,
+        "alpha2code": "LR",
+        "name": "Liberia"
+      },
+      {
+        "prefix": 218,
+        "alpha2code": "LY",
+        "name": "Libya"
+      },
+      {
+        "prefix": 423,
+        "alpha2code": "LI",
+        "name": "Liechtenstein"
+      },
+      {
+        "prefix": 370,
+        "alpha2code": "LT",
+        "name": "Lithuania"
+      },
+      {
+        "prefix": 352,
+        "alpha2code": "LU",
+        "name": "Luxembourg"
+      },
+      {
+        "prefix": 261,
+        "alpha2code": "MG",
+        "name": "Madagascar"
+      },
+      {
+        "prefix": 265,
+        "alpha2code": "MW",
+        "name": "Malawi"
+      },
+      {
+        "prefix": 60,
+        "alpha2code": "MY",
+        "name": "Malaysia"
+      },
+      {
+        "prefix": 960,
+        "alpha2code": "MV",
+        "name": "Maldives"
+      },
+      {
+        "prefix": 223,
+        "alpha2code": "ML",
+        "name": "Mali"
+      },
+      {
+        "prefix": 356,
+        "alpha2code": "MT",
+        "name": "Malta"
+      },
+      {
+        "prefix": 692,
+        "alpha2code": "MH",
+        "name": "Marshall Islands"
+      },
+      {
+        "prefix": 596,
+        "alpha2code": "MQ",
+        "name": "Martinique"
+      },
+      {
+        "prefix": 222,
+        "alpha2code": "MR",
+        "name": "Mauritania"
+      },
+      {
+        "prefix": 230,
+        "alpha2code": "MU",
+        "name": "Mauritius"
+      },
+      {
+        "prefix": 262,
+        "alpha2code": "YT",
+        "name": "Mayotte"
+      },
+      {
+        "prefix": 52,
+        "alpha2code": "MX",
+        "name": "Mexico"
+      },
+      {
+        "prefix": 691,
+        "alpha2code": "FM",
+        "name": "Micronesia"
+      },
+      {
+        "prefix": 377,
+        "alpha2code": "MC",
+        "name": "Monaco"
+      },
+      {
+        "prefix": 976,
+        "alpha2code": "MN",
+        "name": "Mongolia"
+      },
+      {
+        "prefix": 382,
+        "alpha2code": "ME",
+        "name": "Montenegro"
+      },
+      {
+        "prefix": "1-664",
+        "alpha2code": "MS",
+        "name": "Montserrat"
+      },
+      {
+        "prefix": 212,
+        "alpha2code": "MA",
+        "name": "Morocco"
+      },
+      {
+        "prefix": 258,
+        "alpha2code": "MZ",
+        "name": "Mozambique"
+      },
+      {
+        "prefix": 95,
+        "alpha2code": "MM",
+        "name": "Myanmar"
+      },
+      {
+        "prefix": 264,
+        "alpha2code": "NA",
+        "name": "Namibia"
+      },
+      {
+        "prefix": 674,
+        "alpha2code": "NR",
+        "name": "Nauru"
+      },
+      {
+        "prefix": 977,
+        "alpha2code": "NP",
+        "name": "Nepal"
+      },
+      {
+        "prefix": 31,
+        "alpha2code": "NL",
+        "name": "Netherlands"
+      },
+      {
+        "prefix": 687,
+        "alpha2code": "NC",
+        "name": "New Caledonia"
+      },
+      {
+        "prefix": 64,
+        "alpha2code": "NZ",
+        "name": "New Zealand"
+      },
+      {
+        "prefix": 505,
+        "alpha2code": "NI",
+        "name": "Nicaragua"
+      },
+      {
+        "prefix": 227,
+        "alpha2code": "NE",
+        "name": "Niger"
+      },
+      {
+        "prefix": 234,
+        "alpha2code": "NG",
+        "name": "Nigeria"
+      },
+      {
+        "prefix": 683,
+        "alpha2code": "NU",
+        "name": "Niue"
+      },
+      {
+        "prefix": 672,
+        "alpha2code": "NF",
+        "name": "Norfolk Island"
+      },
+      {
+        "prefix": "1-670",
+        "alpha2code": "MP",
+        "name": "Northern Mariana Islands"
+      },
+      {
+        "prefix": 47,
+        "alpha2code": "NO",
+        "name": "Norway"
+      },
+      {
+        "prefix": 968,
+        "alpha2code": "OM",
+        "name": "Oman"
+      },
+      {
+        "prefix": 92,
+        "alpha2code": "PK",
+        "name": "Pakistan"
+      },
+      {
+        "prefix": 680,
+        "alpha2code": "PW",
+        "name": "Palau"
+      },
+      {
+        "prefix": 507,
+        "alpha2code": "PA",
+        "name": "Panama"
+      },
+      {
+        "prefix": 675,
+        "alpha2code": "PG",
+        "name": "Papua New Guinea"
+      },
+      {
+        "prefix": 595,
+        "alpha2code": "PY",
+        "name": "Paraguay"
+      },
+      {
+        "prefix": 51,
+        "alpha2code": "PE",
+        "name": "Peru"
+      },
+      {
+        "prefix": 63,
+        "alpha2code": "PH",
+        "name": "Philippines"
+      },
+      {
+        "prefix": 870,
+        "alpha2code": "PN",
+        "name": "Pitcairn Islands"
+      },
+      {
+        "prefix": 48,
+        "alpha2code": "PL",
+        "name": "Poland"
+      },
+      {
+        "prefix": 351,
+        "alpha2code": "PT",
+        "name": "Portugal"
+      },
+      {
+        "prefix": 1,
+        "alpha2code": "PR",
+        "name": "Puerto Rico"
+      },
+      {
+        "prefix": 974,
+        "alpha2code": "QA",
+        "name": "Qatar"
+      },
+      {
+        "prefix": 82,
+        "alpha2code": "KR",
+        "name": "South Korea"
+      },
+      {
+        "prefix": 373,
+        "alpha2code": "MD",
+        "name": "Moldova"
+      },
+      {
+        "prefix": 40,
+        "alpha2code": "RO",
+        "name": "Romania"
+      },
+      {
+        "prefix": 7,
+        "alpha2code": "RU",
+        "name": "Russia"
+      },
+      {
+        "prefix": 250,
+        "alpha2code": "RW",
+        "name": "Rwanda"
+      },
+      {
+        "prefix": 262,
+        "alpha2code": "RE",
+        "name": "Réunion"
+      },
+      {
+        "prefix": 590,
+        "alpha2code": "BL",
+        "name": "St. Barthélemy"
+      },
+      {
+        "prefix": 290,
+        "alpha2code": "SH",
+        "name": "St. Helena"
+      },
+      {
+        "prefix": "1-869",
+        "alpha2code": "KN",
+        "name": "St. Kitts & Nevis"
+      },
+      {
+        "prefix": "1-758",
+        "alpha2code": "LC",
+        "name": "St. Lucia"
+      },
+      {
+        "prefix": 590,
+        "alpha2code": "MF",
+        "name": "St. Martin"
+      },
+      {
+        "prefix": 508,
+        "alpha2code": "PM",
+        "name": "St. Pierre & Miquelon"
+      },
+      {
+        "prefix": "1-784",
+        "alpha2code": "VC",
+        "name": "St. Vincent & Grenadines"
+      },
+      {
+        "prefix": 685,
+        "alpha2code": "WS",
+        "name": "Samoa"
+      },
+      {
+        "prefix": 378,
+        "alpha2code": "SM",
+        "name": "San Marino"
+      },
+      {
+        "prefix": 239,
+        "alpha2code": "ST",
+        "name": "São Tomé & Príncipe"
+      },
+      {
+        "prefix": "",
+        "alpha2code": "",
+        "name": ""
+      },
+      {
+        "prefix": 966,
+        "alpha2code": "SA",
+        "name": "Saudi Arabia"
+      },
+      {
+        "prefix": 221,
+        "alpha2code": "SN",
+        "name": "Senegal"
+      },
+      {
+        "prefix": 381,
+        "alpha2code": "RS",
+        "name": "Serbia"
+      },
+      {
+        "prefix": 248,
+        "alpha2code": "SC",
+        "name": "Seychelles"
+      },
+      {
+        "prefix": 232,
+        "alpha2code": "SL",
+        "name": "Sierra Leone"
+      },
+      {
+        "prefix": 65,
+        "alpha2code": "SG",
+        "name": "Singapore"
+      },
+      {
+        "prefix": "1-721",
+        "alpha2code": "SX",
+        "name": "Sint Maarten"
+      },
+      {
+        "prefix": 421,
+        "alpha2code": "SK",
+        "name": "Slovakia"
+      },
+      {
+        "prefix": 386,
+        "alpha2code": "SI",
+        "name": "Slovenia"
+      },
+      {
+        "prefix": 677,
+        "alpha2code": "SB",
+        "name": "Solomon Islands"
+      },
+      {
+        "prefix": 252,
+        "alpha2code": "SO",
+        "name": "Somalia"
+      },
+      {
+        "prefix": 27,
+        "alpha2code": "ZA",
+        "name": "South Africa"
+      },
+      {
+        "prefix": 500,
+        "alpha2code": "GS",
+        "name": "South Georgia & South Sandwich Islands"
+      },
+      {
+        "prefix": 211,
+        "alpha2code": "SS",
+        "name": "South Sudan"
+      },
+      {
+        "prefix": 34,
+        "alpha2code": "ES",
+        "name": "Spain"
+      },
+      {
+        "prefix": 94,
+        "alpha2code": "LK",
+        "name": "Sri Lanka"
+      },
+      {
+        "prefix": 970,
+        "alpha2code": "PS",
+        "name": "Palestine"
+      },
+      {
+        "prefix": 249,
+        "alpha2code": "SD",
+        "name": "Sudan"
+      },
+      {
+        "prefix": 597,
+        "alpha2code": "SR",
+        "name": "Suriname"
+      },
+      {
+        "prefix": 47,
+        "alpha2code": "SJ",
+        "name": "Svalbard & Jan Mayen"
+      },
+      {
+        "prefix": 46,
+        "alpha2code": "SE",
+        "name": "Sweden"
+      },
+      {
+        "prefix": 41,
+        "alpha2code": "CH",
+        "name": "Switzerland"
+      },
+      {
+        "prefix": 963,
+        "alpha2code": "SY",
+        "name": "Syria"
+      },
+      {
+        "prefix": 992,
+        "alpha2code": "TJ",
+        "name": "Tajikistan"
+      },
+      {
+        "prefix": 66,
+        "alpha2code": "TH",
+        "name": "Thailand"
+      },
+      {
+        "prefix": 389,
+        "alpha2code": "MK",
+        "name": "North Macedonia"
+      },
+      {
+        "prefix": 670,
+        "alpha2code": "TL",
+        "name": "Timor-Leste"
+      },
+      {
+        "prefix": 228,
+        "alpha2code": "TG",
+        "name": "Togo"
+      },
+      {
+        "prefix": 690,
+        "alpha2code": "TK",
+        "name": "Tokelau"
+      },
+      {
+        "prefix": 676,
+        "alpha2code": "TO",
+        "name": "Tonga"
+      },
+      {
+        "prefix": "1-868",
+        "alpha2code": "TT",
+        "name": "Trinidad & Tobago"
+      },
+      {
+        "prefix": 216,
+        "alpha2code": "TN",
+        "name": "Tunisia"
+      },
+      {
+        "prefix": 90,
+        "alpha2code": "TR",
+        "name": "Turkey"
+      },
+      {
+        "prefix": 993,
+        "alpha2code": "TM",
+        "name": "Turkmenistan"
+      },
+      {
+        "prefix": "1-649",
+        "alpha2code": "TC",
+        "name": "Turks & Caicos Islands"
+      },
+      {
+        "prefix": 688,
+        "alpha2code": "TV",
+        "name": "Tuvalu"
+      },
+      {
+        "prefix": 256,
+        "alpha2code": "UG",
+        "name": "Uganda"
+      },
+      {
+        "prefix": 380,
+        "alpha2code": "UA",
+        "name": "Ukraine"
+      },
+      {
+        "prefix": 971,
+        "alpha2code": "AE",
+        "name": "United Arab Emirates"
+      },
+      {
+        "prefix": 44,
+        "alpha2code": "GB",
+        "name": "UK"
+      },
+      {
+        "prefix": 255,
+        "alpha2code": "TZ",
+        "name": "Tanzania"
+      },
+      {
+        "prefix": "",
+        "alpha2code": "UM",
+        "name": "U.S. Outlying Islands"
+      },
+      {
+        "prefix": "1-340",
+        "alpha2code": "VI",
+        "name": "U.S. Virgin Islands"
+      },
+      {
+        "prefix": 598,
+        "alpha2code": "UY",
+        "name": "Uruguay"
+      },
+      {
+        "prefix": 998,
+        "alpha2code": "UZ",
+        "name": "Uzbekistan"
+      },
+      {
+        "prefix": 678,
+        "alpha2code": "VU",
+        "name": "Vanuatu"
+      },
+      {
+        "prefix": 58,
+        "alpha2code": "VE",
+        "name": "Venezuela"
+      },
+      {
+        "prefix": 84,
+        "alpha2code": "VN",
+        "name": "Vietnam"
+      },
+      {
+        "prefix": 681,
+        "alpha2code": "WF",
+        "name": "Wallis & Futuna"
+      },
+      {
+        "prefix": 212,
+        "alpha2code": "EH",
+        "name": "Western Sahara"
+      },
+      {
+        "prefix": 967,
+        "alpha2code": "YE",
+        "name": "Yemen"
+      },
+      {
+        "prefix": 260,
+        "alpha2code": "ZM",
+        "name": "Zambia"
+      },
+      {
+        "prefix": 263,
+        "alpha2code": "ZW",
+        "name": "Zimbabwe"
+      },
+      {
+        "prefix": 358,
+        "alpha2code": "AX",
+        "name": "Åland Islands"
+      }
+    ];
+
+    const keywordInput = document.querySelector('input[name=keywordId]')
+    const regionSelector = document.querySelector('.region-selector');
+    const phoneInput = document.querySelector('input[name=phoneNumber]');
+    const emailInput = document.querySelector('input[name=email]');
+    const firstNameInput = document.querySelector('input[name=firstName]');
+    const lastNameInput = document.querySelector('input[name=lastName]');
+    const successMessage = document.querySelector('#via__sent-message');
+    const errorMessage = document.querySelector('#via__error-message');
+    const subscribeForm = document.querySelector('#via__subscribe-form');
+
+    function navigateToUrl(url) {
+        window.location.href = url;
+    }
+
+    function showSuccessMessage() {
+        successMessage.style.display = 'block';
+        subscribeForm.style.display = 'none';
+    }
+
+    function showErrorMessage() {
+        errorMessage.style.display = 'block';
+        subscribeForm.style.display = 'none';
+
+        setTimeout(() => {
+            errorMessage.style.display = 'none';
+            subscribeForm.style.display = 'block';
+        }, 5000);
+    }
+
+    async function subscribe(event) {
+        event = event || window.event;
+        const keywordId = (keywordInput && keywordInput.value) || undefined;
+        const refNumber = "T2HkFqQh"
+        const email = (emailInput && emailInput.value) || undefined;
+        const firstName = (firstNameInput && firstNameInput.value) || undefined;
+        const lastName = (lastNameInput && lastNameInput.value) || undefined;
+        const countryCode = (regionSelector && regionSelector.value) || undefined;
+        let phoneNumber = (phoneInput && phoneInput.value) || undefined;
+        if (phoneNumber && phoneNumber.charAt(0) !== '+') {
+            phoneNumber = '+' + (countryCode || '1') + phoneNumber;
+        }
+        const hasPhoneOrEmail = phoneNumber || email;
+        if (!keywordId || !hasPhoneOrEmail) {
+            event.preventDefault();
+            event.stopPropagation();
+            return;
+        }
+
+        try {
+            const res = await fetch(
+                'https://api.viacustomers.com/api/shopify/page-subscribe',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        keywordId,
+                        email,
+                        phoneNumber,
+                        firstName,
+                        lastName,
+                        refNumber
+                    }),
+                }
+            );
+
+            if (!res.ok) {
+                showErrorMessage();
+            } else {
+                showSuccessMessage();
+
+                const url = data && data.postSubmissionUrl;
+                if (url) {
+                    setTimeout(() => navigateToUrl(url), 3000);
+                }
+            }
+        } catch (e) {
+            showErrorMessage();
+            console.error(e);
+        }
+    }
+
+    function createCleave() {
+        const selector = '#via__phone-subscribe';
+        let phoneFormatting = new Cleave(selector, {
+            phone: true,
+            phoneRegionCode: data.isUsOnly ? 'US' : undefined,
+        })
+        return (region) => {
+            phoneFormatting = new Cleave(selector, {
+                phone: true,
+                phoneRegionCode: region,
+            });
+        }
+    };
+
+    if (data.isUsOnly) {
+        regionSelector.style.display = 'none';
+        phoneInput.style.paddingLeft = '.75em';
+    } else {
+     countries.forEach(country => {
+        const option = document.createElement('option');
+        option.textContent = country.alpha2code + ' (+' + country.prefix + ')';
+        option.value = country.prefix;
+
+        regionSelector.appendChild(option);
+     });
+
+     regionSelector.value = '1'; // default to US
+    }
+
+    const cleave = createCleave();
+
+</script>
