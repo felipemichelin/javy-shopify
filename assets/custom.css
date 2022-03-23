@@ -1,3 +1,6 @@
+div#gorgias-chat-container {
+  display: none;
+}
 
 button.cbb-frequently-bought-add-button {
   width: 100%!important;
