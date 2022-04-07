@@ -46,6 +46,7 @@
     "product_save_type": "percent",
     "enable_product_reviews": false,
     "quick_shop_enable": false,
+    "quick_shop_style": "product",
     "product_image_type": "slider",
     "cart_type": "drawer",
     "cart_icon": "bag",
