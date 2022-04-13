@@ -40,7 +40,6 @@
 
   <div class="hero__media hero__media--{{ section.id }}{% if hero_text %} hero__media--overlay{% endif %}">
 
-    <!--
     {%- if section.settings.video_url contains 'youtube.com/watch' -%}
       {%- assign video_id = section.settings.video_url | split: 'v=' -%}
       {%- assign video_id = video_id[1] | split: '&' | first -%}
@@ -79,9 +78,6 @@
         src="{{ section.settings.video_url }}"
         loop muted playsinline autoplay></video>
     {%- endif -%}
--->
-    <div style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.videodelivery.net/4063a5fb1f5286b7b817d398ba2a0e1f?poster=https%3A%2F%2Fvideodelivery.net%2F4063a5fb1f5286b7b817d398ba2a0e1f%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" style="border: none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-
 
   </div>
 
@@ -153,7 +149,9 @@
       </div>
     </div>
         
+        <!--
         
+
         
         
 
