@@ -11,7 +11,7 @@
         "color_accent": "rgba(0,0,0,0)",
         "text_align": "vertical-center horizontal-center",
         "video_url": "https:\/\/assets.javycoffee.com\/videos\/javy-hero.mp4",
-        "section_height": "100vh",
+        "section_height": "750px",
         "mobile_height": "500px"
       }
     },
