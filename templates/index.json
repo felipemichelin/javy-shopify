@@ -1,7 +1,23 @@
 {
   "sections": {
+    "1649869160591dd0ac": {
+      "type": "hero-video",
+      "settings": {
+        "title": "The fastest, easiest, and most convenient coffee ever.",
+        "title_size": 80,
+        "subheading": "Instantly craft any style coffee that you want in seconds. Simply add 1-2 tsp of Javy Coffee Concentrate and enjoy your favorite drink.",
+        "link_text": "SHOP NOW",
+        "link": "https:\/\/try.javycoffee.com\/lp17\/?utm_source=shopify&utm_campaign=hero",
+        "color_accent": "rgba(0,0,0,0)",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https:\/\/vimeo.com\/699116885",
+        "section_height": "850px",
+        "mobile_height": "auto"
+      }
+    },
     "1636926059f853904a": {
       "type": "r_hero",
+      "disabled": true,
       "settings": {
       }
     },
@@ -91,24 +107,10 @@
       "type": "r_features",
       "settings": {
       }
-    },
-    "1649869160591dd0ac": {
-      "type": "hero-video",
-      "settings": {
-        "title": "The fastest, easiest, and most convenient coffee ever.",
-        "title_size": 80,
-        "subheading": "Instantly craft any style coffee that you want in seconds. Simply add 1-2 tsp of Javy Coffee Concentrate and enjoy your favorite drink.",
-        "link_text": "SHOP NOW",
-        "link": "https:\/\/try.javycoffee.com\/lp17\/?utm_source=shopify&utm_campaign=hero",
-        "color_accent": "rgba(0,0,0,0)",
-        "text_align": "vertical-center horizontal-center",
-        "video_url": "https:\/\/vimeo.com\/699116885",
-        "section_height": "850px",
-        "mobile_height": "auto"
-      }
     }
   },
   "order": [
+    "1649869160591dd0ac",
     "1636926059f853904a",
     "163693788401f3ab80",
     "16370770736eab6e65",
@@ -116,7 +118,6 @@
     "1636938299d92ccfd5",
     "1636937952ab6f11d9",
     "1636937926242c9bd3",
-    "163693796607e2c395",
-    "1649869160591dd0ac"
+    "163693796607e2c395"
   ]
 }
