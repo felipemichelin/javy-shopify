@@ -91,6 +91,21 @@
       "type": "r_features",
       "settings": {
       }
+    },
+    "1649869160591dd0ac": {
+      "type": "hero-video",
+      "settings": {
+        "title": "The fastest, easiest, and most convenient coffee.",
+        "title_size": 80,
+        "subheading": "Seamless auto-playing hero videos",
+        "link_text": "",
+        "link": "",
+        "color_accent": "rgba(0,0,0,0)",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "section_height": "650px",
+        "mobile_height": "auto"
+      }
     }
   },
   "order": [
@@ -101,6 +116,7 @@
     "1636938299d92ccfd5",
     "1636937952ab6f11d9",
     "1636937926242c9bd3",
-    "163693796607e2c395"
+    "163693796607e2c395",
+    "1649869160591dd0ac"
   ]
 }
