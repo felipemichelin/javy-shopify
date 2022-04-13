@@ -97,13 +97,13 @@
       "settings": {
         "title": "The fastest, easiest, and most convenient coffee.",
         "title_size": 80,
-        "subheading": "Seamless auto-playing hero videos",
-        "link_text": "",
-        "link": "",
+        "subheading": "Instantly craft any style coffee that you want in seconds. Simply add 1-2 tsp of Javy Coffee Concentrate and enjoy your favorite drink.",
+        "link_text": "SHOP NOW",
+        "link": "https:\/\/try.javycoffee.com\/lp17\/?utm_source=shopify&utm_campaign=hero",
         "color_accent": "rgba(0,0,0,0)",
         "text_align": "vertical-center horizontal-center",
         "video_url": "https:\/\/vimeo.com\/699116885",
-        "section_height": "650px",
+        "section_height": "850px",
         "mobile_height": "auto"
       }
     }
