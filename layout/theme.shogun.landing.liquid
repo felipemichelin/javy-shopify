@@ -21,13 +21,64 @@ This file can be re-written at any time.
   {%- endif -%}
 
 
+  
+<style>
+  a.slide-nav__link {
+    color: #000!important;
+}
+  
+  button.js-toggle-submenu.slide-nav__link {
+    color: #000!important;
+}
+  
+  a.slide-nav__sublist-link {
+    color: #000!important;
+}
+  
+  .slide-nav a, .slide-nav button {
+    color: #fff;
+    color: #000000!important;
+}
+  
+  a.site-nav__thumb-cart.js-drawer-open-cart.js-no-transition {
+    background-color: #c8202f!important;
+}
+  
+  
+
+  
+  a.site-nav__link.site-nav__link--icon.site-nav__link--cart.js-drawer-open-cart.js-no-transition {
+    background-color: transparent!important;
+}
+  
+  
+  span.cart-link__bubble-num {
+    color: #fff;
+}
+  
+  
+  a.site-nav__thumb-cart.js-drawer-open-cart.js-no-transition {
+    color: #fff!important;
+}
+
+  
+  </style>
+  
+
+  
+  
+  
 
 <head>
-{% include 'limespot' %}
   
-<!-- ReSci start (Inserted on: 2021-06-14 20:52:01 UTC) -->
-{% render 'resci-main.v1.liquid' %}
-<!-- ReSci end -->
+  
+  <!-- Begin: Northbeam Pixel -->
+<script async type="text/javascript" src="//j.northbeam.io/ota-sp/ec9a2b7a-7d37-494e-ad39-a670b4497324.js"></script>
+<!-- End: Northbeam Pixel -->
+  
+  
+{% include 'limespot' %}
+
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,7 +147,6 @@ This file can be re-written at any time.
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
   </script>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 <link rel="stylesheet" href="{{ 'normalize.css' | asset_url}}">
 <link rel="stylesheet" href="{{ 'webflow.css' | asset_url}}">
@@ -113,6 +163,7 @@ This file can be re-written at any time.
     <link rel="stylesheet" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}">
   {%- endif -%}
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  <script src="//cdn.codeblackbelt.com/js/modules/frequently-bought-together/main.min.js?shop=drink-javy.myshopify.com" defer></script>
   {%- if request.page_type contains 'customers/' -%}
     <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
   {%- endif -%}
@@ -198,6 +249,28 @@ jumbleberry("track", "Lead", { hid_param: "click_id" });
 {% include "omega_tiktok_multi_pixel" %}
 
 
+{% include "omega-tiktok-multi-pixels" %} 
+
+
+<!-- Hotjar Tracking Code for https://javycoffee.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2704048,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+  <style>
+    .r_btn {
+    background-color: #c8202f;
+    color: #fff!important;
+}
+  </style>
+
 
 </head>
 
@@ -208,17 +281,12 @@ jumbleberry("track", "Lead", { hid_param: "click_id" });
   <link rel="stylesheet" href="{{ 'r_custom.css' | asset_url }}">
 <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}">
   {{ content_for_layout }}
-<limespot></limespot>
   
   <script>window.setTimeout(function() { document.body.className += " loaded"; }, 25);</script>
 <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=61917ec4c8a471b172e2f375" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="{{ 'custom.js' | asset_url}}"></script>
 <script src="{{ 'webflow.js' | asset_url }}"></script>
-<script>
-const observer = lozad(); // lazy loads elements with default selector as '.lozad'
-observer.observe();
-</script>
 <script src="{{ 'product-scripts.js' | asset_url}}"></script>
 <script>
 $(document).scroll(function () {
@@ -232,11 +300,9 @@ $(document).scroll(function () {
 
 
 </script>
-<script>!function(_){_.GORGIAS_CHAT_APP_ID="2015",_.GORGIAS_CHAT_BASE_URL="us-east1-898b.production.gorgias.chat",_.GORGIAS_API_BASE_URL="config.gorgias.chat";var e=new XMLHttpRequest;e.open("GET","https://config.gorgias.chat/applications/2015",!0),e.onload=function(n){if(4===e.readyState)if(200===e.status){var t=JSON.parse(e.responseText);if(!t.application||!t.bundleVersion)throw new Error("Missing fields in the response body - https://config.gorgias.chat/applications/2015");if(_.GORGIAS_CHAT_APP=t.application,_.GORGIAS_CHAT_BUNDLE_VERSION=t.bundleVersion,t&&t.texts&&(_.GORGIAS_CHAT_TEXTS=t.texts),!document.getElementById("gorgias-chat-container")){var o=document.createElement("div");o.id="gorgias-chat-container",document.body.appendChild(o);var r=document.createElement("script");r.setAttribute("defer",!0),r.src="https://storage.googleapis.com/gorgias-chat-production-client-builds/{bundleVersion}/static/js/main.js".replace("{bundleVersion}",t.bundleVersion),document.body.appendChild(r)}}else console.error("Failed request GET - https://config.gorgias.chat/applications/2015")},e.onerror=function(_){console.error(_)},e.send()}(window||{});</script>
-<script>!function(I){I.IS_SHOPIFY=!0,I.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",I.SHOPIFY_CUSTOMER_ID="{{customer.id}}",I.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});</script>
 <script src="https://cdn.attn.tv/javy/dtag.js"></script>
 <script async defer data-pin-hover="true" data-pin-tall="true" data-pin-round="true" src="//assets.pinterest.com/js/pinit.js"></script>
-<script>(function(){ var s = document.createElement('script'), e = ! document.body ? document.querySelector('head') : document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : false, hideTrigger : false, language : 'en', position : 'left', leadColor : '#146ff8', triggerColor : '#146ff8', triggerRadius : '50%', triggerPositionX : 'right', triggerPositionY : 'center', triggerIcon : 'people', triggerSize : 'medium', triggerOffsetX : 20, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'right', triggerPositionY : 'center', triggerOffsetX : 10, triggerOffsetY : 10, triggerRadius : '50%' } }); }; e.appendChild(s);}());</script>
+<script> (function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : true, hideTrigger : true, disableBgProcess : false, language : 'en', position : 'left', leadColor : '#146ff8', triggerColor : '#146ff8', triggerRadius : '50%', triggerPositionX : 'right', triggerPositionY : 'bottom', triggerIcon : 'people', triggerSize : 'medium', triggerOffsetX : 20, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'right', triggerPositionY : 'center', triggerOffsetX : 10, triggerOffsetY : 0, triggerRadius : '50%' } }); }; h.appendChild(s); })(); </script>
 <script>
     !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
     },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
@@ -245,6 +311,26 @@ $(document).scroll(function () {
     twq('init','o6q9y');
     twq('track','PageView');
     </script>
+<script>
+      function calculateHMSleft() {
+        //calculate
+        var now = new Date();
+        var hoursleft = 23 - now.getHours();
+        var minutesleft = 59 - now.getMinutes();
+        var secondsleft = 59 - now.getSeconds();
+        //format 0 prefixes
+        if (hoursleft < 10) hoursleft = "0" + hoursleft;
+        if (minutesleft < 10) minutesleft = "0" + minutesleft;
+        if (secondsleft < 10) secondsleft = "0" + secondsleft;
+        //display
+        $('.sale_countdown').html(hoursleft + "H " + minutesleft + "M " + secondsleft + "S ");
+      }
+      calculateHMSleft();
+      setInterval(calculateHMSleft, 1000);
+    </script>
+<script src="//cdn.datasteam.io/js/D2106E58872C4B.js" async defer></script>
+<script id="gorgias-chat-widget-install-v2" src="https://config.gorgias.chat/gorgias-chat-bundle-loader.js?applicationId=2015"></script>
+<script id="gorgias-chat-shopify-install">!function(_){_.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",_.SHOPIFY_CUSTOMER_ID="{{customer.id}}",_.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});</script>
   <style type="text/css">
     body, html {
       width: 100% !important;
@@ -252,9 +338,6 @@ $(document).scroll(function () {
     }
   </style>
   
-<!-- CRITEO START -->
-{% include 'criteo-tracking' %}
-<!-- CRITEO END -->
 </body>
 
 </html>
