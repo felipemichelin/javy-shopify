@@ -92,6 +92,7 @@
   {%- assign rk_lang_unsat_fat = rk_settings.rk_lang_unsat_fat | default: 'Unsaturated Fat' -%}
   {%- assign rk_lang_grams = rk_settings.rk_lang_grams | default: 'grams' -%}
   {%- assign rk_lang_milligrams = rk_settings.rk_lang_milligrams | default: 'milligrams' -%}
+  {%- assign rk_lang_micrograms = rk_settings.rk_lang.micrograms | default: 'micrograms' -%}
   {%- assign rk_lang_atc = rk_settings.rk_lang_atc | default: 'Add To Cart' -%}
   {%- assign rk_lang_quantity = rk_settings.rk_lang_quantity | default: 'Remove quantity in cart' -%}
   {%- assign rk_lang_cart = rk_settings.rk_lang_cart | default: 'View Cart' -%}
@@ -99,6 +100,7 @@
   {%- assign rk_lang_added = rk_settings.rk_lang_added | default: 'Added' -%} 
   {%- assign rk_lang_removed = rk_settings.rk_lang_removed | default: 'Removed' -%}
   {%- assign rk_lang_step = rk_settings.rk_lang.step | default: 'Step' -%}
+  {%- assign rk_lang_rating_confirmation = rk_settings.rk_lang.rating_confirmation -%}
   {%- comment -%}
     End Translations / Languages 
   {%- endcomment -%} 
@@ -251,6 +253,7 @@
           <h4 class="rk_group_heading">{{- ingredient.heading_text -}}</h4>
         {%- else -%}
           {%- if ingredient.selected_product != blank -%}
+            {% assign default_variant = null %}
             {% assign split_product_id = ingredient.selected_product.id | split:'/' %}
             {% assign product_id = split_product_id[4] %}
             {% assign product_handle = ingredient.selected_product.handle %}
@@ -281,7 +284,7 @@
                       {%- break -%}
                   {% endif %}
               {% endfor %}
-            {% endfor %}   
+            {% endfor %}
  
             {%- if rk_settings.rk_plan == 'business' and rk_settings.enable_atc == true and default_variant.available -%}
               <li>
@@ -313,11 +316,16 @@
               </li>
             {%- else -%}
               <li>
-                <a target="_blank" class="rk_has_link" href="/products/{{- ingredient.selected_product.handle -}}">{{- ingredient.ingredient -}}</a>
+                {% if default_variant.available %}
+                <a target="_blank" class="rk_has_link" href="/products/{{- ingredient.selected_product.handle -}}">
+                  {{- ingredient.ingredient -}}
+                </a>
+                {% else %}
+                  {{- ingredient.ingredient -}}
+                {% endif %}
               </li>
             {%- endif -%}
-
-          {%- elsif rk_settings.rk_plan == 'business' and rk_settings.enable_atc == true and ingredient.ingredient contains shop.domain or ingredient.ingredient contains shop.permanent_domain or ingredient.ingredient contains extra_domain and ingredient.ingredient contains '/products/' -%}
+          {%- elsif rk_settings.rk_plan == 'business' and rk_settings.enable_atc == true and ingredient.ingredient contains shop.domain or ingredient.ingredient contains shop.permanent_domain or ingredient.ingredient contains extra_domain and ingredient.ingredient contains '/products/' and default_variant.available -%}
             {% assign split_product_link = ingredient.ingredient | split:'"' %}
             {% assign product_title = split_product_link[2] | split:'>' | last %}
             {% assign product_handle = split_product_link[1] | split: '/' | last %}
@@ -553,6 +561,8 @@
                     {% assign current_nutrition_field_type = nutrition_field.type | replace: 'grams', rk_lang_grams %}
                   {% when 'milligrams' %}
                     {% assign current_nutrition_field_type = nutrition_field.type | replace: 'milligrams', rk_lang_milligrams %}
+                  {% when 'micrograms' %}
+                    {% assign current_nutrition_field_type = nutrition_field.type | replace: 'micrograms', rk_lang_micrograms %}
                   {% when 'calories' %}
                     {% assign current_nutrition_field_type = nutrition_field.type | replace: 'calories', '' %}
                   {% else %}
@@ -736,6 +746,7 @@
             {%- if rk_mf.recipe_note != blank -%}
               <span class="rk_hr"></span>
               <div class="rk_column">
+                <h2 class="rk_column_heading">{{- rk_lang_note -}}</h2>
                 <p>{{- rk_mf.recipe_note -}}</p>
               </div>
             {%- endif -%}
@@ -1224,8 +1235,46 @@
   {%- endcomment -%}
   {% if rk_mf.enable_rating == true %}
     <script>
-      var recipe_id={{ rk_mf.recipe_id }};
-      (function(){var starContainer=document.querySelector('.stars');var starsNodeList=starContainer.children;var stars=Array.prototype.slice.call(starsNodeList);var totalStars=stars.length;starContainer.addEventListener('click',function handler(e){this.removeEventListener("click",handler);var index=stars.indexOf(e.target);var user_rating=totalStars-index;stars.forEach(function(el){el.classList.remove('is-selected')});e.target.classList.add('is-selected');fetch("https://my.recipekit.app/rating",{headers:{'Accept':'application/json','Content-Type':'application/json'},method:"POST",body:JSON.stringify({recipe_id:recipe_id,user_rating:user_rating})}).then(function(res){document.getElementById('rk_rating_thanks').innerHTML='{{ rk_lang_rating_thanks }}'}).catch(function(res){document.getElementById('rk_rating_thanks').innerHTML='{{ rk_lang_rating_thanks }}';console.log('Woops! Something went wrong while rating this recipe.')})})})();
+      let recipe_id = {{ rk_mf.recipe_id }};
+      let counter = 0;
+      (function() {
+          let starContainer = document.querySelector('.stars');
+          let starsNodeList = starContainer.children;
+          let stars = Array.prototype.slice.call(starsNodeList);
+          let totalStars = stars.length;
+          let confirm_rating = '{{ rk_lang_rating_confirmation}}';
+          starContainer.addEventListener('click', function handler(e) {
+              counter++;
+              let index = stars.indexOf(e.target);
+              let user_rating = totalStars - index;
+              stars.forEach(function(el) {
+                  el.classList.remove('is-selected')
+              });
+              e.target.classList.add('is-selected');
+              if (counter == 1 && confirm_rating) {
+                  document.getElementById('rk_rating_thanks').innerHTML = '{{ rk_lang_rating_confirmation }}';
+              } else {
+                  this.removeEventListener("click", handler);
+                  fetch("https://my.recipekit.app/rating", {
+                      headers: {
+                          'Accept': 'application/json',
+                          'Content-Type': 'application/json'
+                      },
+                      method: "POST",
+                      body: JSON.stringify({
+                          recipe_id: recipe_id,
+                          user_rating: user_rating
+                      })
+                  }).then(function(res) {
+                      document.getElementById('rk_rating_thanks').innerHTML = '{{ rk_lang_rating_thanks }}'
+                  }).catch(function(res) {
+                      document.getElementById('rk_rating_thanks').innerHTML = '{{ rk_lang_rating_thanks }}';
+                      console.log('Woops! Something went wrong while rating this recipe.')
+                  })
+              }
+
+          })
+      })();    
     </script>
   {% endif %}
   {% comment %}
