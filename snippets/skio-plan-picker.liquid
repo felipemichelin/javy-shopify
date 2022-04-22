@@ -1,0 +1,322 @@
+{% comment %}
+product: required on non-product pages, snippets only have access to globally available variables
+  by default. If the product variable is defined locally, for example inside a for each product in
+  a collection, the snippet will not have access to the product variable unless explicitly passed.
+
+form_id: required when skio plan picker is not nested inside a form
+
+key: optional passed in for uniqueness, defaults to product.id
+
+start_onetime: optional to choose initial selection, defaults to true
+
+onetime_first: optional to choose order of onetime vs subs, defaults to true
+
+discount_format: optional, values could be 'percent' or 'absolute', defaults to 'percent'
+
+Usage required: {% render 'skio-plan-picker' %}
+Usage conditionally required: {% render 'skio-plan-picker', product: product, form_id: form_id %}
+Usage optional: {% render 'skio-plan-picker', product: product, key: key, form_id: form_id, start_onetime: false, onetime_first: false, discount_format: 'absolute' %}
+{% endcomment %}
+
+{% if product.selling_plan_groups.size > 0 %}
+  {% comment %} SCRIPT {% endcomment %}
+  <script>
+    // Only loads the script if a plan picker is on the page, and only once
+    // the main element is hovered over. doesn't load multiple times if there is are multiple plan pickers.
+    // Defer loading to reduce load impact
+    if (window.skio_plan_picker_script_load === undefined) {
+      window.skio_plan_picker_script_load = true;
+
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.defer = true;
+      script.src = '{{ 'skio-plan-picker.js' | asset_url }}';
+
+      window.SkioLoadJS = (e) => {
+        document.head.append(script);
+
+        document.querySelectorAll('fieldset[skio-plan-picker], .variant-swatch').forEach(el =>
+          el.removeEventListener('mouseover', window.SkioLoadJS));
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('fieldset[skio-plan-picker], .variant-swatch').forEach(el => 
+          el.addEventListener('mouseover', window.SkioLoadJS));
+      });
+    }
+
+    // Handling async load of skio-plan-picker.liquid
+    if (window.SkioPlanPicker) {
+      // Auto init
+      const autoInitPlanPickerEls = document.querySelectorAll(
+        '[skio-plan-picker][skio-auto-init]'
+      );
+      autoInitPlanPickerEls.forEach(autoInitPlanPickerEl => {
+        if (!autoInitPlanPickerEl.skio) 
+          window.SkioPlanPicker({ planPickerEl: autoInitPlanPickerEl });
+      });
+    } else {
+      document.querySelectorAll('fieldset[skio-plan-picker], [name="id"], .variant-swatch').forEach(el =>
+        el.addEventListener('mouseover', window.SkioLoadJS));
+    }
+  </script>
+
+  {{ 'skio-plan-picker.css' | asset_url | stylesheet_tag }}
+
+  {% liquid
+    assign current_variant = product.selected_or_first_available_variant
+
+    assign is_main_product = false
+    if request.page_type == 'product'
+      assign path_handle = request.path | split: '/' | last
+      if path_handle == product.handle
+        assign is_main_product = true
+      endif
+    endif
+
+    unless key
+      assign key = product.id
+    endunless
+    if start_onetime == nil
+      assign start_onetime = true
+    endif
+    if product.requires_selling_plan
+      assign start_onetime = false
+    endif
+    if product.selected_selling_plan
+      assign start_onetime = false
+    endif
+    if onetime_first == nil
+      assign onetime_first = true
+    endif
+    if discount_format == nil
+      assign discount_format = 'percent'
+    endif
+  %}
+
+  <fieldset class="skio-plan-picker" skio-plan-picker="{{ key }}" skio-auto-init 
+    skio-discount-format="{{ discount_format }}"
+    {% if is_main_product %} skio-main-product {% endif %}
+  >
+    {% comment %} PRODUCT JSON {% endcomment %}
+    <script type="text/json" skio-product-json>{{ product | json }}</script>
+
+    {% comment %} SELLING PLAN {% endcomment %}
+    {% liquid
+      if product.selected_selling_plan
+        assign selected_selling_plan_id = product.selected_selling_plan.id
+      else
+        assign selected_selling_plan_id = current_variant.selling_plan_allocations.first.selling_plan.id
+      endif
+    %}
+    <input name="selling_plan" type="hidden" value="{% unless start_onetime %}{{ selected_selling_plan_id }}{% endunless %}" 
+      {% if form_id %}form="{{ form_id }}"{% endif %}
+    />
+
+    {% liquid 	
+      if product.selected_selling_plan 	
+        assign price_adjustment = product.selected_selling_plan.price_adjustments.first	
+      elsif start_onetime == false	
+        assign price_adjustment = product.selling_plan_groups.first.selling_plans.first.price_adjustments.first	
+      endif	
+      if price_adjustment	
+        case price_adjustment.value_type	
+          when 'percentage'	
+            assign discount_percent = price_adjustment.value | round
+            assign discount_absolute = current_variant.price | times: price_adjustment.value | divided_by: 100.0	
+          when 'fixed_amount'	
+            assign discount_percent = price_adjustment.value | times: 1.0 | divided_by: current_variant.price | times: 100.0 | round
+            assign discount_absolute = price_adjustment.value	
+          when 'price'	
+            if current_variant.compare_at_price
+              assign discount_percent = current_variant.compare_at_price | minus: price_adjustment.value | times: 1.0 | divided_by: current_variant.compare_at_price | times: 100.0	| round
+            else
+              assign discount_percent = current_variant.price | minus: price_adjustment.value | times: 1.0 | divided_by: current_variant.price | times: 100.0	| round
+            endif
+            assign discount_absolute = current_variant.price | minus: price_adjustment.value	
+        endcase	
+        if discount_percent == 0	
+          assign discount_text = ''	
+        elsif discount_format == 'percent' or discount_format == blank	
+          assign discount_text = discount_percent | append: '%'	
+        else	
+          assign discount_text = discount_absolute | money	
+        endif	
+      endif	
+    %}	
+    <input name="properties[Discount]" type="hidden" value="{{ discount_text }}" {% if start_onetime %}disabled{% endif %}	
+      {% if form_id %}form="{{ form_id }}"{% endif %}
+    />
+    
+    {% comment %} ONE TIME {% endcomment %}
+    {% capture onetimeHTML %}
+      {% unless product.requires_selling_plan %}
+        <div class="skio-group-container skio-group-container--available{% if start_onetime %} skio-group-container--selected{% endif %}" skio-group-container>
+          <input id="skio-one-time-{{ key }}" class="skio-group-input" name="skio-group-{{ key }}" 
+            type="radio" value="" skio-one-time {% if start_onetime %}checked{% endif %}>
+          <label class="skio-group-label" for="skio-one-time-{{ key }}">
+            <div class="skio-radio__container">
+              <img class="skio-radio" loading="lazy" src="{{ 'yellowradio.svg' | asset_url}}" alt="">
+            </div>
+            <div>
+              One-Time
+              <span skio-onetime-price style="display: none;">{{ current_variant.price | money }}</span>
+            </div>
+          </label>
+        </div>
+      {% endunless %}
+    {% endcapture %}
+
+    {% comment %} SUBSCRIPTIONS {% endcomment %}
+    {% capture subscriptionHTML %}
+      {% assign firstSelected = false %}
+      {% for group in product.selling_plan_groups %}
+        {% comment %} TODO: replace with check for app_id {% endcomment %}
+        {% if group.name == 'Subscription' or group.name == 'Prepaid' %}
+          {% comment %} SELLING PLAN GROUP {% endcomment %}
+          {% liquid
+            assign group_available = false
+            for allocation in current_variant.selling_plan_allocations
+              if allocation.selling_plan_group_id == group.id
+                assign group_available = true
+              endif
+            endfor
+
+            assign group_selected = false
+            unless start_onetime
+              if product.selected_selling_plan
+                if group.selling_plan_selected
+                  assign group_selected = true
+                endif
+              elsif firstSelected == false and group_available == true
+                assign group_selected = true
+                assign firstSelected = true
+              endif
+            endunless
+          %}
+          <div skio-subscription class="skio-group-container{%- if group_available %} skio-group-container--available{% endif -%}
+            {%- if group_selected %} skio-group-container--selected{% endif %}" skio-group-container>
+            <input id="skio-selling-plan-group-{{ forloop.index }}-{{ key }}" class="skio-group-input"
+              name="skio-group-{{ key }}"
+              type="radio" value="{{ group.id }}" {% if group_selected %}checked{% endif %}
+              skio-selling-plan-group="{{ group.id }}">
+            <label class="skio-group-label" for="skio-selling-plan-group-{{ forloop.index }}-{{ key }}">
+              <div class="skio-radio__container">
+                <img class="skio-radio" loading="lazy" src="{{ 'yellowradio.svg' | asset_url}}" alt="">
+              </div>
+              <div>
+                <span>
+                  {%- if group.name == 'Subscription' -%}
+                    <strong>Javy Club</strong>: Sub & Save
+                  {%- else -%}
+                    Prepay & Save
+                  {%- endif -%}
+                </span>
+    
+                {% comment %} 
+                  Discount logic should match the logic in skio-plan-picker.js and probably 
+                  should match skio-cart-label.liquid
+                {% endcomment %}
+                {% liquid 
+                  for selling_plan in group.selling_plans
+                    assign selected = false
+                    if group.selling_plan_selected
+                      if product.selected_selling_plan.id == selling_plan.id
+                        assign selected = true
+                      endif
+                    elsif forloop.first
+                      assign selected = true
+                    endif
+    
+                    if selected
+                      assign price_adjustment = selling_plan.price_adjustments.first
+                      case price_adjustment.value_type
+                        when 'percentage'
+                          assign discount_percent = price_adjustment.value | round
+                          assign discount_absolute = current_variant.price | times: price_adjustment.value | divided_by: 100.0
+                        when 'fixed_amount'
+                          assign discount_percent = price_adjustment.value | times: 1.0 | divided_by: current_variant.price | times: 100.0 | round
+                          assign discount_absolute = price_adjustment.value
+                        when 'price'
+                          if current_variant.compare_at_price
+                            assign discount_percent = current_variant.compare_at_price | minus: price_adjustment.value | times: 1.0 | divided_by: current_variant.compare_at_price | times: 100.0 | round
+                          else
+                            assign discount_percent = current_variant.price | minus: price_adjustment.value | times: 1.0 | divided_by: current_variant.price | times: 100.0 | round
+                          endif
+                          assign discount_absolute = current_variant.price | minus: price_adjustment.value
+                      endcase
+                      if discount_percent == 0
+                        assign discount_text = ''
+                      elsif discount_format == 'percent' or discount_format == blank
+                        assign discount_text = discount_percent | append: '%'
+                      else
+                        assign discount_text = discount_absolute | money
+                      endif
+    
+                      assign price = current_variant.price | minus: discount_absolute
+                    endif
+                  endfor
+                %}
+                
+                <span style="display: none;">
+                <span skio-discount>{{ discount_text }}</span>: <span skio-subscription-price>{{ price | money }}</span>
+                </span>
+    
+                <div class="skio-frequency" {% if group.selling_plans.size == 1 %}style="display: none;"{% endif %}>
+                  <div>
+                    Delivery {% if group.selling_plans.size == 1 %}{{ group.selling_plans[0].options[0].value | downcase }}{% endif %}
+                  </div>
+                  <select skio-selling-plans="{{ group.id }}" {% if group.selling_plans.size == 1 %}style="display: none;"{% endif %}>
+                    {% for plan in group.selling_plans %}
+                      {% liquid 
+                        assign selected = false
+                        if product.selected_selling_plan
+                          if product.selected_selling_plan.id == plan.id
+                            assign selected = true
+                          endif
+                        elsif forloop.first
+                          assign selected = true
+                        endif
+                      %}
+                      <option value="{{ plan.id }}" {% if selected %}selected{% endif %}>{{ plan.options[0].value }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+            </label>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endcapture %}
+
+    {% if onetime_first == true %}
+      {{ onetimeHTML }}
+      {{ subscriptionHTML }}
+    {% else %}
+      {{ subscriptionHTML }}
+      {{ onetimeHTML }}
+    {% endif %}
+  </fieldset>
+{% endif %}
+
+<!-- SKIO: FREQUENTLY BOUGHT TOGETHER APP OVERRIDE -->
+<style>
+  :root {
+    --cbb-frequently-bought-display: {%- if product.selected_selling_plan -%} none {%- else -%} block {%- endif -%};
+  }
+
+  .cbb-frequently-bought-container {
+    display: var(--cbb-frequently-bought-display)
+  }
+</style>
+
+<script>
+  window.addEventListener('skio:plan-picker:group-update', (event) => {
+    if(event.detail.selection == 'subscription') {
+      document.documentElement.style.setProperty('--cbb-frequently-bought-display', 'none');
+    } else {
+      document.documentElement.style.setProperty('--cbb-frequently-bought-display', 'block');
+    }
+  })
+</script>
+<!-- SKIO: FREQUENTLY BOUGHT TOGETHER APP OVERRIDE -->
