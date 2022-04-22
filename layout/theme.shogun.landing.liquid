@@ -242,7 +242,9 @@ n.src=o.d+o.p+"?hid="+a(o.h)+"&uid="+a(o.u)+"&v="+o.v,n.async=!!o.h,o.e=!1,o.q.u
 i.parentNode.insertBefore(n,i))},j[n]=j[n]||o,j[n].d=b}(window,document,"script","https://www.earth-education-sheet.com/");
 
 jumbleberry("init", "FJvHK3oP1x1Cig0P1xObwu2yJfMbhITahhiM5Mbhuch3qRt2D-sgwFzBFMAuP_gALfMTc4-lfLvskhfL1_-biA~~", jumbleberry.g("click_id"));
-jumbleberry("track", "Lead", { hid_param: "click_id" });
+if (jumbleberry.g("click_id")) {
+  jumbleberry("track", "Lead");
+}
 </script>
   
   
