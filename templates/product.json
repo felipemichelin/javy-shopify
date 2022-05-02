@@ -9,6 +9,11 @@
           "settings": {
           }
         },
+        "bdbf2fa6-937c-4804-9575-5dfb64631148": {
+          "type": "skio-plan-picker",
+          "settings": {
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -62,6 +67,7 @@
       },
       "block_order": [
         "price",
+        "bdbf2fa6-937c-4804-9575-5dfb64631148",
         "variant_picker",
         "sales_point",
         "inventory_status",
