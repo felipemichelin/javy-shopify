@@ -76,29 +76,8 @@
                 {% continue %}
               {% endif %}
 
-              {% assign addon = all_products[handle] %}
 
-<div class="cart-addons">
-            <div class="addon_w-layout-grid addon_grid addon_product">
-              <div class="addon-image addon_image"><img src="{{addon.featured_image | img_url : '200x'}} " loading="lazy" alt="" class="addon_image"></div>
-              <div class="upsell-description">
-                <div class="addon-badge">BEST SELLER</div>
-                <div class="addon-title addon_heading">{{addon.title}}</div>
-                <div class="addon-subtitle"> 
-                
-                 <span class="addon_saleprice"> {{addon.price | money}} </span>
-                    <span class="addon_regprice"> {{addon.selected_or_first_available_variant.compare_at_price | money}} </span>
-                    
-                    </div>
-              </div>
-              <div class="crossell-button"><a data-variant-id="41004121718945" href="#" class="crossell-link checkout-addon-toggle w-inline-block checkout-selected-addon">
-                  <div class="crossell-button-text add_to_order addon_addtocart" data-variantid="{{addon.selected_or_first_available_variant.id}}">ADD</div>
-                </a></div>
-            </div>
-            </div>
-            {% endfor %}
-          </div>
-        {% endif %}
+
 
 
 
@@ -192,3 +171,6 @@
     </div>
   </form>
 </div>
+
+
+
