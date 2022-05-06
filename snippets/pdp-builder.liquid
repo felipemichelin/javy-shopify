@@ -8,13 +8,11 @@
   <!--    ADD AFTER cart_loader    -->
   <script type="text/javascript" src="https://assets.javycoffee.com/js/pixel.js" defer=""></script>
   <meta content="api.buyjavy.com" name="checkout-api-endpoint">
-  <script src="https://assets.javycoffee.com/js/common-header.js" type="text/javascript"></script>
   <meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport">
+  <meta content="shopify-pdp" name="checkout-landing-page-name"> <!-- Landing pages only -->
 
-      <meta content="shopify-pdp" name="checkout-landing-page-name"> <!-- Landing pages only -->
 
 
-<!-- update -->
 
   <!--  CUSTOM SELECTION / HIGHLIGHT COLOR  -->
   <style>
@@ -22,6 +20,20 @@
 	::selection { color: #000; background: #ffc540;}
   	*:focus { outline: none; }
 </style>
+
+      <!--  Responsive Typography  -->
+      <style>
+/* Desktop and above */
+html { font-size: 16px; }
+/*Tablet */
+@media (max-width: 991px) { html { font-size: 16px; } }
+/* Mobile - Landcape */
+@media (max-width: 767px) { html { font-size: 16px; } }
+/* Mobile - Portrait */
+@media (max-width: 479px) { html { font-size: 16px; } }
+</style>
+
+
 
 <style>
 h2.heading.l {
@@ -93,21 +105,6 @@ a.button-yellow.submit-flavors.justify.w-inline-block.disabled .checkout_next {
   
   
   
-  <div class="custom-code-embeds">
-    <div class="responsive-typography-embed w-embed">
-      <!--  Responsive Typography  -->
-      <style>
-/* Desktop and above */
-html { font-size: 16px; }
-/*Tablet */
-@media (max-width: 991px) { html { font-size: 16px; } }
-/* Mobile - Landcape */
-@media (max-width: 767px) { html { font-size: 16px; } }
-/* Mobile - Portrait */
-@media (max-width: 479px) { html { font-size: 16px; } }
-</style>
-    </div>
-  </div>
 
   <section id="kit-selector" class="hero-section-s">
     <div class="container _1rem_m">
@@ -212,11 +209,6 @@ html { font-size: 16px; }
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-
-.promo-bar {
-    display: none!important;
-}
-
 </style>
                 </div>
                 <div class="track-horizontal">
@@ -797,7 +789,7 @@ html { font-size: 16px; }
                   </div>
                 </div>
                 <article class="accordion__content">
-                  <p class="body-text s s-m-b-12">Most of what we do is geared towards the quality of the coffee, consistency and value.  As such, this means that the farmers who supply our coffee are hitting all the main points to make the products we have outstanding.<br></p>
+                  <p class="body-text s s-m-b-12">Most of what we do is geared towards the quality of the coffee, consistency and value.  As such, this means that the farmers who supply our coffee are hitting all the main points to make the products we have outstanding.<br></p>
                 </article>
               </div>
               <div class="accordion__item">
@@ -1068,7 +1060,7 @@ display:none
               <path d="M10.0002 15.172L19.1922 5.979L20.6072 7.393L10.0002 18L3.63623 11.636L5.05023 10.222L10.0002 15.172Z" fill="currentColor"></path>
             </svg>
           </div>
-          <p><strong>Exclusive content &amp;  recipes</strong></p>
+          <p><strong>Exclusive content &amp;  recipes</strong></p>
         </div>
         <div class="savings-feature">
           <div class="checkmark w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1213,8 +1205,6 @@ const variants = {
     },
   },
 };
-
-
 </script>
 
 
@@ -1242,24 +1232,20 @@ if (BOTTLE_QTY === 0) {
 }
 let ORDER_TYPE = document.querySelector('[name=skio-group-build-your-kit]:checked').value;
 let frequency = "subscription";
-
 document.querySelectorAll('[name=skio-group-build-your-kit]').forEach((el) => el.addEventListener('change', (event) => {
   if(event.target.value == 'subscription') {
     document.querySelectorAll('input[data-selling-plan]').forEach((el) => {
       el.disabled = false;
     });
-
     $('.card-each.subscription').show();
     $('.card-each.one-time').hide();
   } else {
     document.querySelectorAll('input[data-selling-plan]').forEach((el) => {
       el.disabled = true;
     });
-
     $('.card-each.subscription').hide();
     $('.card-each.one-time').show();
   }
-
   let frequency = event.target.value;
   ORDER_TYPE = frequency;
   if (BOTTLE_QTY === 0) {
@@ -1290,7 +1276,6 @@ document.querySelectorAll('[name=skio-group-build-your-kit]').forEach((el) => el
       $(".checkout").text(priceFormatted);
   }
 }));
-
 let data = {};
 const GLOBAL_QUANTITY_MAX = 4;
 const GLOBAL_QUANTITY_MIN = 0;
@@ -1324,7 +1309,6 @@ const updateDisplayQuantities = () => {
               "inactive"
           );
       }
-
       $(`input[data-flavor="${flavor}"][data-quantity]`).val(qty); // SKIO UPDATE INPUT QUANTITY
   }
 };
