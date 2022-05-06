@@ -9354,6 +9354,7 @@ blockquote {
   font-size: 0.75rem;
 }
 
+/**
 .icon {
   display: -webkit-box;
   display: -webkit-flex;
@@ -9376,7 +9377,7 @@ blockquote {
   align-items: center;
   color: #000;
 }
-
+**/
 .star-reviews {
   display: -webkit-box;
   display: -webkit-flex;
