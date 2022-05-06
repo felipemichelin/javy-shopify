@@ -48,7 +48,7 @@
     "quick_shop_enable": false,
     "quick_shop_style": "product",
     "product_image_type": "slider",
-    "cart_type": "drawer",
+    "cart_type": "page",
     "cart_icon": "bag",
     "cart_additional_buttons": false,
     "cart_notes_enable": false,
