@@ -1,0 +1,50 @@
+{% liquid
+  assign price = current_variant.price 
+  assign discount_text = ''
+
+  if product.selected_selling_plan
+    assign selling_plan = product.selected_selling_plan
+
+    assign price_adjustment = selling_plan.price_adjustments.first
+    
+    case price_adjustment.value_type
+      when 'percentage'
+        assign discount_percent = price_adjustment.value | round
+        assign discount_absolute = current_variant.price | times: price_adjustment.value | divided_by: 100.0
+      when 'fixed_amount'
+        assign discount_percent = price_adjustment.value | times: 1.0 | divided_by: current_variant.price | times: 100.0 | round
+        assign discount_absolute = price_adjustment.value
+      when 'price'
+        if current_variant.compare_at_price > current_variant.price
+          assign discount_percent = current_variant.compare_at_price | minus: price_adjustment.value | times: 1.0 | divided_by: current_variant.compare_at_price | times: 100.0 | round
+          assign discount_absolute = current_variant.compare_at_price | minus: price_adjustment.value
+        else 
+          assign discount_percent = current_variant.price | minus: price_adjustment.value | times: 1.0 | divided_by: current_variant.price | times: 100.0 | round
+          assign discount_absolute = current_variant.price | minus: price_adjustment.value
+        endif 
+    endcase
+    if discount_percent == 0
+      assign discount_text = ''
+    elsif discount_format == 'percent' or discount_format == blank
+      assign discount_text = discount_percent | append: '%'
+    else
+      assign discount_text = discount_absolute | money
+    endif
+
+    assign price = current_variant.price | minus: discount_absolute
+  endif
+%}
+
+<div class="saving-sec" skio-subscription-price-wrapper {% unless product.selected_selling_plan %}style="display: none;"{% endunless %}> 
+  <div class="price-sec">
+    <div class="youresaving">You&#x27;re saving <span class="checkout-compare-price-savings-pct" skio-subscription-price-savings>{{ discount_text }}</span></div>
+  </div>
+
+
+  <div class="reg-text"><span class="checkout-price" skio-subscription-product-price>{{ price | money }}</span></div>
+  {% if current_variant.compare_at_price > current_variant.price %}
+    <div class="save-text"><span class="checkout-compare-price" skio-subscription-product-price-compare>{{ current_variant.compare_at_price | money }}</span></div>
+  {% elsif current_variant.price > price %}
+    <div class="save-text"><span class="checkout-compare-price" skio-subscription-product-price-compare>{{ current_variant.price | money }}</span></div>
+  {% endif %}
+</div>

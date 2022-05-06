@@ -1,0 +1,7 @@
+<script> // once smart cart is loaded and ready 
+  
+  
+  document.addEventListener('rebuy:smartcart.ready', function(event){ // If your shop already uses jquery, no need to use 'Rebuy.libaries.$', feel free to replace this with '$' 
+    $('.cart-link').click(function(){ // show Smart Cart once the icon is clicked 
+      Rebuy.SmartCart.show(); }); }); 
+</script>

@@ -10,7 +10,7 @@
         "link": "https:\/\/try.javycoffee.com\/lp17\/?utm_source=shopify&utm_campaign=hero",
         "color_accent": "rgba(0,0,0,0)",
         "text_align": "vertical-center horizontal-center",
-        "video_url": "https:\/\/assets.javycoffee.com\/videos\/javy-hero.mp4",
+        "video_url": "https:\/\/assets.website-files.com\/625b32b2ddc1bd60f2e15739\/625b33f7a7bd61d38c8e182c_javy-hero-transcode.mp4",
         "section_height": "750px",
         "mobile_height": "500px"
       }
@@ -26,8 +26,33 @@
       "settings": {
       }
     },
+    "165107036910ff57e5": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Coffee Concentrates",
+        "description": "",
+        "home_featured_products": "coffee-concentrates",
+        "rows": 1,
+        "per_row_desktop": 4,
+        "per_row_mobile": "2",
+        "view_all": false,
+        "alt": false
+      }
+    },
+    "1651070369161ddd93": {
+      "type": "featured-collection-slider",
+      "disabled": true,
+      "settings": {
+        "title": "Coffee Concentrates",
+        "description": "",
+        "home_featured_products": "coffee-concentrates",
+        "per_row": "small",
+        "alt": false
+      }
+    },
     "16370770736eab6e65": {
       "type": "r_flavors",
+      "disabled": true,
       "blocks": {
         "16370770733316d662-0": {
           "type": "testimonial",
@@ -105,6 +130,7 @@
     },
     "163693796607e2c395": {
       "type": "r_features",
+      "disabled": true,
       "settings": {
       }
     }
@@ -113,6 +139,8 @@
     "1649869160591dd0ac",
     "1636926059f853904a",
     "163693788401f3ab80",
+    "165107036910ff57e5",
+    "1651070369161ddd93",
     "16370770736eab6e65",
     "1636938087dade00c5",
     "1636938299d92ccfd5",

@@ -11,7 +11,7 @@
 
 
     {%- unless settings.cart_type == 'sticky' -%}
-      <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon site-nav__link--cart js-drawer-open-cart js-no-transition" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
+      <a href="#" class="site-nav__link site-nav__link--icon site-nav__link--cart js-drawer-open-cart js-no-transition" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
         <span class="cart-link">
           {%- if settings.cart_icon == 'cart' -%}
             <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64"><path d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3"/><circle cx="27" cy="53" r="2"/><circle cx="47" cy="53" r="2"/></svg>

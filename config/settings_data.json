@@ -34,7 +34,7 @@
     "type_base_line_height": 1.5,
     "button_type_style": "caps",
     "button_style": "round-slight",
-    "animate_images": true,
+    "animate_images": false,
     "animate_page_transitions": false,
     "desktop_loader_width": 100,
     "mobile_loader_width": 100,
@@ -48,7 +48,7 @@
     "quick_shop_enable": false,
     "quick_shop_style": "product",
     "product_image_type": "slider",
-    "cart_type": "drawer",
+    "cart_type": "page",
     "cart_icon": "bag",
     "cart_additional_buttons": false,
     "cart_notes_enable": false,
@@ -99,7 +99,7 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "show_newsletter": true,
+          "show_newsletter": false,
           "newsletter_title": "Don't miss our exclusive offers",
           "newsletter_richtext": "",
           "show_locale_selector": true,
@@ -158,12 +158,6 @@
         "disabled": true,
         "settings": {
           "show_preview_data": true
-        }
-      },
-      "11349500561483629931": {
-        "type": "shopify:\/\/apps\/restock-back-in-stock-alerts\/blocks\/app-embed\/b399b727-6c85-44fc-9e21-63114bd72054",
-        "disabled": false,
-        "settings": {
         }
       }
     }

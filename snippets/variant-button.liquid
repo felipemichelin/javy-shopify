@@ -77,14 +77,20 @@
             <div class="check-circle-2" style="border-color: rgb(221, 221, 221); background-color: rgb(255, 255, 255);">
               <img src="https://try.javycoffee.com/lp15/images/checkmark-cards.svg" loading="lazy" alt="" class="check-white-2" style="opacity: 1;">
               </div>
-            </div>
-            
-            
-            
-            
+            </div>  
+
+            <!-- SKIO LOGIC -->
+            {% liquid
+              assign current_price = current_variant.price
+
+              if product.selected_selling_plan
+                assign current_price = current_variant.selling_plan_allocations.first.price
+              endif
+            %}
+            <!-- END SKIO -->
             
             {% if bottle_cnt > 0 %}
-            <span class="swatch-title"> <span class="title">{{ value | escape }}</span> <span class="unit_price"> {{current_variant.price | divided_by: bottle_cnt | money }}/each </span> </span>
+            <span class="swatch-title"> <span class="title">{{ value | escape }}</span> <span class="unit_price"> {{ current_price | divided_by: bottle_cnt | money }}/each </span> </span>
             {% else %}
             {{ value | escape }}
             {% endif %}

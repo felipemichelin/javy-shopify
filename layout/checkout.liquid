@@ -5,10 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
     <meta name="referrer" content="origin">
+    
+    <link rel="stylesheet" href="{{ 'pdp-builder.css' | asset_url}}">
+    
+    <style>
+      
+      .tag__button .icon-svg {
+    stroke: rgb(255 255 255 / 90%)!important;
+}
+      
+      span.reduction-code .icon-svg {
+    color: #fff!important;
+}
+      
+      .tag {
+    background-color: #c8202f!important;
+    color: #ffffff;
+}
+      .sidebar .reduction-code__text {
+    color: #ffffff!important;
+}
+      
+      
+      .total-line__name .reduction-code svg.icon-svg.icon-svg--color-adaptive-light.icon-svg--size-18.reduction-code__icon {
+    color: #929292!important;
+}
+      
+      span.reduction-code__text.skeleton-while-loading--left {
+    color: #929292!important;
+}
+      
+      
+      
+      .total-line__name span.reduction-code__text {
+    color: #929292!important;
+      }
+      
+      .order-summary__sections {
+        height: auto!important;
+      }
+      @media (max-width: 749px) {
+.main {
+    padding-top: 0px!important;
+}
+      }
+      
+      
+            @media (max-width: 749px) {
+.hide-mobo {
+    display:none;
+}
+      }
+      
+                  @media (min-width: 749px) {
+.hide-desktop {
+    display:none;
+}
+      }
+      
+      .countdown-v2 {
+        margin-bottom: 1rem;
+      }
+      
+      body {
+    font-family: Gotham, sans-serif!important;
+
+}
+      h2 {
+        font-family: Gotham!important;
+    margin-top: 0px!important;
+    font-size: 1.125rem!important;
+    line-height: 1.25!important;
+    font-weight: 700!important;
+    letter-spacing: -0.017em!important;
+}
+      
+      h2.dynamic-checkout__title {
+    font-weight: 400!important;
+    text-transform: uppercase;
+    font-size: 0.65rem!important;
+}
+
+      
+      
+      
+      
+    </style>
 
     <title>{{ page_title }}</title>
 
     {{ content_for_header }}
+    
+    
 
     {{ checkout_stylesheets }}
     {{ checkout_scripts }}
@@ -18,24 +106,99 @@
   <body>
     {{ skip_to_content_link }}
 
-    <header class="banner" data-header role="banner">
+    <!--<header class="banner" data-header role="banner">
       <div class="wrap">
         {{ content_for_logo }}
       </div>
-    </header>
+    </header>-->
 
     {{ order_summary_toggle }}
     <div class="content" data-content>
       <div class="wrap">
         <div class="main">
           <header class="main__header" role="banner">
-            {{ content_for_logo }}
+            
+            
+            
+            <!-- custom header -->
+                <div class="checkout-head"><img src="{{ 'logo.svg' | asset_url}}" alt="" class="brand-logo-image">
+                <div class="secure-checkout"><img src="{{ 'locker.svg' | asset_url}}" loading="lazy" alt="" class="secure-icon">
+                  <div class="secure-text">CHECKOUT</div>
+                </div>
+              </div>
+            
+            <!-- custom coutndown -->
+                                  <div class="countdown-v2" >
+                        <div class="offer-container"><img src="{{ 'discounts.svg' | asset_url}}" loading="lazy" alt="limited-offre-icon" class="limited-offre-icon"></div>
+                        <div class="limited-offre-head-3">
+                          <div class="offer-bold-3-copy">SALE ENDS SOON!</div>
+                          <div class="cart-reserved">Your cart is reserved for <span id="timer" data-timer-duration="900" class="timer-checkout checkout-timer">15:00</span></div>
+                        </div>
+                      </div>
+            
+            
+            <!--{{ content_for_logo }}-->
             {{ breadcrumb }}
             {{ alternative_payment_methods }}
           </header>
           <main class="main__content" role="main">
             {{ content_for_layout }}
           </main>
+          
+          
+          
+          			<!-- trusted customer reviews -->
+            <div class="hide-desktop" style="margin-bottom:1rem;">
+              <div class="w-layout-grid trusted-reviews">
+              <div class="divider-wrap reviews">
+                <div class="grey-line"></div>
+                <div data-i18n="trusted_reviews" class="sign-up-text-2">TRUSTED CUSTOMER REVIEWS</div>
+                <div class="grey-line"></div>
+              </div>
+              <div class="list-person-item text-black mb-30">
+                <div class="flex-row">
+                  <div class="avatar-block-img"><img src="{{ 'review-01.png' | asset_url}}" loading="lazy" alt="avatar-img" class="avatar-img"></div>
+                  <div class="list-person-item-info">
+                    <div class="list-block-1">
+                      <div class="list-block-1-info">
+                        <div class="div-block-340"><img src="{{ 'tps.svg' | asset_url}}" loading="lazy" alt="" class="image-41">
+                          <div class="checkout-review-name">Christa F.<br></div>
+                        </div>
+                        <div class="review-location-verified">
+                          <div class="verified-2">
+                            <div class="text-block-50">Posted on</div><img src="{{ 'trustpilot.svg' | asset_url}}" loading="lazy" alt="" class="review-shield-2">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p data-i18n="trusted_reviews_review_1" class="customer-r-text">I love Javy. The taste is great and it saves me a ton of money not buying my coffee everyday. It is so easy to make delicious iced coffee and takes less than 2 minutes in the mornings.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="list-person-item text-black mb-30">
+                <div class="flex-row">
+                  <div class="avatar-block-img"><img src="{{ 'review-02.png' | asset_url}}" loading="lazy" alt="avatar-img" class="avatar-img"></div>
+                  <div class="list-person-item-info">
+                    <div class="list-block-1">
+                      <div class="list-block-1-info">
+                        <div class="div-block-340"><img src="{{ 'tps.svg' | asset_url}}" loading="lazy" alt="" class="image-41">
+                          <div class="checkout-review-name">Mitzie S.</div>
+                        </div>
+                        <div class="review-location-verified">
+                          <div class="verified-2">
+                            <div class="text-block-50">Posted on</div><img src="{{ 'trustpilot.svg' | asset_url}}" loading="lazy" alt="" class="review-shield-2">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p data-i18n="trusted_reviews_review_1" class="customer-r-text">I absolutely LOVE this coffee. Convenience and taste is amazing! I&#x27;m not going back to any store, I&#x27;m definitely ordering from Javy from now on!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          
+          
           <footer class="main__footer" role="contentinfo">
             {{ content_for_footer }}
           </footer>
@@ -46,13 +209,114 @@
           </div>
           <div class="sidebar__content">
             {{ content_for_order_summary }}
+            
+            
+            
+            
+            
+            
+            
+            	     
+				<!-- trusted customer reviews -->
+            <div class="hide-mobo">
+              <div class="w-layout-grid trusted-reviews">
+              <div class="divider-wrap reviews">
+                <div class="grey-line"></div>
+                <div data-i18n="trusted_reviews" class="sign-up-text-2">TRUSTED CUSTOMER REVIEWS</div>
+                <div class="grey-line"></div>
+              </div>
+              <div class="list-person-item text-black mb-30">
+                <div class="flex-row">
+                  <div class="avatar-block-img"><img src="{{ 'review-01.png' | asset_url}}" loading="lazy" alt="avatar-img" class="avatar-img"></div>
+                  <div class="list-person-item-info">
+                    <div class="list-block-1">
+                      <div class="list-block-1-info">
+                        <div class="div-block-340"><img src="{{ 'tps.svg' | asset_url}}" loading="lazy" alt="" class="image-41">
+                          <div class="checkout-review-name">Christa F.<br></div>
+                        </div>
+                        <div class="review-location-verified">
+                          <div class="verified-2">
+                            <div class="text-block-50">Posted on</div><img src="{{ 'trustpilot.svg' | asset_url}}" loading="lazy" alt="" class="review-shield-2">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p data-i18n="trusted_reviews_review_1" class="customer-r-text">I love Javy. The taste is great and it saves me a ton of money not buying my coffee everyday. It is so easy to make delicious iced coffee and takes less than 2 minutes in the mornings.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="list-person-item text-black mb-30">
+                <div class="flex-row">
+                  <div class="avatar-block-img"><img src="{{ 'review-02.png' | asset_url}}" loading="lazy" alt="avatar-img" class="avatar-img"></div>
+                  <div class="list-person-item-info">
+                    <div class="list-block-1">
+                      <div class="list-block-1-info">
+                        <div class="div-block-340"><img src="{{ 'tps.svg' | asset_url}}" loading="lazy" alt="" class="image-41">
+                          <div class="checkout-review-name">Mitzie S.</div>
+                        </div>
+                        <div class="review-location-verified">
+                          <div class="verified-2">
+                            <div class="text-block-50">Posted on</div><img src="{{ 'trustpilot.svg' | asset_url}}" loading="lazy" alt="" class="review-shield-2">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p data-i18n="trusted_reviews_review_1" class="customer-r-text">I absolutely LOVE this coffee. Convenience and taste is amazing! I&#x27;m not going back to any store, I&#x27;m definitely ordering from Javy from now on!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            
+            
+            
+            
+            
+            
+
+            
+            
           </div>
         </aside>
       </div>
+      
+             
+            
+      
     </div>
 
     {{ tracking_code }}
-  
+    
+     <script type="text/javascript">
+    var timeoutHandle;
+    function countdown(minutes, seconds) {
+        function tick() {
+            var counter = document.getElementById("timer");
+            counter.innerHTML =
+                minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+            seconds--;
+            if (seconds >= 0) {
+                timeoutHandle = setTimeout(tick, 1000);
+            } else {
+                if (minutes >= 1) {
+                    // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
+                    setTimeout(function () {
+                        countdown(minutes - 1, 59);
+                    }, 1000);
+                }
+            }
+        }
+        tick();
+    }
 
+    countdown(14, 59);
+</script>
+    
+    
+    
+    
+    
+  <div data-rebuy-id="34569"></div>
+<script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop=drink-javy.myshopify.com"></script>
 </body>
 </html>
