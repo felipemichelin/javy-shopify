@@ -1,0 +1,87 @@
+.skio-plan-picker {
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  border: 0;
+  margin-top: 1em;
+}
+
+.skio-group-container {
+  display: none;
+}
+.skio-group-container--available {
+  display: block;
+}
+
+.skio-group-wrapper {
+  display: flex;
+  gap: 30px;
+}
+
+/* Hide frequency if not selected */
+/* .skio-group-container:not(.skio-group-container--selected) .skio-frequency {
+  display: none;
+} */
+
+.skio-group-input {
+  display: none;
+  cursor: pointer;
+}
+.skio-group-input:checked ~ .skio-group-label .skio-radio {
+  display: block;
+}
+/* .skio-group-input:checked ~ .skio-group-label .skio-radio--unchecked {
+  display: none;
+}
+.skio-group-input:not(:checked) ~ .skio-group-label .skio-radio--checked {
+  display: none;
+}
+.skio-group-input:not(:checked) ~ .skio-group-label .skio-radio--unchecked {
+  display: block;
+} */
+
+.skio-group-additional {
+  display: none;
+}
+
+.skio-group-additional--show {
+  display: block;
+}
+
+.skio-group-label {
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* .skio-radio-container {
+  margin-right: 10px;
+  margin-top: 5px;
+} */
+
+.skio-radio__container {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  border: 1px solid #b3b3b3;
+  margin-right: 6px;
+}
+
+.skio-radio {
+  width: 16px;
+  height: 16px;
+  display: none;
+}
+
+.skio-frequency {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.skio-frequency select {
+  text-transform: lowercase;
+}

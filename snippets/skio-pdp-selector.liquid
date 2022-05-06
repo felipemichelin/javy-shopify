@@ -1,0 +1,313 @@
+
+            <div id="unlock-offer" class="unlock-offer">
+              {% comment %} <div data-current="subscription" data-easing="ease" data-duration-in="0" data-duration-out="0" class="product-selector m-t-0 w-tabs">
+                <div class="frequency_menu w-tab-menu">
+                  
+                  
+                  
+                  
+                  
+                  <!-- FREQUENCY SELECTOR -->
+
+                  {% render 'skio-plan-picker' %}
+                  
+                  <a data-w-tab="subscription" data-frequency="subscription" id="w-node-_0534089f-6078-6134-0779-b53895eb0951-25ca5373" data-w-id="0534089f-6078-6134-0779-b53895eb0951" class="tab_frequency w-inline-block w-tab-link w--current">
+                    <div class="check-wrapper left">
+                      <div class="check-circle"><img style="opacity:0" loading="eager" src="{{ '622763dbbbccc93f815c76cf_radio.svg' | asset_url}}" alt="" class="check-white-2"></div>
+                    </div>
+                    <div class="selector"><strong>Subscribe &amp;  Save</strong></div>
+                    <div class="icon open_sub_popup w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20V20ZM11 7H13V9H11V7ZM11 11H13V17H11V11Z" fill="currentColor"></path>
+                      </svg>
+                    </div>
+                  </a>
+                  <a data-w-tab="one-time" data-frequency="one_time" data-w-id="0534089f-6078-6134-0779-b53895eb094a" class="tab_frequency w-inline-block w-tab-link">
+                    <div class="check-wrapper left">
+                      <div class="check-circle"><img style="opacity:0" loading="eager" src="{{ '622763dbbbccc93f815c76cf_radio.svg' | asset_url}}" alt="" class="check-white-2"></div>
+                    </div>
+                    <div class="selector"><strong>One Time</strong></div>
+                  </a>
+                  
+                  
+                  
+                </div>
+                <div class="products-content w-tab-content">
+                  <div data-w-tab="subscription" class="quantity-content w-tab-pane w--tab-active"></div>
+                  <div data-w-tab="one-time" class="quantity-content w-tab-pane"></div>
+                </div>
+              </div> {% endcomment %}
+
+              {{ 'skio-plan-picker.css' | asset_url | stylesheet_tag }}
+              
+              {% assign key = 'build-your-kit' %}
+              <div class="skio-plan-picker" style="margin-bottom: 1em;">
+                <div class="skio-group-container skio-group-container--available" skio-group-container>
+                  <input id="skio-subscription-{{ key }}" class="skio-group-input" name="skio-group-{{ key }}" 
+                    type="radio" value="subscription" skio-subscription checked>
+                    
+                  <label class="skio-group-label" for="skio-subscription-{{ key }}">
+                    <div class="skio-radio__container">
+                      <img class="skio-radio" loading="lazy" src="{{ 'yellowradio.svg' | asset_url}}" alt="">
+                    </div>
+
+                    <div style="display: flex;">
+                      Subscribe & Save
+                      <div class="icon open_sub_popup w-embed">
+                        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20V20ZM11 7H13V9H11V7ZM11 11H13V17H11V11Z" fill="currentColor"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="skio-group-container skio-group-container--available skio-group-container--selected" skio-group-container>
+                  <input id="skio-one-time-{{ key }}" class="skio-group-input" name="skio-group-{{ key }}" 
+                    type="radio" value="one_time" skio-one-time>
+                  <label class="skio-group-label" for="skio-one-time-{{ key }}">
+                    <div class="skio-radio__container">
+                      <img class="skio-radio" loading="lazy" src="{{ 'yellowradio.svg' | asset_url}}" alt="">
+                    </div>
+
+                    <div>
+                      One-Time
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <form id="bottle-selector" class="bottle-selector no-bottom">
+                <div class="flavor-selector">                  
+                  <div class="flavor-selector-variant">
+                    <input type="hidden" name="items[0][id]" data-flavor="original" data-variant-id value="41882029686945">
+                    <input type="hidden" name="items[0][selling_plan]" data-flavor="original" data-selling-plan value="1098580129">
+                    <input type="hidden" name="items[0][quantity]" data-flavor="original" data-quantity value="1">
+
+                    <div class="top-sec-flavors">
+                      <div class="img-block"><img width="100" loading="eager" src="{{ 'original_1original.png' | asset_url}}" alt="" class="flavor_img"></div>
+                      <div class="description-block">
+                        <div class="flavor-name-2">Original</div>
+                      </div>
+                      <div id="original_flavor" class="quantity-handler">
+                        <div data-flavor="original" class="button-quantity decrease-qty">-</div>
+                        <div data-flavor="original" class="display-qty">0</div>
+                        <div data-flavor="original" class="button-quantity increase-qty">+</div>
+                      </div>
+                    </div>
+                    <div class="text-block-42">BEST SELLER</div>
+                  </div>
+                  
+                  
+                  
+                  <div class="flavor-selector-variant">
+                    <input type="hidden" name="items[1][id]" data-flavor="caramel" data-variant-id value="41882029490337">
+                    <input type="hidden" name="items[1][selling_plan]" data-flavor="caramel" data-selling-plan value="1098547361">
+                    <input type="hidden" name="items[1][quantity]" data-flavor="caramel" data-quantity value="1">
+
+                    <div class="top-sec-flavors">
+                      <div class="img-block"><img width="100" loading="eager" src="{{ 'carmel_1carmel.png' | asset_url}}" alt="" class="flavor_img"></div>
+                      <div class="description-block">
+                        <div class="flavor-name-2">Caramel</div>
+                      </div>
+                      <div id="caramel_flavor" class="quantity-handler">
+                        <div data-flavor="caramel" class="button-quantity decrease-qty">-</div>
+                        <div data-flavor="caramel" class="display-qty">0</div>
+                        <div data-flavor="caramel" class="button-quantity increase-qty">+</div>
+                      </div>
+                    </div>
+                    <div class="text-block-42">BEST SELLER</div>
+                  </div>
+                  
+                  
+                  
+                  <div class="flavor-selector-variant">
+                    <input type="hidden" name="items[2][id]" data-flavor="vanilla" data-variant-id value="41882030145697">
+                    <input type="hidden" name="items[2][selling_plan]" data-flavor="vanilla" data-selling-plan value="1098481825">
+                    <input type="hidden" name="items[2][quantity]" data-flavor="vanilla" data-quantity value="1">
+
+                    <div class="top-sec-flavors">
+                      <div class="img-block"><img width="100" loading="eager" src="{{ 'vanilla_1vanilla.png' | asset_url}}" alt="" class="flavor_img"></div>
+                      <div class="description-block">
+                        <div class="flavor-name-2">French Vanilla</div>
+                      </div>
+                      <div id="vanilla_flavor" class="quantity-handler">
+                        <div data-flavor="vanilla" class="button-quantity decrease-qty">-</div>
+                        <div data-flavor="vanilla" class="display-qty">0</div>
+                        <div data-flavor="vanilla" class="button-quantity increase-qty">+</div>
+                      </div>
+                    </div>
+                    <div class="text-block-42">BEST SELLER</div>
+                  </div>
+                  
+                  
+                  
+                  <div class="flavor-selector-variant">
+                    <input type="hidden" name="items[3][id]" data-flavor="mocha" data-variant-id value="41882029850785">
+                    <input type="hidden" name="items[3][selling_plan]" data-flavor="mocha" data-selling-plan value="1098514593">
+                    <input type="hidden" name="items[3][quantity]" data-flavor="mocha" data-quantity value="1">
+
+                    <div class="top-sec-flavors">
+                      <div class="img-block"><img width="100" loading="eager" src="{{ 'mocha_2mocha.png' | asset_url}}" alt="" class="flavor_img"></div>
+                      <div class="description-block">
+                        <div class="flavor-name-2">Mocha</div>
+                      </div>
+                      <div id="mocha_flavor" class="quantity-handler">
+                        <div data-flavor="mocha" class="button-quantity decrease-qty">-</div>
+                        <div data-flavor="mocha" class="display-qty">0</div>
+                        <div data-flavor="mocha" class="button-quantity increase-qty">+</div>
+                      </div>
+                    </div>
+                    <div class="text-block-42">BEST SELLER</div>
+                  </div>
+                </div>
+
+
+                    {% comment %} <div class="flavor-selector-variant out_of_stock">
+                      <input type="hidden" name="items[4][id]" data-flavor="pumpkin" data-variant-id value="36488142061729">
+                      <input type="hidden" name="items[4][selling_plan]" data-flavor="pumpkin" data-selling-plan value="1092911265">
+                      <input type="hidden" name="items[4][quantity]" data-flavor="pumpkin" data-quantity value="1">
+
+                      <div class="top-sec-flavors">
+                        <div class="img-block"><img width="100" loading="eager" src="{{ 'flavor_pumpkin_1flavor_pumpkin.jpg' | asset_url}}" alt="" class="flavor_img"></div>
+                        <div class="description-block">
+                          <div class="flavor-name-2">Pumpkin Spice</div>
+                        </div>
+                        <div id="pumpkin_flavor" class="quantity-handler">
+                          <div data-flavor="pumpkin" class="button-quantity decrease-qty">-</div>
+                          <div data-flavor="pumpkin" class="display-qty">0</div>
+                          <div data-flavor="pumpkin" class="button-quantity increase-qty">+</div>
+                        </div>
+                      </div>
+                    </div> {% endcomment %}
+
+                    <div class="flavor-selector-variant decaf">
+                      <input type="hidden" name="items[5][id]" data-flavor="decaf" data-variant-id value="41882030407841">
+                      <input type="hidden" name="items[5][selling_plan]" data-flavor="decaf" data-selling-plan value="1098449057">
+                      <input type="hidden" name="items[5][quantity]" data-flavor="decaf" data-quantity value="1">
+
+                      <div class="top-sec-flavors">
+                        <div class="img-block"><img width="100" loading="eager" src="{{ 'decaf_1decaf.png' | asset_url}}" alt="" class="flavor_img"></div>
+                        <div class="description-block"><img data-sizes="[{&quot;max&quot;:10000,&quot;size&quot;:&quot;100vw&quot;}]" loading="lazy" src="{{ 'mocha_3mocha.png' | asset_url}}" alt="" class="flavor-mobile">
+                          <div class="flavor-name-2">Decaf</div>
+                        </div>
+                        <div id="decaf_flavor" class="quantity-handler">
+                          <div data-flavor="decaf" class="button-quantity decrease-qty">-</div>
+                          <div data-flavor="decaf" class="display-qty">0</div>
+                          <div data-flavor="decaf" class="button-quantity increase-qty">+</div>
+                        </div>
+                      </div>
+                    </div>
+                
+                
+                <div class="each-card">
+                  <div class="card-each subscription">
+                    <p id="w-node-fb61da09-4ac2-f3fe-9153-acaf423f4dac-25ca5373" class="p-rebill-3">BUY MORE, PAY LESS<br></p>
+                    <div class="div-block-344">
+                      <div class="item-card _4">
+                        <p class="item-variation"><span class="text-span-57">4+ Bottles</span> - <span data-variant-id="41411710353569" class="item-discount-2 checkout-compare-price-savings-pct"> </span><span class="item-discount-2 green">% OFF </span><br></p>
+                        <div class="div-block-346">
+                          <p class="item-variation f_s">Free Shipping<span class="text-span-67"></span><span class="text-span-64"></span><br></p>
+                        </div>
+                      </div>
+                      <div class="item-card _3">
+                        <p class="item-variation"><span class="text-span-57">3 Bottles</span> - <span data-variant-id="41411707830433" class="item-discount-2 checkout-compare-price-savings-pct"> </span><span class="item-discount-2">% OFF </span><br></p>
+                        <p class="item-variation f_s">Free Shipping<br></p>
+                      </div>
+                      <div class="item-card _2">
+                        <p class="item-variation"><span class="text-span-57">2 Bottles</span> - <span data-variant-id="41411705274529" class="checkout-compare-price-savings-pct"> </span>% OFF <br></p>
+                        <p class="item-variation f_s">Free Shipping<br></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-each one-time">
+                    <p class="p-rebill-3">BUY MORE, PAY LESS<br></p>
+                    <div class="div-block-344">
+                      <div class="item-card _4">
+                        <p class="item-variation"><span class="text-span-57">4+ Bottles</span> - <span data-variant-id="41411710550177" class="item-discount-2 checkout-compare-price-savings-pct"> </span><span class="item-discount-2 green">% OFF </span><br></p>
+                        <div class="div-block-346">
+                          <p class="item-variation f_s">Free Shipping<span class="text-span-67"></span><span class="text-span-64"></span><br></p>
+                        </div>
+                      </div>
+                      <div class="item-card _3">
+                        <p class="item-variation"><span class="text-span-57">3 Bottles</span> - <span data-variant-id="41411708027041" class="item-discount-2 checkout-compare-price-savings-pct"> </span><span class="item-discount-2">% OFF </span><br></p>
+                        <p class="item-variation f_s">Free Shipping<br></p>
+                      </div>
+                      <div class="item-card _2">
+                        <p class="item-variation"><span class="text-span-57">2 Bottles</span> - <span data-variant-id="41411705766049" class="checkout-compare-price-savings-pct"> </span>% OFF <br></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="button-holder">
+                  <div class="price-info">
+                    <div class="price-sec-2">
+                      <div class="savings-number">You&#x27;re saving <span data-variant-id="41411703242913" class="total_savings checkout-compare-price-savings-pct"> </span>%</div>
+                    </div>
+                    <div class="saving-sec-2">
+                      <div class="reg-text">Only <span data-variant-id="41411703242913" class="checkout checkout-price"> </span>/each</div>
+                      <div data-variant-id="41411703242913" class="save-text checkout-compare-price"> </div>
+                    </div>
+                  </div>
+                  <div class="cta-inner">
+                    <div class="button-loader">
+                      <button class="button-yellow submit-flavors justify w-inline-block">
+                        <div class="checkout_box">
+                          <div class="loader-wrapper">
+                            <div class="three-quarter-spinner invert"></div>
+                            <div class="w-embed">
+                              <style>
+                            .three-quarter-spinner {
+                              animation: spin .9s linear 0s infinite;
+                            }
+                            </style>
+                            </div>
+                          </div>
+                          <div class="cta-text">CHECKOUT</div><img src="{{ 'arrow-right-mobile.svg' | asset_url}}" loading="lazy" alt="" class="checkout_next invert">
+                        </div>
+                        <div class="price_box">
+                          <div class="price_box-compare"> </div>
+                          <div class="price_box-sale"> </div>
+                        </div>
+                      </button>
+                    </div>
+                    <div class="w-layout-grid grid-features hide">
+                      <div class="f-shipping">
+                        <div class="feature-icons w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.965 18C8.84612 18.8343 8.43021 19.5977 7.79368 20.1499C7.15714 20.7022 6.34272 21.0063 5.5 21.0063C4.65728 21.0063 3.84286 20.7022 3.20632 20.1499C2.56979 19.5977 2.15388 18.8343 2.035 18H1V6C1 5.73478 1.10536 5.48043 1.29289 5.29289C1.48043 5.10536 1.73478 5 2 5H16C16.2652 5 16.5196 5.10536 16.7071 5.29289C16.8946 5.48043 17 5.73478 17 6V8H20L23 12.056V18H20.965C20.8461 18.8343 20.4302 19.5977 19.7937 20.1499C19.1571 20.7022 18.3427 21.0063 17.5 21.0063C16.6573 21.0063 15.8429 20.7022 15.2063 20.1499C14.5698 19.5977 14.1539 18.8343 14.035 18H8.965ZM15 7H3V15.05C3.39456 14.6472 3.8806 14.3457 4.41675 14.1711C4.9529 13.9966 5.52329 13.9541 6.07938 14.0474C6.63546 14.1407 7.16077 14.3669 7.61061 14.7069C8.06044 15.0469 8.42148 15.4905 8.663 16H14.337C14.505 15.647 14.73 15.326 15 15.05V7ZM17 13H21V12.715L18.992 10H17V13ZM17.5 19C17.898 19 18.2796 18.8419 18.561 18.5605C18.8424 18.2791 19.0005 17.8975 19.0005 17.4995C19.0005 17.1015 18.8424 16.7199 18.561 16.4385C18.2796 16.1571 17.898 15.999 17.5 15.999C17.102 15.999 16.7204 16.1571 16.439 16.4385C16.1576 16.7199 15.9995 17.1015 15.9995 17.4995C15.9995 17.8975 16.1576 18.2791 16.439 18.5605C16.7204 18.8419 17.102 19 17.5 19V19ZM7 17.5C7 17.303 6.9612 17.108 6.88582 16.926C6.81044 16.744 6.69995 16.5786 6.56066 16.4393C6.42137 16.3001 6.25601 16.1896 6.07403 16.1142C5.89204 16.0388 5.69698 16 5.5 16C5.30302 16 5.10796 16.0388 4.92597 16.1142C4.74399 16.1896 4.57863 16.3001 4.43934 16.4393C4.30005 16.5786 4.18956 16.744 4.11418 16.926C4.0388 17.108 4 17.303 4 17.5C4 17.8978 4.15804 18.2794 4.43934 18.5607C4.72064 18.842 5.10218 19 5.5 19C5.89782 19 6.27936 18.842 6.56066 18.5607C6.84196 18.2794 7 17.8978 7 17.5V17.5Z" fill="currentColor"></path>
+                          </svg>
+                        </div>
+                        <div class="free-shipping">FREE EXPEDITED SHIPPING<strong><br></strong></div>
+                      </div>
+                      <div class="f-shipping">
+                        <div class="feature-icons w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C17.523 2 22 6.477 22 12C22 14.136 21.33 16.116 20.189 17.741L17 12H20C19.9998 10.1562 19.3628 8.36906 18.1967 6.94089C17.0305 5.51272 15.4069 4.53119 13.6003 4.16236C11.7938 3.79352 9.91533 4.06002 8.28268 4.91677C6.65002 5.77351 5.36342 7.16791 4.64052 8.86408C3.91762 10.5603 3.80281 12.4541 4.31549 14.2251C4.82818 15.9962 5.93689 17.5358 7.45408 18.5836C8.97127 19.6313 10.8038 20.1228 12.6416 19.9749C14.4795 19.827 16.2099 19.0488 17.54 17.772L18.538 19.567C16.7232 21.1396 14.4014 22.0036 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM12 7C12.7956 7 13.5587 7.31607 14.1213 7.87868C14.6839 8.44129 15 9.20435 15 10V11H16V16H8V11H9V10C9 9.20435 9.31607 8.44129 9.87868 7.87868C10.4413 7.31607 11.2044 7 12 7V7ZM14 13H10V14H14V13ZM12 9C11.7551 9.00003 11.5187 9.08996 11.3356 9.25272C11.1526 9.41547 11.0357 9.63975 11.007 9.883L11 10V11H13V10C13 9.75507 12.91 9.51866 12.7473 9.33563C12.5845 9.15259 12.3603 9.03566 12.117 9.007L12 9Z" fill="currentColor"></path>
+                          </svg>
+                        </div>
+                        <div class="free-shipping">CANCEL ANYTIME<strong><br></strong></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+<script>
+document.querySelector('#bottle-selector').addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  let formData = new FormData(event.target);
+
+  fetch('/cart/add.js', {
+    method: 'POST',
+    body: formData
+  })
+  .then((response) => response.json())
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+});
+</script>
+         

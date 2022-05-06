@@ -120,6 +120,10 @@
 .r_product_tabs.w-tabs {
     display: none!important;
 }
+
+[data-product-blocks] {
+  display: none;
+}
 </style>
 
 Currently out of stock.
@@ -144,28 +148,8 @@ Currently out of stock.
         </div>
       </div>
 -->
-{% if product.metafields.my_fields.list_01 != blank %}
+            
 
-                 <ul role="list" class="r_product_features r_one_time w-list-unstyled r_general_product">
-                    {% if product.metafields.my_fields.list_01 != blank %}
-                    <li class="r_product_features_item"><img loading="lazy" src="https://uploads-ssl.webflow.com/61325340b9cecc1855901179/61893b8b8f80ad621ceb731f_checkmark.svg" alt="check-icon" class="r_check_item">
-                      <div class="r_p_benefits r_smaller m_0">{{ product.metafields.my_fields.list_01 }}</div>
-                    </li>
-                    {% endif %}
-                    {% if product.metafields.my_fields.list_01 != blank %}
-                    <li class="r_product_features_item"><img loading="lazy" src="https://uploads-ssl.webflow.com/61325340b9cecc1855901179/61893b8b8f80ad621ceb731f_checkmark.svg" alt="check-icon" class="r_check_item">
-                      <div class="r_p_benefits r_smaller m_0">{{ product.metafields.my_fields.list_02 }}</div>
-                    </li>
-                    {% endif %}
-                    {% if product.metafields.my_fields.list_01 != blank %}
-                    <li class="r_product_features_item"><img loading="lazy" src="https://uploads-ssl.webflow.com/61325340b9cecc1855901179/61893b8b8f80ad621ceb731f_checkmark.svg" alt="check-icon" class="r_check_item">
-                      <div class="r_p_benefits r_smaller m_0">{{ product.metafields.my_fields.list_03 }}</div>
-                    </li>
-                    {% endif %}
-
-                  </ul>
-
-{% endif %}
 
 
 
@@ -176,12 +160,12 @@ Currently out of stock.
 
 
 
-          <div data-current="one_tab" data-easing="ease" data-duration-in="0" data-duration-out="0" class="r_product_tabs w-tabs">
+          {% comment %} <div data-current="one_tab" data-easing="ease" data-duration-in="0" data-duration-out="0" class="r_product_tabs w-tabs"> {% endcomment %}
 
 
 
 
-{% if product.type == "Coffee Concentrate" %}
+{% comment %} {% if product.type == "Coffee Concentrate" %}
 
             <div class="r_tabs_menu w-tab-menu">
               <a data-w-tab="sub_tab" data-frequency="sub" data-w-id="33b1871f-8e87-e501-9cf9-14bd5babeb9f" class="tab_frequency w-inline-block w-tab-link">
@@ -198,11 +182,11 @@ Currently out of stock.
               </a>
             </div>
 
-      {%- endif -%}
+      {%- endif -%} {% endcomment %}
 
 
 
-            <div class="r_freq_tab_content w-tab-content">
+            {% comment %} <div class="r_freq_tab_content w-tab-content">
               <div data-w-tab="sub_tab" class="r_prod_tab w-tab-pane">
                 <p class="r_freq_desc"><strong>Like a coffee club, but better.</strong> Get Javy delivered to your door monthly. Dollars will be saved, fun will be had. Easy to Cancel.<br></p>
                 <div class="tab-content-inner">
@@ -227,7 +211,7 @@ Currently out of stock.
                 </div>
               </div>
               <div data-w-tab="one_tab" class="r_prod_tab w-tab-pane w--tab-active">
-                <div class="tab-content-inner">
+                <div class="tab-content-inner"> {% endcomment %}
 
                 
 
@@ -238,6 +222,8 @@ Currently out of stock.
                   {%- case block.type -%}
                     {%- when '@app' -%}
                       {% render block %}
+                    {%- when 'skio-plan-picker' -%}
+                      {% render 'skio-plan-picker', form_id: form_id, onetime_first: false, %}
                     {%- when 'reviews' -%}
                       <div class="product-block product-block--small">
                         <a href="#shopify-product-reviews-{{ product.id }}">
@@ -393,31 +379,34 @@ Currently out of stock.
                   </ul>
                   -->
 
-
-
+                  <!-- SKIO SUBSCRIPTION CONTENT -->
+                  <div skio-subscription-content class="skio-group-additional" {% unless product.selected_selling_plan %}style="display: none;"{% endunless %}>
+                    <p class="r_freq_desc"><strong>Like a coffee club, but better.</strong> Get Javy delivered to your door monthly. Dollars will be saved, fun will be had. Easy to Cancel.<br></p>
+                    <div class="tab-content-inner">
+                      <ul role="list" class="r_product_features w-list-unstyled">
+                        <li class="r_product_features_item"><img loading="lazy" src="{{ 'greencheck.svg' | asset_url}}" alt="check-icon" class="r_check_item">
+                          <div class="r_p_benefits r_smaller m_0">Never have to think about reordering<strong><br></strong></div>
+                        </li>
+                        <li class="r_product_features_item"><img loading="lazy" src="{{ 'greencheck.svg' | asset_url}}" alt="check-icon" class="r_check_item">
+                          <div class="r_p_benefits r_smaller m_0">Save up to 36%<strong><br></strong></div>
+                        </li>
+                        <li class="r_product_features_item"><img loading="lazy" src="{{ 'greencheck.svg' | asset_url}}" alt="check-icon" class="r_check_item">
+                          <div class="r_p_benefits r_smaller m_0">Cancel anytime<strong><br></strong></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- END SKIO SUBSCRIPTION CONTENT -->
 
                   <div class="price-list">
+                    {% render 'skio-price', product: product, current_variant: current_variant %}
 
-
-
-                    <div class="saving-sec" data-price-wrapper>
+                    <div class="saving-sec {% unless current_variant.compare_at_price > current_variant.price %}hide{% endunless%}" data-price-wrapper {% if product.selected_selling_plan %} style="display: none;" {% endif %}>
                       
-                      {%- if current_variant.compare_at_price > current_variant.price -%}
+                      
                     <div class="price-sec">
                       <div class="youresaving">You&#x27;re saving <span class="checkout-compare-price-savings-pct" data-product-price-savings>28</span>%</div>
                     </div>
-                            {%- else -%}
-
-
-                    <style>
-.saving-sec {
-    justify-content: flex-start!important;
-}
-                    </style>
-
-
-
-    {%- endif -%}
                       
                       
                       <div class="reg-text"><span class="checkout-price" data-product-price>{{ current_variant.price | money }}</span></div>
@@ -431,10 +420,10 @@ Currently out of stock.
 
                   <script>
     jQuery(document).ready(function($) {
-                  var sale_price_old = $(".checkout-price").html().substr(1);
-                  var compare_price_old = $(".checkout-compare-price").html().substr(1);
+                  var sale_price_old = $("[data-price-wrapper] .checkout-price").html().substr(1);
+                  var compare_price_old = $("[data-price-wrapper] .checkout-compare-price").html().substr(1);
                   var new_savings = ((1 - sale_price_old/compare_price_old)*100).toFixed(0);;
-                  $(".checkout-compare-price-savings-pct").html(new_savings);
+                  $("[data-price-wrapper] .checkout-compare-price-savings-pct").html(new_savings);
                       });
 </script>
 
@@ -520,8 +509,8 @@ Currently out of stock.
                 </div>
               {%- endif -%}
             </div>
-                </div>
-              </div>
+                {% comment %} </div> {% endcomment %}
+              {% comment %} </div> {% endcomment %}
             </div>
           </div>
  
