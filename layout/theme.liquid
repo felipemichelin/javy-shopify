@@ -1,4 +1,9 @@
 <!doctype html>
+
+
+
+
+
 <html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
 
   
@@ -8,15 +13,6 @@
 <head>
   
   
-        {% if template contains 'listicle-template' %}
-
-  <html data-wf-page="6268a718a9cc3d0125ca5373" data-wf-site="6268a718a9cc3d6036ca528a">
-
-  
-  
-  
-  
-  {% endif %}
 
 
 
@@ -30,9 +26,9 @@
 
   
   {% if template.name != "index" %} 
-
+  {% if template.name != "listicle-template" %} 
 <html data-wf-page="6193badf379679270fc7daef" data-wf-site="61917ec4c8a471b172e2f375"> 
-
+  {%- endif -%}
   {%- endif -%}
   
     {% if template.name == "listicle-template" %} 
