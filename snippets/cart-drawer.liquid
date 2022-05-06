@@ -60,22 +60,6 @@
 
 
 
-              {% if template == 'product' and settings.show_addon %}
-        <div class="addon_products">
-            {% assign handles = product.metafields.global.addon_products | split: "|" %}
-            {% for handle in handles %}
-              {% assign break = 0 %}
-              {% for item in cart.items %}
-                {% if handle == item.product.handle %}
-                  {% assign break = 1 %}
-                  {% break %}
-                {% endif %}
-              {% endfor %}
-
-              {% if break == 1 %}
-                {% continue %}
-              {% endif %}
-
 
 
 
