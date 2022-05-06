@@ -339,6 +339,16 @@ div#CartDrawer {
 </div>
 {% endunless %}
 
+        {% if template contains 'listicle-template' %}
+  
+  {% render 'pdp-builder' %}
+
+  
+  
+  <script src="{{ 'pdp-builder.js' | asset_url }}"></script>
+  
+  
+  {% endif %}
 
 
 
@@ -537,17 +547,6 @@ if (jumbleberry.g("click_id")) {
   jumbleberry("track", "Lead");
 }
 </script>
-
-        {% if template contains 'listicle-template' %}
-  
-  {% render 'pdp-builder' %}
-
-  
-  
-  <script src="{{ 'pdp-builder.js' | asset_url }}"></script>
-  
-  
-  {% endif %}
   
   
 </body>
