@@ -4,6 +4,11 @@ This file can be re-written at any time.
 {% endcomment %}
 
 <!doctype html>
+
+
+
+
+
 <html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
 
   
@@ -15,14 +20,6 @@ This file can be re-written at any time.
   
   
   
-        {% if template contains 'listicle-template' %}
-
-  
-  
-  
-  
-  
-  {% endif %}
 
 
 
@@ -36,9 +33,9 @@ This file can be re-written at any time.
 
   
   {% if template.name != "index" %} 
-
+{% if template.name != "listicle-template" %} 
 <html data-wf-page="6193badf379679270fc7daef" data-wf-site="61917ec4c8a471b172e2f375"> 
-
+  {%- endif -%}
   {%- endif -%}
   
     {% if template.name == "listicle-template" %} 
@@ -75,7 +72,6 @@ This file can be re-written at any time.
 }
   
   
-
   
   a.site-nav__link.site-nav__link--icon.site-nav__link--cart.js-drawer-open-cart.js-no-transition {
     background-color: transparent!important;
@@ -90,13 +86,12 @@ This file can be re-written at any time.
   a.site-nav__thumb-cart.js-drawer-open-cart.js-no-transition {
     color: #fff!important;
 }
-
-/* #CartDrawer is element that contains the entire cart drawer */ 
+-/* #CartDrawer is element that contains the entire cart drawer */ 
   
   .smart-cart--enabled #CartDrawer, #PageContainer::after { display: none !important; } /* making sure that scrolling is still enabled after closing the smart cart */ .smart-cart--enabled .js-drawer-open { overflow: scroll !important; }
-
-  
-
+div#CartDrawer {
+    display: none!important;
+}
   </style>
   
 
@@ -183,7 +178,6 @@ This file can be re-written at any time.
         themeVersion: "4.1.1"
       }
     };
-
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
   </script>
 
@@ -218,11 +212,9 @@ This file can be re-written at any time.
   {%- endif -%}
   
   
-  {% unless template contains 'listicle-template' %}  
 
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
   
-    {% endunless %}  
 
   
   
@@ -287,7 +279,6 @@ This file can be re-written at any time.
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-414247778');
 </script>
   
@@ -343,8 +334,6 @@ $(document).scroll(function () {
     $(".site-nav__thumb-menu").fadeOut();
   }
 });
-
-
 </script>
 <script src="https://cdn.attn.tv/javy/dtag.js"></script>
 <script async defer data-pin-hover="true" data-pin-tall="true" data-pin-round="true" src="//assets.pinterest.com/js/pinit.js"></script>
@@ -402,12 +391,12 @@ o.m=o.e=function(){var n,i;!j._RNGSeed&&o.i.apply(o,arguments)&&(n=u.createEleme
 n.src=o.d+o.p+"?hid="+a(o.h)+"&uid="+a(o.u)+"&v="+o.v,n.async=!!o.h,o.e=!1,o.q.unshift(arguments),j.addEventListener(
 "beforeunload",n.onerror=function(){o.e=o.i;for(var n=0;n<o.q.length;++n)o.apply(o,o.q[n]);o.q=[]}),
 i.parentNode.insertBefore(n,i))},j[n]=j[n]||o,j[n].d=b}(window,document,"script","https://www.earth-education-sheet.com/");
-
 jumbleberry("init", "FJvHK3oP1x1Cig0P1xObwu2yJfMbhITahhiM5Mbhuch3qRt2D-sgwFzBFMAuP_gALfMTc4-lfLvskhfL1_-biA~~", jumbleberry.g("click_id"));
 if (jumbleberry.g("click_id")) {
   jumbleberry("track", "Lead");
 }
 </script>
+<script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
   <style type="text/css">
     body, html {
       width: 100% !important;
@@ -418,4 +407,3 @@ if (jumbleberry.g("click_id")) {
 </body>
 
 </html>
-
