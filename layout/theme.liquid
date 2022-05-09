@@ -189,20 +189,14 @@ div#CartDrawer {
   
 
 
-{% unless template contains 'listicle-template' %}  
+{% unless template contains 'listicle-template' or template contains 'trial-lander' %}  
 <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 <link rel="stylesheet" href="{{ 'normalize.css' | asset_url}}">
 <link rel="stylesheet" href="{{ 'webflow.css' | asset_url}}">
 <link rel="stylesheet" href="{{ 'javy-custom.webflow.css' | asset_url}}">
 {% endunless %}
   
-  {% unless template contains 'trial-lander' %}  
-<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<link rel="stylesheet" href="{{ 'normalize.css' | asset_url}}">
-<link rel="stylesheet" href="{{ 'webflow.css' | asset_url}}">
-<link rel="stylesheet" href="{{ 'javy-custom.webflow.css' | asset_url}}">
-{% endunless %}
-  
+
 
   {% if template contains 'listicle-template' %}
   
