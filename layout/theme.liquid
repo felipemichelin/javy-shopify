@@ -337,6 +337,19 @@ div#CartDrawer {
   
   
   {% endif %}
+          
+          
+   {% if template contains 'trial-template' %}
+  
+  {% render 'trial-template' %}
+
+  
+  
+  <script src="{{ 'pdp-builder.js' | asset_url }}"></script>
+  
+  
+  {% endif %}
+
 
 
 
