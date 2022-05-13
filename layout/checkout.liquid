@@ -324,5 +324,14 @@
     
   <div data-rebuy-id="34569"></div>
 <script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop=drink-javy.myshopify.com"></script>
+<script>
+  (function($) {
+    $(document).on("page:load page:change", function() {
+      if(document.querySelector('[for=checkout_subscription_agreement]')) {
+        document.querySelector('[for=checkout_subscription_agreement]').innerText = 'I agree to place this order'
+      }
+    });
+  })(Checkout.$);
+</script>
 </body>
 </html>
