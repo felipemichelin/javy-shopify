@@ -297,6 +297,11 @@ document.querySelector('#bottle-selector').addEventListener('submit', (event) =>
 
   let formData = new FormData(event.target);
 
+  
+  	fetch('/cart/clear.js');
+    console.log("cleared_cart"); 
+  
+  
   fetch('/cart/add.js', {
     method: 'POST',
     body: formData
@@ -321,12 +326,3 @@ document.querySelector('#bottle-selector').addEventListener('submit', (event) =>
 </style>
 
 
-<script>
-  
-  $(document).ready(function() {
-	fetch('/cart/clear.js');
-console.log("cleared_cart");   
-  }
-                      
-                      
-</script>
