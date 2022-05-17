@@ -169,7 +169,7 @@ Usage optional: {% render 'skio-plan-picker', product: product, key: key, form_i
 
     {% comment %} SUBSCRIPTIONS {% endcomment %}
     {% capture subscriptionHTML %}
-      {% assign firstSelected = true %}
+      {% assign firstSelected = false %}
       {% for group in product.selling_plan_groups %}
         {% comment %} TODO: replace with check for app_id {% endcomment %}
         {% if group.name == 'Subscription' or group.name == 'Prepaid' %}
