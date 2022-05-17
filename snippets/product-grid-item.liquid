@@ -215,7 +215,7 @@ FLASH SALE        </div>
         <div class="grid-product__price">
           {%- if on_sale -%}
             <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
-            <del class="grid-product__price--original"><span skio-subscription-price>{{ price | money }}</span></del>
+            <del class="grid-product__price--original">{{ product.compare_at_price | money }}</del>
             <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
           {%- endif -%}
           {%- if product.price_varies -%}
