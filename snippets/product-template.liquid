@@ -223,7 +223,7 @@ Currently out of stock.
                     {%- when '@app' -%}
                       {% render block %}
                     {%- when 'skio-plan-picker' -%}
-                      {% render 'skio-plan-picker', form_id: form_id, onetime_first: false, %}
+                      {% render 'skio-plan-picker', product: product, key: key, form_id: form_id, start_onetime: false, onetime_first: false, discount_format: 'absolute' %}
                     {%- when 'reviews' -%}
                       <div class="product-block product-block--small">
                         <a href="#shopify-product-reviews-{{ product.id }}">
