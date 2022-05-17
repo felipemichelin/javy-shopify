@@ -109,7 +109,7 @@ Usage optional: {% render 'skio-plan-picker', product: product, key: key, form_i
         assign selected_selling_plan_id = current_variant.selling_plan_allocations.first.selling_plan.id
       endif
     %}
-    <input checked name="selling_plan" type="hidden" value="{% unless start_onetime %}{{ selected_selling_plan_id }}{% endunless %}" 
+    <input name="selling_plan" type="hidden" value="{% unless start_onetime %}{{ selected_selling_plan_id }}{% endunless %}" 
       {% if form_id %}form="{{ form_id }}"{% endif %}
     />
 
