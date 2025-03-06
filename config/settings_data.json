@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "color_body_bg": "#ffffff",
@@ -48,19 +57,19 @@
     "quick_shop_enable": false,
     "quick_shop_style": "product",
     "product_image_type": "slider",
-    "cart_type": "drawer",
+    "cart_type": "page",
     "cart_icon": "bag",
     "cart_additional_buttons": false,
     "cart_notes_enable": false,
-    "social_instagram_link": "https:\/\/www.instagram.com\/javy.coffee\/",
-    "social_facebook_link": "https:\/\/www.facebook.com\/DrinkJavy\/",
+    "social_instagram_link": "https://www.instagram.com/javy.coffee/",
+    "social_facebook_link": "https://www.facebook.com/DrinkJavy/",
     "social_twitter_link": "",
     "social_pinterest_link": "",
     "social_snapchat_link": "",
     "social_tiktok_link": "",
-    "favicon": "shopify:\/\/shop_images\/favicon_3d8e081c-be5e-4f00-9ef6-2375069296d2.png",
+    "favicon": "shopify://shop_images/favicon_3d8e081c-be5e-4f00-9ef6-2375069296d2.png",
     "freeshipping_price": "44.95",
-    "checkout_logo_image": "shopify:\/\/shop_images\/logo_5d731a41-68f2-4c5e-8e47-f5bff2e78197.png",
+    "checkout_logo_image": "shopify://shop_images/logo_5d731a41-68f2-4c5e-8e47-f5bff2e78197.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_color": "#ffffff",
@@ -85,7 +94,7 @@
           "sticky_index": false,
           "sticky_collection": false,
           "header_search_enable": true,
-          "logo": "shopify:\/\/shop_images\/logo_5d731a41-68f2-4c5e-8e47-f5bff2e78197.png",
+          "logo": "shopify://shop_images/logo_5d731a41-68f2-4c5e-8e47-f5bff2e78197.png",
           "desktop_logo_width": 180,
           "mobile_logo_width": 100,
           "logo_hide_mobile": false,
@@ -119,7 +128,7 @@
           "popup_seconds": 5,
           "popup_days": 30,
           "popup_title": "Sign up and save",
-          "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers.<\/p>",
+          "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers.</p>",
           "enable_newsletter": true,
           "button_label": "",
           "button_link": ""
@@ -138,7 +147,7 @@
           "enable_product": false,
           "enable_collection": false,
           "title": "On social",
-          "description": "<p>Send us yours <a href=\"https:\/\/instagram.com\/youraccount\/\">@youraccount<\/a><\/p>"
+          "description": "<p>Send us yours <a href=\"https://instagram.com/youraccount/\">@youraccount</a></p>"
         }
       },
       "giftcard-header": {
@@ -149,12 +158,10 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "15683396631634586217": {
-        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": false,
         "settings": {
           "button_color": "#000000",
@@ -353,8 +360,7 @@
         },
         "password-header": {
           "type": "password-header",
-          "settings": {
-          }
+          "settings": {}
         },
         "product-recommendations": {
           "type": "product-recommendations",

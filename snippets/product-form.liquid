@@ -1,4 +1,4 @@
-{% form 'product', product, id: form_id, class: 'product-single__form small--text-center' %}
+{% form 'product', product, data-productid: product.id, id: form_id, class: 'product-single__form small--text-center' %}
   <input type="hidden" name="data-product-id" value="{{ product.id }}">
 
   {%- liquid
@@ -48,7 +48,7 @@
 
   <div class="shopify-payment-terms product__policies">{{ form | payment_terms }}</div>
 
-  <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js" data-product-select>
+  <select name="id" data-productid="{{ product.id }}" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js" data-product-select>
     {%- for variant in product.variants -%}
       {%- if variant.available -%}
         <option value="{{ variant.id }}"{% if variant == product.selected_or_first_available_variant %}
